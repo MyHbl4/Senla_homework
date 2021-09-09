@@ -1,11 +1,13 @@
 public class Employee extends Person {
     private String position;
     private int salary;
+    private int bonus;
 
-    public Employee(String name, String sex, String position, int salary) {
+    public Employee(String name, String sex, String position, int salary, int bonus) {
         super(name, sex);
         this.position = position;
         this.salary = salary;
+        this.bonus = bonus;
     }
 
     public String getPosition() {
@@ -22,6 +24,14 @@ public class Employee extends Person {
 
     public void setSalary(int salary) {
         this.salary = salary;
+    }
+
+    public int getBonus() {
+        return bonus;
+    }
+
+    public void setBonus(int bonus) {
+        this.bonus = bonus;
     }
 
     @Override
