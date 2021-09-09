@@ -1,4 +1,6 @@
-public class Administrator extends Employee{
+package task3;
+
+public class Administrator extends Employee {
     private String assistent;
     private boolean fire;
 

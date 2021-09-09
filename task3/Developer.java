@@ -1,4 +1,6 @@
-public class Developer extends Employee{
+package task3;
+
+public class Developer extends Employee {
     private String language;
 
     public Developer(String name, String sex, String position, int salary, int bonus, String language) {

@@ -1,4 +1,6 @@
-public class HR extends Employee{
+package task3;
+
+public class HR extends Employee {
     private String levelEnglish;
     private boolean hire;
 

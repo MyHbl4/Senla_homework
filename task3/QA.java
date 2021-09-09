@@ -1,4 +1,6 @@
-public class QA extends Employee{
+package task3;
+
+public class QA extends Employee {
     private boolean automation;
 
     public QA(String name, String sex, String position, int salary, int bonus, boolean automation) {

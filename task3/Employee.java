@@ -1,3 +1,5 @@
+package task3;
+
 public class Employee extends Person {
     private String position;
     private int salary;
