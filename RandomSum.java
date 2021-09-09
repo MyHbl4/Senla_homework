@@ -29,11 +29,4 @@ public class RandomSum {
     public String toString() {
         return "RandomSum [ "+ "Random number: " + random + ", Sum numbers: " + sumNum +']';
     }
-
-    public static void main(String[] args) {
-        RandomSum random = new RandomSum();
-        System.out.println(random);
-        System.out.println(random.getRandom());
-        System.out.println(random.getSumNum());
-    }
 }
