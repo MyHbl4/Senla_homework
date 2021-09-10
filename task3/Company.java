@@ -3,12 +3,12 @@ package task3;
 public class Company {
     private String name;
     private String industry;
-    private Employee[] employees;
+    private Employee[] employees = new Employee[5];
+    private int count = 0;
 
-    public Company(String name, String industry, Employee[] employees) {
+    public Company(String name, String industry) {
         this.name = name;
         this.industry = industry;
-        this.employees = employees;
     }
 
     public String getName() {
@@ -31,18 +31,28 @@ public class Company {
         return employees;
     }
 
-    public void setEmployees(Employee[] employees) {
+    private void setEmployees(Employee[] employees) {
         this.employees = employees;
     }
 
-    public int salaryAmount(){
+    public int getCount() {
+        return count;
+    }
+
+    private void setCount(int count) {
+        this.count = count;
+    }
+
+    public int salaryAmount() {
         int sum = 0;
-        for(Employee e:employees){
-            sum += e.getSalary()+e.getBonus();
+        for (Employee e : employees) {
+            sum += e.getSalary() + e.getBonus();
         }
         return sum;
     }
 
-
-
+    public void addEmployee(Employee employee) {
+        employees[count] = employee;
+        count++;
+    }
 }
