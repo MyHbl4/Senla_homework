@@ -4,11 +4,11 @@ import task4.model.Order;
 
 public interface OrderRepository {
 
-    void addOrder(Order order);
+  void addOrder(Order order);
 
-    void closeOrder(Order order);
+  void closeOrder(int id);
 
-    void cancelOrder(Order order);
+  void cancelOrder(int id);
 
-    void printOrderRepository();
+  void printOrderRepository();
 }

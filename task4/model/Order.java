@@ -3,69 +3,72 @@ package task4.model;
 import java.util.Arrays;
 
 public class Order {
-    private long id;
-    private long buyerId;
-    private long[] booksId;
-    private OrderStatus orderStatus = OrderStatus.NEW;
+  private int id;
+  private int buyerId;
+  private int[] booksId;
+  private OrderStatus orderStatus = OrderStatus.NEW;
 
-    public Order(long id, long buyerId, long[] booksId) {
-        this.id = id;
-        this.buyerId = buyerId;
-        this.booksId = booksId;
-    }
+  public Order(int id, int buyerId, int[] booksId) {
+    this.id = id;
+    this.buyerId = buyerId;
+    this.booksId = booksId;
+  }
 
-    public long getId() {
-        return id;
-    }
+  public int getId() {
+    return id;
+  }
 
-    public void setId(long id) {
-        this.id = id;
-    }
+  public void setId(int id) {
+    this.id = id;
+  }
 
-    public long getBuyerId() {
-        return buyerId;
-    }
+  public int getBuyerId() {
+    return buyerId;
+  }
 
-    public void setBuyerId(long buyerId) {
-        this.buyerId = buyerId;
-    }
+  public void setBuyerId(int buyerId) {
+    this.buyerId = buyerId;
+  }
 
-    public long[] getBooksId() {
-        return booksId;
-    }
+  public int[] getBooksId() {
+    return booksId;
+  }
 
-    public void setBooksId(long[] booksId) {
-        this.booksId = booksId;
-    }
+  public void setBooksId(int[] booksId) {
+    this.booksId = booksId;
+  }
 
-    public void setOrderStatus(OrderStatus orderStatus) {
-        this.orderStatus = orderStatus;
-    }
+  public OrderStatus getOrderStatus() {
+    return orderStatus;
+  }
 
-    public OrderStatus getOrderStatus() {
-        return orderStatus;
-    }
+  public void setOrderStatus(OrderStatus orderStatus) {
+    this.orderStatus = orderStatus;
+  }
 
-    public void setOrderStatusNew() {
-        this.orderStatus = OrderStatus.NEW;
-    }
+  public void setOrderStatusNew() {
+    this.orderStatus = OrderStatus.NEW;
+  }
 
-    public void setOrderStatusCompleate() {
-        this.orderStatus = OrderStatus.COMPLEATE;
-    }
+  public void setOrderStatusCompleate() {
+    this.orderStatus = OrderStatus.COMPLETED;
+  }
 
-    public void setOrderStatusCanceled() {
-        this.orderStatus = OrderStatus.CANCELED;
-    }
+  public void setOrderStatusCanceled() {
+    this.orderStatus = OrderStatus.CANCELED;
+  }
 
-    @Override
-    public String toString() {
-        return "Order{" +
-                "id=" + id +
-                ", buyerId=" + buyerId +
-                ", booksId=" + Arrays.toString(booksId) +
-                ", orderStatus=" + orderStatus +
-                '}';
-    }
+  @Override
+  public String toString() {
+    return "Order{"
+        + "id="
+        + id
+        + ", buyerId="
+        + buyerId
+        + ", booksId="
+        + Arrays.toString(booksId)
+        + ", orderStatus="
+        + orderStatus
+        + '}';
+  }
 }
-

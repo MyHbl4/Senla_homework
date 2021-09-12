@@ -4,8 +4,7 @@ import task4.model.Buyer;
 
 public interface BuyerRepository {
 
-    void addBuyer(Buyer buyer);
+  void addBuyer(Buyer buyer);
 
-    void printBuyerRepository();
-
+  void printBuyerRepository();
 }

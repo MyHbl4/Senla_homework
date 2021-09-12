@@ -4,12 +4,15 @@ import task4.model.Book;
 
 public interface BookRepository {
 
-    void addBook(Book book);
+  void addBook(Book book);
 
-    void removeBook(Book books);
+  void inStock(int id);
 
-    Book findBookById(long id);
+  void outOfStock(int id);
 
-    void printBookRepository();
+  void removeBook(int id);
 
+  Book findBookById(int id);
+
+  void printBookRepository();
 }
