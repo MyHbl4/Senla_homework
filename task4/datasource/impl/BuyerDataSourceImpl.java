@@ -1,7 +1,8 @@
-package task4.datasource;
+package task4.datasource.impl;
 
+import task4.datasource.BuyerDataSource;
 import task4.model.Buyer;
-import task4.other.BuyerArrayList;
+import task4.util.BuyerArrayList;
 
 public class BuyerDataSourceImpl implements BuyerDataSource {
   private final BuyerArrayList buyers = new BuyerArrayList();

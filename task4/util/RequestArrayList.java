@@ -1,8 +1,8 @@
-package task4.other;
+package task4.util;
 
-import task4.model.Order;
+import task4.model.Request;
 
-public class OrderArrayList {
+public class RequestArrayList {
   private final int INIT_SIZE = 16;
   private final int CUT_RATE = 4;
   private Object[] array = new Object[INIT_SIZE];
@@ -12,17 +12,17 @@ public class OrderArrayList {
   Добавляет новый элемент в список. При достижении размера внутреннего
   массива происходит его увеличение в два раза.
   */
-  public void add(Order order) {
+  public void add(Request request) {
     if (pointer == array.length - 1)
       resize(array.length * 2); // увеличу в 2 раза, если достигли границ
-    array[pointer++] = order;
+    array[pointer++] = request;
   }
 
   /*
   Возвращает элемент списка по индексу.
   */
-  public Order get(int index) {
-    return (Order) array[index];
+  public Request get(int index) {
+    return (Request) array[index];
   }
 
   /*

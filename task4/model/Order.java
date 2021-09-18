@@ -1,17 +1,28 @@
 package task4.model;
 
-import java.util.Arrays;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Order {
   private int id;
   private int buyerId;
-  private int[] booksId;
+  private Object[] books;
   private OrderStatus orderStatus = OrderStatus.NEW;
+  private LocalDate execution = LocalDate.now();
 
-  public Order(int id, int buyerId, int[] booksId) {
+  public Order(int id, int buyerId, Object[] books) {
     this.id = id;
     this.buyerId = buyerId;
-    this.booksId = booksId;
+    this.books = books;
+  }
+
+  public LocalDate getExecution() {
+    return execution;
+  }
+
+  public void setExecution(LocalDate execution) {
+    this.execution = execution;
   }
 
   public int getId() {
@@ -30,12 +41,12 @@ public class Order {
     this.buyerId = buyerId;
   }
 
-  public int[] getBooksId() {
-    return booksId;
+  public Object[] getBooks() {
+    return books;
   }
 
-  public void setBooksId(int[] booksId) {
-    this.booksId = booksId;
+  public void setBooks(Object[] books) {
+    this.books = books;
   }
 
   public OrderStatus getOrderStatus() {
@@ -58,6 +69,35 @@ public class Order {
     this.orderStatus = OrderStatus.CANCELED;
   }
 
+  public int getPrice() {
+    int price = 0;
+    for (int i = 0; i < books.length; i++) {
+      EnumBook book = (EnumBook) books[i];
+      price += book.getPrice();
+    }
+    return price;
+  }
+
+  public List<Book> getBookInOrder(){
+    List<Book> listBook = new ArrayList<>();
+    for (Object book:books){
+      listBook.add((Book)book);
+    }
+    return listBook;
+  }
+
+  public void showBooks() {
+    System.out.print("Books in order: ");
+    for (int i = 0; i < books.length; i++) {
+      EnumBook book = (EnumBook) books[i];
+      if (i + 1 != books.length) {
+        System.out.print(book.getTitle() + ", ");
+      } else {
+        System.out.println(book.getTitle());
+      }
+    }
+  }
+
   @Override
   public String toString() {
     return "Order{"
@@ -65,10 +105,12 @@ public class Order {
         + id
         + ", buyerId="
         + buyerId
-        + ", booksId="
-        + Arrays.toString(booksId)
         + ", orderStatus="
         + orderStatus
+        + ", execution="
+        + execution
+        + ", price="
+        + getPrice()
         + '}';
   }
 }

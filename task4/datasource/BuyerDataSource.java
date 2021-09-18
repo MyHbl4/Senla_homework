@@ -1,6 +1,6 @@
 package task4.datasource;
 
-import task4.other.BuyerArrayList;
+import task4.util.BuyerArrayList;
 
 public interface BuyerDataSource {
 

@@ -1,11 +1,9 @@
-package task4.other;
+package task4.util;
 
-import task4.model.Buyer;
+import task4.model.Order;
 
-public class BuyerArrayList {
-
+public class OrderArrayList {
   private final int INIT_SIZE = 16;
-
   private final int CUT_RATE = 4;
   private Object[] array = new Object[INIT_SIZE];
   private int pointer = 0;
@@ -14,17 +12,17 @@ public class BuyerArrayList {
   Добавляет новый элемент в список. При достижении размера внутреннего
   массива происходит его увеличение в два раза.
   */
-  public void add(Buyer buyer) {
+  public void add(Order order) {
     if (pointer == array.length - 1)
       resize(array.length * 2); // увеличу в 2 раза, если достигли границ
-    array[pointer++] = buyer;
+    array[pointer++] = order;
   }
 
   /*
   Возвращает элемент списка по индексу.
   */
-  public Buyer get(int index) {
-    return (Buyer) array[index];
+  public Order get(int index) {
+    return (Order) array[index];
   }
 
   /*

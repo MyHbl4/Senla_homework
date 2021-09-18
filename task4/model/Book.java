@@ -1,5 +1,7 @@
 package task4.model;
 
+import java.time.LocalDate;
+
 public class Book {
   private int id;
   private String title;
@@ -7,13 +9,22 @@ public class Book {
   private int price;
   private Genre genre;
   private Availability availability = Availability.IN_STOCK;
+  private int publication;
+  private LocalDate deliveryDate = LocalDate.now();
 
-  public Book(int id, String title, String author, int price, Genre genre) {
+  public Book(int id, String title, String author, int price, Genre genre, int publication) {
     this.id = id;
     this.title = title;
     this.author = author;
     this.price = price;
     this.genre = genre;
+    this.publication = publication;
+  }
+
+  public Book(EnumBook title) {}
+
+  public int getPublication() {
+    return publication;
   }
 
   public int getId() {
@@ -72,6 +83,14 @@ public class Book {
     this.availability = Availability.OUT_OF_STOCK;
   }
 
+  public LocalDate getDeliveryDate() {
+    return deliveryDate;
+  }
+
+  public void setDeliveryDate(LocalDate deliveryDate) {
+    this.deliveryDate = deliveryDate;
+  }
+
   @Override
   public String toString() {
     return "Book{"
@@ -83,12 +102,16 @@ public class Book {
         + ", author='"
         + author
         + '\''
+        + ", published="
+        + publication
         + ", price="
         + price
         + ", genre="
         + genre
         + ", availability="
         + availability
+        + ", delivery date="
+        + deliveryDate
         + '}';
   }
 }
