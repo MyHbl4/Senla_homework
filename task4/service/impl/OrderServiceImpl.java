@@ -34,14 +34,17 @@ public class OrderServiceImpl implements OrderService {
 
   @Override
   public void addRequest(String request) {
+    int goodJob = 0;
     for (int i = 0; i < requestRepository.getAll().size(); i++) {
       if (requestRepository.getAll().get(i).getTitle().equals(request)) {
         requestRepository
             .getAll()
             .get(i)
             .setCount(requestRepository.getAll().get(i).getCount() + 1);
-        break;
+        goodJob = 1;
       }
+    }
+    if (goodJob == 0) {
       requestRepository.getAll().add(new Request(request));
     }
   }
@@ -50,10 +53,20 @@ public class OrderServiceImpl implements OrderService {
   public void addOrder(Order order) {
     orderRepository.getAll().add(order);
     for (int i = 0; i < order.getBooks().length; i++) {
-      for (int k = 0; k < bookRepository.getAll().size(); k++) {
-        if (bookRepository.getAll().get(k).getAvailability().equals(Availability.IN_STOCK)) {
-        } else {
-          addRequest(bookRepository.getAll().get(k).getTitle());
+      if (order.getBooksInOrder().get(i).getTitle() != null) {
+        for (int k = 0; k < bookRepository.getAll().size(); k++) {
+          if (order
+                  .getBooksInOrder()
+                  .get(i)
+                  .getTitle()
+                  .equals(bookRepository.getAll().get(k).getTitle())
+              && bookRepository
+                  .getAll()
+                  .get(k)
+                  .getAvailability()
+                  .equals(Availability.OUT_OF_STOCK)) {
+            addRequest(bookRepository.getAll().get(k).getTitle());
+          }
         }
       }
     }

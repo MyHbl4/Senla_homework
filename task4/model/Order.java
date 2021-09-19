@@ -73,7 +73,7 @@ public class Order {
   public int getPrice() {
     int price = 0;
     for (int i = 0; i < books.length; i++) {
-      EnumBook book = (EnumBook) books[i];
+      Book book = (Book) books[i];
       price += book.getPrice();
     }
     return price;
@@ -90,7 +90,7 @@ public class Order {
   public void showBooks() {
     System.out.print("Books in order: ");
     for (int i = 0; i < books.length; i++) {
-      EnumBook book = (EnumBook) books[i];
+      Book book = (Book) books[i];
       if (i + 1 != books.length) {
         System.out.print(book.getTitle() + ", ");
       } else {

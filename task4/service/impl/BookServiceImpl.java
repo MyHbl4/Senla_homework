@@ -8,18 +8,26 @@ import task4.comporator.book.SortBookByTitle;
 import task4.comporator.book.SortOldBookByDeliveryDate;
 import task4.model.Book;
 import task4.repository.BookRepository;
+import task4.repository.RequestRepository;
 import task4.service.BookService;
 
 public class BookServiceImpl implements BookService {
   private final BookRepository bookRepository;
+  private final RequestRepository requestRepository;
 
-  public BookServiceImpl(BookRepository bookRepository) {
+  public BookServiceImpl(BookRepository bookRepository, RequestRepository requestRepository) {
     this.bookRepository = bookRepository;
+    this.requestRepository = requestRepository;
   }
 
   @Override
   public void addBook(Book book) {
     bookRepository.getAll().add(book);
+    for(int i=0; i<requestRepository.getAll().size();i++){
+      if(book.getTitle().equals(requestRepository.getAll().get(i).getTitle()) && requestRepository.getAll().get(i).getCount()>0){
+        requestRepository.getAll().get(i).setCount(requestRepository.getAll().get(i).getCount()-1);
+      }
+    }
     System.out.println("The book has been added!");
   }
 

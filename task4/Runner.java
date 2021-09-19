@@ -44,7 +44,7 @@ public class Runner {
     BuyerRepository buyerRepository = new BuyerRepositoryImpl(buyerDataSource);
     OrderRepository orderRepository = new OrderRepositoryImpl(orderDataSource, bookDataSource);
     RequestRepository requestRepository = new RequestRepositoryImpl(requestDataSource);
-    BookService bookService = new BookServiceImpl(bookRepository);
+    BookService bookService = new BookServiceImpl(bookRepository, requestRepository);
     BuyerService buyerService = new BuyerServiceImpl(buyerRepository);
     OrderService orderService = new OrderServiceImpl(orderRepository, buyerRepository, bookRepository, requestRepository);
     RequestService requestService = new RequestServiceImpl(requestRepository);
@@ -85,10 +85,17 @@ public class Runner {
     buyerService.printBuyerRepository(); // просмотреть список покупателей в БД
     orderService.printOrderRepository(); // просмотреть список заказов в БД
 
+
+
+    //для наглядности добавим 3 ордера с отсутствующими книгами
+    orderService.addOrder(new Order(7, 2, new Object[]{new Book(1, "Война и мир", "Лев Толстой", 150, Genre.NOVEL, 1867)}));
+    requestService.printRequestRepository();
+    orderService.addOrder(new Order(7, 2, new Object[]{new Book(1, "Война и мир", "Лев Толстой", 150, Genre.NOVEL, 1867)}));
+    requestService.printRequestRepository();
+    orderService.addOrder(new Order(5, 2, new Object[]{new Book(1, "Война и мир", "Лев Толстой", 150, Genre.NOVEL, 1867)}));
+    requestService.printRequestRepository();
     // =========Lesson 5========
     System.out.println("*************** LESSON 5 ******************");
-    // лист запросов по количеству запросов
-    // лист запросов по имени
 
     // лист книг по имени
     System.out.println("sort book by title");
@@ -113,7 +120,11 @@ public class Runner {
     orderService.outputArray(orderService.sortOrderByPrice());
 
     // лист запросов по количеству запросов
+    System.out.println("sort requests by count");
+    requestService.outputArray(requestService.sortRequestByCount());
     // лист запросов по имени
+    System.out.println("sort requests by title");
+    requestService.outputArray(requestService.sortRequestByTitle());
 
     // лист выполненных заказов за период времени по дате выполнения(указать количество месяцев)
     System.out.println("sort completed order by execution date");
@@ -159,7 +170,11 @@ public class Runner {
     bookService.printBookRepository();
 
     requestService.printRequestRepository();
-    orderService.addOrder(new Order(7, 2, new Object[]{EnumBook.WAR_AND_PEACE}));
+    orderService.addOrder(new Order(7, 2, new Object[]{new Book(1, "Война и мир", "Лев Толстой", 150, Genre.NOVEL, 1867)}));
+    requestService.printRequestRepository();
+    orderService.addOrder(new Order(7, 2, new Object[]{new Book(1, "Война и мир", "Лев Толстой", 150, Genre.NOVEL, 1867)}));
+    requestService.printRequestRepository();
+    bookService.addBook(new Book(1, "Война и мир", "Лев Толстой", 150, Genre.NOVEL, 1867));
     requestService.printRequestRepository();
 
   }
