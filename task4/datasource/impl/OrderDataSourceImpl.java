@@ -16,7 +16,7 @@ public class OrderDataSourceImpl implements OrderDataSource {
 
     orders.add(new Order(1, 2, new Object[] {EnumBook.HURRY_POTTER, EnumBook.HOBBIT}));
     orders.add(new Order(2, 3, new Object[] {EnumBook.JAVA_GUIDE}));
-    orders.add(new Order(3, 1, new Object[] {EnumBook.WAR_AND_PEACE, EnumBook.LORD_OF_THE_RING}));
+    orders.add(new Order(3, 1, new Object[] {EnumBook.LORD_OF_THE_RING}));
   }
 
   @Override

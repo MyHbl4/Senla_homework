@@ -2,11 +2,10 @@ package task4.model;
 
 public class Request {
   private String title;
-  private static int id=1;
+  private int count = 1;
 
   public Request(String title) {
     this.title = title;
-    id++;
   }
 
   public String getTitle() {
@@ -17,18 +16,16 @@ public class Request {
     this.title = title;
   }
 
-  public static int getId() {
-    return id;
+  public int getCount() {
+    return count;
   }
 
-  public static void setId(int id) {
-    Request.id = id;
+  public void setCount(int count) {
+    this.count = count;
   }
 
   @Override
   public String toString() {
-    return "Request{" +
-        "title='" + title + '\'' +
-        '}';
+    return "Request{" + " title='" + title + '\'' + ", count=" + count + '}';
   }
 }

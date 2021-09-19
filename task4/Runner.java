@@ -9,6 +9,7 @@ import task4.datasource.impl.BookDataSourceImpl;
 import task4.datasource.impl.BuyerDataSourceImpl;
 import task4.datasource.impl.OrderDataSourceImpl;
 import task4.datasource.impl.RequestDataSourceImpl;
+import task4.model.Availability;
 import task4.model.Book;
 import task4.model.Buyer;
 import task4.model.EnumBook;
@@ -150,6 +151,16 @@ public class Runner {
     System.out.println("revenue for all time");
     System.out.println(orderService.getAllPriceOfSoldBooks(6));
     System.out.println();
-    System.out.println(requestDataSource.getRequest());
+
+    bookRepository.findBookById(3).setAvailability(Availability.OUT_OF_STOCK);
+    System.out.println("change status");
+    System.out.println("new order");
+
+    bookService.printBookRepository();
+
+    requestService.printRequestRepository();
+    orderService.addOrder(new Order(7, 2, new Object[]{EnumBook.WAR_AND_PEACE}));
+    requestService.printRequestRepository();
+
   }
 }

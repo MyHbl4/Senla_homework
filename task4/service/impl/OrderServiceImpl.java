@@ -6,7 +6,6 @@ import task4.comporator.order.SortOrderByExecutionDate;
 import task4.comporator.order.SortOrderByPrice;
 import task4.comporator.order.SortOrderByStatus;
 import task4.model.Availability;
-import task4.model.Book;
 import task4.model.Order;
 import task4.model.OrderStatus;
 import task4.model.Request;
@@ -34,17 +33,31 @@ public class OrderServiceImpl implements OrderService {
   }
 
   @Override
+  public void addRequest(String request) {
+    for (int i = 0; i < requestRepository.getAll().size(); i++) {
+      if (requestRepository.getAll().get(i).getTitle().equals(request)) {
+        requestRepository
+            .getAll()
+            .get(i)
+            .setCount(requestRepository.getAll().get(i).getCount() + 1);
+        break;
+      }
+      requestRepository.getAll().add(new Request(request));
+    }
+  }
+
+  @Override
   public void addOrder(Order order) {
-    System.out.println("Order added!");
     orderRepository.getAll().add(order);
-    for (Book book : order.getBookInOrder()) {
-      for (int i = 0; i < bookRepository.getAll().size(); i++) {
-        if (bookRepository.findBookById(i).getAvailability().equals(Availability.OUT_OF_STOCK)
-            && book.getTitle().equals(bookRepository.findBookById(i).getTitle())) {
-          requestRepository.getAll().add(new Request(bookRepository.findBookById(i).getTitle()));
+    for (int i = 0; i < order.getBooks().length; i++) {
+      for (int k = 0; k < bookRepository.getAll().size(); k++) {
+        if (bookRepository.getAll().get(k).getAvailability().equals(Availability.IN_STOCK)) {
+        } else {
+          addRequest(bookRepository.getAll().get(k).getTitle());
         }
       }
     }
+    System.out.println("Order added!");
   }
 
   @Override

@@ -3,6 +3,7 @@ package task4.model;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import task4.util.BookArrayList;
 
 public class Order {
   private int id;
@@ -78,13 +79,13 @@ public class Order {
     return price;
   }
 
-  public List<Book> getBookInOrder(){
-    List<Book> listBook = new ArrayList<>();
-    for (Object book:books){
-      listBook.add((Book)book);
-    }
-    return listBook;
-  }
+//  public List<Book> getBookInOrder(){
+//    List<Book> listBook = new ArrayList<>();
+//    for (Book book:books){
+//      listBook.add((Book)book);
+//    }
+//    return listBook;
+//  }
 
   public void showBooks() {
     System.out.print("Books in order: ");
@@ -96,6 +97,14 @@ public class Order {
         System.out.println(book.getTitle());
       }
     }
+  }
+
+  public BookArrayList getBooksInOrder() {
+    BookArrayList books2 = new BookArrayList();
+    for (int i=0;i<books.length;i++){
+      books2.add((Book)books[i]);
+    }
+    return books2;
   }
 
   @Override

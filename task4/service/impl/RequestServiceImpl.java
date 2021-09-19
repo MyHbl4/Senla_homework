@@ -12,7 +12,8 @@ public class RequestServiceImpl implements RequestService {
   }
 
   @Override
-  public void addRequest(Request request) {
-    requestRepository.getAll().add(request);
+  public void printRequestRepository() {
+    System.out.println("List of all request:");
+    requestRepository.getAll().print();
   }
 }

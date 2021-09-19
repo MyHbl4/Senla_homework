@@ -1,6 +1,7 @@
 package task4.datasource.impl;
 
 import task4.datasource.RequestDataSource;
+import task4.model.Request;
 import task4.util.RequestArrayList;
 
 public class RequestDataSourceImpl implements RequestDataSource {
@@ -11,6 +12,7 @@ public class RequestDataSourceImpl implements RequestDataSource {
   }
 
   public void initData() {
+    requests.add(new Request("Десять негритят"));
 
   }
 

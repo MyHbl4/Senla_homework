@@ -1,8 +1,11 @@
 package task4.service;
 
 import task4.model.Order;
+import task4.model.Request;
 
 public interface OrderService {
+
+  void  addRequest(String request);
 
   void addOrder(Order order);
 
