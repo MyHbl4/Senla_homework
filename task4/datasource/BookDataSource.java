@@ -1,8 +1,9 @@
 package task4.datasource;
 
-import task4.util.BookArrayList;
+import java.util.List;
+import task4.model.Book;
 
 public interface BookDataSource {
 
-  BookArrayList getBooks();
+  List<Book> getBooks();
 }

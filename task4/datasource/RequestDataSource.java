@@ -1,9 +1,9 @@
 package task4.datasource;
 
-import task4.util.RequestArrayList;
+import java.util.List;
+import task4.model.Request;
 
 public interface RequestDataSource {
 
-  RequestArrayList getRequest();
-
+  List<Request> getRequest();
 }

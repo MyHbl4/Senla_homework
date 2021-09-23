@@ -1,52 +1,43 @@
 package task4.model;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
-import task4.util.BookArrayList;
+import java.util.Objects;
 
-public class Order {
-  private int id;
-  private int buyerId;
-  private Object[] books;
+public class Order extends Identity {
+  private long id = createOrderid();
+  private String customerName;
+  private List<Book> books;
   private OrderStatus orderStatus = OrderStatus.NEW;
   private LocalDate execution = LocalDate.now();
+  private int price = getPrice();
 
-  public Order(int id, int buyerId, Object[] books) {
-    this.id = id;
-    this.buyerId = buyerId;
+  public Order(String customerName, List<Book> books) {
+    this.customerName = customerName;
     this.books = books;
   }
 
-  public LocalDate getExecution() {
-    return execution;
-  }
-
-  public void setExecution(LocalDate execution) {
-    this.execution = execution;
-  }
-
-  public int getId() {
+  public long getId() {
     return id;
   }
 
-  public void setId(int id) {
+  public void setId(long id) {
     this.id = id;
   }
 
-  public int getBuyerId() {
-    return buyerId;
+  public String getCustomerName() {
+    return customerName;
   }
 
-  public void setBuyerId(int buyerId) {
-    this.buyerId = buyerId;
+  public void setCustomerName(String customerName) {
+    this.customerName = customerName;
   }
 
-  public Object[] getBooks() {
+  public List<Book> getBooks() {
     return books;
   }
 
-  public void setBooks(Object[] books) {
+  public void setBooks(List<Book> books) {
     this.books = books;
   }
 
@@ -56,6 +47,14 @@ public class Order {
 
   public void setOrderStatus(OrderStatus orderStatus) {
     this.orderStatus = orderStatus;
+  }
+
+  public LocalDate getExecution() {
+    return execution;
+  }
+
+  public void setExecution(LocalDate execution) {
+    this.execution = execution;
   }
 
   public void setOrderStatusNew() {
@@ -72,39 +71,47 @@ public class Order {
 
   public int getPrice() {
     int price = 0;
-    for (int i = 0; i < books.length; i++) {
-      Book book = (Book) books[i];
-      price += book.getPrice();
+    if (books != null) {
+      for (Book book : books) {
+        price += book.getPrice();
+      }
     }
     return price;
   }
 
-//  public List<Book> getBookInOrder(){
-//    List<Book> listBook = new ArrayList<>();
-//    for (Book book:books){
-//      listBook.add((Book)book);
-//    }
-//    return listBook;
-//  }
+  public void setPrice(int price) {
+    this.price = price;
+  }
 
   public void showBooks() {
     System.out.print("Books in order: ");
-    for (int i = 0; i < books.length; i++) {
-      Book book = (Book) books[i];
-      if (i + 1 != books.length) {
-        System.out.print(book.getTitle() + ", ");
-      } else {
-        System.out.println(book.getTitle());
-      }
+    for (Book book : books) {
+      System.out.print('\'' + book.getTitle() + "' ");
     }
+    System.out.println();
   }
 
-  public BookArrayList getBooksInOrder() {
-    BookArrayList books2 = new BookArrayList();
-    for (int i=0;i<books.length;i++){
-      books2.add((Book)books[i]);
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
     }
-    return books2;
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    Order order = (Order) o;
+    return getId() == order.getId()
+        && getPrice() == order.getPrice()
+        && Objects.equals(getCustomerName(), order.getCustomerName())
+        && Objects.equals(getBooks(), order.getBooks())
+        && getOrderStatus() == order.getOrderStatus()
+        && Objects.equals(getExecution(), order.getExecution());
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(
+        getId(), getCustomerName(), getBooks(), getOrderStatus(), getExecution(), getPrice());
   }
 
   @Override
@@ -112,14 +119,17 @@ public class Order {
     return "Order{"
         + "id="
         + id
-        + ", buyerId="
-        + buyerId
+        + ", customerName='"
+        + customerName
+        + '\''
+        + ", books="
+        + books
         + ", orderStatus="
         + orderStatus
         + ", execution="
         + execution
         + ", price="
-        + getPrice()
-        + '}';
+        + price
+        + "} ";
   }
 }

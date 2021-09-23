@@ -1,8 +1,8 @@
 package task4.datasource;
 
-import task4.util.OrderArrayList;
+import java.util.List;
+import task4.model.Order;
 
 public interface OrderDataSource {
-
-  OrderArrayList getOrders();
+  List<Order> getOrders();
 }

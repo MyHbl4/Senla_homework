@@ -1,19 +1,13 @@
 package task4.repository;
 
+import java.util.List;
 import task4.model.Book;
-import task4.util.BookArrayList;
 
 public interface BookRepository {
 
-  BookArrayList getAll();
+  List<Book> getAll();
 
   Book findBookById(int id);
 
-  Book findBookByTitle(String tiltle);
-
-  Book[] getArrayBook();
-
-  int getCountOldBook();
-
-  Book[] getArrayOldBook();
+  List<Book> getOldBooks();
 }

@@ -1,11 +1,10 @@
 package task4.service;
 
 import task4.model.Order;
-import task4.model.Request;
 
 public interface OrderService {
 
-  void  addRequest(String request);
+  void addRequest(String request);
 
   void addOrder(Order order);
 
@@ -13,25 +12,19 @@ public interface OrderService {
 
   void cancelOrder(int id);
 
-  void printOrderRepository();
+  void getAllPriceOfSoldBooks(int months);
 
-  int getCountSoldBooks(int months);
-
-  int getPriceOfSoldBooksInOrder(int id);
-
-  int getAllPriceOfSoldBooks(int months);
+  void getCompletedOrder(int months);
 
   void orderInfoById(int id);
 
-  void outputArray(Order[] orders);
+  void sortOrderByStatus();
 
-  Order[] sortOrderByStatus();
+  void sortOrderByPrice();
 
-  Order[] sortOrderByPrice();
+  void sortOrderByExecutionDate();
 
-  Order[] sortOrderByExecutionDate();
+  void sortCompletedOrderByPrice(int months);
 
-  Order[] sortCompletedOrderByPrice(int months);
-
-  Order[] sortCompletedOrderByExecutionDate(int months);
+  void sortCompletedOrderByExecutionDate(int months);
 }

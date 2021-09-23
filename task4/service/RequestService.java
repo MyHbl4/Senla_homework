@@ -1,14 +1,8 @@
 package task4.service;
 
-import task4.model.Request;
-
 public interface RequestService {
 
-  void printRequestRepository();
+  void sortRequestByCount();
 
-  void outputArray(Request[] requests);
-
-  Request[] sortRequestByCount();
-
-  Request[] sortRequestByTitle();
+  void sortRequestByTitle();
 }

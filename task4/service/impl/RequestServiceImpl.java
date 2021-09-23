@@ -1,9 +1,5 @@
 package task4.service.impl;
 
-import java.util.Arrays;
-import task4.comporator.request.SortRequestByCount;
-import task4.comporator.request.SortRequestByTitle;
-import task4.model.Request;
 import task4.repository.RequestRepository;
 import task4.service.RequestService;
 
@@ -15,29 +11,14 @@ public class RequestServiceImpl implements RequestService {
   }
 
   @Override
-  public void printRequestRepository() {
-    System.out.println("List of all request:");
-    requestRepository.getAll().print();
+  public void sortRequestByCount() {
+    requestRepository.getAll().sort((r1, r2) -> r1.getCount() - r2.getCount());
+    requestRepository.getAll().stream().forEach(System.out::println);
   }
 
   @Override
-  public void outputArray(Request[] requests) {
-      for (Request request : requests) {
-        System.out.println(request);
-      }
-    }
-
-  @Override
-  public Request[] sortRequestByCount() {
-    Request[] sortRequest = requestRepository.getArray(requestRepository.getAll());
-    Arrays.sort(sortRequest, new SortRequestByCount());
-    return sortRequest;
-  }
-
-  @Override
-  public Request[] sortRequestByTitle() {
-    Request[] sortRequest = requestRepository.getArray(requestRepository.getAll());
-    Arrays.sort(sortRequest, new SortRequestByTitle());
-    return sortRequest;
+  public void sortRequestByTitle() {
+    requestRepository.getAll().sort((r1, r2) -> r1.getTitle().compareTo(r2.getTitle()));
+    requestRepository.getAll().stream().forEach(System.out::println);
   }
 }

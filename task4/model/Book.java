@@ -1,37 +1,29 @@
 package task4.model;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
-public class Book {
-  private int id;
+public class Book extends Identity {
+  private long id = createBookId();
   private String title;
   private String author;
   private int price;
-  private Genre genre;
   private Availability availability = Availability.IN_STOCK;
   private int publication;
   private LocalDate deliveryDate = LocalDate.now();
 
-  public Book(int id, String title, String author, int price, Genre genre, int publication) {
-    this.id = id;
+  public Book(String title, String author, int price, int publication) {
     this.title = title;
     this.author = author;
     this.price = price;
-    this.genre = genre;
     this.publication = publication;
   }
 
-  public Book(EnumBook title) {}
-
-  public int getPublication() {
-    return publication;
-  }
-
-  public int getId() {
+  public long getId() {
     return id;
   }
 
-  public void setId(int id) {
+  public void setId(long id) {
     this.id = id;
   }
 
@@ -59,14 +51,6 @@ public class Book {
     this.price = price;
   }
 
-  public Genre getGenre() {
-    return genre;
-  }
-
-  public void setGenre(Genre genre) {
-    this.genre = genre;
-  }
-
   public Availability getAvailability() {
     return availability;
   }
@@ -75,12 +59,12 @@ public class Book {
     this.availability = availability;
   }
 
-  public void setBookStatusInStock() {
-    this.availability = Availability.IN_STOCK;
+  public int getPublication() {
+    return publication;
   }
 
-  public void setBookStatusOutOfStock() {
-    this.availability = Availability.OUT_OF_STOCK;
+  public void setPublication(int publication) {
+    this.publication = publication;
   }
 
   public LocalDate getDeliveryDate() {
@@ -89,6 +73,36 @@ public class Book {
 
   public void setDeliveryDate(LocalDate deliveryDate) {
     this.deliveryDate = deliveryDate;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    Book book = (Book) o;
+    return getId() == book.getId()
+        && getPrice() == book.getPrice()
+        && getPublication() == book.getPublication()
+        && Objects.equals(getTitle(), book.getTitle())
+        && Objects.equals(getAuthor(), book.getAuthor())
+        && getAvailability() == book.getAvailability()
+        && Objects.equals(getDeliveryDate(), book.getDeliveryDate());
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(
+        getId(),
+        getTitle(),
+        getAuthor(),
+        getPrice(),
+        getAvailability(),
+        getPublication(),
+        getDeliveryDate());
   }
 
   @Override
@@ -102,16 +116,14 @@ public class Book {
         + ", author='"
         + author
         + '\''
-        + ", published="
-        + publication
         + ", price="
         + price
-        + ", genre="
-        + genre
         + ", availability="
         + availability
-        + ", delivery date="
+        + ", publication="
+        + publication
+        + ", deliveryDate="
         + deliveryDate
-        + '}';
+        + "} ";
   }
 }

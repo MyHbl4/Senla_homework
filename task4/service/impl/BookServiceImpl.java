@@ -1,11 +1,6 @@
 package task4.service.impl;
 
-import java.util.Arrays;
-import task4.comporator.book.SortBookByAvailability;
-import task4.comporator.book.SortBookByPrice;
-import task4.comporator.book.SortBookByPublishedDate;
-import task4.comporator.book.SortBookByTitle;
-import task4.comporator.book.SortOldBookByDeliveryDate;
+import task4.model.Availability;
 import task4.model.Book;
 import task4.repository.BookRepository;
 import task4.repository.RequestRepository;
@@ -23,40 +18,20 @@ public class BookServiceImpl implements BookService {
   @Override
   public void addBook(Book book) {
     bookRepository.getAll().add(book);
-    for(int i=0; i<requestRepository.getAll().size();i++){
-      if(book.getTitle().equals(requestRepository.getAll().get(i).getTitle()) && requestRepository.getAll().get(i).getCount()>0){
-        requestRepository.getAll().get(i).setCount(requestRepository.getAll().get(i).getCount()-1);
+    for (int i = 0; i < requestRepository.getAll().size(); i++) {
+      if (book.getTitle().equals(requestRepository.getAll().get(i).getTitle())
+          && requestRepository.getAll().get(i).getCount() > 0) {
+        requestRepository
+            .getAll()
+            .get(i)
+            .setCount(requestRepository.getAll().get(i).getCount() - 1);
       }
     }
-    System.out.println("The book has been added!");
-  }
-
-  @Override
-  public void inStock(int id) {
-    bookRepository.findBookById(id).setBookStatusInStock();
-    System.out.println("The book is in stock!");
-  }
-
-  @Override
-  public void outOfStock(int id) {
-    bookRepository.findBookById(id).setBookStatusOutOfStock();
-    System.out.println("The book is out of stock!");
   }
 
   @Override
   public void removeBook(int id) {
-    for (int i = 0; i < bookRepository.getAll().size(); i++) {
-      if (bookRepository.getAll().get(i).getId() == id) {
-        bookRepository.getAll().remove(i);
-        System.out.println("The book has been deleted!");
-      }
-    }
-  }
-
-  @Override
-  public void printBookRepository() {
-    System.out.println("List of all books:");
-    bookRepository.getAll().print();
+    bookRepository.findBookById(id).setAvailability(Availability.OUT_OF_STOCK);
   }
 
   @Override
@@ -69,8 +44,6 @@ public class BookServiceImpl implements BookService {
             + book.getTitle()
             + ", Author: "
             + book.getAuthor()
-            + ", Genre: "
-            + book.getGenre()
             + ", Price: "
             + book.getPrice()
             + ", Availability: "
@@ -78,51 +51,40 @@ public class BookServiceImpl implements BookService {
   }
 
   @Override
-  public void outputArray(Book[] books) {
-    for (Book book : books) {
-      System.out.println(book);
-    }
+  public void sortBookByPrice() {
+    bookRepository.getAll().sort((b1, b2) -> b1.getPrice() - b2.getPrice());
+    bookRepository.getAll().stream().forEach(System.out::println);
   }
 
   @Override
-  public Book[] sortBookByPrice() {
-    Book[] sortBook = bookRepository.getArrayBook();
-    Arrays.sort(sortBook, new SortBookByPrice());
-    return sortBook;
+  public void sortBookByAvailability() {
+    bookRepository.getAll().sort((b1, b2) -> b1.getAvailability().compareTo(b2.getAvailability()));
+    bookRepository.getAll().stream().forEach(System.out::println);
   }
 
   @Override
-  public Book[] sortBookByAvailability() {
-    Book[] sortBook = bookRepository.getArrayBook();
-    Arrays.sort(sortBook, new SortBookByAvailability());
-    return sortBook;
+  public void sortBookByPublishedDate() {
+    bookRepository.getAll().sort((b1, b2) -> b1.getPublication() - b2.getPublication());
+    bookRepository.getAll().stream().forEach(System.out::println);
   }
 
   @Override
-  public Book[] sortBookByPublishedDate() {
-    Book[] sortBook = bookRepository.getArrayBook();
-    Arrays.sort(sortBook, new SortBookByPublishedDate());
-    return sortBook;
+  public void sortBookByTitle() {
+    bookRepository.getAll().sort((b1, b2) -> b1.getTitle().compareTo(b2.getTitle()));
+    bookRepository.getAll().stream().forEach(System.out::println);
   }
 
   @Override
-  public Book[] sortBookByTitle() {
-    Book[] sortBook = bookRepository.getArrayBook();
-    Arrays.sort(sortBook, new SortBookByTitle());
-    return sortBook;
+  public void sortOldBookByDeliveryDate() {
+    bookRepository
+        .getOldBooks()
+        .sort((b1, b2) -> b1.getDeliveryDate().compareTo(b2.getDeliveryDate()));
+    bookRepository.getOldBooks().stream().forEach(System.out::println);
   }
 
   @Override
-  public Book[] sortOldBookByDeliveryDate() {
-    Book[] sortBook = bookRepository.getArrayOldBook();
-    Arrays.sort(sortBook, new SortOldBookByDeliveryDate());
-    return sortBook;
-  }
-
-  @Override
-  public Book[] sortOldBookByPrice() {
-    Book[] sortBook = bookRepository.getArrayOldBook();
-    Arrays.sort(sortBook, new SortBookByPrice());
-    return sortBook;
+  public void sortOldBookByPrice() {
+    bookRepository.getOldBooks().sort((b1, b2) -> b1.getPrice() - b2.getPrice());
+    bookRepository.getOldBooks().stream().forEach(System.out::println);
   }
 }

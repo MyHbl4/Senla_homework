@@ -6,27 +6,19 @@ public interface BookService {
 
   void addBook(Book book);
 
-  void inStock(int id);
-
-  void outOfStock(int id);
-
   void removeBook(int id);
-
-  void printBookRepository();
 
   void bookInfoById(int id);
 
-  void outputArray(Book[] books);
+  void sortBookByAvailability();
 
-  Book[] sortBookByAvailability();
+  void sortBookByPrice();
 
-  Book[] sortBookByPrice();
+  void sortBookByPublishedDate();
 
-  Book[] sortBookByPublishedDate();
+  void sortBookByTitle();
 
-  Book[] sortBookByTitle();
+  void sortOldBookByDeliveryDate();
 
-  Book[] sortOldBookByDeliveryDate();
-
-  Book[] sortOldBookByPrice();
+  void sortOldBookByPrice();
 }
