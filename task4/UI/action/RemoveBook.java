@@ -17,6 +17,7 @@ public class RemoveBook extends CreateManager implements IAction {
       e.printStackTrace();
     }
     manager.removeBook(id);
+    manager.updateBookCsv();
     System.out.println("The book has been removed");
   }
 }

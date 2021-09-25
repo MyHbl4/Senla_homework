@@ -1,5 +1,12 @@
 package task4.service.impl;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.time.LocalDate;
 import task4.model.Availability;
 import task4.model.Book;
 import task4.repository.BookRepository;
@@ -86,5 +93,63 @@ public class BookServiceImpl implements BookService {
   public void sortOldBookByPrice() {
     bookRepository.getOldBooks().sort((b1, b2) -> b1.getPrice() - b2.getPrice());
     bookRepository.getOldBooks().stream().forEach(System.out::println);
+  }
+
+  //  BufferedReader reader = new BufferedReader(new FileReader(fileName));
+  @Override
+  public void updateBookCsv() {
+    String fileName = "bookdata.csv";
+    try {
+      PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(fileName)));
+      for (Book book : bookRepository.getAll()) {
+        writer.println(
+            book.getId()
+                + "|"
+                + book.getTitle()
+                + "|"
+                + book.getAuthor()
+                + "|"
+                + book.getPrice()
+                + "|"
+                + book.getPublication()
+                + "|"
+                + book.getAvailability()
+                + "|"
+                + book.getDeliveryDate());
+      }
+      writer.flush();
+      writer.close();
+      //      JOptionPane.showMessageDialog(null,"BookDataSource updated");
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
+  @Override
+  public void downloadBookCsv() {
+    String fileName = "bookdata.csv";
+    try {
+      try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
+        String someBook;
+        bookRepository.getAll().clear();
+        while ((someBook = reader.readLine()) != null) {
+          String[] values = someBook.split("\\|");
+          bookRepository
+              .getAll()
+              .add(
+                  new Book(
+                      Long.parseLong(values[0]),
+                      values[1],
+                      values[2],
+                      Integer.parseInt(values[3]),
+                      Integer.parseInt(values[4]),
+                      Availability.valueOf(values[5]),
+                      LocalDate.parse(values[6])));
+        }
+      }
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    System.out.println("book csv downloaded");
   }
 }

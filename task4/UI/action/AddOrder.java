@@ -29,6 +29,7 @@ public class AddOrder extends CreateManager implements IAction {
     } catch (IOException e) {
       e.printStackTrace();
     }
+    manager.updateOrderCsv();
     System.out.println("Order has been added");
   }
 }

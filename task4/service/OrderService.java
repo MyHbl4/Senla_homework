@@ -27,4 +27,8 @@ public interface OrderService {
   void sortCompletedOrderByPrice(int months);
 
   void sortCompletedOrderByExecutionDate(int months);
+
+  void updateOrderCsv();
+
+  void downloadOrderCsv();
 }

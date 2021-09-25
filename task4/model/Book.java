@@ -12,6 +12,23 @@ public class Book extends Identity {
   private int publication;
   private LocalDate deliveryDate = LocalDate.now();
 
+  public Book(
+      long id,
+      String title,
+      String author,
+      int price,
+      int publication,
+      Availability availability,
+      LocalDate deliveryDate) {
+    this.id = id;
+    this.title = title;
+    this.author = author;
+    this.price = price;
+    this.availability = availability;
+    this.publication = publication;
+    this.deliveryDate = deliveryDate;
+  }
+
   public Book(String title, String author, int price, int publication) {
     this.title = title;
     this.author = author;
@@ -107,23 +124,23 @@ public class Book extends Identity {
 
   @Override
   public String toString() {
-    return "Book{"
-        + "id="
+    return "Book[ "
+        + "id: "
         + id
-        + ", title='"
+        + ", title: '"
         + title
         + '\''
-        + ", author='"
+        + ", author: '"
         + author
         + '\''
-        + ", price="
+        + ", price: "
         + price
-        + ", availability="
+        + ", availability: "
         + availability
-        + ", publication="
+        + ", publication: "
         + publication
-        + ", deliveryDate="
+        + ", deliveryDate: "
         + deliveryDate
-        + "} ";
+        + " ] ";
   }
 }

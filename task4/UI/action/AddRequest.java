@@ -17,6 +17,7 @@ public class AddRequest extends CreateManager implements IAction {
       e.printStackTrace();
     }
     manager.addRequest(request);
+    manager.updateRequestCsv();
     System.out.println("Request has been added");
   }
 }

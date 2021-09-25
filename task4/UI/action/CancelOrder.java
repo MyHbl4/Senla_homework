@@ -17,6 +17,7 @@ public class CancelOrder extends CreateManager implements IAction {
       e.printStackTrace();
     }
     manager.cancelOrder(id);
+    manager.updateOrderCsv();
     System.out.println("The order has been canceled");
   }
 }

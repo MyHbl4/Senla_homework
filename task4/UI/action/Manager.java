@@ -89,6 +89,16 @@ public class Manager implements BookService, OrderService, RequestService {
   }
 
   @Override
+  public void updateBookCsv() {
+    bookService.updateBookCsv();
+  }
+
+  @Override
+  public void downloadBookCsv() {
+    bookService.downloadBookCsv();
+  }
+
+  @Override
   public void addRequest(String request) {
     orderService.addRequest(request);
   }
@@ -149,6 +159,16 @@ public class Manager implements BookService, OrderService, RequestService {
   }
 
   @Override
+  public void updateOrderCsv() {
+    orderService.updateOrderCsv();
+  }
+
+  @Override
+  public void downloadOrderCsv() {
+    orderService.downloadOrderCsv();
+  }
+
+  @Override
   public void sortRequestByCount() {
     requestService.sortRequestByCount();
   }
@@ -156,5 +176,15 @@ public class Manager implements BookService, OrderService, RequestService {
   @Override
   public void sortRequestByTitle() {
     requestService.sortRequestByTitle();
+  }
+
+  @Override
+  public void updateRequestCsv() {
+    requestService.updateRequestCsv();
+  }
+
+  @Override
+  public void downloadRequestCsv() {
+    requestService.downloadRequestCsv();
   }
 }

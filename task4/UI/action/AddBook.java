@@ -23,6 +23,7 @@ public class AddBook extends CreateManager implements IAction {
     } catch (IOException e) {
       e.printStackTrace();
     }
+    manager.updateBookCsv();
     System.out.println("The book has been added");
   }
 }

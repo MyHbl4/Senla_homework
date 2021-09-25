@@ -21,4 +21,9 @@ public interface BookService {
   void sortOldBookByDeliveryDate();
 
   void sortOldBookByPrice();
+
+  void updateBookCsv();
+
+  void downloadBookCsv();
+
 }

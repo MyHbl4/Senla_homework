@@ -17,6 +17,7 @@ public class CloseOrder extends CreateManager implements IAction {
       e.printStackTrace();
     }
     manager.closeOrder(id);
+    manager.updateOrderCsv();
     System.out.println("The order has been closed");
   }
 }

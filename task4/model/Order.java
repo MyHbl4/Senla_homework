@@ -1,6 +1,7 @@
 package task4.model;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -11,6 +12,12 @@ public class Order extends Identity {
   private OrderStatus orderStatus = OrderStatus.NEW;
   private LocalDate execution = LocalDate.now();
   private int price = getPrice();
+
+  public Order(long id, String customerName, List<Book> books) {
+    this.id = id;
+    this.customerName = customerName;
+    this.books = books;
+  }
 
   public Order(String customerName, List<Book> books) {
     this.customerName = customerName;
@@ -70,17 +77,13 @@ public class Order extends Identity {
   }
 
   public int getPrice() {
-    int price = 0;
+    int prices = 0;
     if (books != null) {
       for (Book book : books) {
-        price += book.getPrice();
+        prices += book.getPrice();
       }
     }
-    return price;
-  }
-
-  public void setPrice(int price) {
-    this.price = price;
+    return prices;
   }
 
   public void showBooks() {
@@ -89,6 +92,18 @@ public class Order extends Identity {
       System.out.print('\'' + book.getTitle() + "' ");
     }
     System.out.println();
+  }
+
+  public String getBooksId() {
+    String strBooks ="";
+    for(int i =0; i<books.size();i++) {
+      if(i + 1 == books.size()){
+        strBooks += books.get(i).getId();
+      }else {
+        strBooks += books.get(i).getId() +",";
+      }
+    }
+    return strBooks;
   }
 
   @Override
@@ -116,20 +131,20 @@ public class Order extends Identity {
 
   @Override
   public String toString() {
-    return "Order{"
-        + "id="
+    return "Order[ "
+        + "id: "
         + id
-        + ", customerName='"
+        + ", customerName: '"
         + customerName
         + '\''
-        + ", books="
+        + ", books: "
         + books
-        + ", orderStatus="
+        + ", orderStatus: "
         + orderStatus
-        + ", execution="
+        + ", execution: "
         + execution
-        + ", price="
-        + price
-        + "} ";
+        + ", price: "
+        + getPrice()
+        + " ] ";
   }
 }

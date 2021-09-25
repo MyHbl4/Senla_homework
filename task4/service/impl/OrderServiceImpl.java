@@ -1,7 +1,18 @@
 package task4.service.impl;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import task4.model.Availability;
+import task4.model.Book;
 import task4.model.Order;
 import task4.model.OrderStatus;
 import task4.model.Request;
@@ -150,5 +161,57 @@ public class OrderServiceImpl implements OrderService {
         .getCompletedOrder(months)
         .sort(((o1, o2) -> o1.getExecution().compareTo(o2.getExecution())));
     orderRepository.getCompletedOrder(months).stream().forEach(System.out::println);
+  }
+
+  @Override
+  public void updateOrderCsv() {
+    String fileName = "orderdata.csv";
+    try {
+      PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(fileName)));
+      for (Order order : orderRepository.getAll()) {
+        writer.println(
+            order.getId()
+                + "|"
+                + order.getCustomerName()
+                + "|"
+                + order.getBooksId());
+      }
+      writer.flush();
+      writer.close();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
+  @Override
+  public void downloadOrderCsv() {
+    String fileName = "orderdata.csv";
+    try {
+      try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
+        String someOrder;
+        orderRepository.getAll().clear();
+        while ((someOrder = reader.readLine()) != null) {
+          List<Book> orderBooks = new ArrayList<>();
+          String[] values = someOrder.split("\\|");
+          long id = Long.parseLong(values[0]);
+          String name = values[1];
+          List<String> listlong = Arrays.asList(values[2].split(","));
+          for(String l:listlong){
+            for(Book book:bookRepository.getAll()){
+              if(Long.parseLong(l)==book.getId()){
+                orderBooks.add(book);
+              }
+            }
+          }
+          orderRepository
+              .getAll()
+              .add(
+                  new Order(id,name,orderBooks));
+        }
+      }
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    System.out.println("order csv downloaded");
   }
 }
