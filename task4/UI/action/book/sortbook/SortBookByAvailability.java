@@ -1,4 +1,7 @@
-package task4.UI.action;
+package task4.UI.action.book.sortbook;
+
+import task4.UI.action.CreateManager;
+import task4.UI.action.IAction;
 
 public class SortBookByAvailability extends CreateManager implements IAction {
 

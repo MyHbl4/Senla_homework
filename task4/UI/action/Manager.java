@@ -8,6 +8,7 @@ import task4.datasource.impl.OrderDataSourceImpl;
 import task4.datasource.impl.RequestDataSourceImpl;
 import task4.model.Book;
 import task4.model.Order;
+import task4.model.Request;
 import task4.repository.BookRepository;
 import task4.repository.OrderRepository;
 import task4.repository.RequestRepository;
@@ -38,6 +39,13 @@ public class Manager implements BookService, OrderService, RequestService {
   private static Manager instance;
 
   public Manager() {}
+
+//  public static void main(String[] args) {
+//    System.out.println(    new Manager().findOrderById(1));
+//  }
+//  public Request findRequestById(int id){return requestRepository.findRequestById(id);}
+
+  public Order findOrderById(int id){return orderRepository.findOrderById(id);}
 
   public Book findBookById(int id) {
     return bookRepository.findBookById(id);

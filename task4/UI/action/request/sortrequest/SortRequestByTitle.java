@@ -1,4 +1,7 @@
-package task4.UI.action;
+package task4.UI.action.request.sortrequest;
+
+import task4.UI.action.CreateManager;
+import task4.UI.action.IAction;
 
 public class SortRequestByTitle extends CreateManager implements IAction {
 

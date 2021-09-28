@@ -8,7 +8,6 @@ import task4.UI.action.Manager;
 public class MenuController {
 
   private static MenuController instance;
-  BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
   Scanner scanner = new Scanner(System.in);
   private Builder builder;
   private Navigator navigator;
@@ -33,12 +32,12 @@ public class MenuController {
     System.out.println("\n::BOOK STORE::\n*******************");
     navigator.setCurrentMenu(builder.getRootMenu());
     navigator.printMenu();
-    boolean flag = true;
-    while (flag) {
+    boolean isValid = true;
+    while (isValid) {
       int index = -1;
       index = scanner.nextInt();
       if (index == 0) {
-        flag = false;
+        isValid = false;
         System.out.printf("The program is closed");
       } else if (index > 0 && index <= navigator.getCurrentMenu().getMenuItems().size()) {
         navigator.navigate(index - 1);
