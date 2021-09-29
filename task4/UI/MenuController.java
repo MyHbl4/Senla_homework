@@ -1,7 +1,5 @@
 package task4.UI;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.util.Scanner;
 import task4.UI.action.Manager;
 
@@ -26,9 +24,9 @@ public class MenuController {
   }
 
   public void run() {
-    new Manager().downloadBookCsv();
-    new Manager().downloadOrderCsv();
-    new Manager().downloadRequestCsv();
+    new Manager().getBookService().downloadBookCsv();
+    new Manager().getOrderService().downloadOrderCsv();
+    new Manager().getRequestService().downloadRequestCsv();
     System.out.println("\n::BOOK STORE::\n*******************");
     navigator.setCurrentMenu(builder.getRootMenu());
     navigator.printMenu();

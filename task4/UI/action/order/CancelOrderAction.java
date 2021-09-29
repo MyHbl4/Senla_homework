@@ -1,16 +1,16 @@
 package task4.UI.action.order;
 
-import task4.UI.action.CreateManager;
+import task4.UI.action.AbstractAction;
 import task4.UI.action.IAction;
 import task4.exception.CheckOfData;
 import task4.exception.CustomException;
 import task4.exception.CustomScanner;
 
-public class CancelOrder extends CreateManager implements IAction {
+public class CancelOrderAction extends AbstractAction implements IAction {
   private CheckOfData checkOfData;
   private CustomScanner customScanner;
 
-  public CancelOrder(CheckOfData checkData, CustomScanner customScanner) {
+  public CancelOrderAction(CheckOfData checkData, CustomScanner customScanner) {
     this.checkOfData = checkData;
     this.customScanner = customScanner;
   }
@@ -24,8 +24,8 @@ public class CancelOrder extends CreateManager implements IAction {
       try {
         id = customScanner.getInt();
         checkOfData.checkOrder(id);
-        manager.cancelOrder(id);
-        manager.updateOrderCsv();
+        manager.getOrderService().cancelOrder(id);
+        manager.getOrderService().updateOrderCsv();
         System.out.println("The order has been canceled");
         isValid = false;
       } catch (CustomException e) {

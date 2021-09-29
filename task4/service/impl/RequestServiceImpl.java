@@ -72,8 +72,7 @@ public class RequestServiceImpl implements RequestService {
         }
       }
     } catch (IOException e) {
-      e.printStackTrace();
+      System.out.println("Loading error");
     }
-    System.out.println("request csv downloaded");
   }
 }

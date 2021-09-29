@@ -1,16 +1,13 @@
 package task4.UI.action.request;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import task4.UI.action.CreateManager;
+import task4.UI.action.AbstractAction;
 import task4.UI.action.IAction;
 import task4.exception.CustomScanner;
 
-public class AddRequest extends CreateManager implements IAction {
+public class AddRequestAction extends AbstractAction implements IAction {
   private CustomScanner customScanner;
 
-  public AddRequest(CustomScanner customScanner) {
+  public AddRequestAction(CustomScanner customScanner) {
     this.customScanner = customScanner;
   }
 
@@ -19,8 +16,8 @@ public class AddRequest extends CreateManager implements IAction {
     System.out.println("Enter the name of the book");
     String request;
       request = customScanner.getString();
-      manager.addRequest(request);
-      manager.updateRequestCsv();
+      manager.getOrderService().addRequest(request);
+      manager.getRequestService().updateRequestCsv();
       System.out.println("Request has been added");
   }
 }

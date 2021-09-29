@@ -1,17 +1,17 @@
 package task4.UI.action.order;
 
-import java.util.Scanner;
-import task4.UI.action.CreateManager;
+import task4.UI.action.AbstractAction;
 import task4.UI.action.IAction;
 import task4.exception.CheckOfData;
 import task4.exception.CustomException;
 import task4.exception.CustomScanner;
+import task4.model.Order;
 
-public class OrderInfo extends CreateManager implements IAction {
+public class OrderInfoAction extends AbstractAction implements IAction {
   private CheckOfData checkOfData;
   private CustomScanner customScanner;
 
-  public OrderInfo(CheckOfData checkData, CustomScanner customScanner) {
+  public OrderInfoAction(CheckOfData checkData, CustomScanner customScanner) {
     this.checkOfData = checkData;
     this.customScanner = customScanner;
   }
@@ -25,7 +25,18 @@ public class OrderInfo extends CreateManager implements IAction {
       try {
         id = customScanner.getInt();
         checkOfData.checkOrder(id);
-        manager.orderInfoById(id);
+        Order order = manager.getOrderService().findOrderById(id);
+        System.out.print(
+            "Order ID: "
+                + order.getId()
+                + ", Customer: '"
+                + order.getCustomerName()
+                + "', Price: "
+                + order.getPrice()
+                + ", Status: "
+                + order.getOrderStatus()
+                + ", ");
+        order.showBooks();
         isValid = false;
       } catch (CustomException e) {
         System.out.println(" Value is incorrect");

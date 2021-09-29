@@ -1,13 +1,13 @@
 package task4.UI.action.order;
 
-import task4.UI.action.CreateManager;
+import task4.UI.action.AbstractAction;
 import task4.UI.action.IAction;
 import task4.exception.CustomScanner;
 
-public class AmountEarnedFunds extends CreateManager implements IAction {
+public class AmountEarnedFundsAction extends AbstractAction implements IAction {
 private CustomScanner customScanner;
 
-  public AmountEarnedFunds(CustomScanner customScanner) {
+  public AmountEarnedFundsAction(CustomScanner customScanner) {
     this.customScanner = customScanner;
   }
 
@@ -16,6 +16,6 @@ private CustomScanner customScanner;
     System.out.println("Enter the number of months to display the income");
     int months;
       months = customScanner.getInt();
-    manager.getAllPriceOfSoldBooks(months);
+    manager.getOrderService().getAllPriceOfSoldBooks(months);
   }
 }

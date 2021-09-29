@@ -1,16 +1,16 @@
 package task4.UI.action.book;
 
-import task4.UI.action.CreateManager;
+import task4.UI.action.AbstractAction;
 import task4.UI.action.IAction;
 import task4.exception.CheckOfData;
 import task4.exception.CustomException;
 import task4.exception.CustomScanner;
 
-public class RemoveBook extends CreateManager implements IAction {
+public class RemoveBookAction extends AbstractAction implements IAction {
   private CheckOfData checkOfData;
   private CustomScanner customScanner;
 
-  public RemoveBook(CheckOfData checkOfData, CustomScanner customScanner) {
+  public RemoveBookAction(CheckOfData checkOfData, CustomScanner customScanner) {
     this.checkOfData = checkOfData;
     this.customScanner = customScanner;
   }
@@ -24,8 +24,8 @@ public class RemoveBook extends CreateManager implements IAction {
       try {
         id = customScanner.getInt();
         checkOfData.checkBook(id);
-        manager.removeBook(id);
-        manager.updateBookCsv();
+        manager.getBookService().removeBook(id);
+        manager.getBookService().updateBookCsv();
         System.out.println("The book has been removed");
         isValid = false;
       } catch (CustomException e) {

@@ -1,19 +1,16 @@
 package task4.UI.action.order;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import task4.UI.action.CreateManager;
+import task4.UI.action.AbstractAction;
 import task4.UI.action.IAction;
 import task4.exception.CheckOfData;
 import task4.exception.CustomException;
 import task4.exception.CustomScanner;
 
-public class CloseOrder extends CreateManager implements IAction {
+public class CloseOrderAction extends AbstractAction implements IAction {
 private CheckOfData checkOfData;
 private CustomScanner customScanner;
 
-  public CloseOrder(CheckOfData checkOfData, CustomScanner customScanner) {
+  public CloseOrderAction(CheckOfData checkOfData, CustomScanner customScanner) {
     this.checkOfData = checkOfData;
     this.customScanner = customScanner;
   }
@@ -27,8 +24,8 @@ private CustomScanner customScanner;
       try {
         id = customScanner.getInt();
         checkOfData.checkOrder(id);
-        manager.closeOrder(id);
-        manager.updateOrderCsv();
+        manager.getOrderService().closeOrder(id);
+        manager.getOrderService().updateOrderCsv();
         System.out.println("The order has been closed");
         isValid = false;
       } catch (CustomException e) {

@@ -1,16 +1,13 @@
 package task4.UI.action.order.sortorder;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import task4.UI.action.CreateManager;
+import task4.UI.action.AbstractAction;
 import task4.UI.action.IAction;
 import task4.exception.CustomScanner;
 
-public class SortCompletedOrderByExecutionDate extends CreateManager implements IAction {
+public class SortCompletedOrderByPriceAction extends AbstractAction implements IAction {
   private CustomScanner customScanner;
 
-  public SortCompletedOrderByExecutionDate(CustomScanner customScanner) {
+  public SortCompletedOrderByPriceAction(CustomScanner customScanner) {
     this.customScanner = customScanner;
   }
 
@@ -19,6 +16,6 @@ public class SortCompletedOrderByExecutionDate extends CreateManager implements 
     System.out.println("Enter for how many months, show the list");
     int months;
     months = customScanner.getInt();
-    manager.sortCompletedOrderByExecutionDate(months);
+    manager.getOrderService().sortCompletedOrderByPrice(months);
   }
 }

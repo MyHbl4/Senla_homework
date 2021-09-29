@@ -6,9 +6,6 @@ import task4.datasource.RequestDataSource;
 import task4.datasource.impl.BookDataSourceImpl;
 import task4.datasource.impl.OrderDataSourceImpl;
 import task4.datasource.impl.RequestDataSourceImpl;
-import task4.model.Book;
-import task4.model.Order;
-import task4.model.Request;
 import task4.repository.BookRepository;
 import task4.repository.OrderRepository;
 import task4.repository.RequestRepository;
@@ -22,7 +19,8 @@ import task4.service.impl.BookServiceImpl;
 import task4.service.impl.OrderServiceImpl;
 import task4.service.impl.RequestServiceImpl;
 
-public class Manager implements BookService, OrderService, RequestService {
+public class Manager {
+
   private static final BookDataSource bookDataSource = new BookDataSourceImpl();
   private static final OrderDataSource orderDataSource = new OrderDataSourceImpl();
   private static final RequestDataSource requestDataSource = new RequestDataSourceImpl();
@@ -31,168 +29,24 @@ public class Manager implements BookService, OrderService, RequestService {
       new OrderRepositoryImpl(orderDataSource, bookDataSource);
   private static final RequestRepository requestRepository =
       new RequestRepositoryImpl(requestDataSource);
-  private static final BookService bookService =
+  private final BookService bookService =
       new BookServiceImpl(bookRepository, requestRepository);
-  private static final OrderService orderService =
+  private final OrderService orderService =
       new OrderServiceImpl(orderRepository, bookRepository, requestRepository);
-  private static final RequestService requestService = new RequestServiceImpl(requestRepository);
-  private static Manager instance;
+  private final RequestService requestService = new RequestServiceImpl(requestRepository);
 
   public Manager() {}
 
-//  public static void main(String[] args) {
-//    System.out.println(    new Manager().findOrderById(1));
-//  }
-//  public Request findRequestById(int id){return requestRepository.findRequestById(id);}
-
-  public Order findOrderById(int id){return orderRepository.findOrderById(id);}
-
-  public Book findBookById(int id) {
-    return bookRepository.findBookById(id);
+  public BookService getBookService() {
+    return bookService;
   }
 
-  @Override
-  public void addBook(Book book) {
-    bookService.addBook(book);
+  public OrderService getOrderService() {
+    return orderService;
   }
 
-  @Override
-  public void removeBook(int id) {
-    bookService.removeBook(id);
+  public RequestService getRequestService() {
+    return requestService;
   }
 
-  @Override
-  public void bookInfoById(int id) {
-    bookService.bookInfoById(id);
-  }
-
-  @Override
-  public void sortBookByAvailability() {
-    bookService.sortBookByAvailability();
-  }
-
-  @Override
-  public void sortBookByPrice() {
-    bookService.sortBookByPrice();
-  }
-
-  @Override
-  public void sortBookByPublishedDate() {
-    bookService.sortBookByPublishedDate();
-  }
-
-  @Override
-  public void sortBookByTitle() {
-    bookService.sortBookByTitle();
-  }
-
-  @Override
-  public void sortOldBookByDeliveryDate() {
-    bookService.sortOldBookByDeliveryDate();
-  }
-
-  @Override
-  public void sortOldBookByPrice() {
-    bookService.sortOldBookByPrice();
-  }
-
-  @Override
-  public void updateBookCsv() {
-    bookService.updateBookCsv();
-  }
-
-  @Override
-  public void downloadBookCsv() {
-    bookService.downloadBookCsv();
-  }
-
-  @Override
-  public void addRequest(String request) {
-    orderService.addRequest(request);
-  }
-
-  @Override
-  public void addOrder(Order order) {
-    orderService.addOrder(order);
-  }
-
-  @Override
-  public void closeOrder(int id) {
-    orderService.closeOrder(id);
-  }
-
-  @Override
-  public void cancelOrder(int id) {
-    orderService.closeOrder(id);
-  }
-
-  @Override
-  public void getAllPriceOfSoldBooks(int months) {
-    orderService.getAllPriceOfSoldBooks(months);
-  }
-
-  @Override
-  public void getCompletedOrder(int months) {
-    orderService.getCompletedOrder(months);
-  }
-
-  @Override
-  public void orderInfoById(int id) {
-    orderService.orderInfoById(id);
-  }
-
-  @Override
-  public void sortOrderByStatus() {
-    orderService.sortOrderByStatus();
-  }
-
-  @Override
-  public void sortOrderByPrice() {
-    orderService.sortOrderByPrice();
-  }
-
-  @Override
-  public void sortOrderByExecutionDate() {
-    orderService.sortOrderByExecutionDate();
-  }
-
-  @Override
-  public void sortCompletedOrderByPrice(int months) {
-    orderService.sortCompletedOrderByPrice(months);
-  }
-
-  @Override
-  public void sortCompletedOrderByExecutionDate(int months) {
-    orderService.sortCompletedOrderByExecutionDate(months);
-  }
-
-  @Override
-  public void updateOrderCsv() {
-    orderService.updateOrderCsv();
-  }
-
-  @Override
-  public void downloadOrderCsv() {
-    orderService.downloadOrderCsv();
-  }
-
-  @Override
-  public void sortRequestByCount() {
-    requestService.sortRequestByCount();
-  }
-
-  @Override
-  public void sortRequestByTitle() {
-    requestService.sortRequestByTitle();
-  }
-
-  @Override
-  public void updateRequestCsv() {
-    requestService.updateRequestCsv();
-  }
-
-  @Override
-  public void downloadRequestCsv() {
-    requestService.downloadRequestCsv();
-  }
 }

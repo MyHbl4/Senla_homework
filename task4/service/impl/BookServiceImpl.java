@@ -23,6 +23,11 @@ public class BookServiceImpl implements BookService {
   }
 
   @Override
+  public Book findBookById(int id) {
+    return bookRepository.findBookById(id);
+  }
+
+  @Override
   public void addBook(Book book) {
     bookRepository.getAll().add(book);
     for (int i = 0; i < requestRepository.getAll().size(); i++) {
@@ -39,22 +44,6 @@ public class BookServiceImpl implements BookService {
   @Override
   public void removeBook(int id) {
     bookRepository.findBookById(id).setAvailability(Availability.OUT_OF_STOCK);
-  }
-
-  @Override
-  public void bookInfoById(int id) {
-    Book book = bookRepository.findBookById(id);
-    System.out.println(
-        "Book ID: "
-            + id
-            + ", Title: "
-            + book.getTitle()
-            + ", Author: "
-            + book.getAuthor()
-            + ", Price: "
-            + book.getPrice()
-            + ", Availability: "
-            + book.getAvailability());
   }
 
   @Override
@@ -95,7 +84,6 @@ public class BookServiceImpl implements BookService {
     bookRepository.getOldBooks().stream().forEach(System.out::println);
   }
 
-  //  BufferedReader reader = new BufferedReader(new FileReader(fileName));
   @Override
   public void updateBookCsv() {
     String fileName = "bookdata.csv";
@@ -119,7 +107,6 @@ public class BookServiceImpl implements BookService {
       }
       writer.flush();
       writer.close();
-      //      JOptionPane.showMessageDialog(null,"BookDataSource updated");
     } catch (IOException e) {
       e.printStackTrace();
     }
@@ -148,8 +135,8 @@ public class BookServiceImpl implements BookService {
         }
       }
     } catch (IOException e) {
-      e.printStackTrace();
+      System.out.println("Loading error");
+      ;
     }
-    System.out.println("book csv downloaded");
   }
 }

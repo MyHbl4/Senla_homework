@@ -2,7 +2,6 @@ package task4.service.impl;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -33,6 +32,11 @@ public class OrderServiceImpl implements OrderService {
     this.orderRepository = orderRepository;
     this.bookRepository = bookRepository;
     this.requestRepository = requestRepository;
+  }
+
+  @Override
+  public Order findOrderById(int id) {
+    return orderRepository.findOrderById(id);
   }
 
   @Override
@@ -98,37 +102,12 @@ public class OrderServiceImpl implements OrderService {
   }
 
   @Override
-  public void getCompletedOrder(int months) {
+  public int getCompletedOrder(int months) {
     int count = 0;
-    int bookCount = 0;
     for (Order order : orderRepository.getCompletedOrder(months)) {
-      bookCount += order.getBooks().size();
       count++;
     }
-    System.out.println(
-        "In "
-            + months
-            + " months, "
-            + count
-            + " orders were completed, "
-            + bookCount
-            + " books were sold");
-  }
-
-  @Override
-  public void orderInfoById(int id) {
-    Order order = orderRepository.findOrderById(id);
-    System.out.print(
-        "Order ID: "
-            + order.getId()
-            + ", Customer="
-            + order.getCustomerName()
-            + ", Price: "
-            + order.getPrice()
-            + ", Status: "
-            + order.getOrderStatus()
-            + ", ");
-    order.showBooks();
+    return count;
   }
 
   @Override
@@ -169,12 +148,7 @@ public class OrderServiceImpl implements OrderService {
     try {
       PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(fileName)));
       for (Order order : orderRepository.getAll()) {
-        writer.println(
-            order.getId()
-                + "|"
-                + order.getCustomerName()
-                + "|"
-                + order.getBooksId());
+        writer.println(order.getId() + "|" + order.getCustomerName() + "|" + order.getBooksId());
       }
       writer.flush();
       writer.close();
@@ -196,22 +170,18 @@ public class OrderServiceImpl implements OrderService {
           long id = Long.parseLong(values[0]);
           String name = values[1];
           List<String> listlong = Arrays.asList(values[2].split(","));
-          for(String l:listlong){
-            for(Book book:bookRepository.getAll()){
-              if(Long.parseLong(l)==book.getId()){
+          for (String l : listlong) {
+            for (Book book : bookRepository.getAll()) {
+              if (Long.parseLong(l) == book.getId()) {
                 orderBooks.add(book);
               }
             }
           }
-          orderRepository
-              .getAll()
-              .add(
-                  new Order(id,name,orderBooks));
+          orderRepository.getAll().add(new Order(id, name, orderBooks));
         }
       }
     } catch (IOException e) {
-      e.printStackTrace();
+      System.out.println("Loading error");
     }
-    System.out.println("order csv downloaded");
   }
 }

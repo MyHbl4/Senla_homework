@@ -4,11 +4,11 @@ import task4.model.Book;
 
 public interface BookService {
 
+  Book findBookById(int id);
+
   void addBook(Book book);
 
   void removeBook(int id);
-
-  void bookInfoById(int id);
 
   void sortBookByAvailability();
 

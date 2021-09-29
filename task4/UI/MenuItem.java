@@ -2,7 +2,7 @@ package task4.UI;
 
 import task4.UI.action.IAction;
 
-public class MenuItem implements IAction {
+public class MenuItem{
 
   private String title;
   private IAction action;
@@ -13,9 +13,6 @@ public class MenuItem implements IAction {
     this.action = action;
     this.nextMenu = nextMenu;
   }
-
-  @Override
-  public void execute() {}
 
   public void doAction() {
     action.execute();

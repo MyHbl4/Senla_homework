@@ -4,6 +4,8 @@ import task4.model.Order;
 
 public interface OrderService {
 
+  Order findOrderById(int id);
+
   void addRequest(String request);
 
   void addOrder(Order order);
@@ -14,9 +16,7 @@ public interface OrderService {
 
   void getAllPriceOfSoldBooks(int months);
 
-  void getCompletedOrder(int months);
-
-  void orderInfoById(int id);
+  int getCompletedOrder(int months);
 
   void sortOrderByStatus();
 
