@@ -1,4 +1,4 @@
-package task4.UI.action.book;
+package task4.UI.action.bookAction;
 
 import task4.UI.action.AbstractAction;
 import task4.UI.action.IAction;

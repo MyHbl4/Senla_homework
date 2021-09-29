@@ -1,4 +1,4 @@
-package task4.UI.action.book.sortbook;
+package task4.UI.action.bookAction.sortbook;
 
 import task4.UI.action.AbstractAction;
 import task4.UI.action.IAction;

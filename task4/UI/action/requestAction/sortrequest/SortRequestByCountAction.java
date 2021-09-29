@@ -1,4 +1,4 @@
-package task4.UI.action.request.sortrequest;
+package task4.UI.action.requestAction.sortrequest;
 
 import task4.UI.action.AbstractAction;
 import task4.UI.action.IAction;
