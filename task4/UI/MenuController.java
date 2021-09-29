@@ -24,10 +24,8 @@ public class MenuController {
   }
 
   public void run() {
-    new Manager().getBookService().downloadBookCsv();
-    new Manager().getOrderService().downloadOrderCsv();
-    new Manager().getRequestService().downloadRequestCsv();
-    System.out.println("\n::BOOK STORE::\n*******************");
+    navigator.loadCsv();
+    navigator.helloShop();
     navigator.setCurrentMenu(builder.getRootMenu());
     navigator.printMenu();
     boolean isValid = true;

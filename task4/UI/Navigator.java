@@ -1,5 +1,7 @@
 package task4.UI;
 
+import task4.UI.action.Manager;
+
 public class Navigator {
 
   private static Navigator instance;
@@ -16,6 +18,16 @@ public class Navigator {
 
   public void printMenu() {
     System.out.println(currentMenu);
+  }
+
+  public void helloShop(){
+    System.out.println("\n::BOOK STORE::\n*******************");
+  }
+
+  public void loadCsv(){
+    new Manager().getBookService().downloadBookCsv();
+    new Manager().getOrderService().downloadOrderCsv();
+    new Manager().getRequestService().downloadRequestCsv();
   }
 
   public void navigate(int index) {
