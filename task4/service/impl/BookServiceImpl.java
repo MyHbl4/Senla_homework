@@ -7,6 +7,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import task4.model.Availability;
 import task4.model.Book;
 import task4.repository.BookRepository;
@@ -47,41 +49,19 @@ public class BookServiceImpl implements BookService {
   }
 
   @Override
-  public void sortBookByPrice() {
-    bookRepository.getAll().sort((b1, b2) -> b1.getPrice() - b2.getPrice());
-    bookRepository.getAll().stream().forEach(System.out::println);
+  public List<Book> getAll() {
+    return bookRepository.getAll();
   }
 
   @Override
-  public void sortBookByAvailability() {
-    bookRepository.getAll().sort((b1, b2) -> b1.getAvailability().compareTo(b2.getAvailability()));
-    bookRepository.getAll().stream().forEach(System.out::println);
-  }
-
-  @Override
-  public void sortBookByPublishedDate() {
-    bookRepository.getAll().sort((b1, b2) -> b1.getPublication() - b2.getPublication());
-    bookRepository.getAll().stream().forEach(System.out::println);
-  }
-
-  @Override
-  public void sortBookByTitle() {
-    bookRepository.getAll().sort((b1, b2) -> b1.getTitle().compareTo(b2.getTitle()));
-    bookRepository.getAll().stream().forEach(System.out::println);
-  }
-
-  @Override
-  public void sortOldBookByDeliveryDate() {
-    bookRepository
-        .getOldBooks()
-        .sort((b1, b2) -> b1.getDeliveryDate().compareTo(b2.getDeliveryDate()));
-    bookRepository.getOldBooks().stream().forEach(System.out::println);
-  }
-
-  @Override
-  public void sortOldBookByPrice() {
-    bookRepository.getOldBooks().sort((b1, b2) -> b1.getPrice() - b2.getPrice());
-    bookRepository.getOldBooks().stream().forEach(System.out::println);
+  public List<Book> getOldBooks() {
+    List<Book> oldBooks = new ArrayList<>();
+    for (Book book : bookRepository.getAll()) {
+      if (book.getDeliveryDate().isBefore(LocalDate.now().minusMonths(6))) {
+        oldBooks.add(book);
+      }
+    }
+    return oldBooks;
   }
 
   @Override
@@ -136,7 +116,6 @@ public class BookServiceImpl implements BookService {
       }
     } catch (IOException e) {
       System.out.println("Loading error");
-      ;
     }
   }
 }

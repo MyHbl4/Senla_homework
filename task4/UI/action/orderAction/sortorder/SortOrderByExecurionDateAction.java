@@ -7,6 +7,7 @@ public class SortOrderByExecurionDateAction extends AbstractAction implements IA
 
   @Override
   public void execute() {
-    manager.getOrderService().sortOrderByExecutionDate();
+    manager.getOrderService().getAll().sort(((o1, o2) -> o1.getExecution().compareTo(o2.getExecution())));
+    manager.getOrderService().getAll().stream().forEach(System.out::println);
   }
 }

@@ -7,6 +7,7 @@ public class SortBookByAvailabilityAction extends AbstractAction implements IAct
 
   @Override
   public void execute() {
-    manager.getBookService().sortBookByAvailability();
+    manager.getBookService().getAll().sort((b1, b2) -> b1.getAvailability().compareTo(b2.getAvailability()));
+    manager.getBookService().getAll().stream().forEach(System.out::println);
   }
 }

@@ -7,6 +7,7 @@ public class SortBookByTitleAction extends AbstractAction implements IAction {
 
   @Override
   public void execute() {
-    manager.getBookService().sortBookByTitle();
+    manager.getBookService().getAll().sort((b1, b2) -> b1.getTitle().compareTo(b2.getTitle()));
+    manager.getBookService().getAll().stream().forEach(System.out::println);
   }
 }

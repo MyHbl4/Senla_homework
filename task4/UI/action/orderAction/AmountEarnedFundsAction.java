@@ -15,7 +15,10 @@ private CustomScanner customScanner;
   public void execute() {
     System.out.println("Enter the number of months to display the income");
     int months;
+    int price;
       months = customScanner.getInt();
-    manager.getOrderService().getAllPriceOfSoldBooks(months);
+    price = manager.getOrderService().getAllPriceOfSoldBooks(months);
+    System.out.println("Revenue for " + months + " months amounted to: " + price);
+
   }
 }

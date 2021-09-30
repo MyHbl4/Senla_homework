@@ -8,6 +8,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.LocalDate;
+import java.util.List;
 import task4.model.Availability;
 import task4.model.Book;
 import task4.model.Request;
@@ -21,16 +22,10 @@ public class RequestServiceImpl implements RequestService {
     this.requestRepository = requestRepository;
   }
 
-  @Override
-  public void sortRequestByCount() {
-    requestRepository.getAll().sort((r1, r2) -> r1.getCount() - r2.getCount());
-    requestRepository.getAll().stream().forEach(System.out::println);
-  }
 
   @Override
-  public void sortRequestByTitle() {
-    requestRepository.getAll().sort((r1, r2) -> r1.getTitle().compareTo(r2.getTitle()));
-    requestRepository.getAll().stream().forEach(System.out::println);
+  public List<Request> getAll() {
+    return requestRepository.getAll();
   }
 
   @Override

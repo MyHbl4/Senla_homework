@@ -7,6 +7,7 @@ public class SortOldBookByPriceAction extends AbstractAction implements IAction 
 
   @Override
   public void execute() {
-    manager.getBookService().sortOldBookByPrice();
+    manager.getBookService().getOldBooks().sort((b1, b2) -> b1.getPrice() - b2.getPrice());
+    manager.getBookService().getOldBooks().stream().forEach(System.out::println);
   }
 }

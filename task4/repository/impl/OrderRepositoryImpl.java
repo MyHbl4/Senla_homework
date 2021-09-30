@@ -34,15 +34,5 @@ public class OrderRepositoryImpl implements OrderRepository {
     return order;
   }
 
-  @Override
-  public List<Order> getCompletedOrder(int months) {
-    List<Order> completedOrder = new ArrayList<>();
-    for (Order order : orderDataSource.getOrders()) {
-      if (order.getOrderStatus().equals(OrderStatus.COMPLETED)
-          && order.getExecution().isAfter(LocalDate.now().minusMonths(months))) {
-        completedOrder.add(order);
-      }
-    }
-    return completedOrder;
-  }
+
 }

@@ -29,16 +29,14 @@ public class Manager {
       new OrderRepositoryImpl(orderDataSource, bookDataSource);
   private static final RequestRepository requestRepository =
       new RequestRepositoryImpl(requestDataSource);
-  private final BookService bookService =
-      new BookServiceImpl(bookRepository, requestRepository);
+  private final BookService bookService = new BookServiceImpl(bookRepository, requestRepository);
   private final OrderService orderService =
       new OrderServiceImpl(orderRepository, bookRepository, requestRepository);
   private final RequestService requestService = new RequestServiceImpl(requestRepository);
 
   public Manager() {}
 
-  public BookService getBookService() {
-    return bookService;
+  public BookService getBookService() {    return bookService;
   }
 
   public OrderService getOrderService() {
@@ -48,5 +46,4 @@ public class Manager {
   public RequestService getRequestService() {
     return requestService;
   }
-
 }

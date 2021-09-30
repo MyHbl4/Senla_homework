@@ -1,10 +1,11 @@
 package task4.service;
 
+import java.util.List;
+import task4.model.Request;
+
 public interface RequestService {
 
-  void sortRequestByCount();
-
-  void sortRequestByTitle();
+  List<Request> getAll();
 
   void updateRequestCsv();
 

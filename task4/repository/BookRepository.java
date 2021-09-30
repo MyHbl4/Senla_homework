@@ -8,6 +8,4 @@ public interface BookRepository {
   List<Book> getAll();
 
   Book findBookById(int id);
-
-  List<Book> getOldBooks();
 }

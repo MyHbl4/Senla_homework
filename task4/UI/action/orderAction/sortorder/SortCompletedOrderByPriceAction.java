@@ -16,6 +16,7 @@ public class SortCompletedOrderByPriceAction extends AbstractAction implements I
     System.out.println("Enter for how many months, show the list");
     int months;
     months = customScanner.getInt();
-    manager.getOrderService().sortCompletedOrderByPrice(months);
+    manager.getOrderService().getCompletedOrderList(months).sort(((o1, o2) -> o1.getPrice() - o2.getPrice()));
+    manager.getOrderService().getCompletedOrderList(months).stream().forEach(System.out::println);
   }
 }

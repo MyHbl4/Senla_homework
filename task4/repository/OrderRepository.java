@@ -9,5 +9,4 @@ public interface OrderRepository {
 
   Order findOrderById(int id);
 
-  List<Order> getCompletedOrder(int months);
 }

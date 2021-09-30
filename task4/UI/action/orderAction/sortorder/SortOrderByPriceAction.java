@@ -7,6 +7,7 @@ public class SortOrderByPriceAction extends AbstractAction implements IAction {
 
   @Override
   public void execute() {
-    manager.getOrderService().sortOrderByPrice();
+    manager.getOrderService().getAll().sort(((o1, o2) -> o1.getPrice() - o2.getPrice()));
+    manager.getOrderService().getAll().stream().forEach(System.out::println);
   }
 }

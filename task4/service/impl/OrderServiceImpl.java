@@ -86,7 +86,7 @@ public class OrderServiceImpl implements OrderService {
   }
 
   @Override
-  public void getAllPriceOfSoldBooks(int months) {
+  public int getAllPriceOfSoldBooks(int months) {
     int price = 0;
     for (int i = 0; i < orderRepository.getAll().size(); i++) {
       if (orderRepository.getAll().get(i).getOrderStatus().equals(OrderStatus.COMPLETED)
@@ -98,48 +98,24 @@ public class OrderServiceImpl implements OrderService {
         price += orderRepository.findOrderById(i + 1).getPrice();
       }
     }
-    System.out.println("Revenue for " + months + " months amounted to: " + price);
+    return price;
   }
 
   @Override
-  public int getCompletedOrder(int months) {
-    int count = 0;
-    for (Order order : orderRepository.getCompletedOrder(months)) {
-      count++;
+  public List<Order> getAll() {
+    return orderRepository.getAll();
+  }
+
+  @Override
+  public List<Order> getCompletedOrderList(int months) {
+    List<Order> completedOrder = new ArrayList<>();
+    for (Order order : orderRepository.getAll()) {
+      if (order.getOrderStatus().equals(OrderStatus.COMPLETED)
+          && order.getExecution().isAfter(LocalDate.now().minusMonths(months))) {
+        completedOrder.add(order);
+      }
     }
-    return count;
-  }
-
-  @Override
-  public void sortOrderByStatus() {
-    orderRepository.getAll().sort(((o1, o2) -> o1.getOrderStatus().compareTo(o2.getOrderStatus())));
-    orderRepository.getAll().stream().forEach(System.out::println);
-  }
-
-  @Override
-  public void sortOrderByPrice() {
-    orderRepository.getAll().sort(((o1, o2) -> o1.getPrice() - o2.getPrice()));
-    orderRepository.getAll().stream().forEach(System.out::println);
-  }
-
-  @Override
-  public void sortOrderByExecutionDate() {
-    orderRepository.getAll().sort(((o1, o2) -> o1.getExecution().compareTo(o2.getExecution())));
-    orderRepository.getAll().stream().forEach(System.out::println);
-  }
-
-  @Override
-  public void sortCompletedOrderByPrice(int months) {
-    orderRepository.getCompletedOrder(months).sort(((o1, o2) -> o1.getPrice() - o2.getPrice()));
-    orderRepository.getCompletedOrder(months).stream().forEach(System.out::println);
-  }
-
-  @Override
-  public void sortCompletedOrderByExecutionDate(int months) {
-    orderRepository
-        .getCompletedOrder(months)
-        .sort(((o1, o2) -> o1.getExecution().compareTo(o2.getExecution())));
-    orderRepository.getCompletedOrder(months).stream().forEach(System.out::println);
+    return completedOrder;
   }
 
   @Override

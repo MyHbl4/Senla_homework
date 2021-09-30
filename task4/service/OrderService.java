@@ -1,5 +1,6 @@
 package task4.service;
 
+import java.util.List;
 import task4.model.Order;
 
 public interface OrderService {
@@ -14,19 +15,11 @@ public interface OrderService {
 
   void cancelOrder(int id);
 
-  void getAllPriceOfSoldBooks(int months);
+  int getAllPriceOfSoldBooks(int months);
 
-  int getCompletedOrder(int months);
+  List<Order> getAll();
 
-  void sortOrderByStatus();
-
-  void sortOrderByPrice();
-
-  void sortOrderByExecutionDate();
-
-  void sortCompletedOrderByPrice(int months);
-
-  void sortCompletedOrderByExecutionDate(int months);
+  List<Order> getCompletedOrderList(int months);
 
   void updateOrderCsv();
 

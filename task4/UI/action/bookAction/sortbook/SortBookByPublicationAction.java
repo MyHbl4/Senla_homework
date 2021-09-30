@@ -7,6 +7,7 @@ public class SortBookByPublicationAction extends AbstractAction implements IActi
 
   @Override
   public void execute() {
-    manager.getBookService().sortBookByPublishedDate();
+    manager.getBookService().getAll().sort((b1, b2) -> b1.getPublication() - b2.getPublication());
+    manager.getBookService().getAll().stream().forEach(System.out::println);
   }
 }

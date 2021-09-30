@@ -31,15 +31,4 @@ public class BookRepositoryImpl implements BookRepository {
     }
     return book1;
   }
-
-  @Override
-  public List<Book> getOldBooks() {
-    List<Book> oldBooks = new ArrayList<>();
-    for (Book book : bookDataSource.getBooks()) {
-      if (book.getDeliveryDate().isBefore(LocalDate.now().minusMonths(6))) {
-        oldBooks.add(book);
-      }
-    }
-    return oldBooks;
-  }
 }

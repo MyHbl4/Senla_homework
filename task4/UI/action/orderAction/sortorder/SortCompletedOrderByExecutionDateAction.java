@@ -16,6 +16,8 @@ public class SortCompletedOrderByExecutionDateAction extends AbstractAction impl
     System.out.println("Enter for how many months, show the list");
     int months;
     months = customScanner.getInt();
-    manager.getOrderService().sortCompletedOrderByExecutionDate(months);
+    manager.getOrderService().getCompletedOrderList(months)
+        .sort(((o1, o2) -> o1.getExecution().compareTo(o2.getExecution())));
+    manager.getOrderService().getCompletedOrderList(months).stream().forEach(System.out::println);
   }
 }

@@ -2,7 +2,7 @@ package task4.UI;
 
 import task4.UI.action.bookAction.AddBookAction;
 import task4.UI.action.orderAction.AddOrderAction;
-import task4.UI.action.requestAction.AddRequestAction;
+import task4.UI.action.request.AddRequestAction;
 import task4.UI.action.orderAction.AmountEarnedFundsAction;
 import task4.UI.action.bookAction.BookInfoAction;
 import task4.UI.action.orderAction.CancelOrderAction;
@@ -21,8 +21,8 @@ import task4.UI.action.bookAction.sortbook.SortOldBookByPriceAction;
 import task4.UI.action.orderAction.sortorder.SortOrderByExecurionDateAction;
 import task4.UI.action.orderAction.sortorder.SortOrderByPriceAction;
 import task4.UI.action.orderAction.sortorder.SortOrderByStatusAction;
-import task4.UI.action.requestAction.sortrequest.SortRequestByCountAction;
-import task4.UI.action.requestAction.sortrequest.SortRequestByTitleAction;
+import task4.UI.action.request.sortrequest.SortRequestByCountAction;
+import task4.UI.action.request.sortrequest.SortRequestByTitleAction;
 import task4.exception.CheckOfData;
 import task4.exception.CustomScanner;
 

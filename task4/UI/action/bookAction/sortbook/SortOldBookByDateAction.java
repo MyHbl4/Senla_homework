@@ -7,6 +7,9 @@ public class SortOldBookByDateAction extends AbstractAction implements IAction {
 
   @Override
   public void execute() {
-    manager.getBookService().sortOldBookByDeliveryDate();
+    manager.getBookService().getOldBooks()
+        .sort((b1, b2) -> b1.getDeliveryDate().compareTo(b2.getDeliveryDate()));
+    manager.getBookService().getOldBooks().stream().forEach(System.out::println);
+
   }
 }

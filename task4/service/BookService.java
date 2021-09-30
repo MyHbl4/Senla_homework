@@ -1,5 +1,6 @@
 package task4.service;
 
+import java.util.List;
 import task4.model.Book;
 
 public interface BookService {
@@ -10,17 +11,9 @@ public interface BookService {
 
   void removeBook(int id);
 
-  void sortBookByAvailability();
+  List<Book> getAll();
 
-  void sortBookByPrice();
-
-  void sortBookByPublishedDate();
-
-  void sortBookByTitle();
-
-  void sortOldBookByDeliveryDate();
-
-  void sortOldBookByPrice();
+  List<Book> getOldBooks();
 
   void updateBookCsv();
 
