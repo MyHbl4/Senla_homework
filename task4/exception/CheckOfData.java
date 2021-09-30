@@ -20,4 +20,9 @@ public class CheckOfData extends AbstractAction {
     }
     throw new CustomException();
   }
+
+  @Override
+  public void execute() {
+
+  }
 }
