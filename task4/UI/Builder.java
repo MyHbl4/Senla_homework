@@ -27,14 +27,13 @@ import task4.UI.action.orderAction.CompletedOrderAction;
 import task4.UI.action.orderAction.OrderInfoAction;
 import task4.UI.action.orderAction.sortorder.SortCompletedOrderByExecutionDateAction;
 import task4.UI.action.orderAction.sortorder.SortCompletedOrderByPriceAction;
-import task4.UI.action.orderAction.sortorder.SortOrderByExecurionDateAction;
+import task4.UI.action.orderAction.sortorder.SortOrderByExecutionDateAction;
 import task4.UI.action.orderAction.sortorder.SortOrderByPriceAction;
 import task4.UI.action.orderAction.sortorder.SortOrderByStatusAction;
 import task4.UI.action.request.AddRequestAction;
 import task4.UI.action.request.sortrequest.SortRequestByCountAction;
 import task4.UI.action.request.sortrequest.SortRequestByTitleAction;
 import task4.util.CheckOfData;
-import task4.util.CustomScanner;
 
 public class Builder {
 
@@ -87,10 +86,7 @@ public class Builder {
             createSortStaleBookMenu()));
     rootMenu.addMenuItem(new MenuItem("3 - Add book", new AddBookAction(), getRootMenu()));
     rootMenu.addMenuItem(
-        new MenuItem(
-            "4 - Remove book",
-            new RemoveBookAction(new CheckOfData()),
-            getRootMenu()));
+        new MenuItem("4 - Remove book", new RemoveBookAction(new CheckOfData()), getRootMenu()));
     rootMenu.addMenuItem(
         new MenuItem("5 - Back\n0 - Exit", () -> System.out.println("Back"), getRootMenu()));
     return rootMenu;
@@ -141,30 +137,17 @@ public class Builder {
             () -> System.out.println("Select the sorting type"),
             createSortCompletedOrderMenu()));
     rootMenu.addMenuItem(
-        new MenuItem(
-            "3 - Add order",
-            new AddOrderAction(new CheckOfData(), new CustomScanner()),
-            getRootMenu()));
+        new MenuItem("3 - Add order", new AddOrderAction(new CheckOfData()), getRootMenu()));
     rootMenu.addMenuItem(
         new MenuItem(
-            "4 - Close the order",
-            new CloseOrderAction(new CheckOfData(), new CustomScanner()),
-            getRootMenu()));
+            "4 - Close the order", new CloseOrderAction(new CheckOfData()), getRootMenu()));
     rootMenu.addMenuItem(
         new MenuItem(
-            "5 - Cancel the order",
-            new CancelOrderAction(new CheckOfData(), new CustomScanner()),
-            getRootMenu()));
+            "5 - Cancel the order", new CancelOrderAction(new CheckOfData()), getRootMenu()));
     rootMenu.addMenuItem(
-        new MenuItem(
-            "6 - Amount of earned funds",
-            new AmountEarnedFundsAction(new CustomScanner()),
-            getRootMenu()));
+        new MenuItem("6 - Amount of earned funds", new AmountEarnedFundsAction(), getRootMenu()));
     rootMenu.addMenuItem(
-        new MenuItem(
-            "7 - Number of completed orders",
-            new CompletedOrderAction(new CustomScanner()),
-            getRootMenu()));
+        new MenuItem("7 - Number of completed orders", new CompletedOrderAction(), getRootMenu()));
     rootMenu.addMenuItem(
         new MenuItem("8 - Back\n0 - Exit", () -> System.out.println("Back"), getRootMenu()));
     return rootMenu;
@@ -175,16 +158,14 @@ public class Builder {
     rootMenu.setName(SORT_ORDERS);
     rootMenu.addMenuItem(
         new MenuItem(
-            "1 - Sorting by execution date", new SortOrderByExecurionDateAction(), getRootMenu()));
+            "1 - Sorting by execution date", new SortOrderByExecutionDateAction(), getRootMenu()));
     rootMenu.addMenuItem(
         new MenuItem("2 - Sorting by price", new SortOrderByPriceAction(), getRootMenu()));
     rootMenu.addMenuItem(
         new MenuItem("3 - Sorting by status", new SortOrderByStatusAction(), getRootMenu()));
     rootMenu.addMenuItem(
         new MenuItem(
-            "4 - Order information",
-            new OrderInfoAction(new CheckOfData(), new CustomScanner()),
-            getRootMenu()));
+            "4 - Order information", new OrderInfoAction(new CheckOfData()), getRootMenu()));
     rootMenu.addMenuItem(
         new MenuItem("5 - Back\n0 - Exit", () -> System.out.println("Back"), getRootMenu()));
     return rootMenu;
@@ -196,13 +177,10 @@ public class Builder {
     rootMenu.addMenuItem(
         new MenuItem(
             "1 - Sorting by execution date",
-            new SortCompletedOrderByExecutionDateAction(new CustomScanner()),
+            new SortCompletedOrderByExecutionDateAction(),
             getRootMenu()));
     rootMenu.addMenuItem(
-        new MenuItem(
-            "2 - Sorting by price",
-            new SortCompletedOrderByPriceAction(new CustomScanner()),
-            getRootMenu()));
+        new MenuItem("2 - Sorting by price", new SortCompletedOrderByPriceAction(), getRootMenu()));
     rootMenu.addMenuItem(
         new MenuItem("3 - Back\n0 - Exit", () -> System.out.println("Back"), getRootMenu()));
     return rootMenu;
@@ -216,8 +194,7 @@ public class Builder {
             "1 - View all requests",
             () -> System.out.println("Select the sorting type"),
             createSortRequestMenu()));
-    rootMenu.addMenuItem(
-        new MenuItem("2 - Add request", new AddRequestAction(new CustomScanner()), getRootMenu()));
+    rootMenu.addMenuItem(new MenuItem("2 - Add request", new AddRequestAction(), getRootMenu()));
     rootMenu.addMenuItem(
         new MenuItem("3 - Back\n0 - Exit", () -> System.out.println("Back"), getRootMenu()));
     return rootMenu;

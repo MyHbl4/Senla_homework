@@ -21,6 +21,16 @@ public interface OrderService {
 
   List<Order> getCompletedOrderList(int months);
 
+  List<Order> sortCompletedOrderByExecutionDate(int months);
+
+  List<Order> sortCompletedOrderByPrice(int months);
+
+  List<Order> sortOrderByExecutionDate();
+
+  List<Order> sortOrderByPrice();
+
+  List<Order> sortOrderByStatus();
+
   void updateOrderCsv();
 
   void downloadOrderCsv();

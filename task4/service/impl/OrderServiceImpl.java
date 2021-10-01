@@ -9,6 +9,7 @@ import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import task4.model.Availability;
 import task4.model.Book;
@@ -116,6 +117,41 @@ public class OrderServiceImpl implements OrderService {
       }
     }
     return completedOrder;
+  }
+
+  @Override
+  public List<Order> sortCompletedOrderByExecutionDate(int months) {
+    List<Order> sortOrders = getCompletedOrderList(months);
+    getCompletedOrderList(months).sort((Comparator.comparing(Order::getExecution)));
+    return sortOrders;
+  }
+
+  @Override
+  public List<Order> sortCompletedOrderByPrice(int months) {
+    List<Order> sortOrders = getCompletedOrderList(months);
+    getCompletedOrderList(months).sort((Comparator.comparingInt(Order::getPrice)));
+    return sortOrders;
+  }
+
+  @Override
+  public List<Order> sortOrderByExecutionDate() {
+    List<Order> sortOrders = orderRepository.getAll();
+    orderRepository.getAll().sort((Comparator.comparing(Order::getExecution)));
+    return sortOrders;
+  }
+
+  @Override
+  public List<Order> sortOrderByPrice() {
+    List<Order> sortOrders = orderRepository.getAll();
+    orderRepository.getAll().sort((Comparator.comparingInt(Order::getPrice)));
+    return sortOrders;
+  }
+
+  @Override
+  public List<Order> sortOrderByStatus() {
+    List<Order> sortOrders = orderRepository.getAll();
+    orderRepository.getAll().sort((Comparator.comparing(Order::getOrderStatus)));
+    return sortOrders;
   }
 
   @Override

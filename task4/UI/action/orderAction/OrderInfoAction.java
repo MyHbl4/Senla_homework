@@ -7,13 +7,12 @@ import task4.util.CheckOfData;
 import task4.util.CustomException;
 import task4.util.CustomScanner;
 
-public class OrderInfoAction extends AbstractAction implements IAction {
+public class OrderInfoAction extends AbstractAction {
   private CheckOfData checkOfData;
-  private CustomScanner customScanner;
 
-  public OrderInfoAction(CheckOfData checkData, CustomScanner customScanner) {
+
+  public OrderInfoAction(CheckOfData checkData) {
     this.checkOfData = checkData;
-    this.customScanner = customScanner;
   }
 
   @Override

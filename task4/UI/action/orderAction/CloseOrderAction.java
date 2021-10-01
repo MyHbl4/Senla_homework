@@ -6,13 +6,11 @@ import task4.util.CheckOfData;
 import task4.util.CustomException;
 import task4.util.CustomScanner;
 
-public class CloseOrderAction extends AbstractAction implements IAction {
+public class CloseOrderAction extends AbstractAction {
   private CheckOfData checkOfData;
-  private CustomScanner customScanner;
 
-  public CloseOrderAction(CheckOfData checkOfData, CustomScanner customScanner) {
+  public CloseOrderAction(CheckOfData checkOfData) {
     this.checkOfData = checkOfData;
-    this.customScanner = customScanner;
   }
 
   @Override

@@ -1,13 +1,14 @@
 package task4.UI.action.request.sortrequest;
 
+import java.util.List;
 import task4.UI.action.AbstractAction;
-import task4.UI.action.IAction;
+import task4.model.Request;
 
-public class SortRequestByTitleAction extends AbstractAction implements IAction {
+public class SortRequestByTitleAction extends AbstractAction {
 
   @Override
   public void execute() {
-    manager.getRequestService().getAll().sort((r1, r2) -> r1.getTitle().compareTo(r2.getTitle()));
-    manager.getRequestService().getAll().stream().forEach(System.out::println);
+    List<Request> sortRequests = manager.getRequestService().sortRequestByTitle();
+    printOut.printRequest(sortRequests);
   }
 }

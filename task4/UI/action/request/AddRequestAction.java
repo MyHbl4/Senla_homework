@@ -4,12 +4,7 @@ import task4.UI.action.AbstractAction;
 import task4.UI.action.IAction;
 import task4.util.CustomScanner;
 
-public class AddRequestAction extends AbstractAction implements IAction {
-  private CustomScanner customScanner;
-
-  public AddRequestAction(CustomScanner customScanner) {
-    this.customScanner = customScanner;
-  }
+public class AddRequestAction extends AbstractAction {
 
   @Override
   public void execute() {

@@ -7,6 +7,10 @@ public interface RequestService {
 
   List<Request> getAll();
 
+  List<Request> sortRequestByCount();
+
+  List<Request> sortRequestByTitle();
+
   void updateRequestCsv();
 
   void downloadRequestCsv();

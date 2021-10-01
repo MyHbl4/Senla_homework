@@ -5,12 +5,7 @@ import task4.UI.action.IAction;
 import task4.model.Order;
 import task4.util.CustomScanner;
 
-public class CompletedOrderAction extends AbstractAction implements IAction {
-  private CustomScanner customScanner;
-
-  public CompletedOrderAction(CustomScanner customScanner) {
-    this.customScanner = customScanner;
-  }
+public class CompletedOrderAction extends AbstractAction {
 
   @Override
   public void execute() {
