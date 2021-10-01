@@ -9,6 +9,6 @@ public class SortRequestByTitleAction extends AbstractAction {
   @Override
   public void execute() {
     List<Request> sortRequests = manager.getRequestService().sortRequestByTitle();
-    printOut.printRequest(sortRequests);
+    printOut.printList(sortRequests);
   }
 }

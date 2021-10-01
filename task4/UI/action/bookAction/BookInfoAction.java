@@ -1,9 +1,10 @@
 package task4.UI.action.bookAction;
 
+import task4.UI.action.AbstractAction;
 import task4.model.Book;
 import task4.util.CustomException;
 
-public class BookInfoAction extends BookAbstractAction {
+public class BookInfoAction extends AbstractAction {
 
   @Override
   public void execute() {
@@ -15,17 +16,7 @@ public class BookInfoAction extends BookAbstractAction {
         id = customScanner.getInt();
         check.checkBook(id);
         Book book = manager.getBookService().findBookById(id);
-        System.out.println(
-            "Book ID: "
-                + id
-                + ", Title: '"
-                + book.getTitle()
-                + "', Author: '"
-                + book.getAuthor()
-                + "', Price: "
-                + book.getPrice()
-                + ", Availability: "
-                + book.getAvailability());
+        printOut.printEntity(book);
         isValid = false;
       } catch (CustomException e) {
         System.out.println(" Value is incorrect");

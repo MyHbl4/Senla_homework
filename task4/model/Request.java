@@ -41,6 +41,6 @@ public class Request extends Identity {
 
   @Override
   public String toString() {
-    return "Request[ " + " id: " + id + ", count: " + count + ",  title: '" + title + '\'' + " ] ";
+    return "Request - " + "ID: " + id + ", Count: " + count + ",  Title: '" + title + "'";
   }
 }

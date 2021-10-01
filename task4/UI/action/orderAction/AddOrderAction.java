@@ -3,20 +3,11 @@ package task4.UI.action.orderAction;
 import java.util.ArrayList;
 import java.util.List;
 import task4.UI.action.AbstractAction;
-import task4.UI.action.IAction;
 import task4.model.Book;
 import task4.model.Order;
-import task4.util.CheckOfData;
 import task4.util.CustomException;
-import task4.util.CustomScanner;
 
 public class AddOrderAction extends AbstractAction {
-  private CheckOfData checkOfData;
-
-
-  public AddOrderAction(CheckOfData checkOfData) {
-    this.checkOfData = checkOfData;
-  }
 
   @Override
   public void execute() {
@@ -34,7 +25,7 @@ public class AddOrderAction extends AbstractAction {
       while (isValid) {
         try {
           id = customScanner.getInt();
-          checkOfData.checkBook(id);
+          check.checkBook(id);
           books.add(manager.getBookService().findBookById(id));
           manager.getOrderService().addOrder(new Order(customerName, books));
           manager.getOrderService().updateOrderCsv();

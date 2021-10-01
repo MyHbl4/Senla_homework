@@ -1,17 +1,9 @@
 package task4.UI.action.orderAction;
 
 import task4.UI.action.AbstractAction;
-import task4.UI.action.IAction;
-import task4.util.CheckOfData;
 import task4.util.CustomException;
-import task4.util.CustomScanner;
 
 public class CancelOrderAction extends AbstractAction {
-  private CheckOfData checkOfData;
-
-  public CancelOrderAction(CheckOfData checkOfData) {
-    this.checkOfData = checkOfData;
-  }
 
   @Override
   public void execute() {
@@ -21,7 +13,7 @@ public class CancelOrderAction extends AbstractAction {
     while (isValid) {
       try {
         id = customScanner.getInt();
-        checkOfData.checkOrder(id);
+        check.checkOrder(id);
         manager.getOrderService().cancelOrder(id);
         manager.getOrderService().updateOrderCsv();
         System.out.println("The order has been canceled");

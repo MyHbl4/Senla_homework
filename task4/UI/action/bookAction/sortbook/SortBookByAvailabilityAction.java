@@ -9,6 +9,6 @@ public class SortBookByAvailabilityAction extends AbstractAction {
   @Override
   public void execute() {
     List<Book> sortBooks = manager.getBookService().sortBookByAvailability();
-    printOut.printBook(sortBooks);
+    printOut.printList(sortBooks);
   }
 }

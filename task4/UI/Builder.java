@@ -33,7 +33,6 @@ import task4.UI.action.orderAction.sortorder.SortOrderByStatusAction;
 import task4.UI.action.request.AddRequestAction;
 import task4.UI.action.request.sortrequest.SortRequestByCountAction;
 import task4.UI.action.request.sortrequest.SortRequestByTitleAction;
-import task4.util.CheckOfData;
 
 public class Builder {
 
@@ -85,8 +84,7 @@ public class Builder {
             () -> System.out.println("Select the sorting type"),
             createSortStaleBookMenu()));
     rootMenu.addMenuItem(new MenuItem("3 - Add book", new AddBookAction(), getRootMenu()));
-    rootMenu.addMenuItem(
-        new MenuItem("4 - Remove book", new RemoveBookAction(new CheckOfData()), getRootMenu()));
+    rootMenu.addMenuItem(new MenuItem("4 - Remove book", new RemoveBookAction(), getRootMenu()));
     rootMenu.addMenuItem(
         new MenuItem("5 - Back\n0 - Exit", () -> System.out.println("Back"), getRootMenu()));
     return rootMenu;
@@ -136,14 +134,11 @@ public class Builder {
             "2 - View completed orders",
             () -> System.out.println("Select the sorting type"),
             createSortCompletedOrderMenu()));
+    rootMenu.addMenuItem(new MenuItem("3 - Add order", new AddOrderAction(), getRootMenu()));
     rootMenu.addMenuItem(
-        new MenuItem("3 - Add order", new AddOrderAction(new CheckOfData()), getRootMenu()));
+        new MenuItem("4 - Close the order", new CloseOrderAction(), getRootMenu()));
     rootMenu.addMenuItem(
-        new MenuItem(
-            "4 - Close the order", new CloseOrderAction(new CheckOfData()), getRootMenu()));
-    rootMenu.addMenuItem(
-        new MenuItem(
-            "5 - Cancel the order", new CancelOrderAction(new CheckOfData()), getRootMenu()));
+        new MenuItem("5 - Cancel the order", new CancelOrderAction(), getRootMenu()));
     rootMenu.addMenuItem(
         new MenuItem("6 - Amount of earned funds", new AmountEarnedFundsAction(), getRootMenu()));
     rootMenu.addMenuItem(
@@ -164,8 +159,7 @@ public class Builder {
     rootMenu.addMenuItem(
         new MenuItem("3 - Sorting by status", new SortOrderByStatusAction(), getRootMenu()));
     rootMenu.addMenuItem(
-        new MenuItem(
-            "4 - Order information", new OrderInfoAction(new CheckOfData()), getRootMenu()));
+        new MenuItem("4 - Order information", new OrderInfoAction(), getRootMenu()));
     rootMenu.addMenuItem(
         new MenuItem("5 - Back\n0 - Exit", () -> System.out.println("Back"), getRootMenu()));
     return rootMenu;

@@ -1,25 +1,21 @@
 package task4.util;
 
-import task4.UI.action.AbstractAction;
+import task4.UI.action.Manager;
 
-public class CheckOfData extends AbstractAction {
-
+public class CheckOfData {
   public CheckOfData() {}
 
   public void checkOrder(int id) throws CustomException {
-    if (id > 0 && manager.getOrderService().findOrderById(id) != null) {
+    if (id > 0 && new Manager().getOrderService().findOrderById(id) != null) {
       return;
     }
     throw new CustomException();
   }
 
   public void checkBook(int id) throws CustomException {
-    if (id > 0 && manager.getBookService().findBookById(id) != null) {
+    if (id > 0 && new Manager().getBookService().findBookById(id) != null) {
       return;
     }
     throw new CustomException();
   }
-
-  @Override
-  public void execute() {}
 }

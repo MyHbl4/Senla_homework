@@ -124,23 +124,22 @@ public class Book extends Identity {
 
   @Override
   public String toString() {
-    return "Book[ "
-        + "id: "
+    return "Book - "
+        + "ID: "
         + id
-        + ", title: '"
+        + ", Title: '"
         + title
         + '\''
-        + ", author: '"
+        + ", Author: '"
         + author
         + '\''
-        + ", price: "
+        + ", Price: "
         + price
-        + ", availability: "
+        + ", Availability: "
         + availability
-        + ", publication: "
+        + ", Publication: "
         + publication
-        + ", deliveryDate: "
-        + deliveryDate
-        + " ] ";
+        + ", Delivery date: "
+        + deliveryDate;
   }
 }

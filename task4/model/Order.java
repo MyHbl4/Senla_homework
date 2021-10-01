@@ -130,20 +130,18 @@ public class Order extends Identity {
 
   @Override
   public String toString() {
-    return "Order[ "
-        + "id: "
+    return "Order - "
+        + "ID: "
         + id
-        + ", customerName: '"
+        + ", Customer name: '"
         + customerName
-        + '\''
-        + ", books: "
+        + "', Books: "
         + books
-        + ", orderStatus: "
+        + ", Order status: "
         + orderStatus
-        + ", execution: "
+        + ", Execution: "
         + execution
-        + ", price: "
-        + getPrice()
-        + " ] ";
+        + ", Price: "
+        + getPrice();
   }
 }

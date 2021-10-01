@@ -1,15 +1,9 @@
 package task4.UI.action.bookAction;
 
 import task4.UI.action.AbstractAction;
-import task4.util.CheckOfData;
 import task4.util.CustomException;
 
 public class RemoveBookAction extends AbstractAction {
-  private final CheckOfData checkOfData;
-
-  public RemoveBookAction(CheckOfData checkOfData) {
-    this.checkOfData = checkOfData;
-  }
 
   @Override
   public void execute() {
@@ -19,7 +13,7 @@ public class RemoveBookAction extends AbstractAction {
     while (isValid) {
       try {
         id = customScanner.getInt();
-        checkOfData.checkBook(id);
+        check.checkBook(id);
         manager.getBookService().removeBook(id);
         manager.getBookService().updateBookCsv();
         System.out.println("The book has been removed");

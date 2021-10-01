@@ -12,6 +12,6 @@ public class SortCompletedOrderByPriceAction extends AbstractAction {
     int months;
     months = customScanner.getInt();
     List<Order> sortOrders = manager.getOrderService().sortCompletedOrderByPrice(months);
-    printOut.printOrder(sortOrders);
+    printOut.printList(sortOrders);
   }
 }

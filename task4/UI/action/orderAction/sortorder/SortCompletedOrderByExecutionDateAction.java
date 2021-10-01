@@ -12,6 +12,6 @@ public class SortCompletedOrderByExecutionDateAction extends AbstractAction {
     int months;
     months = customScanner.getInt();
     List<Order> sortOrders = manager.getOrderService().sortCompletedOrderByExecutionDate(months);
-    printOut.printOrder(sortOrders);
+    printOut.printList(sortOrders);
   }
 }
