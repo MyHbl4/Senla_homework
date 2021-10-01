@@ -95,15 +95,15 @@ public class BookServiceImpl implements BookService {
 
   @Override
   public List<Book> sortOldBookByDate() {
-    List<Book> sortBooks = bookRepository.getAll();
-    bookRepository.getAll().sort(Comparator.comparing(Book::getDeliveryDate));
+    List<Book> sortBooks = getOldBooks();
+    getOldBooks().sort(Comparator.comparing(Book::getDeliveryDate));
     return sortBooks;
   }
 
   @Override
   public List<Book> sortOldBookByPrice() {
-    List<Book> sortBooks = bookRepository.getAll();
-    bookRepository.getAll().sort(Comparator.comparingInt(Book::getPrice));
+    List<Book> sortBooks = getOldBooks();
+    getOldBooks().sort(Comparator.comparingInt(Book::getPrice));
     return sortBooks;
   }
 
