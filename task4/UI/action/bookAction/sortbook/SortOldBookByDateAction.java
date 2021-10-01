@@ -1,15 +1,14 @@
 package task4.UI.action.bookAction.sortbook;
 
+import java.util.List;
 import task4.UI.action.AbstractAction;
-import task4.UI.action.IAction;
+import task4.model.Book;
 
-public class SortOldBookByDateAction extends AbstractAction implements IAction {
+public class SortOldBookByDateAction extends AbstractAction {
 
   @Override
   public void execute() {
-    manager.getBookService().getOldBooks()
-        .sort((b1, b2) -> b1.getDeliveryDate().compareTo(b2.getDeliveryDate()));
-    manager.getBookService().getOldBooks().stream().forEach(System.out::println);
-
+    List<Book> sortBooks = manager.getBookService().sortOldBookByDate();
+    printOut.printBook(sortBooks);
   }
 }

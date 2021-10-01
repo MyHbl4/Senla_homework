@@ -2,15 +2,11 @@ package task4.service.impl;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.time.LocalDate;
 import java.util.List;
-import task4.model.Availability;
-import task4.model.Book;
 import task4.model.Request;
 import task4.repository.RequestRepository;
 import task4.service.RequestService;
@@ -21,7 +17,6 @@ public class RequestServiceImpl implements RequestService {
   public RequestServiceImpl(RequestRepository requestRepository) {
     this.requestRepository = requestRepository;
   }
-
 
   @Override
   public List<Request> getAll() {
@@ -34,12 +29,7 @@ public class RequestServiceImpl implements RequestService {
     try {
       PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(fileName)));
       for (Request request : requestRepository.getAll()) {
-        writer.println(
-            request.getId()
-                + "|"
-                + request.getCount()
-                + "|"
-                + request.getTitle());
+        writer.println(request.getId() + "|" + request.getCount() + "|" + request.getTitle());
       }
       writer.flush();
       writer.close();
@@ -59,11 +49,7 @@ public class RequestServiceImpl implements RequestService {
           String[] values = someRequest.split("\\|");
           requestRepository
               .getAll()
-              .add(
-                  new Request(
-                      Long.parseLong(values[0]),
-                      Integer.parseInt(values[1]),
-                      values[2]));
+              .add(new Request(Long.parseLong(values[0]), Integer.parseInt(values[1]), values[2]));
         }
       }
     } catch (IOException e) {

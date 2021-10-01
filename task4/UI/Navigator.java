@@ -20,11 +20,11 @@ public class Navigator {
     System.out.println(currentMenu);
   }
 
-  public void helloShop(){
+  public void helloShop() {
     System.out.println("\n::BOOK STORE::\n*******************");
   }
 
-  public void loadCsv(){
+  public void loadCsv() {
     new Manager().getBookService().downloadBookCsv();
     new Manager().getOrderService().downloadOrderCsv();
     new Manager().getRequestService().downloadRequestCsv();

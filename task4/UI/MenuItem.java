@@ -2,7 +2,7 @@ package task4.UI;
 
 import task4.UI.action.IAction;
 
-public class MenuItem{
+public class MenuItem {
 
   private String title;
   private IAction action;

@@ -1,4 +1,4 @@
-package task4.exception;
+package task4.util;
 
 import java.util.Scanner;
 

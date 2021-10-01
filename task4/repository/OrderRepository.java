@@ -8,5 +8,4 @@ public interface OrderRepository {
   List<Order> getAll();
 
   Order findOrderById(int id);
-
 }

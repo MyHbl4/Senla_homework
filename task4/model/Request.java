@@ -1,6 +1,6 @@
 package task4.model;
 
-public class Request extends Identity{
+public class Request extends Identity {
   private long id = createRequestid();
   private String title;
   private int count = 1;
@@ -41,6 +41,6 @@ public class Request extends Identity{
 
   @Override
   public String toString() {
-    return "Request[ " +" id: "+id+", count: " + count + ",  title: '" + title + '\'' + " ] ";
+    return "Request[ " + " id: " + id + ", count: " + count + ",  title: '" + title + '\'' + " ] ";
   }
 }

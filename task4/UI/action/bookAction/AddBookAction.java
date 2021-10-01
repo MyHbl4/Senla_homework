@@ -1,16 +1,9 @@
 package task4.UI.action.bookAction;
 
 import task4.UI.action.AbstractAction;
-import task4.UI.action.IAction;
-import task4.exception.CustomScanner;
 import task4.model.Book;
 
-public class AddBookAction extends AbstractAction implements IAction {
-  private CustomScanner customScanner;
-
-  public AddBookAction(CustomScanner customScanner) {
-    this.customScanner = customScanner;
-  }
+public class AddBookAction extends AbstractAction {
 
   @Override
   public void execute() {

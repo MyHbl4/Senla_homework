@@ -2,11 +2,11 @@ package task4.UI.action.bookAction;
 
 import task4.UI.action.AbstractAction;
 import task4.UI.action.IAction;
-import task4.exception.CheckOfData;
-import task4.exception.CustomException;
-import task4.exception.CustomScanner;
+import task4.util.CheckOfData;
+import task4.util.CustomException;
+import task4.util.CustomScanner;
 
-public class RemoveBookAction extends AbstractAction implements IAction {
+public class RemoveBookAction extends AbstractAction {
   private CheckOfData checkOfData;
   private CustomScanner customScanner;
 

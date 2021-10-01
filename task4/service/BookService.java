@@ -15,8 +15,19 @@ public interface BookService {
 
   List<Book> getOldBooks();
 
+  List<Book> sortBookByAvailability();
+
+  List<Book> sortBookByPrice();
+
+  List<Book> sortBookByPublication();
+
+  List<Book> sortBookByTitle();
+
+  List<Book> sortOldBookByDate();
+
+  List<Book> sortOldBookByPrice();
+
   void updateBookCsv();
 
   void downloadBookCsv();
-
 }

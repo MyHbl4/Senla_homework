@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import task4.model.Availability;
 import task4.model.Book;
@@ -62,6 +63,48 @@ public class BookServiceImpl implements BookService {
       }
     }
     return oldBooks;
+  }
+
+  @Override
+  public List<Book> sortBookByAvailability() {
+    List<Book> sortBooks = bookRepository.getAll();
+    bookRepository.getAll().sort(Comparator.comparing(Book::getAvailability));
+    return sortBooks;
+  }
+
+  @Override
+  public List<Book> sortBookByPrice() {
+    List<Book> sortBooks = bookRepository.getAll();
+    bookRepository.getAll().sort(Comparator.comparingInt(Book::getPrice));
+    return sortBooks;
+  }
+
+  @Override
+  public List<Book> sortBookByPublication() {
+    List<Book> sortBooks = bookRepository.getAll();
+    bookRepository.getAll().sort(Comparator.comparingInt(Book::getPublication));
+    return sortBooks;
+  }
+
+  @Override
+  public List<Book> sortBookByTitle() {
+    List<Book> sortBooks = bookRepository.getAll();
+    bookRepository.getAll().sort(Comparator.comparing(Book::getTitle));
+    return sortBooks;
+  }
+
+  @Override
+  public List<Book> sortOldBookByDate() {
+    List<Book> sortBooks = bookRepository.getAll();
+    bookRepository.getAll().sort(Comparator.comparing(Book::getDeliveryDate));
+    return sortBooks;
+  }
+
+  @Override
+  public List<Book> sortOldBookByPrice() {
+    List<Book> sortBooks = bookRepository.getAll();
+    bookRepository.getAll().sort(Comparator.comparingInt(Book::getPrice));
+    return sortBooks;
   }
 
   @Override

@@ -36,7 +36,8 @@ public class Manager {
 
   public Manager() {}
 
-  public BookService getBookService() {    return bookService;
+  public BookService getBookService() {
+    return bookService;
   }
 
   public OrderService getOrderService() {

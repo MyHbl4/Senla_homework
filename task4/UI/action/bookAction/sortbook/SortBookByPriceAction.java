@@ -1,13 +1,14 @@
 package task4.UI.action.bookAction.sortbook;
 
+import java.util.List;
 import task4.UI.action.AbstractAction;
-import task4.UI.action.IAction;
+import task4.model.Book;
 
-public class SortBookByPriceAction extends AbstractAction implements IAction {
+public class SortBookByPriceAction extends AbstractAction {
 
   @Override
   public void execute() {
-    manager.getBookService().getAll().sort((b1, b2) -> b1.getPrice() - b2.getPrice());
-    manager.getBookService().getAll().stream().forEach(System.out::println);
+    List<Book> sortBooks = manager.getBookService().sortBookByPrice();
+    printOut.printBook(sortBooks);
   }
 }

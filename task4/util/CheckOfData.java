@@ -1,11 +1,10 @@
-package task4.exception;
+package task4.util;
 
 import task4.UI.action.AbstractAction;
 
 public class CheckOfData extends AbstractAction {
 
-  public CheckOfData() {
-  }
+  public CheckOfData() {}
 
   public void checkOrder(int id) throws CustomException {
     if (id > 0 && manager.getOrderService().findOrderById(id) != null) {
@@ -22,7 +21,5 @@ public class CheckOfData extends AbstractAction {
   }
 
   @Override
-  public void execute() {
-
-  }
+  public void execute() {}
 }

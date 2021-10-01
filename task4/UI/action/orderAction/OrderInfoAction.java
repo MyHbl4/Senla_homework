@@ -2,10 +2,10 @@ package task4.UI.action.orderAction;
 
 import task4.UI.action.AbstractAction;
 import task4.UI.action.IAction;
-import task4.exception.CheckOfData;
-import task4.exception.CustomException;
-import task4.exception.CustomScanner;
 import task4.model.Order;
+import task4.util.CheckOfData;
+import task4.util.CustomException;
+import task4.util.CustomScanner;
 
 public class OrderInfoAction extends AbstractAction implements IAction {
   private CheckOfData checkOfData;

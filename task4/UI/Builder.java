@@ -1,6 +1,14 @@
 package task4.UI;
 
-import static task4.UI.Constant.*;
+import static task4.UI.Constant.BOOK_MENU;
+import static task4.UI.Constant.ORDER_MENU;
+import static task4.UI.Constant.REQUEST_MENU;
+import static task4.UI.Constant.ROOT_MENU;
+import static task4.UI.Constant.SORT_BOOKS;
+import static task4.UI.Constant.SORT_COMPLETED_ORDER;
+import static task4.UI.Constant.SORT_ORDERS;
+import static task4.UI.Constant.SORT_REQUEST_MENU;
+import static task4.UI.Constant.SORT_STALE_BOOKS;
 
 import task4.UI.action.bookAction.AddBookAction;
 import task4.UI.action.bookAction.BookInfoAction;
@@ -25,8 +33,8 @@ import task4.UI.action.orderAction.sortorder.SortOrderByStatusAction;
 import task4.UI.action.request.AddRequestAction;
 import task4.UI.action.request.sortrequest.SortRequestByCountAction;
 import task4.UI.action.request.sortrequest.SortRequestByTitleAction;
-import task4.exception.CheckOfData;
-import task4.exception.CustomScanner;
+import task4.util.CheckOfData;
+import task4.util.CustomScanner;
 
 public class Builder {
 
@@ -77,8 +85,7 @@ public class Builder {
             "2 - View stale books",
             () -> System.out.println("Select the sorting type"),
             createSortStaleBookMenu()));
-    rootMenu.addMenuItem(
-        new MenuItem("3 - Add book", new AddBookAction(new CustomScanner()), getRootMenu()));
+    rootMenu.addMenuItem(new MenuItem("3 - Add book", new AddBookAction(), getRootMenu()));
     rootMenu.addMenuItem(
         new MenuItem(
             "4 - Remove book",
@@ -102,11 +109,7 @@ public class Builder {
     rootMenu.addMenuItem(
         new MenuItem(
             "4 - Sorting by availability", new SortBookByAvailabilityAction(), getRootMenu()));
-    rootMenu.addMenuItem(
-        new MenuItem(
-            "5 - Book information",
-            new BookInfoAction(new CheckOfData(), new CustomScanner()),
-            getRootMenu()));
+    rootMenu.addMenuItem(new MenuItem("5 - Book information", new BookInfoAction(), getRootMenu()));
     rootMenu.addMenuItem(
         new MenuItem("6 - Back\n0 - Exit", () -> System.out.println("Back"), getRootMenu()));
     return rootMenu;

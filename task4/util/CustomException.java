@@ -1,9 +1,8 @@
-package task4.exception;
+package task4.util;
 
-public class CustomException extends Exception{
+public class CustomException extends Exception {
 
-  public CustomException() {
-  }
+  public CustomException() {}
 
   public CustomException(String message) {
     super(message);
@@ -17,8 +16,8 @@ public class CustomException extends Exception{
     super(cause);
   }
 
-  public CustomException(String message, Throwable cause, boolean enableSuppression,
-      boolean writableStackTrace) {
+  public CustomException(
+      String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
     super(message, cause, enableSuppression, writableStackTrace);
   }
 }

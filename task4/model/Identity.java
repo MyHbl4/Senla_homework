@@ -14,5 +14,7 @@ public abstract class Identity {
     return orderid++;
   }
 
-  public static Long createRequestid() {return requestid++;}
+  public static Long createRequestid() {
+    return requestid++;
+  }
 }

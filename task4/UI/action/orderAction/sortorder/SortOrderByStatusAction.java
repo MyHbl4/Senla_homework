@@ -7,7 +7,10 @@ public class SortOrderByStatusAction extends AbstractAction implements IAction {
 
   @Override
   public void execute() {
-    manager.getOrderService().getAll().sort(((o1, o2) -> o1.getOrderStatus().compareTo(o2.getOrderStatus())));
+    manager
+        .getOrderService()
+        .getAll()
+        .sort(((o1, o2) -> o1.getOrderStatus().compareTo(o2.getOrderStatus())));
     manager.getOrderService().getAll().stream().forEach(System.out::println);
   }
 }

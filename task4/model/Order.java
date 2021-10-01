@@ -1,7 +1,6 @@
 package task4.model;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -95,12 +94,12 @@ public class Order extends Identity {
   }
 
   public String getBooksId() {
-    String strBooks ="";
-    for(int i =0; i<books.size();i++) {
-      if(i + 1 == books.size()){
+    String strBooks = "";
+    for (int i = 0; i < books.size(); i++) {
+      if (i + 1 == books.size()) {
         strBooks += books.get(i).getId();
-      }else {
-        strBooks += books.get(i).getId() +",";
+      } else {
+        strBooks += books.get(i).getId() + ",";
       }
     }
     return strBooks;
