@@ -89,7 +89,7 @@ public class Builder {
     rootMenu.addMenuItem(
         new MenuItem(
             "4 - Remove book",
-            new RemoveBookAction(new CheckOfData(), new CustomScanner()),
+            new RemoveBookAction(new CheckOfData()),
             getRootMenu()));
     rootMenu.addMenuItem(
         new MenuItem("5 - Back\n0 - Exit", () -> System.out.println("Back"), getRootMenu()));

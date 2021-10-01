@@ -1,18 +1,14 @@
 package task4.UI.action.bookAction;
 
 import task4.UI.action.AbstractAction;
-import task4.UI.action.IAction;
 import task4.util.CheckOfData;
 import task4.util.CustomException;
-import task4.util.CustomScanner;
 
 public class RemoveBookAction extends AbstractAction {
-  private CheckOfData checkOfData;
-  private CustomScanner customScanner;
+  private final CheckOfData checkOfData;
 
-  public RemoveBookAction(CheckOfData checkOfData, CustomScanner customScanner) {
+  public RemoveBookAction(CheckOfData checkOfData) {
     this.checkOfData = checkOfData;
-    this.customScanner = customScanner;
   }
 
   @Override
