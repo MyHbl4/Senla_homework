@@ -10,4 +10,7 @@ public class Constant {
   public static final String SORT_COMPLETED_ORDER = "\n== Sort Order Completed Menu ==";
   public static final String REQUEST_MENU = "\n== Request Menu ==";
   public static final String SORT_REQUEST_MENU = "\n== Sort Request Menu ==";
+  public static final String FILE_BOOKS = "bookdata.csv";
+  public static final String FILE_ORDERS = "orderdata.csv";
+  public static final String FILE_REQUESTS = "requestdata.csv";
 }

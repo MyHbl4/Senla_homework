@@ -1,14 +1,6 @@
 package task4.UI;
 
-import static task4.UI.Constant.BOOK_MENU;
-import static task4.UI.Constant.ORDER_MENU;
-import static task4.UI.Constant.REQUEST_MENU;
-import static task4.UI.Constant.ROOT_MENU;
-import static task4.UI.Constant.SORT_BOOKS;
-import static task4.UI.Constant.SORT_COMPLETED_ORDER;
-import static task4.UI.Constant.SORT_ORDERS;
-import static task4.UI.Constant.SORT_REQUEST_MENU;
-import static task4.UI.Constant.SORT_STALE_BOOKS;
+import static task4.UI.Constant.*;
 
 import task4.UI.action.bookAction.AddBookAction;
 import task4.UI.action.bookAction.BookInfoAction;

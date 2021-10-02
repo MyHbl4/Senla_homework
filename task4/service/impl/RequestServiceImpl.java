@@ -1,5 +1,7 @@
 package task4.service.impl;
 
+import static task4.UI.Constant.FILE_REQUESTS;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -41,9 +43,8 @@ public class RequestServiceImpl implements RequestService {
 
   @Override
   public void updateRequestCsv() {
-    String fileName = "requestdata.csv";
     try {
-      PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(fileName)));
+      PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(FILE_REQUESTS)));
       for (Request request : requestRepository.getAll()) {
         writer.println(request.getId() + "|" + request.getCount() + "|" + request.getTitle());
       }
@@ -56,9 +57,8 @@ public class RequestServiceImpl implements RequestService {
 
   @Override
   public void downloadRequestCsv() {
-    String fileName = "requestdata.csv";
     try {
-      try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
+      try (BufferedReader reader = new BufferedReader(new FileReader(FILE_REQUESTS))) {
         String someRequest;
         requestRepository.getAll().clear();
         while ((someRequest = reader.readLine()) != null) {

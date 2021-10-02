@@ -1,5 +1,7 @@
 package task4.service.impl;
 
+import static task4.UI.Constant.FILE_ORDERS;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -156,9 +158,8 @@ public class OrderServiceImpl implements OrderService {
 
   @Override
   public void updateOrderCsv() {
-    String fileName = "orderdata.csv";
     try {
-      PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(fileName)));
+      PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(FILE_ORDERS)));
       for (Order order : orderRepository.getAll()) {
         writer.println(order.getId() + "|" + order.getCustomerName() + "|" + order.getBooksId());
       }
@@ -171,9 +172,8 @@ public class OrderServiceImpl implements OrderService {
 
   @Override
   public void downloadOrderCsv() {
-    String fileName = "orderdata.csv";
     try {
-      try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
+      try (BufferedReader reader = new BufferedReader(new FileReader(FILE_ORDERS))) {
         String someOrder;
         orderRepository.getAll().clear();
         while ((someOrder = reader.readLine()) != null) {

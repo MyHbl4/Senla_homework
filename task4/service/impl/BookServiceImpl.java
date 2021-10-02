@@ -1,5 +1,7 @@
 package task4.service.impl;
 
+import static task4.UI.Constant.FILE_BOOKS;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -109,9 +111,8 @@ public class BookServiceImpl implements BookService {
 
   @Override
   public void updateBookCsv() {
-    String fileName = "bookdata.csv";
     try {
-      PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(fileName)));
+      PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(FILE_BOOKS)));
       for (Book book : bookRepository.getAll()) {
         writer.println(
             book.getId()
@@ -137,9 +138,8 @@ public class BookServiceImpl implements BookService {
 
   @Override
   public void downloadBookCsv() {
-    String fileName = "bookdata.csv";
     try {
-      try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
+      try (BufferedReader reader = new BufferedReader(new FileReader(FILE_BOOKS))) {
         String someBook;
         bookRepository.getAll().clear();
         while ((someBook = reader.readLine()) != null) {
