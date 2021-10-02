@@ -27,19 +27,6 @@ public class MenuController {
     navigator.helloShop();
     navigator.setCurrentMenu(builder.getRootMenu());
     navigator.printMenu();
-    boolean isValid = true;
-    while (isValid) {
-      int index = -1;
-      index = scanner.nextInt();
-      if (index == 0) {
-        isValid = false;
-        System.out.printf("The program is closed");
-      } else if (index > 0 && index <= navigator.getCurrentMenu().getMenuItems().size()) {
-        navigator.navigate(index - 1);
-        navigator.printMenu();
-      } else {
-        System.out.println("Enter the correct value");
-      }
-    }
+    navigator.navigate();
   }
 }
