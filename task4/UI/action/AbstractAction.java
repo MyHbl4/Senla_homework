@@ -5,8 +5,15 @@ import task4.util.CustomScanner;
 import task4.util.PrintOut;
 
 public abstract class AbstractAction implements IAction {
-  public Manager manager = new Manager();
-  public PrintOut printOut = new PrintOut();
-  public CustomScanner customScanner = new CustomScanner();
-  public CheckOfData check = new CheckOfData();
+  public Manager manager;
+  public PrintOut printOut;
+  public CustomScanner customScanner;
+  public CheckOfData check;
+
+  public AbstractAction(Manager manager) {
+    this.manager = manager;
+    this.customScanner = new CustomScanner();
+    this.printOut = new PrintOut();
+    this.check = new CheckOfData(manager);
+  }
 }

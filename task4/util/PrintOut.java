@@ -8,7 +8,7 @@ public class PrintOut {
     list.forEach(System.out::println);
   }
 
-  public <T> void printEntity(T entity){
+  public <T> void printEntity(T entity) {
     System.out.println(entity);
   }
 }

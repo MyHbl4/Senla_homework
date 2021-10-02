@@ -1,10 +1,13 @@
 package task4.UI.action.orderAction;
 
 import task4.UI.action.AbstractAction;
-import task4.UI.action.IAction;
-import task4.util.CustomScanner;
+import task4.UI.action.Manager;
 
 public class AmountEarnedFundsAction extends AbstractAction {
+
+  public AmountEarnedFundsAction(Manager manager) {
+    super(manager);
+  }
 
   @Override
   public void execute() {

@@ -7,12 +7,15 @@ public class Navigator {
 
   private static Navigator instance;
   private Menu currentMenu;
+  private Manager manager;
 
-  private Navigator() {}
+  private Navigator(Manager manager) {
+    this.manager = manager;
+  }
 
-  public static Navigator getInstance() {
+  public static Navigator getInstance(Manager manager) {
     if (instance == null) {
-      instance = new Navigator();
+      instance = new Navigator(manager);
     }
     return instance;
   }
@@ -26,9 +29,9 @@ public class Navigator {
   }
 
   public void loadCsv() {
-    new Manager().getBookService().downloadBookCsv();
-    new Manager().getOrderService().downloadOrderCsv();
-    new Manager().getRequestService().downloadRequestCsv();
+    manager.getBookService().downloadBookCsv();
+    manager.getOrderService().downloadOrderCsv();
+    manager.getRequestService().downloadRequestCsv();
   }
 
   public void navigate() {

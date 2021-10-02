@@ -1,6 +1,8 @@
 package task4;
 
 import task4.UI.MenuController;
+import task4.UI.action.BookStoreManager;
+import task4.UI.action.Manager;
 import task4.datasource.BookDataSource;
 import task4.datasource.OrderDataSource;
 import task4.datasource.RequestDataSource;
@@ -33,6 +35,8 @@ public class Runner {
     OrderService orderService =
         new OrderServiceImpl(orderRepository, bookRepository, requestRepository);
     RequestService requestService = new RequestServiceImpl(requestRepository);
-    new MenuController().run();
+    Manager manager = new BookStoreManager(bookService, orderService, requestService);
+    MenuController menuController = new MenuController(manager);
+    menuController.run();
   }
 }

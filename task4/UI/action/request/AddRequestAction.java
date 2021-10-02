@@ -1,10 +1,13 @@
 package task4.UI.action.request;
 
 import task4.UI.action.AbstractAction;
-import task4.UI.action.IAction;
-import task4.util.CustomScanner;
+import task4.UI.action.Manager;
 
 public class AddRequestAction extends AbstractAction {
+
+  public AddRequestAction(Manager manager) {
+    super(manager);
+  }
 
   @Override
   public void execute() {

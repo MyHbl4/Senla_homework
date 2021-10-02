@@ -1,6 +1,7 @@
 package task4.UI;
 
 import java.util.Scanner;
+import task4.UI.action.Manager;
 
 public class MenuController {
 
@@ -9,15 +10,15 @@ public class MenuController {
   private Builder builder;
   private Navigator navigator;
 
-  public MenuController() {
-    builder = Builder.getInstance();
+  public MenuController(Manager manager) {
+    builder = Builder.getInstance(manager);
     builder.buildMenu();
-    navigator = Navigator.getInstance();
+    navigator = Navigator.getInstance(manager);
   }
 
-  public static MenuController getInstance() {
+  public static MenuController getInstance(Manager manager) {
     if (instance == null) {
-      instance = new MenuController();
+      instance = new MenuController(manager);
     }
     return instance;
   }

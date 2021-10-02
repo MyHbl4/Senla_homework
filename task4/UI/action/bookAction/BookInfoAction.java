@@ -1,10 +1,15 @@
 package task4.UI.action.bookAction;
 
 import task4.UI.action.AbstractAction;
+import task4.UI.action.Manager;
 import task4.model.Book;
 import task4.util.CustomException;
 
 public class BookInfoAction extends AbstractAction {
+
+  public BookInfoAction(Manager manager) {
+    super(manager);
+  }
 
   @Override
   public void execute() {

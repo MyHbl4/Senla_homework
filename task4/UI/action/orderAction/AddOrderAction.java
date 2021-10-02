@@ -3,11 +3,16 @@ package task4.UI.action.orderAction;
 import java.util.ArrayList;
 import java.util.List;
 import task4.UI.action.AbstractAction;
+import task4.UI.action.Manager;
 import task4.model.Book;
 import task4.model.Order;
 import task4.util.CustomException;
 
 public class AddOrderAction extends AbstractAction {
+
+  public AddOrderAction(Manager manager) {
+    super(manager);
+  }
 
   @Override
   public void execute() {

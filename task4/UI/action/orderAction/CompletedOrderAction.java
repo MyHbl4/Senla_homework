@@ -1,11 +1,14 @@
 package task4.UI.action.orderAction;
 
 import task4.UI.action.AbstractAction;
-import task4.UI.action.IAction;
+import task4.UI.action.Manager;
 import task4.model.Order;
-import task4.util.CustomScanner;
 
 public class CompletedOrderAction extends AbstractAction {
+
+  public CompletedOrderAction(Manager manager) {
+    super(manager);
+  }
 
   @Override
   public void execute() {
