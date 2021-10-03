@@ -7,8 +7,6 @@ public interface OrderService {
 
   Order findOrderById(int id);
 
-  void addRequest(String request);
-
   void addOrder(Order order);
 
   void closeOrder(int id);

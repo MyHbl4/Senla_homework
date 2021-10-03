@@ -7,6 +7,8 @@ public interface RequestService {
 
   List<Request> getAll();
 
+  void addRequest(long bookId);
+
   List<Request> sortRequestByCount();
 
   List<Request> sortRequestByTitle();

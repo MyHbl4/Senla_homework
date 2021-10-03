@@ -32,9 +32,8 @@ public class AddOrderAction extends AbstractAction {
           id = customScanner.getInt();
           check.checkBook(id);
           books.add(manager.getBookService().findBookById(id));
-          manager.getOrderService().addOrder(new Order(customerName, books));
-          manager.getOrderService().updateOrderCsv();
           if (i == amount - 1) {
+            manager.getOrderService().addOrder(new Order(customerName, books));
             System.out.println("Order has been added");
           }
           isValid = false;
@@ -43,5 +42,7 @@ public class AddOrderAction extends AbstractAction {
         }
       }
     }
+    manager.getOrderService().updateOrderCsv();
+    manager.getRequestService().updateRequestCsv();
   }
 }

@@ -17,6 +17,7 @@ import task4.model.Book;
 import task4.repository.BookRepository;
 import task4.repository.RequestRepository;
 import task4.service.BookService;
+import task4.util.PropertyFile;
 
 public class BookServiceImpl implements BookService {
   private final BookRepository bookRepository;
@@ -60,7 +61,8 @@ public class BookServiceImpl implements BookService {
   public List<Book> getOldBooks() {
     List<Book> oldBooks = new ArrayList<>();
     for (Book book : bookRepository.getAll()) {
-      if (book.getDeliveryDate().isBefore(LocalDate.now().minusMonths(6))) {
+      if (book.getDeliveryDate().isBefore(LocalDate.now().minusMonths(
+          Long.parseLong(new PropertyFile().getPropertyValue("MONTHS_STALE_BOOKS"))))) {
         oldBooks.add(book);
       }
     }

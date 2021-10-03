@@ -12,9 +12,9 @@ public class AddRequestAction extends AbstractAction {
   @Override
   public void execute() {
     System.out.println("Enter the name of the book");
-    String request;
-    request = customScanner.getString();
-    manager.getOrderService().addRequest(request);
+    long bookId;
+    bookId = customScanner.getInt();
+    manager.getRequestService().addRequest(bookId);
     manager.getRequestService().updateRequestCsv();
     System.out.println("Request has been added");
   }

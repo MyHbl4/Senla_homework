@@ -2,6 +2,7 @@ package task4.repository.impl;
 
 import java.util.List;
 import task4.datasource.BookDataSource;
+import task4.model.Availability;
 import task4.model.Book;
 import task4.repository.BookRepository;
 
