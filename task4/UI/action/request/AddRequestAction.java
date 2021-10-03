@@ -11,7 +11,7 @@ public class AddRequestAction extends AbstractAction {
 
   @Override
   public void execute() {
-    System.out.println("Enter the name of the book");
+    System.out.println("Enter Book ID");
     long bookId;
     bookId = customScanner.getInt();
     manager.getRequestService().addRequest(bookId);
