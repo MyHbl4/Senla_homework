@@ -14,6 +14,7 @@ import java.util.Comparator;
 import java.util.List;
 import task4.enums.Availability;
 import task4.model.Book;
+import task4.model.Request;
 import task4.repository.BookRepository;
 import task4.repository.RequestRepository;
 import task4.service.BookService;
@@ -36,14 +37,8 @@ public class BookServiceImpl implements BookService {
   @Override
   public void addBook(Book book) {
     bookRepository.getAll().add(book);
-    for (int i = 0; i < requestRepository.getAll().size(); i++) {
-      if (book.getTitle().equals(requestRepository.getAll().get(i).getTitle())
-          && requestRepository.getAll().get(i).getCount() > 0) {
-        requestRepository
-            .getAll()
-            .get(i)
-            .setCount(requestRepository.getAll().get(i).getCount() - 1);
-      }
+    if (checkBookInRequests(book)) {
+      removeBookRequest(book);
     }
   }
 
@@ -52,6 +47,28 @@ public class BookServiceImpl implements BookService {
     bookRepository.findBookById(id).setAvailability(Availability.OUT_OF_STOCK);
   }
 
+  @Override
+  public boolean checkBookInRequests(Book book) {
+    boolean availability = false;
+    for (Request request : requestRepository.getAll()) {
+      if (book.getTitle().equals(request.getTitle()) && request.getCount() > 0) {
+        availability = true;
+      }
+    }
+    return availability;
+  }
+
+  @Override
+  public void removeBookRequest(Book book) {
+    if (checkBookInRequests(book)) {
+      for (Request request : requestRepository.getAll()) {
+        if (book.getTitle().equals(request.getTitle()) && request.getCount() > 0) {
+          request.setCount(request.getCount() - 1);
+          break;
+        }
+      }
+    }
+  }
 
   @Override
   public List<Book> getAll() {
@@ -62,8 +79,11 @@ public class BookServiceImpl implements BookService {
   public List<Book> getOldBooks() {
     List<Book> oldBooks = new ArrayList<>();
     for (Book book : bookRepository.getAll()) {
-      if (book.getDeliveryDate().isBefore(LocalDate.now().minusMonths(
-          Long.parseLong(new PropertyFile().getPropertyValue("MONTHS_STALE_BOOKS"))))) {
+      if (book.getDeliveryDate()
+          .isBefore(
+              LocalDate.now()
+                  .minusMonths(
+                      Long.parseLong(new PropertyFile().getPropertyValue("MONTHS_STALE_BOOKS"))))) {
         oldBooks.add(book);
       }
     }

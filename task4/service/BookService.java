@@ -11,6 +11,10 @@ public interface BookService {
 
   void removeBook(int id);
 
+  boolean checkBookInRequests(Book book);
+
+  void removeBookRequest(Book book);
+
   List<Book> getAll();
 
   List<Book> getOldBooks();

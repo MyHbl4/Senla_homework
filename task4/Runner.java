@@ -30,7 +30,8 @@ public class Runner {
     RequestDataSource requestDataSource = new RequestDataSourceImpl();
     BookRepository bookRepository = new BookRepositoryImpl(bookDataSource);
     OrderRepository orderRepository = new OrderRepositoryImpl(orderDataSource, bookDataSource);
-    RequestRepository requestRepository = new RequestRepositoryImpl(requestDataSource, bookDataSource);
+    RequestRepository requestRepository =
+        new RequestRepositoryImpl(requestDataSource, bookDataSource);
     BookService bookService = new BookServiceImpl(bookRepository, requestRepository);
     OrderService orderService =
         new OrderServiceImpl(orderRepository, bookRepository, requestRepository);

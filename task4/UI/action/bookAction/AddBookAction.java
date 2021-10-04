@@ -22,6 +22,8 @@ public class AddBookAction extends AbstractAction {
     int publication = customScanner.getInt();
     manager.getBookService().addBook(new Book(title, author, price, publication));
     manager.getBookService().updateBookCsv();
+    manager.getRequestService().updateRequestCsv();
+    manager.getOrderService().updateOrderCsv();
     System.out.println("The book has been added");
   }
 }
