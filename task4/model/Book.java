@@ -2,6 +2,7 @@ package task4.model;
 
 import java.time.LocalDate;
 import java.util.Objects;
+import task4.enums.Availability;
 
 public class Book extends Identity {
   private long id = createBookId();

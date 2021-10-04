@@ -1,6 +1,6 @@
 package task4.service.impl;
 
-import static task4.UI.Constant.FILE_REQUESTS;
+import static task4.util.Constant.FILE_REQUESTS;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

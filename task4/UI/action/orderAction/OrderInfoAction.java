@@ -3,7 +3,7 @@ package task4.UI.action.orderAction;
 import task4.UI.action.AbstractAction;
 import task4.UI.action.Manager;
 import task4.model.Order;
-import task4.util.CustomException;
+import task4.exceptions.CustomException;
 
 public class OrderInfoAction extends AbstractAction {
 

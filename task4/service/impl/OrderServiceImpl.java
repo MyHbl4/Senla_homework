@@ -1,6 +1,6 @@
 package task4.service.impl;
 
-import static task4.UI.Constant.FILE_ORDERS;
+import static task4.util.Constant.FILE_ORDERS;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -10,13 +10,12 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
-import task4.model.Availability;
+import task4.enums.Availability;
 import task4.model.Book;
 import task4.model.Order;
-import task4.model.OrderStatus;
+import task4.enums.OrderStatus;
 import task4.repository.BookRepository;
 import task4.repository.OrderRepository;
 import task4.repository.RequestRepository;

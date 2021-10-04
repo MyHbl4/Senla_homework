@@ -1,6 +1,7 @@
 package task4.util;
 
 import task4.UI.action.Manager;
+import task4.exceptions.CustomException;
 
 public class CheckOfData {
   public Manager manager;

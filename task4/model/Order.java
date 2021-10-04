@@ -3,6 +3,7 @@ package task4.model;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Objects;
+import task4.enums.OrderStatus;
 
 public class Order extends Identity {
   private long id = createOrderid();

@@ -1,4 +1,4 @@
-package task4.util;
+package task4.exceptions;
 
 public class CustomException extends Exception {
 

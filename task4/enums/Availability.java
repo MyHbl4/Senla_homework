@@ -1,4 +1,4 @@
-package task4.model;
+package task4.enums;
 
 public enum Availability {
   IN_STOCK,

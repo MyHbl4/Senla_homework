@@ -1,6 +1,6 @@
 package task4.service.impl;
 
-import static task4.UI.Constant.FILE_BOOKS;
+import static task4.util.Constant.FILE_BOOKS;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -12,7 +12,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import task4.model.Availability;
+import task4.enums.Availability;
 import task4.model.Book;
 import task4.repository.BookRepository;
 import task4.repository.RequestRepository;

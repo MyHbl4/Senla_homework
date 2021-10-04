@@ -1,4 +1,4 @@
-package task4.UI;
+package task4.util;
 
 public class Constant {
   public static final String ROOT_MENU = "\n== Root Menu ==";
