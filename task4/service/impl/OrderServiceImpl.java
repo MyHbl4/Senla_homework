@@ -89,7 +89,7 @@ public class OrderServiceImpl implements OrderService {
 
   @Override
   public void cancelOrder(int id) {
-    orderRepository.getAll().get(id - 1).setOrderStatusCanceled();
+    orderRepository.findOrderById(id).setOrderStatusCanceled();
   }
 
   @Override
