@@ -10,6 +10,11 @@ public class Request extends Identity {
     this.bookId = bookId;
   }
 
+  public Request(long bookId, String title) {
+    this.bookId = bookId;
+    this.title = title;
+  }
+
   public Request(long id, int count, long bookId) {
     this.id = id;
     this.count = count;

@@ -21,6 +21,7 @@ public class CloseOrderAction extends AbstractAction {
         check.checkOrder(id);
         manager.getOrderService().closeOrder(id);
         manager.getOrderService().updateOrderCsv();
+        manager.getBookService().updateBookCsv();
         System.out.println("The order has been closed");
         isValid = false;
       } catch (CustomException e) {

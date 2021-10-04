@@ -43,6 +43,7 @@ public class AddOrderAction extends AbstractAction {
       }
     }
     manager.getOrderService().updateOrderCsv();
+    manager.getBookService().updateBookCsv();
     manager.getRequestService().updateRequestCsv();
   }
 }

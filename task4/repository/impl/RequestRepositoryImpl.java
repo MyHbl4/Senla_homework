@@ -23,6 +23,7 @@ public class RequestRepositoryImpl implements RequestRepository {
 
   @Override
   public void addRequest(long bookId) {
+    String title = null;
     int goodJob = 0;
     for (int i = 0; i < getAll().size(); i++) {
       if (getAll().get(i).getBookId() == bookId) {
@@ -31,23 +32,17 @@ public class RequestRepositoryImpl implements RequestRepository {
       }
     }
     if (goodJob == 0) {
-      getAll().add(new Request(bookId));
       for (Book book : bookDataSource.getBooks()) {
         if (book.getId() == bookId) {
-          findRequestById((int) bookId).setTitle(book.getTitle());
+          title = book.getTitle();
         }
       }
+      getAll().add(new Request(bookId, title));
     }
   }
 
   @Override
   public Request findRequestById(int id) {
-    Request request = null;
-    for (int i = 0; i < requestDataSource.getRequest().size(); i++) {
-      if (requestDataSource.getRequest().get(i).getId() == id) {
-        request = requestDataSource.getRequest().get(i);
-      }
-    }
-    return request;
+    return requestDataSource.findRequestById(id);
   }
 }

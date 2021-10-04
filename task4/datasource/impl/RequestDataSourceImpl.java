@@ -18,4 +18,14 @@ public class RequestDataSourceImpl implements RequestDataSource {
   public List<Request> getRequest() {
     return requests;
   }
+
+  public Request findRequestById(int id) {
+    Request request = null;
+    for (int i = 0; i < getRequest().size(); i++) {
+      if (getRequest().get(i).getId() == id) {
+        request = getRequest().get(i);
+      }
+    }
+    return request;
+  }
 }

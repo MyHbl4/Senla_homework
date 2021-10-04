@@ -6,4 +6,6 @@ import task4.model.Request;
 public interface RequestDataSource {
 
   List<Request> getRequest();
+
+  Request findRequestById(int id);
 }

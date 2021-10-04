@@ -9,6 +9,10 @@ public interface OrderService {
 
   void addOrder(Order order);
 
+  void checkBooksForRequest(Order order);
+
+  boolean checkBooksInOrder(Order order);
+
   void closeOrder(int id);
 
   void cancelOrder(int id);

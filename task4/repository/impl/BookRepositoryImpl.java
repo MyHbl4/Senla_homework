@@ -22,12 +22,18 @@ public class BookRepositoryImpl implements BookRepository {
 
   @Override
   public Book findBookById(int id) {
-    Book book1 = null;
-    for (Book book : bookDataSource.getBooks()) {
-      if (book.getId() == id) {
-        book1 = book;
-      }
+    return bookDataSource.findBookById(id);
+  }
+
+  @Override
+  public void removeBook(int id) {
+    findBookById(id).setAvailability(Availability.OUT_OF_STOCK);
+  }
+
+  @Override
+  public void removeBooks(List<Book> books) {
+    for(Book book:books){
+      findBookById((int)book.getId()).setAvailability(Availability.OUT_OF_STOCK);
     }
-    return book1;
   }
 }

@@ -18,4 +18,15 @@ public class OrderDataSourceImpl implements OrderDataSource {
   public List<Order> getOrders() {
     return orders;
   }
+
+  @Override
+  public Order findOrderById(int id) {
+    Order order = null;
+    for (int i = 0; i < getOrders().size(); i++) {
+      if (getOrders().get(i).getId() == id) {
+        order = getOrders().get(i);
+      }
+    }
+    return order;
+  }
 }

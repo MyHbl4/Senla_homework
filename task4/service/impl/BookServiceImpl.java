@@ -52,6 +52,7 @@ public class BookServiceImpl implements BookService {
     bookRepository.findBookById(id).setAvailability(Availability.OUT_OF_STOCK);
   }
 
+
   @Override
   public List<Book> getAll() {
     return bookRepository.getAll();

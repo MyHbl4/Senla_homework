@@ -22,12 +22,6 @@ public class OrderRepositoryImpl implements OrderRepository {
 
   @Override
   public Order findOrderById(int id) {
-    Order order = null;
-    for (int i = 0; i < orderDataSource.getOrders().size(); i++) {
-      if (orderDataSource.getOrders().get(i).getId() == id) {
-        order = orderDataSource.getOrders().get(i);
-      }
-    }
-    return order;
+    return orderDataSource.findOrderById(id);
   }
 }

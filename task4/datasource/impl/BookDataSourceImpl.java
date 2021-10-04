@@ -7,7 +7,6 @@ import task4.model.Book;
 
 public class BookDataSourceImpl implements BookDataSource {
   private final List<Book> books = new ArrayList<>();
-  private final List<Book> booksCsv = new ArrayList<>();
 
   public BookDataSourceImpl() {
     initData();
@@ -18,5 +17,16 @@ public class BookDataSourceImpl implements BookDataSource {
   @Override
   public List<Book> getBooks() {
     return books;
+  }
+
+  @Override
+  public Book findBookById(int id) {
+    Book book1 = null;
+    for (Book book : getBooks()) {
+      if (book.getId() == id) {
+        book1 = book;
+      }
+    }
+    return book1;
   }
 }

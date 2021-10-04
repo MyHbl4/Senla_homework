@@ -9,8 +9,18 @@ public class Order extends Identity {
   private String customerName;
   private List<Book> books;
   private OrderStatus orderStatus = OrderStatus.NEW;
-  private LocalDate execution = LocalDate.now();
+  private LocalDate execution = LocalDate.of(0000,01,01);
   private int price = getPrice();
+
+
+  public Order(long id, String customerName, List<Book> books, OrderStatus orderStatus,
+      LocalDate execution) {
+    this.id = id;
+    this.customerName = customerName;
+    this.books = books;
+    this.orderStatus = orderStatus;
+    this.execution = execution;
+  }
 
   public Order(long id, String customerName, List<Book> books) {
     this.id = id;

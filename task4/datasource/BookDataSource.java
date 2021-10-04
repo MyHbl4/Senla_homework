@@ -6,4 +6,6 @@ import task4.model.Book;
 public interface BookDataSource {
 
   List<Book> getBooks();
+
+  Book findBookById(int id);
 }
