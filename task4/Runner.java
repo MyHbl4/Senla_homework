@@ -32,7 +32,7 @@ public class Runner {
     OrderRepository orderRepository = new OrderRepositoryImpl(orderDataSource, bookDataSource);
     RequestRepository requestRepository =
         new RequestRepositoryImpl(requestDataSource, bookDataSource);
-    BookService bookService = new BookServiceImpl(bookRepository, requestRepository);
+    BookService bookService = new BookServiceImpl(bookRepository, requestRepository, orderRepository);
     OrderService orderService =
         new OrderServiceImpl(orderRepository, bookRepository, requestRepository);
     RequestService requestService = new RequestServiceImpl(requestRepository, bookRepository);

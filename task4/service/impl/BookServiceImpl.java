@@ -13,9 +13,12 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import task4.enums.Availability;
+import task4.enums.OrderStatus;
 import task4.model.Book;
+import task4.model.Order;
 import task4.model.Request;
 import task4.repository.BookRepository;
+import task4.repository.OrderRepository;
 import task4.repository.RequestRepository;
 import task4.service.BookService;
 import task4.util.PropertyFile;
@@ -23,10 +26,15 @@ import task4.util.PropertyFile;
 public class BookServiceImpl implements BookService {
   private final BookRepository bookRepository;
   private final RequestRepository requestRepository;
+  private final OrderRepository orderRepository;
 
-  public BookServiceImpl(BookRepository bookRepository, RequestRepository requestRepository) {
+  public BookServiceImpl(
+      BookRepository bookRepository,
+      RequestRepository requestRepository,
+      OrderRepository orderRepository) {
     this.bookRepository = bookRepository;
     this.requestRepository = requestRepository;
+    this.orderRepository = orderRepository;
   }
 
   @Override
@@ -36,9 +44,22 @@ public class BookServiceImpl implements BookService {
 
   @Override
   public void addBook(Book book) {
-    bookRepository.getAll().add(book);
+    if (!bookRepository.checkBookInBooks(book)) {
+bookRepository.restoreBook(book);
+    } else {
+      bookRepository.getAll().add(book);
+    }
     if (checkBookInRequests(book)) {
       removeBookRequest(book);
+      if (checkBookInOrders(book)) {
+        for (Order order : orderRepository.getAll()) {
+          if (orderRepository.checkBooksInOrder(order)) {
+            order.setOrderStatusCompleate();
+            order.setExecution(LocalDate.now());
+            bookRepository.removeBooks(order.getBooks());
+          }
+        }
+      }
     }
   }
 
@@ -53,6 +74,21 @@ public class BookServiceImpl implements BookService {
     for (Request request : requestRepository.getAll()) {
       if (book.getTitle().equals(request.getTitle()) && request.getCount() > 0) {
         availability = true;
+      }
+    }
+    return availability;
+  }
+
+  @Override
+  public boolean checkBookInOrders(Book book) {
+    boolean availability = false;
+    for (Order order : orderRepository.getAll()) {
+      if (order.getOrderStatus().equals(OrderStatus.NEW)) {
+        for (Book book1 : order.getBooks()) {
+          if (book1.getTitle().equals(book.getTitle())) {
+            availability = true;
+          }
+        }
       }
     }
     return availability;

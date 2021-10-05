@@ -44,7 +44,7 @@ public class OrderServiceImpl implements OrderService {
   public void addOrder(Order order) {
     orderRepository.getAll().add(order);
     if (checkBooksInOrder(order)) {
-      order.setOrderStatusCompleate();
+      closeOrder((int)order.getId());
       bookRepository.removeBooks(order.getBooks());
     } else {
       checkBooksForRequest(order);

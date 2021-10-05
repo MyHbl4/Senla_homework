@@ -13,6 +13,8 @@ public interface BookService {
 
   boolean checkBookInRequests(Book book);
 
+  boolean checkBookInOrders(Book book);
+
   void removeBookRequest(Book book);
 
   List<Book> getAll();

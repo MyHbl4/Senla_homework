@@ -13,5 +13,9 @@ public interface BookRepository {
 
   void removeBooks(List<Book> books);
 
+  boolean checkBookInBooks(Book myBook);
+
+  void restoreBook(Book myBook);
+
 //  void checkAvailabilityBooks(List<Book> books);
 }
