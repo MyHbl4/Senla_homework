@@ -45,20 +45,20 @@ public class BookServiceImpl implements BookService {
   @Override
   public void addBook(Book book) {
     if (!bookRepository.checkBookInBooks(book)) {
-bookRepository.restoreBook(book);
+      bookRepository.restoreBook(book);
     } else {
       bookRepository.getAll().add(book);
     }
     if (checkBookInRequests(book)) {
-      removeBookRequest(book);
-      if (checkBookInOrders(book)) {
+      if (checkBookInOrders(book) && (new PropertyFile().getPropertyValue("FUNCTION_ORDER").equals("on"))) {
         for (Order order : orderRepository.getAll()) {
           if (orderRepository.checkBooksInOrder(order)) {
             order.setOrderStatusCompleate();
-            order.setExecution(LocalDate.now());
             bookRepository.removeBooks(order.getBooks());
           }
         }
+      } else {
+        removeBookRequest(book);
       }
     }
   }

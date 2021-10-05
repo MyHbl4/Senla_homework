@@ -83,7 +83,6 @@ public class OrderServiceImpl implements OrderService {
   @Override
   public void closeOrder(int id) {
     orderRepository.findOrderById(id).setOrderStatusCompleate();
-    orderRepository.findOrderById(id).setExecution(LocalDate.now());
   }
 
   @Override
