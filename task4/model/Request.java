@@ -6,8 +6,7 @@ public class Request extends Identity {
   private long bookId;
   private String title = null;
 
-  public Request() {
-  }
+  public Request() {}
 
   public Request(long bookId) {
     this.bookId = bookId;

@@ -154,62 +154,9 @@ public class OrderServiceImpl implements OrderService {
   }
 
   @Override
-  public void updateOrderCsv() {
-    try {
-      PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(FILE_ORDERS)));
-      for (Order order : orderRepository.getAll()) {
-        writer.println(
-            order.getId()
-                + "|"
-                + order.getCustomerName()
-                + "|"
-                + order.getBooksId()
-                + "|"
-                + order.getOrderStatus()
-                + "|"
-                + order.getExecution());
-      }
-      writer.flush();
-      writer.close();
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-  }
-
-  @Override
-  public void downloadOrderCsv() {
-    try {
-      try (BufferedReader reader = new BufferedReader(new FileReader(FILE_ORDERS))) {
-        String someOrder;
-        orderRepository.getAll().clear();
-        while ((someOrder = reader.readLine()) != null) {
-          List<Book> orderBooks = new ArrayList<>();
-          String[] values = someOrder.split("\\|");
-          long id = Long.parseLong(values[0]);
-          String name = values[1];
-          String[] listlong = values[2].split(",");
-          for (String l : listlong) {
-            for (Book book : bookRepository.getAll()) {
-              if (Long.parseLong(l) == book.getId()) {
-                orderBooks.add(book);
-              }
-            }
-          }
-          OrderStatus status = OrderStatus.valueOf(values[3]);
-          LocalDate executionDate = LocalDate.parse(values[4]);
-          orderRepository.getAll().add(new Order(id, name, orderBooks, status, executionDate));
-        }
-      }
-    } catch (IOException e) {
-      System.out.println("Loading error");
-    }
-  }
-
-  @Override
   public void writeOrderBd() {
     ObjectMapper mapper = new ObjectMapper();
-    try (PrintWriter writer =
-        new PrintWriter(new BufferedWriter(new FileWriter("orderJson.json")))) {
+    try (PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(FILE_ORDERS)))) {
       List<Order> orders = orderRepository.getAll();
       String orderJson = mapper.writeValueAsString(orders);
       writer.write(orderJson);
@@ -223,7 +170,7 @@ public class OrderServiceImpl implements OrderService {
   public void readOrderBd() {
     ObjectMapper mapper = new ObjectMapper();
     List<Order> orders;
-    try (BufferedReader reader = new BufferedReader(new FileReader("orderJson.json"))) {
+    try (BufferedReader reader = new BufferedReader(new FileReader(FILE_ORDERS))) {
       String orderJson;
       orderRepository.getAll().clear();
       while ((orderJson = reader.readLine()) != null) {

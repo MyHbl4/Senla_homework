@@ -17,5 +17,5 @@ public interface BookRepository {
 
   void restoreBook(Book myBook);
 
-//  void checkAvailabilityBooks(List<Book> books);
+  //  void checkAvailabilityBooks(List<Book> books);
 }

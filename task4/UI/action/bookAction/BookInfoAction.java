@@ -2,8 +2,8 @@ package task4.UI.action.bookAction;
 
 import task4.UI.action.AbstractAction;
 import task4.UI.action.Manager;
-import task4.model.Book;
 import task4.exceptions.CustomException;
+import task4.model.Book;
 
 public class BookInfoAction extends AbstractAction {
 

@@ -16,14 +16,15 @@ public class Order extends Identity {
   private String customerName;
   private List<Book> books;
   private OrderStatus orderStatus = OrderStatus.NEW;
+
   @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
   @JsonDeserialize(using = LocalDateDeserializer.class)
   @JsonSerialize(using = LocalDateSerializer.class)
   private LocalDate execution = LocalDate.of(0000, 01, 01);
+
   private int price = getPrice();
 
-  public Order() {
-  }
+  public Order() {}
 
   public Order(
       long id,
@@ -120,7 +121,7 @@ public class Order extends Identity {
     System.out.println();
   }
 
-@Transient
+  @Transient
   public String getBooksId() {
     String strBooks = "";
     for (int i = 0; i < books.size(); i++) {

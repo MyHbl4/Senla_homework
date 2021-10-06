@@ -12,7 +12,6 @@ import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
-import task4.model.Order;
 import task4.model.Request;
 import task4.repository.BookRepository;
 import task4.repository.RequestRepository;
@@ -20,9 +19,9 @@ import task4.service.RequestService;
 
 public class RequestServiceImpl implements RequestService {
   private final RequestRepository requestRepository;
-  private  final BookRepository bookRepository;
+  private final BookRepository bookRepository;
 
-  public RequestServiceImpl(RequestRepository requestRepository,BookRepository bookRepository) {
+  public RequestServiceImpl(RequestRepository requestRepository, BookRepository bookRepository) {
     this.requestRepository = requestRepository;
     this.bookRepository = bookRepository;
   }
@@ -52,42 +51,9 @@ public class RequestServiceImpl implements RequestService {
   }
 
   @Override
-  public void updateRequestCsv() {
-    try {
-      PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(FILE_REQUESTS)));
-      for (Request request : requestRepository.getAll()) {
-        writer.println(request.getId() + "|" + request.getCount() + "|" + request.getBookId() + "|" + request.getTitle());
-      }
-      writer.flush();
-      writer.close();
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-  }
-
-  @Override
-  public void downloadRequestCsv() {
-    try {
-      try (BufferedReader reader = new BufferedReader(new FileReader(FILE_REQUESTS))) {
-        String someRequest;
-        requestRepository.getAll().clear();
-        while ((someRequest = reader.readLine()) != null) {
-          String[] values = someRequest.split("\\|");
-          requestRepository
-              .getAll()
-              .add(new Request(Long.parseLong(values[0]), Integer.parseInt(values[1]), Long.parseLong(values[2]), values[3]));
-        }
-      }
-    } catch (IOException e) {
-      System.out.println("Loading error");
-    }
-  }
-
-  @Override
   public void writerRequestBd() {
     ObjectMapper mapper = new ObjectMapper();
-    try (PrintWriter writer =
-        new PrintWriter(new BufferedWriter(new FileWriter("requestJson.json")))) {
+    try (PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(FILE_REQUESTS)))) {
       List<Request> requests = getAll();
       String requestJson = mapper.writeValueAsString(requests);
       writer.write(requestJson);
@@ -101,7 +67,7 @@ public class RequestServiceImpl implements RequestService {
   public void readRequestBd() {
     ObjectMapper mapper = new ObjectMapper();
     List<Request> requests;
-    try (BufferedReader reader = new BufferedReader(new FileReader("requestJson.json"))) {
+    try (BufferedReader reader = new BufferedReader(new FileReader(FILE_REQUESTS))) {
       String requestJson;
       requestRepository.getAll().clear();
       while ((requestJson = reader.readLine()) != null) {

@@ -27,7 +27,6 @@ public class OrderRepositoryImpl implements OrderRepository {
     return orderDataSource.findOrderById(id);
   }
 
-
   @Override
   public boolean checkBooksInOrder(Order order) {
     boolean availability = true;

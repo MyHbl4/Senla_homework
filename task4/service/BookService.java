@@ -33,10 +33,6 @@ public interface BookService {
 
   List<Book> sortOldBookByPrice();
 
-  void updateBookCsv();
-
-  void downloadBookCsv();
-
   void writeBookBd();
 
   void readBookBd();

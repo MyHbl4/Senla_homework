@@ -6,11 +6,11 @@ import java.util.Properties;
 
 public class PropertyFile {
 
-  public String getPropertyValue(String propertyName){
+  public String getPropertyValue(String propertyName) {
     String propertyValue = "";
     Properties properties = new Properties();
 
-    try(InputStream inputStream = this.getClass().getResourceAsStream("app.properties")){
+    try (InputStream inputStream = this.getClass().getResourceAsStream("app.properties")) {
       properties.load(inputStream);
       propertyValue = properties.getProperty(propertyName);
     } catch (IOException e) {
@@ -18,5 +18,4 @@ public class PropertyFile {
     }
     return propertyValue;
   }
-
 }

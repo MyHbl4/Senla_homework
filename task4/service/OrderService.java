@@ -33,10 +33,6 @@ public interface OrderService {
 
   List<Order> sortOrderByStatus();
 
-  void updateOrderCsv();
-
-  void downloadOrderCsv();
-
   void writeOrderBd();
 
   void readOrderBd();

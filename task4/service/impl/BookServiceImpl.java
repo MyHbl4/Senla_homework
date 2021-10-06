@@ -2,8 +2,6 @@ package task4.service.impl;
 
 import static task4.util.Constant.FILE_BOOKS;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -174,63 +172,9 @@ public class BookServiceImpl implements BookService {
   }
 
   @Override
-  public void updateBookCsv() {
-    try {
-      PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(FILE_BOOKS)));
-      for (Book book : bookRepository.getAll()) {
-        writer.println(
-            book.getId()
-                + "|"
-                + book.getTitle()
-                + "|"
-                + book.getAuthor()
-                + "|"
-                + book.getPrice()
-                + "|"
-                + book.getPublication()
-                + "|"
-                + book.getAvailability()
-                + "|"
-                + book.getDeliveryDate());
-      }
-      writer.flush();
-      writer.close();
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-  }
-
-  @Override
-  public void downloadBookCsv() {
-    try {
-      try (BufferedReader reader = new BufferedReader(new FileReader(FILE_BOOKS))) {
-        String someBook;
-        bookRepository.getAll().clear();
-        while ((someBook = reader.readLine()) != null) {
-          String[] values = someBook.split("\\|");
-          bookRepository
-              .getAll()
-              .add(
-                  new Book(
-                      Long.parseLong(values[0]),
-                      values[1],
-                      values[2],
-                      Integer.parseInt(values[3]),
-                      Integer.parseInt(values[4]),
-                      Availability.valueOf(values[5]),
-                      LocalDate.parse(values[6])));
-        }
-      }
-    } catch (IOException e) {
-      System.out.println("Loading error");
-    }
-  }
-
-  @Override
   public void writeBookBd() {
     ObjectMapper mapper = new ObjectMapper();
-    try (PrintWriter writer =
-        new PrintWriter(new BufferedWriter(new FileWriter("bookJson.json")))) {
+    try (PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(FILE_BOOKS)))) {
       List<Book> books = bookRepository.getAll();
       String bookJson = mapper.writeValueAsString(books);
       writer.write(bookJson);
@@ -244,12 +188,12 @@ public class BookServiceImpl implements BookService {
   public void readBookBd() {
     ObjectMapper mapper = new ObjectMapper();
     List<Book> books;
-    try (BufferedReader reader = new BufferedReader(new FileReader("bookJson.json"))) {
+    try (BufferedReader reader = new BufferedReader(new FileReader(FILE_BOOKS))) {
       String bookJson;
       bookRepository.getAll().clear();
       while ((bookJson = reader.readLine()) != null) {
         books = Arrays.asList(mapper.readValue(bookJson, Book[].class));
-        for (Book book:books){
+        for (Book book : books) {
           getAll().add(book);
         }
       }

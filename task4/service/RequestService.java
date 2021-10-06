@@ -13,10 +13,6 @@ public interface RequestService {
 
   List<Request> sortRequestByTitle();
 
-  void updateRequestCsv();
-
-  void downloadRequestCsv();
-
   void writerRequestBd();
 
   void readRequestBd();
