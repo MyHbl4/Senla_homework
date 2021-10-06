@@ -1,5 +1,11 @@
 package task4.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
+import java.beans.Transient;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Objects;
@@ -10,8 +16,14 @@ public class Order extends Identity {
   private String customerName;
   private List<Book> books;
   private OrderStatus orderStatus = OrderStatus.NEW;
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+  @JsonDeserialize(using = LocalDateDeserializer.class)
+  @JsonSerialize(using = LocalDateSerializer.class)
   private LocalDate execution = LocalDate.of(0000, 01, 01);
   private int price = getPrice();
+
+  public Order() {
+  }
 
   public Order(
       long id,
@@ -108,6 +120,7 @@ public class Order extends Identity {
     System.out.println();
   }
 
+@Transient
   public String getBooksId() {
     String strBooks = "";
     for (int i = 0; i < books.size(); i++) {

@@ -20,7 +20,7 @@ public class CancelOrderAction extends AbstractAction {
         id = customScanner.getInt();
         check.checkOrder(id);
         manager.getOrderService().cancelOrder(id);
-        manager.getOrderService().updateOrderCsv();
+        manager.getOrderService().writeOrderBd();
         System.out.println("The order has been canceled");
         isValid = false;
       } catch (CustomException e) {

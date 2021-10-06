@@ -29,9 +29,9 @@ public class Navigator {
   }
 
   public void loadCsv() {
-    manager.getBookService().downloadBookCsv();
-    manager.getOrderService().downloadOrderCsv();
-    manager.getRequestService().downloadRequestCsv();
+    manager.getBookService().readBookBd();
+    manager.getOrderService().readOrderBd();
+    manager.getRequestService().readRequestBd();
   }
 
   public void navigate() {

@@ -2,6 +2,9 @@ package task4.service.impl;
 
 import static task4.util.Constant.FILE_BOOKS;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -10,6 +13,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import task4.enums.Availability;
@@ -50,7 +54,8 @@ public class BookServiceImpl implements BookService {
       bookRepository.getAll().add(book);
     }
     if (checkBookInRequests(book)) {
-      if (checkBookInOrders(book) && (new PropertyFile().getPropertyValue("FUNCTION_ORDER").equals("on"))) {
+      if (checkBookInOrders(book)
+          && (new PropertyFile().getPropertyValue("FUNCTION_ORDER").equals("on"))) {
         for (Order order : orderRepository.getAll()) {
           if (orderRepository.checkBooksInOrder(order)) {
             order.setOrderStatusCompleate();
@@ -218,6 +223,38 @@ public class BookServiceImpl implements BookService {
       }
     } catch (IOException e) {
       System.out.println("Loading error");
+    }
+  }
+
+  @Override
+  public void writeBookBd() {
+    ObjectMapper mapper = new ObjectMapper();
+    try (PrintWriter writer =
+        new PrintWriter(new BufferedWriter(new FileWriter("bookJson.json")))) {
+      List<Book> books = bookRepository.getAll();
+      String bookJson = mapper.writeValueAsString(books);
+      writer.write(bookJson);
+      writer.flush();
+    } catch (IOException e) {
+      System.out.println("Writing books error");
+    }
+  }
+
+  @Override
+  public void readBookBd() {
+    ObjectMapper mapper = new ObjectMapper();
+    List<Book> books;
+    try (BufferedReader reader = new BufferedReader(new FileReader("bookJson.json"))) {
+      String bookJson;
+      bookRepository.getAll().clear();
+      while ((bookJson = reader.readLine()) != null) {
+        books = Arrays.asList(mapper.readValue(bookJson, Book[].class));
+        for (Book book:books){
+          getAll().add(book);
+        }
+      }
+    } catch (IOException e) {
+      System.out.println("Loading books error");
     }
   }
 }

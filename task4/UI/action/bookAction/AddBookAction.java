@@ -21,9 +21,9 @@ public class AddBookAction extends AbstractAction {
     System.out.println("Enter the year of publication");
     int publication = customScanner.getInt();
     manager.getBookService().addBook(new Book(title, author, price, publication));
-    manager.getBookService().updateBookCsv();
-    manager.getRequestService().updateRequestCsv();
-    manager.getOrderService().updateOrderCsv();
+    manager.getRequestService().writerRequestBd();
+    manager.getOrderService().writeOrderBd();
+    manager.getBookService().writeBookBd();
     System.out.println("The book has been added");
   }
 }

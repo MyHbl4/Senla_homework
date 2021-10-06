@@ -1,5 +1,10 @@
 package task4.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 import java.time.LocalDate;
 import java.util.Objects;
 import task4.enums.Availability;
@@ -11,7 +16,13 @@ public class Book extends Identity {
   private int price;
   private Availability availability = Availability.IN_STOCK;
   private int publication;
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+  @JsonDeserialize(using = LocalDateDeserializer.class)
+  @JsonSerialize(using = LocalDateSerializer.class)
   private LocalDate deliveryDate = LocalDate.now();
+
+  public Book() {
+  }
 
   public Book(
       long id,

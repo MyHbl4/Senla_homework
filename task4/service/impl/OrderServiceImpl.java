@@ -2,6 +2,7 @@ package task4.service.impl;
 
 import static task4.util.Constant.FILE_ORDERS;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -10,12 +11,13 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import task4.enums.Availability;
+import task4.enums.OrderStatus;
 import task4.model.Book;
 import task4.model.Order;
-import task4.enums.OrderStatus;
 import task4.repository.BookRepository;
 import task4.repository.OrderRepository;
 import task4.repository.RequestRepository;
@@ -44,7 +46,7 @@ public class OrderServiceImpl implements OrderService {
   public void addOrder(Order order) {
     orderRepository.getAll().add(order);
     if (checkBooksInOrder(order)) {
-      closeOrder((int)order.getId());
+      closeOrder((int) order.getId());
       bookRepository.removeBooks(order.getBooks());
     } else {
       checkBooksForRequest(order);
@@ -200,6 +202,38 @@ public class OrderServiceImpl implements OrderService {
       }
     } catch (IOException e) {
       System.out.println("Loading error");
+    }
+  }
+
+  @Override
+  public void writeOrderBd() {
+    ObjectMapper mapper = new ObjectMapper();
+    try (PrintWriter writer =
+        new PrintWriter(new BufferedWriter(new FileWriter("orderJson.json")))) {
+      List<Order> orders = orderRepository.getAll();
+      String orderJson = mapper.writeValueAsString(orders);
+      writer.write(orderJson);
+      writer.flush();
+    } catch (IOException e) {
+      System.out.println("Writing orders error");
+    }
+  }
+
+  @Override
+  public void readOrderBd() {
+    ObjectMapper mapper = new ObjectMapper();
+    List<Order> orders;
+    try (BufferedReader reader = new BufferedReader(new FileReader("orderJson.json"))) {
+      String orderJson;
+      orderRepository.getAll().clear();
+      while ((orderJson = reader.readLine()) != null) {
+        orders = Arrays.asList(mapper.readValue(orderJson, Order[].class));
+        for (Order order : orders) {
+          getAll().add(order);
+        }
+      }
+    } catch (IOException e) {
+      System.out.println(e);
     }
   }
 }

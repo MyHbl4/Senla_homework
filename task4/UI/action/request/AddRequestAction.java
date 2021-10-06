@@ -15,7 +15,7 @@ public class AddRequestAction extends AbstractAction {
     long bookId;
     bookId = customScanner.getInt();
     manager.getRequestService().addRequest(bookId);
-    manager.getRequestService().updateRequestCsv();
+    manager.getRequestService().writerRequestBd();
     System.out.println("Request has been added");
   }
 }

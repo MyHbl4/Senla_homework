@@ -42,8 +42,8 @@ public class AddOrderAction extends AbstractAction {
         }
       }
     }
-    manager.getOrderService().updateOrderCsv();
-    manager.getBookService().updateBookCsv();
-    manager.getRequestService().updateRequestCsv();
+    manager.getOrderService().writeOrderBd();
+    manager.getBookService().writeBookBd();
+    manager.getRequestService().writerRequestBd();
   }
 }

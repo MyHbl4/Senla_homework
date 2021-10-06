@@ -16,4 +16,8 @@ public interface RequestService {
   void updateRequestCsv();
 
   void downloadRequestCsv();
+
+  void writerRequestBd();
+
+  void readRequestBd();
 }
