@@ -1,6 +1,6 @@
 package task4.service.impl;
 
-import static task4.util.Constant.FILE_ORDERS;
+import static task4.util.Constant.*;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.BufferedReader;
@@ -180,7 +180,48 @@ public class OrderServiceImpl implements OrderService {
         }
       }
     } catch (IOException e) {
-      System.out.println(e);
+      e.printStackTrace();
+    }
+  }
+
+  @Override
+  public void updateOrderCsv() {
+    try {
+      PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(FILE_ORDERS1)));
+      for (Order order : orderRepository.getAll()) {
+        writer.println(order.getId() + "|" + order.getCustomerName() + "|" + order.getBooksId());
+      }
+      writer.flush();
+      writer.close();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
+  @Override
+  public void downloadOrderCsv() {
+    try {
+      try (BufferedReader reader = new BufferedReader(new FileReader(FILE_ORDERS1))) {
+        String someOrder;
+        orderRepository.getAll().clear();
+        while ((someOrder = reader.readLine()) != null) {
+          List<Book> orderBooks = new ArrayList<>();
+          String[] values = someOrder.split("\\|");
+          long id = Long.parseLong(values[0]);
+          String name = values[1];
+          List<String> listlong = Arrays.asList(values[2].split(","));
+          for (String l : listlong) {
+            for (Book book : bookRepository.getAll()) {
+              if (Long.parseLong(l) == book.getId()) {
+                orderBooks.add(book);
+              }
+            }
+          }
+          orderRepository.getAll().add(new Order(id, name, orderBooks));
+        }
+      }
+    } catch (IOException e) {
+      System.out.println("Loading error");
     }
   }
 }

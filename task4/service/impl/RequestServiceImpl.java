@@ -1,6 +1,6 @@
 package task4.service.impl;
 
-import static task4.util.Constant.FILE_REQUESTS;
+import static task4.util.Constant.*;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.BufferedReader;
@@ -77,7 +77,39 @@ public class RequestServiceImpl implements RequestService {
         }
       }
     } catch (IOException e) {
-      System.out.println("Loading requests error");
+      e.printStackTrace();
+    }
+  }
+
+  @Override
+  public void updateRequestCsv() {
+    try {
+      PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(FILE_REQUESTS1)));
+      for (Request request : requestRepository.getAll()) {
+        writer.println(request.getId() + "|" + request.getCount() + "|" + request.getTitle());
+      }
+      writer.flush();
+      writer.close();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
+  @Override
+  public void downloadRequestCsv() {
+    try {
+      try (BufferedReader reader = new BufferedReader(new FileReader(FILE_REQUESTS1))) {
+        String someRequest;
+        requestRepository.getAll().clear();
+        while ((someRequest = reader.readLine()) != null) {
+          String[] values = someRequest.split("\\|");
+          requestRepository
+              .getAll()
+              .add(new Request(Long.parseLong(values[0]), Integer.parseInt(values[1]), Long.parseLong(values[2])));
+        }
+      }
+    } catch (IOException e) {
+      System.out.println("Loading error");
     }
   }
 }

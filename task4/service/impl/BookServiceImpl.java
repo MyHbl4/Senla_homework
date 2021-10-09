@@ -1,6 +1,6 @@
 package task4.service.impl;
 
-import static task4.util.Constant.FILE_BOOKS;
+import static task4.util.Constant.*;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.BufferedReader;
@@ -198,7 +198,60 @@ public class BookServiceImpl implements BookService {
         }
       }
     } catch (IOException e) {
-      System.out.println("Loading books error");
+      e.printStackTrace();
+    }
+  }
+
+  @Override
+  public void updateBookCsv() {
+    try {
+      PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(FILE_BOOKS1)));
+      for (Book book : bookRepository.getAll()) {
+        writer.println(
+            book.getId()
+                + "|"
+                + book.getTitle()
+                + "|"
+                + book.getAuthor()
+                + "|"
+                + book.getPrice()
+                + "|"
+                + book.getPublication()
+                + "|"
+                + book.getAvailability()
+                + "|"
+                + book.getDeliveryDate());
+      }
+      writer.flush();
+      writer.close();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
+  @Override
+  public void downloadBookCsv() {
+    try {
+      try (BufferedReader reader = new BufferedReader(new FileReader(FILE_BOOKS1))) {
+        String someBook;
+        bookRepository.getAll().clear();
+        while ((someBook = reader.readLine()) != null) {
+          String[] values = someBook.split("\\|");
+          bookRepository
+              .getAll()
+              .add(
+                  new Book(
+                      Long.parseLong(values[0]),
+                      values[1],
+                      values[2],
+                      Integer.parseInt(values[3]),
+                      Integer.parseInt(values[4]),
+                      Availability.valueOf(values[5]),
+                      LocalDate.parse(values[6])));
+        }
+      }
+    } catch (IOException e) {
+      System.out.println("Loading error");
     }
   }
 }

@@ -32,6 +32,9 @@ public class Navigator {
     manager.getBookService().readBookBd();
     manager.getOrderService().readOrderBd();
     manager.getRequestService().readRequestBd();
+//    manager.getBookService().downloadBookCsv();
+//    manager.getOrderService().downloadOrderCsv();
+//    manager.getRequestService().downloadRequestCsv();
   }
 
   public void navigate() {

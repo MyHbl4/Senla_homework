@@ -36,4 +36,8 @@ public interface BookService {
   void writeBookBd();
 
   void readBookBd();
+
+  void updateBookCsv();
+
+  void downloadBookCsv();
 }

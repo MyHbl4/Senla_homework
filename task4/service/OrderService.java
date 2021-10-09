@@ -36,4 +36,8 @@ public interface OrderService {
   void writeOrderBd();
 
   void readOrderBd();
+
+  void updateOrderCsv();
+
+  void downloadOrderCsv();
 }
