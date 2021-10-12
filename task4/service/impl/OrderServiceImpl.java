@@ -1,6 +1,7 @@
 package task4.service.impl;
 
-import static task4.util.Constant.*;
+import static task4.util.Constant.FILE_ORDERS;
+import static task4.util.Constant.FILE_ORDERS1;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.BufferedReader;
@@ -9,11 +10,13 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.lang.reflect.InvocationTargetException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import task4.DI.injector.BeanFactory;
 import task4.enums.Availability;
 import task4.enums.OrderStatus;
 import task4.model.Book;
@@ -21,21 +24,18 @@ import task4.model.Order;
 import task4.repository.BookRepository;
 import task4.repository.OrderRepository;
 import task4.repository.RequestRepository;
+import task4.repository.impl.BookRepositoryImpl;
+import task4.repository.impl.OrderRepositoryImpl;
+import task4.repository.impl.RequestRepositoryImpl;
 import task4.service.OrderService;
 
 public class OrderServiceImpl implements OrderService {
-  private final OrderRepository orderRepository;
-  private final BookRepository bookRepository;
-  private final RequestRepository requestRepository;
-
-  public OrderServiceImpl(
-      OrderRepository orderRepository,
-      BookRepository bookRepository,
-      RequestRepository requestRepository) {
-    this.orderRepository = orderRepository;
-    this.bookRepository = bookRepository;
-    this.requestRepository = requestRepository;
-  }
+  private final OrderRepository orderRepository =
+      BeanFactory.getInstance().getBean(OrderRepositoryImpl.class);
+  private final BookRepository bookRepository =
+      BeanFactory.getInstance().getBean(BookRepositoryImpl.class);
+  private final RequestRepository requestRepository =
+      BeanFactory.getInstance().getBean(RequestRepositoryImpl.class);
 
   @Override
   public Order findOrderById(int id) {
@@ -184,44 +184,44 @@ public class OrderServiceImpl implements OrderService {
     }
   }
 
-  @Override
-  public void updateOrderCsv() {
-    try {
-      PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(FILE_ORDERS1)));
-      for (Order order : orderRepository.getAll()) {
-        writer.println(order.getId() + "|" + order.getCustomerName() + "|" + order.getBooksId());
-      }
-      writer.flush();
-      writer.close();
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-  }
-
-  @Override
-  public void downloadOrderCsv() {
-    try {
-      try (BufferedReader reader = new BufferedReader(new FileReader(FILE_ORDERS1))) {
-        String someOrder;
-        orderRepository.getAll().clear();
-        while ((someOrder = reader.readLine()) != null) {
-          List<Book> orderBooks = new ArrayList<>();
-          String[] values = someOrder.split("\\|");
-          long id = Long.parseLong(values[0]);
-          String name = values[1];
-          List<String> listlong = Arrays.asList(values[2].split(","));
-          for (String l : listlong) {
-            for (Book book : bookRepository.getAll()) {
-              if (Long.parseLong(l) == book.getId()) {
-                orderBooks.add(book);
-              }
-            }
-          }
-          orderRepository.getAll().add(new Order(id, name, orderBooks));
-        }
-      }
-    } catch (IOException e) {
-      System.out.println("Loading error");
-    }
-  }
+//  @Override
+//  public void updateOrderCsv() {
+//    try {
+//      PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(FILE_ORDERS1)));
+//      for (Order order : orderRepository.getAll()) {
+//        writer.println(order.getId() + "|" + order.getCustomerName() + "|" + order.getBooksId());
+//      }
+//      writer.flush();
+//      writer.close();
+//    } catch (IOException e) {
+//      e.printStackTrace();
+//    }
+//  }
+//
+//  @Override
+//  public void downloadOrderCsv() {
+//    try {
+//      try (BufferedReader reader = new BufferedReader(new FileReader(FILE_ORDERS1))) {
+//        String someOrder;
+//        orderRepository.getAll().clear();
+//        while ((someOrder = reader.readLine()) != null) {
+//          List<Book> orderBooks = new ArrayList<>();
+//          String[] values = someOrder.split("\\|");
+//          long id = Long.parseLong(values[0]);
+//          String name = values[1];
+//          String[] listlong = values[2].split(",");
+//          for (String l : listlong) {
+//            for (Book book : bookRepository.getAll()) {
+//              if (Long.parseLong(l) == book.getId()) {
+//                orderBooks.add(book);
+//              }
+//            }
+//          }
+//          orderRepository.getAll().add(new Order(id, name, orderBooks));
+//        }
+//      }
+//    } catch (IOException e) {
+//      System.out.println("Loading error");
+//    }
+//  }
 }

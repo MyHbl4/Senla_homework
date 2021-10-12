@@ -1,6 +1,7 @@
 package task4.service.impl;
 
-import static task4.util.Constant.*;
+import static task4.util.Constant.FILE_BOOKS;
+import static task4.util.Constant.FILE_BOOKS1;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.BufferedReader;
@@ -14,6 +15,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import task4.DI.injector.BeanFactory;
 import task4.enums.Availability;
 import task4.enums.OrderStatus;
 import task4.model.Book;
@@ -22,22 +24,19 @@ import task4.model.Request;
 import task4.repository.BookRepository;
 import task4.repository.OrderRepository;
 import task4.repository.RequestRepository;
+import task4.repository.impl.BookRepositoryImpl;
+import task4.repository.impl.OrderRepositoryImpl;
+import task4.repository.impl.RequestRepositoryImpl;
 import task4.service.BookService;
 import task4.util.PropertyFile;
 
 public class BookServiceImpl implements BookService {
-  private final BookRepository bookRepository;
-  private final RequestRepository requestRepository;
-  private final OrderRepository orderRepository;
-
-  public BookServiceImpl(
-      BookRepository bookRepository,
-      RequestRepository requestRepository,
-      OrderRepository orderRepository) {
-    this.bookRepository = bookRepository;
-    this.requestRepository = requestRepository;
-    this.orderRepository = orderRepository;
-  }
+  private final BookRepository bookRepository =
+      BeanFactory.getInstance().getBean(BookRepositoryImpl.class);
+  private final RequestRepository requestRepository =
+      BeanFactory.getInstance().getBean(RequestRepositoryImpl.class);
+  private final OrderRepository orderRepository =
+      BeanFactory.getInstance().getBean(OrderRepositoryImpl.class);
 
   @Override
   public Book findBookById(int id) {
@@ -202,56 +201,56 @@ public class BookServiceImpl implements BookService {
     }
   }
 
-  @Override
-  public void updateBookCsv() {
-    try {
-      PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(FILE_BOOKS1)));
-      for (Book book : bookRepository.getAll()) {
-        writer.println(
-            book.getId()
-                + "|"
-                + book.getTitle()
-                + "|"
-                + book.getAuthor()
-                + "|"
-                + book.getPrice()
-                + "|"
-                + book.getPublication()
-                + "|"
-                + book.getAvailability()
-                + "|"
-                + book.getDeliveryDate());
-      }
-      writer.flush();
-      writer.close();
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-  }
-
-  @Override
-  public void downloadBookCsv() {
-    try {
-      try (BufferedReader reader = new BufferedReader(new FileReader(FILE_BOOKS1))) {
-        String someBook;
-        bookRepository.getAll().clear();
-        while ((someBook = reader.readLine()) != null) {
-          String[] values = someBook.split("\\|");
-          bookRepository
-              .getAll()
-              .add(
-                  new Book(
-                      Long.parseLong(values[0]),
-                      values[1],
-                      values[2],
-                      Integer.parseInt(values[3]),
-                      Integer.parseInt(values[4]),
-                      Availability.valueOf(values[5]),
-                      LocalDate.parse(values[6])));
-        }
-      }
-    } catch (IOException e) {
-      System.out.println("Loading error");
-    }
-  }
+//  @Override
+//  public void updateBookCsv() {
+//    try {
+//      PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(FILE_BOOKS1)));
+//      for (Book book : bookRepository.getAll()) {
+//        writer.println(
+//            book.getId()
+//                + "|"
+//                + book.getTitle()
+//                + "|"
+//                + book.getAuthor()
+//                + "|"
+//                + book.getPrice()
+//                + "|"
+//                + book.getPublication()
+//                + "|"
+//                + book.getAvailability()
+//                + "|"
+//                + book.getDeliveryDate());
+//      }
+//      writer.flush();
+//      writer.close();
+//    } catch (IOException e) {
+//      e.printStackTrace();
+//    }
+//  }
+//
+//  @Override
+//  public void downloadBookCsv() {
+//    try {
+//      try (BufferedReader reader = new BufferedReader(new FileReader(FILE_BOOKS1))) {
+//        String someBook;
+//        bookRepository.getAll().clear();
+//        while ((someBook = reader.readLine()) != null) {
+//          String[] values = someBook.split("\\|");
+//          bookRepository
+//              .getAll()
+//              .add(
+//                  new Book(
+//                      Long.parseLong(values[0]),
+//                      values[1],
+//                      values[2],
+//                      Integer.parseInt(values[3]),
+//                      Integer.parseInt(values[4]),
+//                      Availability.valueOf(values[5]),
+//                      LocalDate.parse(values[6])));
+//        }
+//      }
+//    } catch (IOException e) {
+//      System.out.println("Loading error");
+//    }
+//  }
 }

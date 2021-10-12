@@ -1,20 +1,19 @@
 package task4.repository.impl;
 
 import java.util.List;
+import task4.DI.injector.BeanFactory;
 import task4.datasource.BookDataSource;
 import task4.datasource.RequestDataSource;
+import task4.datasource.impl.RequestDataSourceImpl;
 import task4.model.Book;
 import task4.model.Request;
 import task4.repository.RequestRepository;
 
 public class RequestRepositoryImpl implements RequestRepository {
-  private final RequestDataSource requestDataSource;
-  private final BookDataSource bookDataSource;
-
-  public RequestRepositoryImpl(RequestDataSource requestDataSource, BookDataSource bookDataSource) {
-    this.requestDataSource = requestDataSource;
-    this.bookDataSource = bookDataSource;
-  }
+  private final RequestDataSource requestDataSource =
+      BeanFactory.getInstance().getBean(RequestDataSourceImpl.class);
+  private final BookDataSource bookDataSource =
+      BeanFactory.getInstance().getBean(BookDataSource.class);
 
   @Override
   public List<Request> getAll() {

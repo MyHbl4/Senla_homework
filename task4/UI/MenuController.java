@@ -1,6 +1,7 @@
 package task4.UI;
 
 import java.util.Scanner;
+import task4.DI.injector.BeanFactory;
 import task4.UI.action.Manager;
 
 public class MenuController {
