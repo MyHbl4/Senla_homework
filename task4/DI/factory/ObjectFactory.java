@@ -1,27 +1,30 @@
 package task4.DI.factory;
 
-import static java.util.stream.Collectors.toMap;
-
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
-import java.util.stream.Stream;
-import task4.DI.annotations.InjectProperty;
 import task4.DI.config.Config;
 import task4.DI.config.JavaConfig;
 import task4.UI.MenuController;
 
 public class ObjectFactory {
-  private static ObjectFactory ourInstance = new ObjectFactory();
-  private Config config;
+  private static final ObjectFactory ourInstance = new ObjectFactory();
+  private final Config config;
+  private List<ObjectConfigurator> configurators = new ArrayList<>();
 
   private ObjectFactory() {
     config =
         new JavaConfig("task4", new HashMap<>(Map.of(MenuController.class, MenuController.class)));
+    for (Class<? extends ObjectConfigurator> aClass :
+        config.getScanner().getSubTypesOf(ObjectConfigurator.class)) {
+      try {
+        configurators.add(aClass.getDeclaredConstructor().newInstance());
+      } catch (InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
+        e.printStackTrace();
+      }
+    }
   }
 
   public static ObjectFactory getInstance() {
@@ -35,7 +38,7 @@ public class ObjectFactory {
     }
     T t = null;
     try {
-      //создаём объект
+      // создаём объект
       t = implClass.getDeclaredConstructor().newInstance();
     } catch (InstantiationException
         | IllegalAccessException
@@ -43,37 +46,8 @@ public class ObjectFactory {
         | NoSuchMethodException e) {
       e.printStackTrace();
     }
-    for (Field declaredField : implClass.getDeclaredFields()) {
-      InjectProperty annotation = declaredField.getAnnotation(InjectProperty.class);
-      //задаём проперти файл
-      String path = ClassLoader.getSystemClassLoader().getResource("app.properties").getPath();
-
-      Stream<String> lines = null;
-      try {
-        //читаем проперти
-        lines = new BufferedReader(new FileReader(path)).lines();
-      } catch (FileNotFoundException e) {
-        e.printStackTrace();
-      }
-      //создаём мапу из проперти файла(значения стринг разделяем через "="
-      Map<String, String> propertiesMap =
-          lines.map(line -> line.split("=")).collect(toMap(arr -> arr[0], arr -> arr[1]));
-
-      if (annotation != null) {
-        //значение аннотации пусто ? берём из мапы значение по имени : берём значение из аннотации
-        String value =
-            annotation.value().isEmpty()
-                ? propertiesMap.get(declaredField.getName())
-                : propertiesMap.get(annotation.value());
-        declaredField.setAccessible(true);
-        try {
-          //устанавливаем у объекта у которого есть подходящее поле значение value
-          declaredField.set(t,value);
-        } catch (IllegalAccessException e) {
-          e.printStackTrace();
-        }
-      }
-    }
+    T finalT = t;
+    configurators.forEach(objectConfigurator -> objectConfigurator.configure(finalT));
     return t;
   }
 }
