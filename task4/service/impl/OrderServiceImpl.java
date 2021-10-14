@@ -14,6 +14,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import task4.DI.factory.ObjectFactory;
+import task4.datasource.BookDataSource;
 import task4.enums.Availability;
 import task4.enums.OrderStatus;
 import task4.model.Book;
@@ -24,18 +26,10 @@ import task4.repository.RequestRepository;
 import task4.service.OrderService;
 
 public class OrderServiceImpl implements OrderService {
-  private final OrderRepository orderRepository;
-  private final BookRepository bookRepository;
-  private final RequestRepository requestRepository;
-
-  public OrderServiceImpl(
-      OrderRepository orderRepository,
-      BookRepository bookRepository,
-      RequestRepository requestRepository) {
-    this.orderRepository = orderRepository;
-    this.bookRepository = bookRepository;
-    this.requestRepository = requestRepository;
-  }
+  private final OrderRepository orderRepository = ObjectFactory.getInstance().createObject(
+      OrderRepository.class);
+  private final BookRepository bookRepository = ObjectFactory.getInstance().createObject(BookRepository.class);
+  private final RequestRepository requestRepository = ObjectFactory.getInstance().createObject(RequestRepository.class);
 
   @Override
   public Order findOrderById(int id) {

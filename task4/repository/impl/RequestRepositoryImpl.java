@@ -1,6 +1,7 @@
 package task4.repository.impl;
 
 import java.util.List;
+import task4.DI.factory.ObjectFactory;
 import task4.datasource.BookDataSource;
 import task4.datasource.RequestDataSource;
 import task4.model.Book;
@@ -8,13 +9,8 @@ import task4.model.Request;
 import task4.repository.RequestRepository;
 
 public class RequestRepositoryImpl implements RequestRepository {
-  private final RequestDataSource requestDataSource;
-  private final BookDataSource bookDataSource;
-
-  public RequestRepositoryImpl(RequestDataSource requestDataSource, BookDataSource bookDataSource) {
-    this.requestDataSource = requestDataSource;
-    this.bookDataSource = bookDataSource;
-  }
+  private final RequestDataSource requestDataSource = ObjectFactory.getInstance().createObject(RequestDataSource.class);
+  private final BookDataSource bookDataSource = ObjectFactory.getInstance().createObject(BookDataSource.class);
 
   @Override
   public List<Request> getAll() {

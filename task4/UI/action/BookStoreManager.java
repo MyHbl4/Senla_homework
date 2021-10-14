@@ -1,20 +1,15 @@
 package task4.UI.action;
 
+import task4.DI.factory.ObjectFactory;
 import task4.service.BookService;
 import task4.service.OrderService;
 import task4.service.RequestService;
 
 public class BookStoreManager implements Manager {
-  private BookService bookService;
-  private OrderService orderService;
-  private RequestService requestService;
+  private final BookService bookService = ObjectFactory.getInstance().createObject(BookService.class);
+  private final OrderService orderService = ObjectFactory.getInstance().createObject(OrderService.class);
+  private final RequestService requestService = ObjectFactory.getInstance().createObject(RequestService.class);
 
-  public BookStoreManager(
-      BookService bookService, OrderService orderService, RequestService requestService) {
-    this.bookService = bookService;
-    this.orderService = orderService;
-    this.requestService = requestService;
-  }
 
   public BookService getBookService() {
     return bookService;

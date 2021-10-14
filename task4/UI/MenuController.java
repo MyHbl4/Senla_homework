@@ -1,6 +1,8 @@
 package task4.UI;
 
 import java.util.Scanner;
+import task4.DI.factory.ObjectFactory;
+import task4.UI.action.BookStoreManager;
 import task4.UI.action.Manager;
 
 public class MenuController {
@@ -9,16 +11,17 @@ public class MenuController {
   Scanner scanner = new Scanner(System.in);
   private Builder builder;
   private Navigator navigator;
+  private Manager manager = ObjectFactory.getInstance().createObject(Manager.class);
 
-  public MenuController(Manager manager) {
+  public MenuController() {
     builder = Builder.getInstance(manager);
     builder.buildMenu();
     navigator = Navigator.getInstance(manager);
   }
 
-  public static MenuController getInstance(Manager manager) {
+  public static MenuController getInstance() {
     if (instance == null) {
-      instance = new MenuController(manager);
+      instance = new MenuController();
     }
     return instance;
   }

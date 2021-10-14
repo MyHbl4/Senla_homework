@@ -2,6 +2,7 @@ package task4.repository.impl;
 
 import java.time.LocalDate;
 import java.util.List;
+import task4.DI.factory.ObjectFactory;
 import task4.datasource.BookDataSource;
 import task4.enums.Availability;
 import task4.model.Book;
@@ -9,12 +10,7 @@ import task4.repository.BookRepository;
 
 public class BookRepositoryImpl implements BookRepository {
 
-  private final BookDataSource bookDataSource;
-
-  public BookRepositoryImpl(BookDataSource bookDataSource) {
-
-    this.bookDataSource = bookDataSource;
-  }
+  private final BookDataSource bookDataSource = ObjectFactory.getInstance().createObject(BookDataSource.class);
 
   @Override
   public List<Book> getAll() {
