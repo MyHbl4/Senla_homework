@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import task4.DI.annotations.InjectProperty;
 import task4.DI.factory.ObjectFactory;
 import task4.datasource.BookDataSource;
 import task4.enums.Availability;
@@ -32,7 +33,10 @@ public class BookServiceImpl implements BookService {
       BookRepository.class);
   private final RequestRepository requestRepository = ObjectFactory.getInstance().createObject(RequestRepository.class);
   private final OrderRepository orderRepository = ObjectFactory.getInstance().createObject(OrderRepository.class);
-
+  @InjectProperty
+  private String FUNCTION_ORDER;
+  @InjectProperty
+  private String MONTHS_STALE_BOOKS;
   @Override
   public Book findBookById(int id) {
     return bookRepository.findBookById(id);
@@ -47,15 +51,19 @@ public class BookServiceImpl implements BookService {
     }
     if (checkBookInRequests(book)) {
       if (checkBookInOrders(book)
-          && (new PropertyFile().getPropertyValue("FUNCTION_ORDER").equals("on"))) {
-        for (Order order : orderRepository.getAll()) {
-          if (orderRepository.checkBooksInOrder(order)) {
-            order.setOrderStatusCompleate();
-            bookRepository.removeBooks(order.getBooks());
-          }
-        }
+          && (FUNCTION_ORDER.equals("on"))) {
+        checkOrder();
       } else {
         removeBookRequest(book);
+      }
+    }
+  }
+
+  private void checkOrder() {
+    for (Order order : orderRepository.getAll()) {
+      if (orderRepository.checkBooksInOrder(order)) {
+        order.setOrderStatusCompleate();
+        bookRepository.removeBooks(order.getBooks());
       }
     }
   }
@@ -116,7 +124,7 @@ public class BookServiceImpl implements BookService {
           .isBefore(
               LocalDate.now()
                   .minusMonths(
-                      Long.parseLong(new PropertyFile().getPropertyValue("MONTHS_STALE_BOOKS"))))) {
+                      Long.parseLong(MONTHS_STALE_BOOKS)))) {
         oldBooks.add(book);
       }
     }
