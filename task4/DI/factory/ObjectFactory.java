@@ -16,7 +16,7 @@ public class ObjectFactory {
 
   private ObjectFactory() {
     config =
-        new JavaConfig("task4", new HashMap<>(Map.of(MenuController.class, MenuController.class)));
+        new JavaConfig("task4", new HashMap<>(Map.of()));
     for (Class<? extends ObjectConfigurator> aClass :
         config.getScanner().getSubTypesOf(ObjectConfigurator.class)) {
       try {

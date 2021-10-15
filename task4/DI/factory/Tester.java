@@ -2,9 +2,11 @@ package task4.DI.factory;
 
 import task4.DI.annotations.InjectProperty;
 
+// @Singleton
 public class Tester implements Test {
   @InjectProperty("MONTHS_STALE_BOOKS")
   private String months;
+
   @InjectProperty("FUNCTION_ORDER")
   private String function;
 

@@ -8,7 +8,6 @@ import task4.UI.action.Manager;
 public class MenuController {
 
   private static MenuController instance;
-  Scanner scanner = new Scanner(System.in);
   private Builder builder;
   private Navigator navigator;
   private Manager manager = ObjectFactory.getInstance().createObject(Manager.class);
