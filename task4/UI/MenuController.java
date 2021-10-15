@@ -6,8 +6,8 @@ import task4.UI.action.Manager;
 public class MenuController {
 
   private static MenuController instance;
-  private Builder builder;
-  private Navigator navigator;
+  private final Builder builder;
+  private final Navigator navigator;
   private final Manager manager = ObjectFactory.getInstance().createObject(Manager.class);
 
   public MenuController() {
@@ -26,7 +26,8 @@ public class MenuController {
   public void run() {
     manager.getBookService().readBookBd();
     manager.getOrderService().readOrderBd();
-    manager.getRequestService().readRequestBd();    navigator.helloShop();
+    manager.getRequestService().readRequestBd();
+    navigator.helloShop();
     navigator.setCurrentMenu(builder.getRootMenu());
     navigator.printMenu();
     navigator.navigate();

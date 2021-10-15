@@ -7,21 +7,22 @@ import java.util.List;
 import java.util.Map;
 import task4.DI.config.Config;
 import task4.DI.config.JavaConfig;
-import task4.UI.MenuController;
 
 public class ObjectFactory {
   private static final ObjectFactory ourInstance = new ObjectFactory();
   private final Config config;
-  private List<ObjectConfigurator> configurators = new ArrayList<>();
+  private final List<ObjectConfigurator> configurators = new ArrayList<>();
 
   private ObjectFactory() {
-    config =
-        new JavaConfig("task4", new HashMap<>(Map.of()));
+    config = new JavaConfig("task4", new HashMap<>(Map.of()));
     for (Class<? extends ObjectConfigurator> aClass :
         config.getScanner().getSubTypesOf(ObjectConfigurator.class)) {
       try {
         configurators.add(aClass.getDeclaredConstructor().newInstance());
-      } catch (InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
+      } catch (InstantiationException
+          | IllegalAccessException
+          | InvocationTargetException
+          | NoSuchMethodException e) {
         e.printStackTrace();
       }
     }

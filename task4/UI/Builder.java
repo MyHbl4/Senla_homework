@@ -39,7 +39,7 @@ public class Builder {
 
   private static Builder instance;
   private Menu rootMenu;
-  private Manager manager;
+  private final Manager manager;
 
   private Builder(Manager manager) {
     this.manager = manager;

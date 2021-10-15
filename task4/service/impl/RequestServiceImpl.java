@@ -12,15 +12,13 @@ import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
-import task4.DI.factory.ObjectFactory;
+import task4.DI.annotations.InjectByType;
 import task4.model.Request;
-import task4.repository.BookRepository;
-import task4.repository.OrderRepository;
 import task4.repository.RequestRepository;
 import task4.service.RequestService;
 
 public class RequestServiceImpl implements RequestService {
-  private final RequestRepository requestRepository = ObjectFactory.getInstance().createObject(RequestRepository.class);
+  @InjectByType private RequestRepository requestRepository;
 
   @Override
   public List<Request> getAll() {

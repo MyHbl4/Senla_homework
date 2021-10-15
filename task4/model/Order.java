@@ -22,7 +22,7 @@ public class Order extends Identity {
   @JsonSerialize(using = LocalDateSerializer.class)
   private LocalDate execution = LocalDate.of(0000, 01, 01);
 
-  private int price = getPrice();
+  private final int price = getPrice();
 
   public Order() {}
 

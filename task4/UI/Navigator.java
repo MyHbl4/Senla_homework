@@ -1,16 +1,13 @@
 package task4.UI;
 
 import java.util.Scanner;
-import task4.DI.factory.ObjectFactory;
-import task4.UI.action.Manager;
 
 public class Navigator {
 
   private static Navigator instance;
   private Menu currentMenu;
 
-  private Navigator() {
-  }
+  private Navigator() {}
 
   public static Navigator getInstance() {
     if (instance == null) {
@@ -27,11 +24,11 @@ public class Navigator {
     System.out.println("\n::BOOK STORE::\n*******************");
   }
 
-//  public void loadCsv() {
-//    manager.getBookService().readBookBd();
-//    manager.getOrderService().readOrderBd();
-//    manager.getRequestService().readRequestBd();
-//  }
+  //  public void loadCsv() {
+  //    manager.getBookService().readBookBd();
+  //    manager.getOrderService().readOrderBd();
+  //    manager.getRequestService().readRequestBd();
+  //  }
 
   public void navigate() {
     Scanner scanner = new Scanner(System.in);

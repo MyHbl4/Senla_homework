@@ -11,7 +11,7 @@ import java.util.stream.Stream;
 import task4.DI.annotations.InjectProperty;
 
 public class InjectPropertyAnnotationObjectConfiguratorImpl implements ObjectConfigurator {
-  private Map<String, String> propertiesMap;
+  private final Map<String, String> propertiesMap;
 
   public InjectPropertyAnnotationObjectConfiguratorImpl() {
     String path = ClassLoader.getSystemClassLoader().getResource("app.properties").getPath();

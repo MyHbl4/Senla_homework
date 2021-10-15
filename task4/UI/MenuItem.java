@@ -4,9 +4,9 @@ import task4.UI.action.IAction;
 
 public class MenuItem {
 
-  private String title;
-  private IAction action;
-  private Menu nextMenu;
+  private final String title;
+  private final IAction action;
+  private final Menu nextMenu;
 
   public MenuItem(String title, IAction action, Menu nextMenu) {
     this.title = title;

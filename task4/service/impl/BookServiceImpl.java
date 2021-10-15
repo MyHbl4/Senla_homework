@@ -14,9 +14,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import task4.DI.annotations.InjectByType;
 import task4.DI.annotations.InjectProperty;
-import task4.DI.factory.ObjectFactory;
-import task4.datasource.BookDataSource;
 import task4.enums.Availability;
 import task4.enums.OrderStatus;
 import task4.model.Book;
@@ -26,17 +25,14 @@ import task4.repository.BookRepository;
 import task4.repository.OrderRepository;
 import task4.repository.RequestRepository;
 import task4.service.BookService;
-import task4.util.PropertyFile;
 
 public class BookServiceImpl implements BookService {
-  private final BookRepository bookRepository = ObjectFactory.getInstance().createObject(
-      BookRepository.class);
-  private final RequestRepository requestRepository = ObjectFactory.getInstance().createObject(RequestRepository.class);
-  private final OrderRepository orderRepository = ObjectFactory.getInstance().createObject(OrderRepository.class);
-  @InjectProperty
-  private String FUNCTION_ORDER;
-  @InjectProperty
-  private String MONTHS_STALE_BOOKS;
+  @InjectByType private BookRepository bookRepository;
+  @InjectByType private RequestRepository requestRepository;
+  @InjectByType private OrderRepository orderRepository;
+  @InjectProperty private String FUNCTION_ORDER;
+  @InjectProperty private String MONTHS_STALE_BOOKS;
+
   @Override
   public Book findBookById(int id) {
     return bookRepository.findBookById(id);
@@ -50,8 +46,7 @@ public class BookServiceImpl implements BookService {
       bookRepository.getAll().add(book);
     }
     if (checkBookInRequests(book)) {
-      if (checkBookInOrders(book)
-          && (FUNCTION_ORDER.equals("on"))) {
+      if (checkBookInOrders(book) && (FUNCTION_ORDER.equals("on"))) {
         checkOrder();
       } else {
         removeBookRequest(book);
@@ -121,10 +116,7 @@ public class BookServiceImpl implements BookService {
     List<Book> oldBooks = new ArrayList<>();
     for (Book book : bookRepository.getAll()) {
       if (book.getDeliveryDate()
-          .isBefore(
-              LocalDate.now()
-                  .minusMonths(
-                      Long.parseLong(MONTHS_STALE_BOOKS)))) {
+          .isBefore(LocalDate.now().minusMonths(Long.parseLong(MONTHS_STALE_BOOKS)))) {
         oldBooks.add(book);
       }
     }
