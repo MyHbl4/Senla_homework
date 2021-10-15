@@ -8,15 +8,13 @@ public class Navigator {
 
   private static Navigator instance;
   private Menu currentMenu;
-  private Manager manager;
 
-  private Navigator(Manager manager) {
-    this.manager = manager;
+  private Navigator() {
   }
 
-  public static Navigator getInstance(Manager manager) {
+  public static Navigator getInstance() {
     if (instance == null) {
-      instance = new Navigator(manager);
+      instance = new Navigator();
     }
     return instance;
   }
@@ -29,11 +27,11 @@ public class Navigator {
     System.out.println("\n::BOOK STORE::\n*******************");
   }
 
-  public void loadCsv() {
-    manager.getBookService().readBookBd();
-    manager.getOrderService().readOrderBd();
-    manager.getRequestService().readRequestBd();
-  }
+//  public void loadCsv() {
+//    manager.getBookService().readBookBd();
+//    manager.getOrderService().readOrderBd();
+//    manager.getRequestService().readRequestBd();
+//  }
 
   public void navigate() {
     Scanner scanner = new Scanner(System.in);

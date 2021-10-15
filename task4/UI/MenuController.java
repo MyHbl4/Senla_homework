@@ -8,12 +8,12 @@ public class MenuController {
   private static MenuController instance;
   private Builder builder;
   private Navigator navigator;
-  private Manager manager = ObjectFactory.getInstance().createObject(Manager.class);
+  private final Manager manager = ObjectFactory.getInstance().createObject(Manager.class);
 
   public MenuController() {
     builder = Builder.getInstance(manager);
     builder.buildMenu();
-    navigator = Navigator.getInstance(manager);
+    navigator = Navigator.getInstance();
   }
 
   public static MenuController getInstance() {
@@ -24,8 +24,9 @@ public class MenuController {
   }
 
   public void run() {
-    navigator.loadCsv();
-    navigator.helloShop();
+    manager.getBookService().readBookBd();
+    manager.getOrderService().readOrderBd();
+    manager.getRequestService().readRequestBd();    navigator.helloShop();
     navigator.setCurrentMenu(builder.getRootMenu());
     navigator.printMenu();
     navigator.navigate();
