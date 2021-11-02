@@ -29,6 +29,7 @@ public class BookRepositoryImpl implements BookRepository {
   @Override
   public void removeBooks(List<Book> books) {
     for (Book book : books) {
+      if (findBookById((int) book.getId()) != null)
       findBookById((int) book.getId()).setAvailability(Availability.OUT_OF_STOCK);
     }
   }
