@@ -20,7 +20,7 @@ public class Order extends Identity {
   @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
   @JsonDeserialize(using = LocalDateDeserializer.class)
   @JsonSerialize(using = LocalDateSerializer.class)
-  private LocalDate execution = LocalDate.of(0000, 01, 01);
+  private LocalDate execution = LocalDate.of(0001, 01, 01);
 
   private final int price = getPrice();
 
