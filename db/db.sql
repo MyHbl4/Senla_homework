@@ -1,3 +1,5 @@
+DROP DATABASE book_shop;
+
 CREATE DATABASE book_shop ENCODING 'UTF-8';
 
 \c book_shop;
@@ -6,8 +8,8 @@ CREATE TYPE status_enum AS ENUM ('NEW', 'COMPLETED', 'CANCELED');
 CREATE TABLE IF NOT EXISTS orders(
 id SMALLSERIAL PRIMARY KEY NOT NULL,
 customerName VARCHAR(50) NOT NULL,
-orderStatus status_enum NOT NULL,
-execution DATE NOT NULL
+orderStatus status_enum DEFAULT 'NEW',
+execution DATE DEFAULT '0001-01-01'
 );
 
 CREATE TYPE availability_enum AS ENUM ('IN_STOCK', 'OUT_OF_STOCK');
@@ -15,15 +17,15 @@ CREATE TABLE IF NOT EXISTS books (
 id SMALLSERIAL PRIMARY KEY NOT NULL,
 title VARCHAR(50) NOT NULL,
 author VARCHAR(50) NOT NULL,
-price NUMERIC(19,2) NOT NULL,
-availability availability_enum NOT NULL,
+price SMALLINT NOT NULL,
+availability availability_enum DEFAULT 'IN_STOCK',
 publication SMALLINT NOT NULL,
-deliveryDate DATE NOT NULL
+deliveryDate DATE DEFAULT NOW()
 );
 
 CREATE TABLE IF NOT EXISTS requests(
 id SMALLSERIAL PRIMARY KEY NOT NULL,
-count INT NOT NULL,
+count SMALLINT DEFAULT 1,
 book_id SMALLINT NOT NULL,
 book_title VARCHAR(50) NOT NULL,
 FOREIGN KEY (book_id) REFERENCES books(id)
@@ -31,7 +33,7 @@ FOREIGN KEY (book_id) REFERENCES books(id)
 
 CREATE TABLE IF NOT EXISTS order_books(
 id SMALLSERIAL PRIMARY KEY NOT NULL,
-order_id SMALLINT,
+order_id SMALLINT NOT NULL,
 book_id SMALLINT NOT NULL,
 FOREIGN KEY (order_id) REFERENCES orders(id),
 FOREIGN KEY (book_id) REFERENCES books(id)
@@ -65,7 +67,7 @@ insert into books (title, author, price, availability, publication, deliverydate
 insert into books (title, author, price, availability, publication, deliverydate) values ('Lethal Weapon', 'Galvan Paolicchi', 194, 'IN_STOCK', 1915, '2021-08-27');
 insert into books (title, author, price, availability, publication, deliverydate) values ('Romeo and Juliet', 'Gottfried Whimper', 74, 'IN_STOCK', 1918, '2021-06-30');
 
-insert into requests (count, book_id, book_title) values (1, 1, 'Dragon Ball The Curse Of The Blood Rubies');
+insert into requests (book_id, book_title) values (1, 'Curly Sue');
 
 insert into order_books (order_id, book_id) values (1,1);
 insert into order_books (order_id, book_id) values (2,2);
@@ -73,3 +75,4 @@ insert into order_books (order_id, book_id) values (3,3);
 insert into order_books (order_id, book_id) values (4,4);
 insert into order_books (order_id, book_id) values (5,5);
 insert into order_books (order_id, book_id) values (6,1);
+

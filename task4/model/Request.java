@@ -8,10 +8,6 @@ public class Request extends Identity {
 
   public Request() {}
 
-  public Request(long bookId) {
-    this.bookId = bookId;
-  }
-
   public Request(long bookId, String title) {
     this.bookId = bookId;
     this.title = title;
@@ -27,6 +23,10 @@ public class Request extends Identity {
     this.id = id;
     this.count = count;
     this.bookId = bookId;
+    this.title = title;
+  }
+
+  public Request(String title) {
     this.title = title;
   }
 

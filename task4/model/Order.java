@@ -26,6 +26,13 @@ public class Order extends Identity {
 
   public Order() {}
 
+  public Order(long id, String customerName, OrderStatus orderStatus, LocalDate execution){
+    this.id = id;
+    this.customerName = customerName;
+    this.orderStatus = orderStatus;
+    this.execution = execution;
+  }
+
   public Order(
       long id,
       String customerName,
@@ -48,6 +55,10 @@ public class Order extends Identity {
   public Order(String customerName, List<Book> books) {
     this.customerName = customerName;
     this.books = books;
+  }
+
+  public Order(String customerName) {
+    this.customerName = customerName;
   }
 
   public long getId() {

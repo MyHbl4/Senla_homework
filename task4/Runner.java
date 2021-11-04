@@ -1,40 +1,47 @@
 package task4;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import task4.DI.factory.ObjectFactory;
 import task4.UI.MenuController;
+import task4.jdbc.BookDAO;
+import task4.jdbc.OrderDAO;
+import task4.jdbc.RequestDAO;
+import task4.model.Book;
+import task4.model.Order;
+import task4.model.Request;
 
 public class Runner {
 
-  public static void main(String[] args) throws SQLException {
-    final String user = "postgres";
-    final String password = "1988";
-    final String url = "jdbc:postgresql://localhost:5432/book_shop";
+  public static void main(String[] args) {
 
-    final Connection connection = DriverManager.getConnection(url, user, password);
+//    Book book = new Book("Hobit", "Talkin", 100, 2000);
+//    BookDAO bookDAO = new BookDAO();
+//    bookDAO.create(book); //создаёт
+//    System.out.println(bookDAO.read(38)); //читает
+//    System.out.println(bookDAO.readAll());  //читает все
+//    bookDAO.update(37); //изменяет
+//    bookDAO.delete(39);  //удаляет
 
-    try (PreparedStatement statement = connection.prepareStatement(
-        "SELECT * FROM requests WHERE id = (?)")) {
-      statement.setInt( 1, 1);
+//    Order order = new Order("Someone");
+//    OrderDAO orderDAO = new OrderDAO();
+//    orderDAO.create(order);  //создаёт
+//    System.out.println(orderDAO.readAll()); //читает все
+//    System.out.println(orderDAO.read(1)); //читает
+//    orderDAO.update(14); //изменяет
+//    orderDAO.delete(13); //удаляет
 
-      final ResultSet resultSet = statement.executeQuery();
+//    Request request = new Request(36, "TestBook");
+//    RequestDAO requestDAO = new RequestDAO();
+//    requestDAO.create(request); //создаёт
+//    System.out.println(requestDAO.read(1)); //читает
+//    System.out.println(requestDAO.readAll());  //читает все
+//    requestDAO.update(1); //изменяет
+//    requestDAO.delete(2); //удаляет
 
-      if(resultSet.next()){
-        String name = "Name: " + resultSet.getString("book_title");
-        System.out.println(name);
-      }
-    } finally{
-      connection.close();
-    }
-
-
-
-
-//    MenuController menuController = ObjectFactory.getInstance().createObject(MenuController.class);
-//    menuController.run();
+    MenuController menuController = ObjectFactory.getInstance().createObject(MenuController.class);
+    menuController.run();
   }
 }
+
+
+//  }
+// }
