@@ -18,6 +18,7 @@ import task4.DI.annotations.InjectByType;
 import task4.DI.annotations.InjectProperty;
 import task4.enums.Availability;
 import task4.enums.OrderStatus;
+import task4.jdbc.BookDAO;
 import task4.model.Book;
 import task4.model.Order;
 import task4.model.Request;
@@ -30,6 +31,7 @@ public class BookServiceImpl implements BookService {
   @InjectByType private BookRepository bookRepository;
   @InjectByType private RequestRepository requestRepository;
   @InjectByType private OrderRepository orderRepository;
+  @InjectByType private BookDAO bookDAO;
   @InjectProperty private String FUNCTION_ORDER;
   @InjectProperty private String MONTHS_STALE_BOOKS;
 
@@ -43,7 +45,7 @@ public class BookServiceImpl implements BookService {
     if (!bookRepository.checkBookInBooks(book)) {
       bookRepository.restoreBook(book);
     } else {
-      bookRepository.getAll().add(book);
+      bookDAO.create(book);
     }
     if (checkBookInRequests(book)) {
       if (checkBookInOrders(book) && (FUNCTION_ORDER.equals("on"))) {
@@ -65,7 +67,7 @@ public class BookServiceImpl implements BookService {
 
   @Override
   public void removeBook(int id) {
-    bookRepository.findBookById(id).setAvailability(Availability.OUT_OF_STOCK);
+    bookRepository.removeBook(id);
   }
 
   @Override
@@ -126,42 +128,42 @@ public class BookServiceImpl implements BookService {
   @Override
   public List<Book> sortBookByAvailability() {
     List<Book> sortBooks = bookRepository.getAll();
-    bookRepository.getAll().sort(Comparator.comparing(Book::getAvailability));
+    sortBooks.sort(Comparator.comparing(Book::getAvailability));
     return sortBooks;
   }
 
   @Override
   public List<Book> sortBookByPrice() {
     List<Book> sortBooks = bookRepository.getAll();
-    bookRepository.getAll().sort(Comparator.comparingInt(Book::getPrice));
+    sortBooks.sort(Comparator.comparingInt(Book::getPrice));
     return sortBooks;
   }
 
   @Override
   public List<Book> sortBookByPublication() {
     List<Book> sortBooks = bookRepository.getAll();
-    bookRepository.getAll().sort(Comparator.comparingInt(Book::getPublication));
+    sortBooks.sort(Comparator.comparingInt(Book::getPublication));
     return sortBooks;
   }
 
   @Override
   public List<Book> sortBookByTitle() {
     List<Book> sortBooks = bookRepository.getAll();
-    bookRepository.getAll().sort(Comparator.comparing(Book::getTitle));
+    sortBooks.sort(Comparator.comparing(Book::getTitle));
     return sortBooks;
   }
 
   @Override
   public List<Book> sortOldBookByDate() {
     List<Book> sortBooks = getOldBooks();
-    getOldBooks().sort(Comparator.comparing(Book::getDeliveryDate));
+    sortBooks.sort(Comparator.comparing(Book::getDeliveryDate));
     return sortBooks;
   }
 
   @Override
   public List<Book> sortOldBookByPrice() {
     List<Book> sortBooks = getOldBooks();
-    getOldBooks().sort(Comparator.comparingInt(Book::getPrice));
+    sortBooks.sort(Comparator.comparingInt(Book::getPrice));
     return sortBooks;
   }
 

@@ -5,32 +5,35 @@ import java.util.List;
 import task4.DI.annotations.InjectByType;
 import task4.datasource.BookDataSource;
 import task4.enums.Availability;
+import task4.jdbc.BookDAO;
 import task4.model.Book;
 import task4.repository.BookRepository;
 
 public class BookRepositoryImpl implements BookRepository {
   @InjectByType private BookDataSource bookDataSource;
+  @InjectByType private BookDAO bookDAO;
 
   @Override
   public List<Book> getAll() {
-    return bookDataSource.getBooks();
+    return bookDAO.readAll();
+//    return bookDataSource.getBooks();
   }
 
   @Override
   public Book findBookById(int id) {
-    return bookDataSource.findBookById(id);
+    return bookDAO.read(id);
   }
 
   @Override
   public void removeBook(int id) {
-    findBookById(id).setAvailability(Availability.OUT_OF_STOCK);
+    bookDAO.update(id);
   }
 
   @Override
   public void removeBooks(List<Book> books) {
     for (Book book : books) {
-      if (findBookById((int) book.getId()) != null)
-      findBookById((int) book.getId()).setAvailability(Availability.OUT_OF_STOCK);
+      if (bookDAO.read(Math.toIntExact(book.getId())) != null)
+        bookDAO.update(Math.toIntExact(book.getId()));
     }
   }
 
@@ -51,8 +54,8 @@ public class BookRepositoryImpl implements BookRepository {
     for (Book book : bookDataSource.getBooks()) {
       if (myBook.getTitle().equals(book.getTitle())
           && book.getAvailability().equals(Availability.OUT_OF_STOCK)) {
-        book.setAvailability(Availability.IN_STOCK);
-        book.setDeliveryDate(LocalDate.now());
+        bookDAO.updateIN(Math.toIntExact(book.getId()));
+        bookDAO.updateDelivery(Math.toIntExact(book.getId()));
         return;
       }
     }

@@ -17,6 +17,8 @@ public class BookDAO extends AbstractDAO<Integer, Book> {
   public static final String SQL_READ_ALL_BOOKS = "SELECT * FROM books";
   public static final String SQL_READ_BOOK_ID = "SELECT * FROM books WHERE id=?";
   public static final String SQL_UPDATE_BOOK_ID = "UPDATE books SET availability='OUT_OF_STOCK' WHERE id=(?) RETURNING id";
+  public static final String SQL_UPDATE_IN_BOOK_ID = "UPDATE books SET availability='IN_STOCK' WHERE id=(?) RETURNING id";
+  public static final String SQL_UPDATE_DELIVERY_BOOK_ID = "UPDATE books SET deliverydate=NOW() WHERE id=(?) RETURNING id";
   public static final String SQL_DELETE_BOOK_ID =
       "DELETE FROM books WHERE id=(?) RETURNING id";
 
@@ -87,6 +89,32 @@ public class BookDAO extends AbstractDAO<Integer, Book> {
 
     try (Connection connection = ConnectorDB.getConnection();
         PreparedStatement statement = connection.prepareStatement(SQL_UPDATE_BOOK_ID)) {
+      statement.setInt(1, id);
+      result = statement.executeQuery().next();
+    } catch (SQLException e) {
+      System.out.println(e.getMessage());
+    }
+    return result;
+  }
+
+  public boolean updateIN(Integer id) {
+    boolean result = false;
+
+    try (Connection connection = ConnectorDB.getConnection();
+        PreparedStatement statement = connection.prepareStatement(SQL_UPDATE_IN_BOOK_ID)) {
+      statement.setInt(1, id);
+      result = statement.executeQuery().next();
+    } catch (SQLException e) {
+      System.out.println(e.getMessage());
+    }
+    return result;
+  }
+
+  public boolean updateDelivery(Integer id) {
+    boolean result = false;
+
+    try (Connection connection = ConnectorDB.getConnection();
+        PreparedStatement statement = connection.prepareStatement(SQL_UPDATE_DELIVERY_BOOK_ID)) {
       statement.setInt(1, id);
       result = statement.executeQuery().next();
     } catch (SQLException e) {

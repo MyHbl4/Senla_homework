@@ -1,5 +1,6 @@
 package task4;
 
+import java.sql.Array;
 import task4.DI.factory.ObjectFactory;
 import task4.UI.MenuController;
 import task4.jdbc.BookDAO;
@@ -16,15 +17,16 @@ public class Runner {
 //    Book book = new Book("Hobit", "Talkin", 100, 2000);
 //    BookDAO bookDAO = new BookDAO();
 //    bookDAO.create(book); //создаёт
-//    System.out.println(bookDAO.read(38)); //читает
+//    System.out.println(bookDAO.read(1)); //читает
 //    System.out.println(bookDAO.readAll());  //читает все
 //    bookDAO.update(37); //изменяет
 //    bookDAO.delete(39);  //удаляет
 
-//    Order order = new Order("Someone");
+//    Order order = new Order("Someone" , '{3, 4}');
 //    OrderDAO orderDAO = new OrderDAO();
-//    orderDAO.create(order);  //создаёт
-//    System.out.println(orderDAO.readAll()); //читает все
+    //    orderDAO.create(order);  //создаёт
+//        System.out.println(orderDAO.readAll()); //читает все
+//    System.out.println(orderDAO.readBooks(1));
 //    System.out.println(orderDAO.read(1)); //читает
 //    orderDAO.update(14); //изменяет
 //    orderDAO.delete(13); //удаляет
@@ -41,7 +43,3 @@ public class Runner {
     menuController.run();
   }
 }
-
-
-//  }
-// }

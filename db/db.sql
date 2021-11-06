@@ -46,7 +46,6 @@ insert into orders (customerName, orderStatus, execution) values ('Rhianon Benec
 insert into orders (customerName, orderStatus, execution) values ('Brigitte Edmund', 'COMPLETED', '2021-02-21');
 insert into orders (customerName, orderStatus, execution) values ('Anny Fenwick', 'NEW', '0001-01-01');
 
-
 insert into books (title, author, price, availability, publication, deliverydate) values ('Curly Sue', 'Ciro Cinavas', 184, 'OUT_OF_STOCK', 2013, '2021-08-23');
 insert into books (title, author, price, availability, publication, deliverydate) values ('Love and Other Catastrophes', 'Alberto Kidgell', 96, 'OUT_OF_STOCK', 1904, '2021-05-13');
 insert into books (title, author, price, availability, publication, deliverydate) values ('Aakrosh', 'Bobbie Simmance', 159, 'OUT_OF_STOCK', 1921, '2021-01-20');

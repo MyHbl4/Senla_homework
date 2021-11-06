@@ -9,10 +9,16 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import task4.DI.annotations.InjectByType;
+import task4.jdbc.ConnectorDB;
 import task4.model.Request;
 import task4.repository.RequestRepository;
 import task4.service.RequestService;
@@ -33,14 +39,14 @@ public class RequestServiceImpl implements RequestService {
   @Override
   public List<Request> sortRequestByCount() {
     List<Request> sortRequests = requestRepository.getAll();
-    requestRepository.getAll().sort(Comparator.comparingInt(Request::getCount));
+    sortRequests.sort(Comparator.comparingInt(Request::getCount));
     return sortRequests;
   }
 
   @Override
   public List<Request> sortRequestByTitle() {
     List<Request> sortRequests = requestRepository.getAll();
-    requestRepository.getAll().sort(Comparator.comparing(Request::getTitle));
+    sortRequests.sort(Comparator.comparing(Request::getTitle));
     return sortRequests;
   }
 

@@ -4,6 +4,7 @@ import java.util.List;
 import task4.DI.annotations.InjectByType;
 import task4.datasource.BookDataSource;
 import task4.datasource.RequestDataSource;
+import task4.jdbc.RequestDAO;
 import task4.model.Book;
 import task4.model.Request;
 import task4.repository.RequestRepository;
@@ -11,6 +12,7 @@ import task4.repository.RequestRepository;
 public class RequestRepositoryImpl implements RequestRepository {
   @InjectByType private RequestDataSource requestDataSource;
   @InjectByType private BookDataSource bookDataSource;
+  @InjectByType private RequestDAO requestDAO;
 
   @Override
   public List<Request> getAll() {
@@ -21,9 +23,9 @@ public class RequestRepositoryImpl implements RequestRepository {
   public void addRequest(long bookId) {
     String title = null;
     int goodJob = 0;
-    for (int i = 0; i < getAll().size(); i++) {
-      if (getAll().get(i).getBookId() == bookId) {
-        getAll().get(i).setCount(getAll().get(i).getCount() + 1);
+    for(Request request:getAll()){
+      if(request.getBookId() == bookId){
+        requestDAO.update(Math.toIntExact(request.getId()));
         goodJob = 1;
       }
     }
@@ -33,7 +35,7 @@ public class RequestRepositoryImpl implements RequestRepository {
           title = book.getTitle();
         }
       }
-      getAll().add(new Request(bookId, title));
+      requestDAO.create(new Request(bookId, title));
     }
   }
 

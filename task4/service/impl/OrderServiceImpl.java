@@ -17,6 +17,7 @@ import java.util.List;
 import task4.DI.annotations.InjectByType;
 import task4.enums.Availability;
 import task4.enums.OrderStatus;
+import task4.jdbc.OrderDAO;
 import task4.model.Book;
 import task4.model.Order;
 import task4.repository.BookRepository;
@@ -28,6 +29,7 @@ public class OrderServiceImpl implements OrderService {
   @InjectByType private OrderRepository orderRepository;
   @InjectByType private BookRepository bookRepository;
   @InjectByType private RequestRepository requestRepository;
+  @InjectByType private OrderDAO orderDAO;
 
   @Override
   public Order findOrderById(int id) {
@@ -36,7 +38,8 @@ public class OrderServiceImpl implements OrderService {
 
   @Override
   public void addOrder(Order order) {
-    orderRepository.getAll().add(order);
+    orderDAO.create(order);
+    orderDAO.createOrderBooks(order);
     if (checkBooksInOrder(order)) {
       closeOrder((int) order.getId());
       bookRepository.removeBooks(order.getBooks());
@@ -76,12 +79,12 @@ public class OrderServiceImpl implements OrderService {
 
   @Override
   public void closeOrder(int id) {
-    orderRepository.findOrderById(id).setOrderStatusCompleate();
+    orderDAO.update(id);
   }
 
   @Override
   public void cancelOrder(int id) {
-    orderRepository.findOrderById(id).setOrderStatusCanceled();
+    orderDAO.updateCancel(id);
   }
 
   @Override
@@ -113,35 +116,35 @@ public class OrderServiceImpl implements OrderService {
   @Override
   public List<Order> sortCompletedOrderByExecutionDate(int months) {
     List<Order> sortOrders = getCompletedOrderList(months);
-    getCompletedOrderList(months).sort((Comparator.comparing(Order::getExecution)));
+    sortOrders.sort((Comparator.comparing(Order::getExecution)));
     return sortOrders;
   }
 
   @Override
   public List<Order> sortCompletedOrderByPrice(int months) {
     List<Order> sortOrders = getCompletedOrderList(months);
-    getCompletedOrderList(months).sort((Comparator.comparingInt(Order::getPrice)));
+    sortOrders.sort((Comparator.comparingInt(Order::getPrice)));
     return sortOrders;
   }
 
   @Override
   public List<Order> sortOrderByExecutionDate() {
     List<Order> sortOrders = orderRepository.getAll();
-    orderRepository.getAll().sort((Comparator.comparing(Order::getExecution)));
+    sortOrders.sort((Comparator.comparing(Order::getExecution)));
     return sortOrders;
   }
 
   @Override
   public List<Order> sortOrderByPrice() {
     List<Order> sortOrders = orderRepository.getAll();
-    orderRepository.getAll().sort((Comparator.comparingInt(Order::getPrice)));
+    sortOrders.sort((Comparator.comparingInt(Order::getPrice)));
     return sortOrders;
   }
 
   @Override
   public List<Order> sortOrderByStatus() {
     List<Order> sortOrders = orderRepository.getAll();
-    orderRepository.getAll().sort((Comparator.comparing(Order::getOrderStatus)));
+    sortOrders.sort((Comparator.comparing(Order::getOrderStatus)));
     return sortOrders;
   }
 
