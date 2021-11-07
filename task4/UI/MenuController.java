@@ -24,9 +24,6 @@ public class MenuController {
   }
 
   public void run() {
-    //    manager.getBookService().readBookBd();
-    //    manager.getOrderService().readOrderBd();
-    //    manager.getRequestService().readRequestBd();
     navigator.helloShop();
     navigator.setCurrentMenu(builder.getRootMenu());
     navigator.printMenu();

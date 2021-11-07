@@ -24,12 +24,6 @@ public class Navigator {
     System.out.println("\n::BOOK STORE::\n*******************");
   }
 
-  //  public void loadCsv() {
-  //    manager.getBookService().readBookBd();
-  //    manager.getOrderService().readOrderBd();
-  //    manager.getRequestService().readRequestBd();
-  //  }
-
   public void navigate() {
     Scanner scanner = new Scanner(System.in);
     boolean isValid = true;

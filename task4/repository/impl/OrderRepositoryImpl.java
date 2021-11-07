@@ -2,23 +2,23 @@ package task4.repository.impl;
 
 import java.util.List;
 import task4.DI.annotations.InjectByType;
-import task4.datasource.OrderDataSource;
 import task4.enums.Availability;
+import task4.jdbc.OrderDAO;
 import task4.model.Book;
 import task4.model.Order;
 import task4.repository.OrderRepository;
 
 public class OrderRepositoryImpl implements OrderRepository {
-  @InjectByType private OrderDataSource orderDataSource;
+  @InjectByType private OrderDAO orderDAO;
 
   @Override
   public List<Order> getAll() {
-    return orderDataSource.getOrders();
+    return orderDAO.readAll();
   }
 
   @Override
   public Order findOrderById(int id) {
-    return orderDataSource.findOrderById(id);
+    return orderDAO.read(id);
   }
 
   @Override

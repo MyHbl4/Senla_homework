@@ -9,8 +9,8 @@ import java.time.LocalDate;
 import java.util.Objects;
 import task4.enums.Availability;
 
-public class Book extends Identity {
-  private long id = createBookId();
+public class Book {
+  private long id;
   private String title;
   private String author;
   private int price;

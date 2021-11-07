@@ -104,7 +104,7 @@ public class BookDAO extends AbstractDAO<Integer, Book> {
     boolean result = false;
 
     try (Connection connection = ConnectorDB.getConnection();
-        PreparedStatement statement = connection.prepareStatement(SQL_UPDATE_IN_BOOK_ID)) {
+        PreparedStatement statement = connection.prepareStatement(SQL_UPDATE_IN_BOOK_ID)){
       statement.setInt(1, id);
       result = statement.executeQuery().next();
     } catch (SQLException e) {
@@ -112,6 +112,41 @@ public class BookDAO extends AbstractDAO<Integer, Book> {
     }
     return result;
   }
+
+  public boolean updateInAndDate(Integer id) {
+    boolean result = false;
+    try (Connection connection = ConnectorDB.getConnection();
+        PreparedStatement statement1 = connection.prepareStatement(SQL_UPDATE_IN_BOOK_ID);
+        PreparedStatement statement2 = connection.prepareStatement(SQL_UPDATE_DELIVERY_BOOK_ID)) {
+      connection.setAutoCommit(false);
+      statement1.setInt(1, id);
+      statement2.setInt(1, id);
+      connection.commit();
+      connection.setAutoCommit(true);
+      result = statement2.executeQuery().next();
+    } catch (SQLException throwables) {
+      throwables.printStackTrace();
+    }
+    return result;
+  }
+
+  //  public boolean updateInAndDate(Integer id){
+  //    boolean result = false;
+  //    try(Connection connection = ConnectorDB.getConnection();
+  //    PreparedStatement statement = connection.prepareStatement(SQL_UPDATE_IN_BOOK_ID)){
+  //      connection.setAutoCommit(false);
+  //      statement.setInt(1, id);
+  //      statement.addBatch();
+  //      statement.setInt(1,id);
+  //      statement.executeBatch();
+  //      connection.commit();
+  //      connection.rollback();
+  //      connection.setAutoCommit(true);
+  //    } catch (SQLException throwables) {
+  //      throwables.printStackTrace();
+  //    }
+  //    return result;
+  //  }
 
   public boolean updateDelivery(Integer id) {
     boolean result = false;

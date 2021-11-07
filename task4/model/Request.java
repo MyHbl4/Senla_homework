@@ -1,7 +1,7 @@
 package task4.model;
 
-public class Request extends Identity {
-  private long id = createRequestid();
+public class Request {
+  private long id;
   private int count = 1;
   private long bookId;
   private String title = null;

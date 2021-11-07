@@ -11,8 +11,8 @@ import java.util.List;
 import java.util.Objects;
 import task4.enums.OrderStatus;
 
-public class Order extends Identity {
-  private long id = createOrderid();
+public class Order {
+  private long id;
   private String customerName;
   private List<Book> books;
   private OrderStatus orderStatus = OrderStatus.NEW;
