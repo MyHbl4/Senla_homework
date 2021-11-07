@@ -26,7 +26,7 @@ public class Order extends Identity {
 
   public Order() {}
 
-  public Order(long id, String customerName, OrderStatus orderStatus, LocalDate execution){
+  public Order(long id, String customerName, OrderStatus orderStatus, LocalDate execution) {
     this.id = id;
     this.customerName = customerName;
     this.orderStatus = orderStatus;

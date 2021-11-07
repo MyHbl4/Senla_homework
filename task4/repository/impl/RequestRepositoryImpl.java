@@ -23,8 +23,8 @@ public class RequestRepositoryImpl implements RequestRepository {
   public void addRequest(long bookId) {
     String title = null;
     int goodJob = 0;
-    for(Request request:getAll()){
-      if(request.getBookId() == bookId){
+    for (Request request : getAll()) {
+      if (request.getBookId() == bookId) {
         requestDAO.update(Math.toIntExact(request.getId()));
         goodJob = 1;
       }

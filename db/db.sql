@@ -1,8 +1,7 @@
-DROP DATABASE book_shop;
 
-CREATE DATABASE book_shop ENCODING 'UTF-8';
+DROP TABLE IF EXISTS order_books, requests, books, orders;
 
-\c book_shop;
+DROP TYPE IF EXISTS status_enum, availability_enum;
 
 CREATE TYPE status_enum AS ENUM ('NEW', 'COMPLETED', 'CANCELED');
 CREATE TABLE IF NOT EXISTS orders(

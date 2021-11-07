@@ -5,11 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import task4.enums.OrderStatus;
-import task4.model.Order;
 import task4.model.Request;
 
 public class RequestDAO extends AbstractDAO<Integer, Request> {
@@ -20,7 +17,8 @@ public class RequestDAO extends AbstractDAO<Integer, Request> {
   public static final String SQL_READ_REQUEST_ID = "SELECT * FROM requests WHERE id=?";
   public static final String SQL_UPDATE_REQUEST_ID =
       "UPDATE requests SET count=((SELECT SUM(count) FROM requests WHERE id=?)+1) WHERE id=?";
-  public static final String SQL_DELETE_REQUEST_ID = "DELETE FROM requests WHERE id=(?) RETURNING id";
+  public static final String SQL_DELETE_REQUEST_ID =
+      "DELETE FROM requests WHERE id=(?) RETURNING id";
 
   @Override
   public boolean create(Request entity) {
@@ -87,7 +85,8 @@ public class RequestDAO extends AbstractDAO<Integer, Request> {
     } catch (SQLException e) {
       System.out.println(e.getMessage());
     }
-    return result;  }
+    return result;
+  }
 
   @Override
   public boolean delete(Integer id) {

@@ -16,7 +16,6 @@ import java.util.Comparator;
 import java.util.List;
 import task4.DI.annotations.InjectByType;
 import task4.DI.annotations.InjectProperty;
-import task4.enums.Availability;
 import task4.enums.OrderStatus;
 import task4.jdbc.BookDAO;
 import task4.model.Book;

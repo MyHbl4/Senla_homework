@@ -17,11 +17,10 @@ public class OrderDAO extends AbstractDAO<Integer, Order> {
 
   public static final String SQL_CREATE_ORDER =
       "INSERT INTO orders (customername) values (?) RETURNING id;";
-  public static final String SQL_CREATE_ORDER_BOOKS ="INSERT INTO order_books (order_id, book_id) values ((select max(id) from orders),?) RETURNING id";
-  public static final String SQL_READ_ALL_ORDERS =
-      "SELECT * FROM orders";
-  public static final String SQL_READ_ORDER_ID =
-      "SELECT * FROM orders WHERE id=?";
+  public static final String SQL_CREATE_ORDER_BOOKS =
+      "INSERT INTO order_books (order_id, book_id) values ((select max(id) from orders),?) RETURNING id";
+  public static final String SQL_READ_ALL_ORDERS = "SELECT * FROM orders";
+  public static final String SQL_READ_ORDER_ID = "SELECT * FROM orders WHERE id=?";
   public static final String SQL_READ_BOOK_IN_ORDER_ID =
       "select o.book_id AS id, books.title, books.author, books.price, books.availability, books.publication, books.deliverydate from order_books o left join books on books.id=o.book_id WHERE o.order_id=?";
   public static final String SQL_UPDATE_ORDER_ID =
@@ -47,14 +46,15 @@ public class OrderDAO extends AbstractDAO<Integer, Order> {
   public boolean createOrderBooks(Order entity) {
     List<Book> books = entity.getBooks();
     boolean result = false;
-    for(Book book:books){
-        try (Connection connection = ConnectorDB.getConnection();
-        PreparedStatement statement = connection.prepareStatement(SQL_CREATE_ORDER_BOOKS)) {
-      statement.setInt(1, Math.toIntExact(book.getId()));
-      result = statement.executeQuery().next();
-    } catch (SQLException e) {
-      System.out.println(e.getMessage());
-    }}
+    for (Book book : books) {
+      try (Connection connection = ConnectorDB.getConnection();
+          PreparedStatement statement = connection.prepareStatement(SQL_CREATE_ORDER_BOOKS)) {
+        statement.setInt(1, Math.toIntExact(book.getId()));
+        result = statement.executeQuery().next();
+      } catch (SQLException e) {
+        System.out.println(e.getMessage());
+      }
+    }
     return result;
   }
 
@@ -70,7 +70,7 @@ public class OrderDAO extends AbstractDAO<Integer, Order> {
         List<Book> books = readBooks(id);
         OrderStatus orderstatus = OrderStatus.valueOf(rs.getString(3));
         LocalDate execution = LocalDate.parse(rs.getString(4));
-        orders.add(new Order(id, customername, books,  orderstatus, execution));
+        orders.add(new Order(id, customername, books, orderstatus, execution));
       }
     } catch (SQLException e) {
       System.out.println(e.getMessage());

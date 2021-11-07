@@ -1,6 +1,5 @@
 package task4.repository.impl;
 
-import java.time.LocalDate;
 import java.util.List;
 import task4.DI.annotations.InjectByType;
 import task4.datasource.BookDataSource;
@@ -16,7 +15,7 @@ public class BookRepositoryImpl implements BookRepository {
   @Override
   public List<Book> getAll() {
     return bookDAO.readAll();
-//    return bookDataSource.getBooks();
+    //    return bookDataSource.getBooks();
   }
 
   @Override
