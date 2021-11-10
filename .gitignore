@@ -3,8 +3,8 @@
 /workspace.xml
 .idea/
 /build.yml
-/pom.xml
 /out/
 /sonar-project.properties
 /task4/.scannerwork/
 /META-INF/
+*.iml
