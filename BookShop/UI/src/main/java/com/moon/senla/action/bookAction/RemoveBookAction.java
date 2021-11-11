@@ -20,7 +20,6 @@ public class RemoveBookAction extends AbstractAction {
         id = customScanner.getInt();
         check.checkBook(id);
         manager.getBookService().removeBook(id);
-        manager.getBookService().writeBookBd();
         System.out.println("The book has been removed");
         isValid = false;
       } catch (CustomException e) {

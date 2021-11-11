@@ -31,8 +31,4 @@ public interface OrderService {
   List<Order> sortOrderByPrice();
 
   List<Order> sortOrderByStatus();
-
-  void writeOrderBd();
-
-  void readOrderBd();
 }

@@ -10,7 +10,6 @@
   <version>1.0-SNAPSHOT</version>
   <modules>
     <module>DI</module>
-    <module>enums</module>
     <module>exceptions</module>
     <module>jdbc</module>
     <module>model</module>
@@ -18,18 +17,20 @@
     <module>service</module>
     <module>UI</module>
     <module>util</module>
+    <module>Main</module>
   </modules>
 
   <dependencies>
     <dependency>
-      <groupId>com.moon.senla</groupId>
-      <version>1.0-SNAPSHOT</version>
-      <artifactId>ui-module</artifactId>
+      <groupId>org.reflections</groupId>
+      <artifactId>reflections</artifactId>
+      <version>0.9.10</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/org.javassist/javassist -->
     <dependency>
-      <groupId>com.moon.senla</groupId>
-      <version>1.0-SNAPSHOT</version>
-      <artifactId>exceptions-module</artifactId>
+      <groupId>org.javassist</groupId>
+      <artifactId>javassist</artifactId>
+      <version>3.28.0-GA</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
     <dependency>
@@ -61,26 +62,6 @@
       <artifactId>jackson-annotations</artifactId>
       <version>2.13.0</version>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/org.reflections/reflections -->
-    <dependency>
-      <groupId>org.reflections</groupId>
-      <artifactId>reflections</artifactId>
-      <version>0.10.2</version>
-    </dependency>
-    <!-- https://mvnrepository.com/artifact/org.javassist/javassist -->
-    <dependency>
-      <groupId>org.javassist</groupId>
-      <artifactId>javassist</artifactId>
-      <version>3.28.0-GA</version>
-    </dependency>
-    <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <version>1.18.22</version>
-      <scope>provided</scope>
-    </dependency>
-
   </dependencies>
   <properties>
     <maven.compiler.source>16</maven.compiler.source>

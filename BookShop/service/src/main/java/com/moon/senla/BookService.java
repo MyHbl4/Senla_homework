@@ -31,8 +31,4 @@ public interface BookService {
   List<Book> sortOldBookByDate();
 
   List<Book> sortOldBookByPrice();
-
-  void writeBookBd();
-
-  void readBookBd();
 }

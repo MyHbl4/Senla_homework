@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
+import com.moon.senla.enums.Availability;
 import java.time.LocalDate;
 import java.util.Objects;
 
@@ -135,7 +136,7 @@ public class Book {
 
   @Override
   public String toString() {
-    return "com.moon.senla.Book - "
+    return "Book - "
         + "ID: "
         + id
         + ", Title: '"
@@ -146,7 +147,7 @@ public class Book {
         + '\''
         + ", Price: "
         + price
-        + ", com.moon.senla.Availability: "
+        + ", Availability: "
         + availability
         + ", Publication: "
         + publication

@@ -9,7 +9,20 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>enums-module</artifactId>
+  <artifactId>main-module</artifactId>
+  <dependencies>
+    <dependency>
+      <groupId>com.moon.senla</groupId>
+      <artifactId>ui-module</artifactId>
+      <version>1.0-SNAPSHOT</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.moon.senla</groupId>
+      <artifactId>di-module</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
+  </dependencies>
 
   <properties>
     <maven.compiler.source>16</maven.compiler.source>

@@ -11,11 +11,10 @@ public class AddRequestAction extends AbstractAction {
 
   @Override
   public void execute() {
-    System.out.println("Enter com.moon.senla.Book ID");
+    System.out.println("Enter the book ID");
     long bookId;
     bookId = customScanner.getInt();
     manager.getRequestService().addRequest(bookId);
-    manager.getRequestService().writerRequestBd();
-    System.out.println("com.moon.senla.Request has been added");
+    System.out.println("Request has been added");
   }
 }

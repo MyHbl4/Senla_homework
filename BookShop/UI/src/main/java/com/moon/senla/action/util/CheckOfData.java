@@ -1,5 +1,6 @@
-package com.moon.senla;
+package com.moon.senla.action.util;
 
+import com.moon.senla.CustomException;
 import com.moon.senla.action.Manager;
 
 public class CheckOfData {

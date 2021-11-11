@@ -11,8 +11,4 @@ public interface RequestService {
   List<Request> sortRequestByCount();
 
   List<Request> sortRequestByTitle();
-
-  void writerRequestBd();
-
-  void readRequestBd();
 }

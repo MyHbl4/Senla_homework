@@ -1,4 +1,4 @@
-package com.moon.senla;
+package com.moon.senla.enums;
 
 public enum Availability {
   IN_STOCK,

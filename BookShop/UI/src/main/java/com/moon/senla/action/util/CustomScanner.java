@@ -1,4 +1,4 @@
-package com.moon.senla;
+package com.moon.senla.action.util;
 
 import java.util.Scanner;
 

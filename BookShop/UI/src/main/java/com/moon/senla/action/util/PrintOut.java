@@ -1,11 +1,11 @@
-package com.moon.senla;
+package com.moon.senla.action.util;
 
 import java.util.List;
 
 public class PrintOut {
 
   public <T> void printList(List<T> list) {
-    list.forEach(System.out::println);
+    for (T l : list) System.out.println(l);
   }
 
   public <T> void printEntity(T entity) {

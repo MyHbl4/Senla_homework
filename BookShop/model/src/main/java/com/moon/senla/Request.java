@@ -64,12 +64,12 @@ public class Request {
 
   @Override
   public String toString() {
-    return "com.moon.senla.Request - "
+    return "Request - "
         + "ID: "
         + id
         + ", Count: "
         + count
-        + ", com.moon.senla.Book ID: "
+        + ", Book ID: "
         + bookId
         + ", Title: '"
         + title

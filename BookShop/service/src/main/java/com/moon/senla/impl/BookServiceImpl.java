@@ -1,27 +1,18 @@
 package com.moon.senla.impl;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.moon.senla.Book;
 import com.moon.senla.BookDAO;
 import com.moon.senla.BookRepository;
 import com.moon.senla.BookService;
-import com.moon.senla.Constant;
 import com.moon.senla.Order;
 import com.moon.senla.OrderRepository;
-import com.moon.senla.OrderStatus;
 import com.moon.senla.Request;
 import com.moon.senla.RequestRepository;
 import com.moon.senla.annotations.InjectByType;
 import com.moon.senla.annotations.InjectProperty;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import com.moon.senla.enums.OrderStatus;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
@@ -163,37 +154,5 @@ public class BookServiceImpl implements BookService {
     List<Book> sortBooks = getOldBooks();
     sortBooks.sort(Comparator.comparingInt(Book::getPrice));
     return sortBooks;
-  }
-
-  @Override
-  public void writeBookBd() {
-    ObjectMapper mapper = new ObjectMapper();
-    try (PrintWriter writer =
-        new PrintWriter(new BufferedWriter(new FileWriter(Constant.FILE_BOOKS)))) {
-      List<Book> books = bookRepository.getAll();
-      String bookJson = mapper.writeValueAsString(books);
-      writer.write(bookJson);
-      writer.flush();
-    } catch (IOException e) {
-      System.out.println("Writing books error");
-    }
-  }
-
-  @Override
-  public void readBookBd() {
-    ObjectMapper mapper = new ObjectMapper();
-    List<Book> books;
-    try (BufferedReader reader = new BufferedReader(new FileReader(Constant.FILE_BOOKS))) {
-      String bookJson;
-      bookRepository.getAll().clear();
-      while ((bookJson = reader.readLine()) != null) {
-        books = Arrays.asList(mapper.readValue(bookJson, Book[].class));
-        for (Book book : books) {
-          getAll().add(book);
-        }
-      }
-    } catch (IOException e) {
-      System.out.println("Loading books error");
-    }
   }
 }

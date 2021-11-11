@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
+import com.moon.senla.enums.OrderStatus;
 import java.beans.Transient;
 import java.time.LocalDate;
 import java.util.List;
@@ -169,14 +170,14 @@ public class Order {
 
   @Override
   public String toString() {
-    return "com.moon.senla.Order - "
+    return "Order - "
         + "ID: "
         + id
         + ", Customer name: '"
         + customerName
         + "', Books: "
         + books
-        + ", com.moon.senla.Order status: "
+        + ", Order status: "
         + orderStatus
         + ", Execution: "
         + execution

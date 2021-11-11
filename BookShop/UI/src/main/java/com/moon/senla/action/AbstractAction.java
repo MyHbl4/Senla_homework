@@ -1,8 +1,8 @@
 package com.moon.senla.action;
 
-import com.moon.senla.CheckOfData;
-import com.moon.senla.CustomScanner;
-import com.moon.senla.PrintOut;
+import com.moon.senla.action.util.CheckOfData;
+import com.moon.senla.action.util.CustomScanner;
+import com.moon.senla.action.util.PrintOut;
 
 public abstract class AbstractAction implements IAction {
   public Manager manager;

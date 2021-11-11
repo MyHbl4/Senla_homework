@@ -14,7 +14,7 @@ public class ObjectFactory {
   private final List<ObjectConfigurator> configurators = new ArrayList<>();
 
   private ObjectFactory() {
-    config = new JavaConfig("task4", new HashMap<>(Map.of()));
+    config = new JavaConfig("com.moon.senla", new HashMap<>(Map.of()));
     for (Class<? extends ObjectConfigurator> aClass :
         config.getScanner().getSubTypesOf(ObjectConfigurator.class)) {
       try {

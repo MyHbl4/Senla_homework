@@ -1,5 +1,7 @@
 package com.moon.senla;
 
+import com.moon.senla.enums.Availability;
+import com.moon.senla.enums.OrderStatus;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

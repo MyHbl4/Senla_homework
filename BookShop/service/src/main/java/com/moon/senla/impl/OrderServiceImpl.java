@@ -1,26 +1,17 @@
 package com.moon.senla.impl;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.moon.senla.Availability;
 import com.moon.senla.Book;
 import com.moon.senla.BookRepository;
-import com.moon.senla.Constant;
 import com.moon.senla.Order;
 import com.moon.senla.OrderDAO;
 import com.moon.senla.OrderRepository;
 import com.moon.senla.OrderService;
-import com.moon.senla.OrderStatus;
 import com.moon.senla.RequestRepository;
 import com.moon.senla.annotations.InjectByType;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import com.moon.senla.enums.Availability;
+import com.moon.senla.enums.OrderStatus;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
@@ -145,37 +136,5 @@ public class OrderServiceImpl implements OrderService {
     List<Order> sortOrders = orderRepository.getAll();
     sortOrders.sort((Comparator.comparing(Order::getOrderStatus)));
     return sortOrders;
-  }
-
-  @Override
-  public void writeOrderBd() {
-    ObjectMapper mapper = new ObjectMapper();
-    try (PrintWriter writer =
-        new PrintWriter(new BufferedWriter(new FileWriter(Constant.FILE_ORDERS)))) {
-      List<Order> orders = orderRepository.getAll();
-      String orderJson = mapper.writeValueAsString(orders);
-      writer.write(orderJson);
-      writer.flush();
-    } catch (IOException e) {
-      System.out.println("Writing orders error");
-    }
-  }
-
-  @Override
-  public void readOrderBd() {
-    ObjectMapper mapper = new ObjectMapper();
-    List<Order> orders;
-    try (BufferedReader reader = new BufferedReader(new FileReader(Constant.FILE_ORDERS))) {
-      String orderJson;
-      orderRepository.getAll().clear();
-      while ((orderJson = reader.readLine()) != null) {
-        orders = Arrays.asList(mapper.readValue(orderJson, Order[].class));
-        for (Order order : orders) {
-          getAll().add(order);
-        }
-      }
-    } catch (IOException e) {
-      System.out.println(e);
-    }
   }
 }

@@ -20,8 +20,6 @@ public class CloseOrderAction extends AbstractAction {
         id = customScanner.getInt();
         check.checkOrder(id);
         manager.getOrderService().closeOrder(id);
-        manager.getOrderService().writeOrderBd();
-        manager.getBookService().writeBookBd();
         System.out.println("The order has been closed");
         isValid = false;
       } catch (CustomException e) {

@@ -42,8 +42,5 @@ public class AddOrderAction extends AbstractAction {
         }
       }
     }
-    manager.getOrderService().writeOrderBd();
-    manager.getBookService().writeBookBd();
-    manager.getRequestService().writerRequestBd();
   }
 }

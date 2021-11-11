@@ -1,6 +1,6 @@
 package com.moon.senla.impl;
 
-import com.moon.senla.Availability;
+import com.moon.senla.enums.Availability;
 import com.moon.senla.Book;
 import com.moon.senla.Order;
 import com.moon.senla.OrderDAO;
