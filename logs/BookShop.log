@@ -1,0 +1,680 @@
+
+2021-11-13 17:46:33,331 INFO main org.reflections.Reflections - Reflections took 105 ms to scan 9 urls, producing 17 keys and 45 values 
+2021-11-13 17:46:41,844 INFO main com.moon.senla.RequestDAO - Method completed - readAll
+2021-11-13 17:46:41,959 WARN main com.moon.senla.RequestDAO - Failed to execute the method - create
+org.postgresql.util.PSQLException: ERROR: null value in column "book_title" of relation "requests" violates not-null constraint
+  Подробности: Failing row contains (9, 1, 254, null).
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2674)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2364)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:354)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:484)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:404)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:162)
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:114)
+	at com.moon.senla.RequestDAO.create(RequestDAO.java:33)
+	at com.moon.senla.impl.RequestRepositoryImpl.addRequest(RequestRepositoryImpl.java:36)
+	at com.moon.senla.impl.RequestServiceImpl.addRequest(RequestServiceImpl.java:20)
+	at com.moon.senla.action.request.AddRequestAction.execute(AddRequestAction.java:20)
+	at com.moon.senla.MenuItem.doAction(MenuItem.java:18)
+	at com.moon.senla.Navigator.navigate(Navigator.java:39)
+	at com.moon.senla.MenuController.run(MenuController.java:30)
+	at com.moon.senla.Runner.main(Runner.java:13)
+2021-11-13 17:46:55,450 INFO main com.moon.senla.RequestDAO - Method completed - readAll
+2021-11-13 17:46:58,244 INFO main com.moon.senla.Runner - The program is closed
+2021-11-13 17:58:09,057 INFO main org.reflections.Reflections - Reflections took 173 ms to scan 9 urls, producing 17 keys and 45 values 
+2021-11-13 17:58:18,813 INFO main com.moon.senla.OrderDAO - Method completed - readBooks
+2021-11-13 17:58:18,860 INFO main com.moon.senla.OrderDAO - Method completed - readBooks
+2021-11-13 17:58:18,907 INFO main com.moon.senla.OrderDAO - Method completed - readBooks
+2021-11-13 17:58:18,954 INFO main com.moon.senla.OrderDAO - Method completed - readBooks
+2021-11-13 17:58:19,001 INFO main com.moon.senla.OrderDAO - Method completed - readBooks
+2021-11-13 17:58:19,048 INFO main com.moon.senla.OrderDAO - Method completed - readBooks
+2021-11-13 17:58:19,048 INFO main com.moon.senla.OrderDAO - Method completed - readAll
+2021-11-13 18:00:41,585 INFO main com.moon.senla.BookDAO - Method completed - read
+2021-11-13 18:01:19,213 INFO main com.moon.senla.BookDAO - Method completed - read
+2021-11-13 18:01:19,260 INFO main com.moon.senla.BookDAO - Method completed - read
+2021-11-13 18:01:29,123 INFO main com.moon.senla.BookDAO - Method completed - read
+2021-11-13 18:01:29,166 INFO main com.moon.senla.BookDAO - Method completed - read
+2021-11-13 18:01:30,077 INFO main com.moon.senla.BookDAO - Method completed - read
+2021-11-13 18:01:30,124 INFO main com.moon.senla.BookDAO - Method completed - read
+2021-11-13 18:01:30,718 INFO main com.moon.senla.BookDAO - Method completed - read
+2021-11-13 18:01:30,765 INFO main com.moon.senla.BookDAO - Method completed - read
+2021-11-13 18:01:31,239 INFO main com.moon.senla.BookDAO - Method completed - read
+2021-11-13 18:01:31,271 INFO main com.moon.senla.BookDAO - Method completed - read
+2021-11-13 18:01:32,082 INFO main com.moon.senla.BookDAO - Method completed - read
+2021-11-13 18:01:32,129 INFO main com.moon.senla.BookDAO - Method completed - read
+2021-11-13 18:01:32,618 INFO main com.moon.senla.BookDAO - Method completed - read
+2021-11-13 18:01:32,665 INFO main com.moon.senla.BookDAO - Method completed - read
+2021-11-13 18:01:33,161 INFO main com.moon.senla.BookDAO - Method completed - read
+2021-11-13 18:01:33,192 INFO main com.moon.senla.BookDAO - Method completed - read
+2021-11-13 18:01:33,775 INFO main com.moon.senla.BookDAO - Method completed - read
+2021-11-13 18:01:33,807 INFO main com.moon.senla.BookDAO - Method completed - read
+2021-11-13 18:01:34,516 INFO main com.moon.senla.BookDAO - Method completed - read
+2021-11-13 18:01:34,563 INFO main com.moon.senla.BookDAO - Method completed - read
+2021-11-13 18:01:35,127 INFO main com.moon.senla.BookDAO - Method completed - read
+2021-11-13 18:01:35,175 INFO main com.moon.senla.BookDAO - Method completed - read
+2021-11-13 18:01:35,660 INFO main com.moon.senla.BookDAO - Method completed - read
+2021-11-13 18:01:35,707 INFO main com.moon.senla.BookDAO - Method completed - read
+2021-11-13 18:01:35,766 INFO main com.moon.senla.OrderDAO - Method completed - create
+2021-11-13 18:01:35,828 INFO main com.moon.senla.OrderDAO - Method completed - createOrderBooks
+2021-11-13 18:01:35,875 INFO main com.moon.senla.OrderDAO - Method completed - createOrderBooks
+2021-11-13 18:01:35,906 INFO main com.moon.senla.OrderDAO - Method completed - createOrderBooks
+2021-11-13 18:01:35,953 INFO main com.moon.senla.OrderDAO - Method completed - createOrderBooks
+2021-11-13 18:01:36,000 INFO main com.moon.senla.OrderDAO - Method completed - createOrderBooks
+2021-11-13 18:01:36,031 INFO main com.moon.senla.OrderDAO - Method completed - createOrderBooks
+2021-11-13 18:01:36,078 INFO main com.moon.senla.OrderDAO - Method completed - createOrderBooks
+2021-11-13 18:01:36,125 INFO main com.moon.senla.OrderDAO - Method completed - createOrderBooks
+2021-11-13 18:01:36,172 INFO main com.moon.senla.OrderDAO - Method completed - createOrderBooks
+2021-11-13 18:01:36,203 INFO main com.moon.senla.OrderDAO - Method completed - createOrderBooks
+2021-11-13 18:01:36,267 INFO main com.moon.senla.OrderDAO - Method completed - createOrderBooks
+2021-11-13 18:01:36,298 INFO main com.moon.senla.OrderDAO - Method completed - createOrderBooks
+2021-11-13 18:01:36,345 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:36,392 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:36,423 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:36,470 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:36,517 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:36,548 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:36,595 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:36,626 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:36,673 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:36,705 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:36,751 INFO main com.moon.senla.RequestDAO - Method completed - readAll
+2021-11-13 18:01:36,795 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:36,831 INFO main com.moon.senla.RequestDAO - Method completed - create
+2021-11-13 18:01:36,862 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:36,909 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:36,941 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:36,987 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:37,019 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:37,066 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:37,097 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:37,144 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:37,187 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:37,218 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:37,265 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:37,296 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:37,363 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:37,394 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:37,441 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:37,473 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:37,519 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:37,551 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:37,598 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:37,629 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:37,676 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:37,707 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:37,754 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:37,785 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:37,834 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:37,865 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:37,896 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:37,943 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:37,990 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:38,021 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:38,052 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:38,099 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:38,146 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:38,177 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:38,209 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:38,255 INFO main com.moon.senla.RequestDAO - Method completed - readAll
+2021-11-13 18:01:38,318 WARN main com.moon.senla.RequestDAO - Failed to execute the method - update request!
+org.postgresql.util.PSQLException: Запрос не вернул результатов.
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:115)
+	at com.moon.senla.RequestDAO.update(RequestDAO.java:89)
+	at com.moon.senla.impl.RequestRepositoryImpl.addRequest(RequestRepositoryImpl.java:26)
+	at com.moon.senla.impl.OrderServiceImpl.checkBooksForRequest(OrderServiceImpl.java:52)
+	at com.moon.senla.impl.OrderServiceImpl.addOrder(OrderServiceImpl.java:37)
+	at com.moon.senla.action.orderAction.AddOrderAction.execute(AddOrderAction.java:36)
+	at com.moon.senla.MenuItem.doAction(MenuItem.java:18)
+	at com.moon.senla.Navigator.navigate(Navigator.java:39)
+	at com.moon.senla.MenuController.run(MenuController.java:30)
+	at com.moon.senla.Runner.main(Runner.java:13)
+2021-11-13 18:01:38,365 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:38,507 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:38,542 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:38,585 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:38,616 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:38,663 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:38,694 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:38,741 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:38,773 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:38,819 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:38,851 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:38,882 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:38,930 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:38,972 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:39,003 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:39,034 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:39,081 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:39,112 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:39,159 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:39,202 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:39,234 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:39,265 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:39,312 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:39,343 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:39,390 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:39,440 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:39,478 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:39,509 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:39,556 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:39,587 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:39,634 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:39,665 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:39,712 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:39,743 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:39,790 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:39,821 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:39,853 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:39,900 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:39,931 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:39,963 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:40,013 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:40,044 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:40,076 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:40,123 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:40,169 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:40,201 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:40,233 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:40,280 INFO main com.moon.senla.RequestDAO - Method completed - readAll
+2021-11-13 18:01:40,321 WARN main com.moon.senla.RequestDAO - Failed to execute the method - update request!
+org.postgresql.util.PSQLException: Запрос не вернул результатов.
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:115)
+	at com.moon.senla.RequestDAO.update(RequestDAO.java:89)
+	at com.moon.senla.impl.RequestRepositoryImpl.addRequest(RequestRepositoryImpl.java:26)
+	at com.moon.senla.impl.OrderServiceImpl.checkBooksForRequest(OrderServiceImpl.java:52)
+	at com.moon.senla.impl.OrderServiceImpl.addOrder(OrderServiceImpl.java:37)
+	at com.moon.senla.action.orderAction.AddOrderAction.execute(AddOrderAction.java:36)
+	at com.moon.senla.MenuItem.doAction(MenuItem.java:18)
+	at com.moon.senla.Navigator.navigate(Navigator.java:39)
+	at com.moon.senla.MenuController.run(MenuController.java:30)
+	at com.moon.senla.Runner.main(Runner.java:13)
+2021-11-13 18:01:40,352 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:40,399 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:40,431 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:40,580 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:40,627 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:40,658 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:40,705 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:40,736 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:40,783 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:40,814 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:40,861 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:40,893 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:40,939 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:40,971 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:41,018 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:41,045 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:41,092 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:41,123 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:41,170 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:41,203 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:41,353 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:41,389 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:41,435 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:41,467 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:41,514 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:41,558 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:41,594 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:41,625 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:41,672 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:41,703 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:41,750 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:41,781 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:41,832 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:41,865 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:41,912 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:41,944 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:41,991 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:42,022 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:42,069 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:42,109 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:42,142 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:42,173 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:42,220 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:42,252 INFO main com.moon.senla.RequestDAO - Method completed - readAll
+2021-11-13 18:01:42,299 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:42,330 INFO main com.moon.senla.RequestDAO - Method completed - create
+2021-11-13 18:01:42,377 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:42,423 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:42,470 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:42,502 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:42,549 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:42,580 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:42,627 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:42,659 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:42,690 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:42,744 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:42,776 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:42,823 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:42,854 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:42,901 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:42,932 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:42,979 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:43,010 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:43,057 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:43,088 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:43,119 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:43,160 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:43,208 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:43,239 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:43,286 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:43,317 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:43,364 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:43,396 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:43,442 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:43,474 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:43,521 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:43,552 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:43,599 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:43,630 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:43,680 INFO main com.moon.senla.RequestDAO - Method completed - readAll
+2021-11-13 18:01:43,819 WARN main com.moon.senla.RequestDAO - Failed to execute the method - update request!
+org.postgresql.util.PSQLException: Запрос не вернул результатов.
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:115)
+	at com.moon.senla.RequestDAO.update(RequestDAO.java:89)
+	at com.moon.senla.impl.RequestRepositoryImpl.addRequest(RequestRepositoryImpl.java:26)
+	at com.moon.senla.impl.OrderServiceImpl.checkBooksForRequest(OrderServiceImpl.java:52)
+	at com.moon.senla.impl.OrderServiceImpl.addOrder(OrderServiceImpl.java:37)
+	at com.moon.senla.action.orderAction.AddOrderAction.execute(AddOrderAction.java:36)
+	at com.moon.senla.MenuItem.doAction(MenuItem.java:18)
+	at com.moon.senla.Navigator.navigate(Navigator.java:39)
+	at com.moon.senla.MenuController.run(MenuController.java:30)
+	at com.moon.senla.Runner.main(Runner.java:13)
+2021-11-13 18:01:43,850 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:43,897 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:43,928 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:43,959 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:44,006 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:44,038 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:44,084 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:44,116 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:44,163 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:44,294 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:44,351 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:44,397 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:44,429 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:44,585 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:44,616 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:44,663 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:44,694 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:44,741 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:44,774 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:44,805 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:44,852 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:44,883 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:44,930 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:44,961 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:44,993 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:45,040 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:45,071 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:45,118 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:45,165 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:45,196 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:45,240 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:45,275 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:45,316 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:45,347 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:45,394 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:45,441 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:45,483 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:45,514 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:45,561 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:45,598 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:45,629 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:45,661 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:45,708 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:45,854 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:45,905 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:45,936 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:45,968 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:46,124 INFO main com.moon.senla.RequestDAO - Method completed - readAll
+2021-11-13 18:01:46,155 WARN main com.moon.senla.RequestDAO - Failed to execute the method - update request!
+org.postgresql.util.PSQLException: Запрос не вернул результатов.
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:115)
+	at com.moon.senla.RequestDAO.update(RequestDAO.java:89)
+	at com.moon.senla.impl.RequestRepositoryImpl.addRequest(RequestRepositoryImpl.java:26)
+	at com.moon.senla.impl.OrderServiceImpl.checkBooksForRequest(OrderServiceImpl.java:52)
+	at com.moon.senla.impl.OrderServiceImpl.addOrder(OrderServiceImpl.java:37)
+	at com.moon.senla.action.orderAction.AddOrderAction.execute(AddOrderAction.java:36)
+	at com.moon.senla.MenuItem.doAction(MenuItem.java:18)
+	at com.moon.senla.Navigator.navigate(Navigator.java:39)
+	at com.moon.senla.MenuController.run(MenuController.java:30)
+	at com.moon.senla.Runner.main(Runner.java:13)
+2021-11-13 18:01:46,202 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:46,233 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:46,280 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:46,311 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:46,357 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:46,388 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:46,435 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:46,466 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:46,498 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:46,544 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:46,576 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:46,623 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:46,654 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:46,685 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:46,732 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:46,763 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:46,794 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:46,841 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:46,880 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:46,905 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:46,952 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:46,983 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:47,015 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:47,062 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:47,218 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:47,245 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:47,407 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:47,454 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:47,485 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:47,532 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:47,563 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:47,610 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:47,641 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:47,688 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:47,719 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:47,766 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:47,798 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:47,829 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:47,876 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:47,916 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:47,939 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:47,986 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:48,017 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:48,064 INFO main com.moon.senla.RequestDAO - Method completed - readAll
+2021-11-13 18:01:48,205 WARN main com.moon.senla.RequestDAO - Failed to execute the method - update request!
+org.postgresql.util.PSQLException: Запрос не вернул результатов.
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:115)
+	at com.moon.senla.RequestDAO.update(RequestDAO.java:89)
+	at com.moon.senla.impl.RequestRepositoryImpl.addRequest(RequestRepositoryImpl.java:26)
+	at com.moon.senla.impl.OrderServiceImpl.checkBooksForRequest(OrderServiceImpl.java:52)
+	at com.moon.senla.impl.OrderServiceImpl.addOrder(OrderServiceImpl.java:37)
+	at com.moon.senla.action.orderAction.AddOrderAction.execute(AddOrderAction.java:36)
+	at com.moon.senla.MenuItem.doAction(MenuItem.java:18)
+	at com.moon.senla.Navigator.navigate(Navigator.java:39)
+	at com.moon.senla.MenuController.run(MenuController.java:30)
+	at com.moon.senla.Runner.main(Runner.java:13)
+2021-11-13 18:01:48,236 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:48,283 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:48,314 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:48,345 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:48,392 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:48,439 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:48,472 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:48,503 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:48,550 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:48,581 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:48,628 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:48,659 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:48,706 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:48,737 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:48,769 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:48,815 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:48,847 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:48,894 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:48,925 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:48,972 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:49,005 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:49,036 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:49,083 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:49,240 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:49,413 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:49,444 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:49,491 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:49,631 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:49,678 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:49,709 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:49,756 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:49,788 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:49,819 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:49,866 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:49,897 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:49,944 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:49,975 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:50,006 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:50,058 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:50,083 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:50,130 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:50,161 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:50,208 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:50,244 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:50,275 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:50,317 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:50,348 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:50,395 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:50,426 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:50,473 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:50,499 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:50,546 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:50,696 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:50,727 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:50,759 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:50,805 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:50,837 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:50,883 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:50,915 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:50,962 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:50,993 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:51,030 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:51,069 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:51,106 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:51,152 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:51,183 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:51,231 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:51,263 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:51,309 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:51,341 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:51,372 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:51,419 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:51,466 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:51,497 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:51,544 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:51,575 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:51,629 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:51,652 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:51,699 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:51,730 INFO main com.moon.senla.RequestDAO - Method completed - readAll
+2021-11-13 18:01:51,777 WARN main com.moon.senla.RequestDAO - Failed to execute the method - update request!
+org.postgresql.util.PSQLException: Запрос не вернул результатов.
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:115)
+	at com.moon.senla.RequestDAO.update(RequestDAO.java:89)
+	at com.moon.senla.impl.RequestRepositoryImpl.addRequest(RequestRepositoryImpl.java:26)
+	at com.moon.senla.impl.OrderServiceImpl.checkBooksForRequest(OrderServiceImpl.java:52)
+	at com.moon.senla.impl.OrderServiceImpl.addOrder(OrderServiceImpl.java:37)
+	at com.moon.senla.action.orderAction.AddOrderAction.execute(AddOrderAction.java:36)
+	at com.moon.senla.MenuItem.doAction(MenuItem.java:18)
+	at com.moon.senla.Navigator.navigate(Navigator.java:39)
+	at com.moon.senla.MenuController.run(MenuController.java:30)
+	at com.moon.senla.Runner.main(Runner.java:13)
+2021-11-13 18:01:51,808 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:51,965 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:51,996 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:52,043 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:52,074 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:52,121 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:52,165 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:52,201 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:52,232 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:52,279 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:52,310 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:52,357 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:52,388 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:52,435 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:52,482 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:52,607 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:52,654 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:52,796 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:52,968 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:52,999 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:53,037 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:53,071 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:53,118 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:53,149 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:53,181 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:53,230 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:53,370 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:53,417 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:53,542 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:53,589 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:53,636 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:53,667 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:53,714 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:53,865 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:53,907 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:53,939 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:53,986 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:54,017 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:54,173 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:54,204 INFO main com.moon.senla.RequestDAO - Method completed - readAll
+2021-11-13 18:01:54,251 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:54,295 INFO main com.moon.senla.RequestDAO - Method completed - create
+2021-11-13 18:01:54,332 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:54,363 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:54,522 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:54,554 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:54,593 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:54,624 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:54,671 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:54,816 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:54,863 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:54,894 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:54,941 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:54,973 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:55,019 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:55,066 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:55,098 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:55,144 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:55,176 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:55,223 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:55,249 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:55,296 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:55,338 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:55,364 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:55,411 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:55,449 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:55,486 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:55,533 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:55,564 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:55,709 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:55,756 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:55,787 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:55,828 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:55,871 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:56,022 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:56,054 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:56,101 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:56,132 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:56,179 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:56,210 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:56,241 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:56,288 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:56,319 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:56,351 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:56,402 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:56,430 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:56,477 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:56,508 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:56,540 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:56,586 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:56,618 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:56,665 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:56,696 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:56,743 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:56,883 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:57,042 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:57,089 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:57,129 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:57,160 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:57,207 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:57,238 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:57,281 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:57,312 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:57,359 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:57,390 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:57,437 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:57,481 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:57,527 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:57,559 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:57,605 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:57,762 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:57,793 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:57,828 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:57,875 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:57,922 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:57,953 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:58,004 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:58,045 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:58,076 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:58,108 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:58,155 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:58,186 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:58,217 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:58,264 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:58,295 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:58,342 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:58,373 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:58,420 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:58,451 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:58,608 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:58,640 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:58,671 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:58,718 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:58,750 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:58,797 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:58,828 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:58,859 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:58,906 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:58,937 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:58,984 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:59,015 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:59,058 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:59,095 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:59,126 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:59,157 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:59,204 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:59,235 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:59,283 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:59,314 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:59,361 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:59,392 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:59,439 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:59,471 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:59,517 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:01:59,573 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 18:02:35,709 INFO main com.moon.senla.OrderDAO - Method completed - read
+2021-11-13 18:02:38,466 INFO main com.moon.senla.OrderDAO - Method completed - readBooks
+2021-11-13 18:02:38,466 INFO main com.moon.senla.OrderDAO - Method completed - read
+2021-11-13 18:02:38,497 INFO main com.moon.senla.OrderDAO - Method completed - update
+2021-11-13 18:17:20,367 INFO main org.reflections.Reflections - Reflections took 136 ms to scan 9 urls, producing 17 keys and 45 values 
+2021-11-13 23:02:27,171 INFO main org.reflections.Reflections - Reflections took 266 ms to scan 9 urls, producing 17 keys and 45 values 
+2021-11-13 23:02:35,517 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 23:02:35,533 INFO main com.moon.senla.BookDAO - Method completed - sortBookByTitle
+2021-11-13 23:02:43,655 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 23:02:43,655 INFO main com.moon.senla.BookDAO - Method completed - getOldBooks
+2021-11-13 23:02:43,655 INFO main com.moon.senla.BookDAO - Method completed - sortOldBookByDate
+2021-11-13 23:03:00,444 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-13 23:03:00,444 INFO main com.moon.senla.BookDAO - Method completed - getOldBooks
+2021-11-13 23:03:00,444 INFO main com.moon.senla.BookDAO - Method completed - sortOldBookByPrice
+2021-11-13 23:03:08,252 INFO main com.moon.senla.Runner - The program is closed
+2021-11-13 23:30:09,048 INFO main org.reflections.Reflections - Reflections took 235 ms to scan 9 urls, producing 17 keys and 45 values 
+2021-11-13 23:30:27,403 INFO main com.moon.senla.RequestDAO - Method completed - readAll
+2021-11-13 23:30:27,418 INFO main com.moon.senla.BookDAO - Method completed - sortRequestByCount
+2021-11-13 23:31:11,431 INFO main com.moon.senla.Runner - The program is closed
+2021-11-14 00:05:09,638 INFO main org.reflections.Reflections - Reflections took 188 ms to scan 9 urls, producing 17 keys and 45 values 
+2021-11-14 00:05:17,929 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-14 00:05:17,929 INFO main com.moon.senla.BookDAO - Method completed - sortBookByTitle
+2021-11-14 00:05:35,485 INFO main com.moon.senla.OrderDAO - Method completed - readBooks
+2021-11-14 00:05:35,485 INFO main com.moon.senla.OrderDAO - Method completed - read
+2021-11-14 00:05:35,625 INFO main com.moon.senla.OrderDAO - Method completed - readBooks
+2021-11-14 00:05:35,625 INFO main com.moon.senla.OrderDAO - Method completed - read
+2021-11-14 00:05:45,333 INFO main com.moon.senla.OrderDAO - Method completed - readBooks
+2021-11-14 00:05:45,395 INFO main com.moon.senla.OrderDAO - Method completed - readBooks
+2021-11-14 00:05:45,458 INFO main com.moon.senla.OrderDAO - Method completed - readBooks
+2021-11-14 00:05:45,531 INFO main com.moon.senla.OrderDAO - Method completed - readBooks
+2021-11-14 00:05:45,594 INFO main com.moon.senla.OrderDAO - Method completed - readBooks
+2021-11-14 00:05:45,656 INFO main com.moon.senla.OrderDAO - Method completed - readBooks
+2021-11-14 00:05:45,725 INFO main com.moon.senla.OrderDAO - Method completed - readBooks
+2021-11-14 00:05:45,725 INFO main com.moon.senla.OrderDAO - Method completed - readAll
+2021-11-14 00:05:45,725 INFO main com.moon.senla.BookDAO - Method completed - sortOrderByPrice

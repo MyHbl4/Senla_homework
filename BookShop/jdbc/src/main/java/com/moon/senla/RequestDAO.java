@@ -7,8 +7,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class RequestDAO extends AbstractDAO<Integer, Request> {
+  private static final Logger logger = LoggerFactory.getLogger(RequestDAO.class);
 
   public static final String SQL_CREATE_REQUESTS =
       "INSERT INTO requests (book_id, book_title) values (?, ?) RETURNING id";
@@ -28,8 +31,9 @@ public class RequestDAO extends AbstractDAO<Integer, Request> {
       statement.setInt(1, Math.toIntExact(entity.getBookId()));
       statement.setString(2, entity.getTitle());
       result = statement.executeQuery().next();
+      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (SQLException e) {
-      System.out.println(e.getMessage());
+      logger.warn("Failed to execute the method - " + Thread.currentThread().getStackTrace()[1].getMethodName(), e);
     }
     return result;
   }
@@ -47,8 +51,9 @@ public class RequestDAO extends AbstractDAO<Integer, Request> {
         String book_title = rs.getString(4);
         requests.add(new Request(id, count, book_id, book_title));
       }
+      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (SQLException e) {
-      System.out.println(e.getMessage());
+      logger.warn("Failed to execute the method - " + Thread.currentThread().getStackTrace()[1].getMethodName(), e);
     }
     return requests;
   }
@@ -66,8 +71,9 @@ public class RequestDAO extends AbstractDAO<Integer, Request> {
         String book_title = rs.getString(4);
         request = new Request(id, count, book_id, book_title);
       }
+      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (SQLException e) {
-      System.out.println(e.getMessage());
+      logger.warn("Failed to execute the method - read request!", e);
     }
     return request;
   }
@@ -81,8 +87,9 @@ public class RequestDAO extends AbstractDAO<Integer, Request> {
       statement.setInt(1, id);
       statement.setInt(2, id);
       result = statement.executeQuery().next();
+      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (SQLException e) {
-      System.out.println(e.getMessage());
+      logger.warn("Failed to execute the method - update request!", e);
     }
     return result;
   }
@@ -95,8 +102,9 @@ public class RequestDAO extends AbstractDAO<Integer, Request> {
         PreparedStatement statement = connection.prepareStatement(SQL_DELETE_REQUEST_ID)) {
       statement.setInt(1, id);
       result = statement.executeQuery().next();
+      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (SQLException e) {
-      System.out.println(e.getMessage());
+      logger.warn("Failed to execute the method - delete request!", e);
     }
     return result;
   }

@@ -29,8 +29,8 @@ import com.moon.senla.action.util.Constant;
 public class Builder {
 
   private static Builder instance;
-  private Menu rootMenu;
   private final Manager manager;
+  private Menu rootMenu;
 
   private Builder(Manager manager) {
     this.manager = manager;
@@ -105,7 +105,7 @@ public class Builder {
             new SortBookByAvailabilityAction(manager),
             getRootMenu()));
     rootMenu.addMenuItem(
-        new MenuItem("5 - com.moon.senla.Book information", new BookInfoAction(manager), getRootMenu()));
+        new MenuItem("5 - Book information", new BookInfoAction(manager), getRootMenu()));
     rootMenu.addMenuItem(
         new MenuItem("6 - Back\n0 - Exit", () -> System.out.println("Back"), getRootMenu()));
     return rootMenu;
@@ -166,7 +166,7 @@ public class Builder {
     rootMenu.addMenuItem(
         new MenuItem("3 - Sorting by status", new SortOrderByStatusAction(manager), getRootMenu()));
     rootMenu.addMenuItem(
-        new MenuItem("4 - com.moon.senla.Order information", new OrderInfoAction(manager), getRootMenu()));
+        new MenuItem("4 - Order information", new OrderInfoAction(manager), getRootMenu()));
     rootMenu.addMenuItem(
         new MenuItem("5 - Back\n0 - Exit", () -> System.out.println("Back"), getRootMenu()));
     return rootMenu;

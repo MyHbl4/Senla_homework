@@ -34,7 +34,7 @@ public class AddOrderAction extends AbstractAction {
           books.add(manager.getBookService().findBookById(id));
           if (i == amount - 1) {
             manager.getOrderService().addOrder(new Order(customerName, books));
-            System.out.println("com.moon.senla.Order has been added");
+            System.out.println("The order has been added");
           }
           isValid = false;
         } catch (CustomException e) {

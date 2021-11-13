@@ -6,4 +6,5 @@
 /out/
 /sonar-project.properties
 /META-INF/
+logs
 *.iml

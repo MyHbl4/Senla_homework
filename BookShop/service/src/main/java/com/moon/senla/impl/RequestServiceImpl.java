@@ -1,14 +1,18 @@
 package com.moon.senla.impl;
 
+import com.moon.senla.BookDAO;
 import com.moon.senla.Request;
 import com.moon.senla.RequestRepository;
 import com.moon.senla.RequestService;
 import com.moon.senla.annotations.InjectByType;
 import java.util.Comparator;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class RequestServiceImpl implements RequestService {
   @InjectByType private RequestRepository requestRepository;
+  private static final Logger logger = LoggerFactory.getLogger(BookDAO.class);
 
   @Override
   public List<Request> getAll() {
@@ -17,20 +21,37 @@ public class RequestServiceImpl implements RequestService {
 
   @Override
   public void addRequest(long bookId) {
-    requestRepository.addRequest(bookId);
+    try {
+      requestRepository.addRequest(bookId);
+      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
+    } catch (Exception e) {
+      logger.warn("Failed to execute the method - " + Thread.currentThread().getStackTrace()[1].getMethodName(), e);
+    }
   }
 
   @Override
   public List<Request> sortRequestByCount() {
-    List<Request> sortRequests = requestRepository.getAll();
-    sortRequests.sort(Comparator.comparingInt(Request::getCount));
+    List<Request> sortRequests = null;
+    try {
+      sortRequests = requestRepository.getAll();
+      sortRequests.sort(Comparator.comparingInt(Request::getCount));
+      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
+    } catch (Exception e) {
+      logger.warn("Failed to execute the method - " + Thread.currentThread().getStackTrace()[1].getMethodName(), e);
+    }
     return sortRequests;
   }
 
   @Override
   public List<Request> sortRequestByTitle() {
-    List<Request> sortRequests = requestRepository.getAll();
-    sortRequests.sort(Comparator.comparing(Request::getTitle));
+    List<Request> sortRequests = null;
+    try {
+      sortRequests = requestRepository.getAll();
+      sortRequests.sort(Comparator.comparing(Request::getTitle));
+      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
+    } catch (Exception e) {
+      logger.warn("Failed to execute the method - " + Thread.currentThread().getStackTrace()[1].getMethodName(), e);
+    }
     return sortRequests;
   }
 }

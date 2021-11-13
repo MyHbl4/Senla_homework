@@ -10,8 +10,11 @@ import java.sql.Statement;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class OrderDAO extends AbstractDAO<Integer, Order> {
+  private static final Logger logger = LoggerFactory.getLogger(OrderDAO.class);
 
   public static final String SQL_CREATE_ORDER =
       "INSERT INTO orders (customername) values (?) RETURNING id;";
@@ -35,9 +38,11 @@ public class OrderDAO extends AbstractDAO<Integer, Order> {
         PreparedStatement statement = connection.prepareStatement(SQL_CREATE_ORDER)) {
       statement.setString(1, entity.getCustomerName());
       result = statement.executeQuery().next();
+      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (SQLException e) {
-      System.out.println(e.getMessage());
+      logger.warn("Failed to execute the method - " + Thread.currentThread().getStackTrace()[1].getMethodName(), e);
     }
+
     return result;
   }
 
@@ -49,8 +54,9 @@ public class OrderDAO extends AbstractDAO<Integer, Order> {
           PreparedStatement statement = connection.prepareStatement(SQL_CREATE_ORDER_BOOKS)) {
         statement.setInt(1, Math.toIntExact(book.getId()));
         result = statement.executeQuery().next();
+        logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
       } catch (SQLException e) {
-        System.out.println(e.getMessage());
+        logger.warn("Failed to execute the method - " + Thread.currentThread().getStackTrace()[1].getMethodName(), e);
       }
     }
     return result;
@@ -70,9 +76,11 @@ public class OrderDAO extends AbstractDAO<Integer, Order> {
         LocalDate execution = LocalDate.parse(rs.getString(4));
         orders.add(new Order(id, customername, books, orderstatus, execution));
       }
+      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (SQLException e) {
-      System.out.println(e.getMessage());
+      logger.warn("Failed to execute the method - " + Thread.currentThread().getStackTrace()[1].getMethodName(), e);
     }
+
     return orders;
   }
 
@@ -90,9 +98,11 @@ public class OrderDAO extends AbstractDAO<Integer, Order> {
         LocalDate execution = LocalDate.parse(rs.getString(4));
         order = new Order(id, customername, books, orderstatus, execution);
       }
+      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (SQLException e) {
-      System.out.println(e.getMessage());
+      logger.warn("Failed to execute the method - " + Thread.currentThread().getStackTrace()[1].getMethodName(), e);
     }
+
     return order;
   }
 
@@ -112,9 +122,11 @@ public class OrderDAO extends AbstractDAO<Integer, Order> {
         LocalDate deliverydate = LocalDate.parse(rs.getString(7));
         books.add(new Book(id, title, author, price, publication, availability, deliverydate));
       }
+      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (SQLException e) {
-      System.out.println(e.getMessage());
+      logger.warn("Failed to execute the method - " + Thread.currentThread().getStackTrace()[1].getMethodName(), e);
     }
+
     return books;
   }
 
@@ -126,9 +138,11 @@ public class OrderDAO extends AbstractDAO<Integer, Order> {
         PreparedStatement statement = connection.prepareStatement(SQL_UPDATE_ORDER_ID)) {
       statement.setInt(1, id);
       result = statement.executeQuery().next();
+      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (SQLException e) {
-      System.out.println(e.getMessage());
+      logger.warn("Failed to execute the method - " + Thread.currentThread().getStackTrace()[1].getMethodName(), e);
     }
+
     return result;
   }
 
@@ -139,9 +153,11 @@ public class OrderDAO extends AbstractDAO<Integer, Order> {
         PreparedStatement statement = connection.prepareStatement(SQL_UPDATE_CANCEL_ORDER_ID)) {
       statement.setInt(1, id);
       result = statement.executeQuery().next();
+      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (SQLException e) {
-      System.out.println(e.getMessage());
+      logger.warn("Failed to execute the method - " + Thread.currentThread().getStackTrace()[1].getMethodName(), e);
     }
+
     return result;
   }
 
@@ -153,9 +169,11 @@ public class OrderDAO extends AbstractDAO<Integer, Order> {
         PreparedStatement statement = connection.prepareStatement(SQL_DELETE_ORDER_ID)) {
       statement.setInt(1, id);
       result = statement.executeQuery().next();
+      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (SQLException e) {
-      System.out.println(e.getMessage());
+      logger.warn("Failed to execute the method - " + Thread.currentThread().getStackTrace()[1].getMethodName(), e);
     }
+
     return result;
   }
 }

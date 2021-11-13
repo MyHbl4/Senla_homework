@@ -15,7 +15,6 @@
       <groupId>com.moon.senla</groupId>
       <artifactId>ui-module</artifactId>
       <version>1.0-SNAPSHOT</version>
-      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>com.moon.senla</groupId>
