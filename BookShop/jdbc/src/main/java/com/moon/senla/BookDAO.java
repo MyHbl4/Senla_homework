@@ -146,7 +146,6 @@ public class BookDAO extends AbstractDAO<Integer, Book> {
       statement1.setInt(1, id);
       statement2.setInt(1, id);
       connection.commit();
-      connection.setAutoCommit(true);
       result = statement2.executeQuery().next();
       logger.info(
           "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
