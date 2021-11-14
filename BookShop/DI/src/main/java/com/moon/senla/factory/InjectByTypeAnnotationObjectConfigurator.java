@@ -1,7 +1,8 @@
 package com.moon.senla.factory;
 
-import com.moon.senla.annotations.InjectByType;
 import java.lang.reflect.Field;
+
+import com.moon.senla.annotations.InjectByType;
 
 public class InjectByTypeAnnotationObjectConfigurator implements ObjectConfigurator {
 

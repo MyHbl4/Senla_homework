@@ -1,9 +1,9 @@
 package com.moon.senla.action.bookAction;
 
-import com.moon.senla.entity.Book;
 import com.moon.senla.CustomException;
 import com.moon.senla.action.AbstractAction;
 import com.moon.senla.action.Manager;
+import com.moon.senla.entity.Book;
 
 public class BookInfoAction extends AbstractAction {
 

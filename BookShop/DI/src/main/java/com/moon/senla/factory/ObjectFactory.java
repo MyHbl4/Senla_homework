@@ -1,12 +1,13 @@
 package com.moon.senla.factory;
 
-import com.moon.senla.config.Config;
-import com.moon.senla.config.JavaConfig;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import com.moon.senla.config.Config;
+import com.moon.senla.config.JavaConfig;
 
 public class ObjectFactory {
   private static final ObjectFactory ourInstance = new ObjectFactory();

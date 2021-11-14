@@ -2,6 +2,7 @@ package com.moon.senla.config;
 
 import java.util.Map;
 import java.util.Set;
+
 import org.reflections.Reflections;
 
 public class JavaConfig implements Config {

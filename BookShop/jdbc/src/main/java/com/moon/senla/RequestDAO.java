@@ -1,6 +1,5 @@
 package com.moon.senla;
 
-import com.moon.senla.entity.Request;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -8,12 +7,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.moon.senla.entity.Request;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class RequestDAO extends AbstractDAO<Integer, Request> {
-  private static final Logger logger = LoggerFactory.getLogger(RequestDAO.class);
-
   public static final String SQL_CREATE_REQUESTS =
       "INSERT INTO requests (book_id, book_title) values (?, ?) RETURNING id";
   public static final String SQL_READ_ALL_REQUESTS = "SELECT * FROM requests";
@@ -22,6 +21,7 @@ public class RequestDAO extends AbstractDAO<Integer, Request> {
       "UPDATE requests SET count=((SELECT SUM(count) FROM requests WHERE id=?)+1) WHERE id=?";
   public static final String SQL_DELETE_REQUEST_ID =
       "DELETE FROM requests WHERE id=(?) RETURNING id";
+  private static final Logger logger = LoggerFactory.getLogger(RequestDAO.class);
 
   @Override
   public boolean create(Request entity) {
@@ -32,9 +32,13 @@ public class RequestDAO extends AbstractDAO<Integer, Request> {
       statement.setInt(1, Math.toIntExact(entity.getBookId()));
       statement.setString(2, entity.getTitle());
       result = statement.executeQuery().next();
-      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
+      logger.info(
+          "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (SQLException e) {
-      logger.warn("Failed to execute the method - " + Thread.currentThread().getStackTrace()[1].getMethodName(), e);
+      logger.warn(
+          "Failed to execute the method - "
+              + Thread.currentThread().getStackTrace()[1].getMethodName(),
+          e);
     }
     return result;
   }
@@ -52,9 +56,13 @@ public class RequestDAO extends AbstractDAO<Integer, Request> {
         String book_title = rs.getString(4);
         requests.add(new Request(id, count, book_id, book_title));
       }
-      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
+      logger.info(
+          "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (SQLException e) {
-      logger.warn("Failed to execute the method - " + Thread.currentThread().getStackTrace()[1].getMethodName(), e);
+      logger.warn(
+          "Failed to execute the method - "
+              + Thread.currentThread().getStackTrace()[1].getMethodName(),
+          e);
     }
     return requests;
   }
@@ -72,7 +80,8 @@ public class RequestDAO extends AbstractDAO<Integer, Request> {
         String book_title = rs.getString(4);
         request = new Request(id, count, book_id, book_title);
       }
-      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
+      logger.info(
+          "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (SQLException e) {
       logger.warn("Failed to execute the method - read request!", e);
     }
@@ -88,7 +97,8 @@ public class RequestDAO extends AbstractDAO<Integer, Request> {
       statement.setInt(1, id);
       statement.setInt(2, id);
       result = statement.executeQuery().next();
-      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
+      logger.info(
+          "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (SQLException e) {
       logger.warn("Failed to execute the method - update request!", e);
     }
@@ -103,7 +113,8 @@ public class RequestDAO extends AbstractDAO<Integer, Request> {
         PreparedStatement statement = connection.prepareStatement(SQL_DELETE_REQUEST_ID)) {
       statement.setInt(1, id);
       result = statement.executeQuery().next();
-      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
+      logger.info(
+          "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (SQLException e) {
       logger.warn("Failed to execute the method - delete request!", e);
     }

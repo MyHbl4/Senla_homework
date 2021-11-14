@@ -2,7 +2,6 @@ package com.moon.senla.factory;
 
 import static java.util.stream.Collectors.toMap;
 
-import com.moon.senla.annotations.InjectProperty;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -11,11 +10,15 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.stream.Stream;
 
+import com.moon.senla.annotations.InjectProperty;
+
 public class InjectPropertyAnnotationObjectConfiguratorImpl implements ObjectConfigurator {
   private final Map<String, String> propertiesMap;
 
   public InjectPropertyAnnotationObjectConfiguratorImpl() {
-    String path = Objects.requireNonNull(ClassLoader.getSystemClassLoader().getResource("app.properties")).getPath();
+    String path =
+        Objects.requireNonNull(ClassLoader.getSystemClassLoader().getResource("app.properties"))
+            .getPath();
     Stream<String> lines = null;
     try {
       lines = new BufferedReader(new FileReader(path)).lines();

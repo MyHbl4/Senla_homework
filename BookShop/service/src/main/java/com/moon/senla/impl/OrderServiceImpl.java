@@ -1,29 +1,30 @@
 package com.moon.senla.impl;
 
-import com.moon.senla.entity.Book;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+
 import com.moon.senla.BookDAO;
 import com.moon.senla.BookRepository;
-import com.moon.senla.entity.Order;
 import com.moon.senla.OrderDAO;
 import com.moon.senla.OrderRepository;
 import com.moon.senla.OrderService;
 import com.moon.senla.RequestRepository;
 import com.moon.senla.annotations.InjectByType;
+import com.moon.senla.entity.Book;
+import com.moon.senla.entity.Order;
 import com.moon.senla.enums.Availability;
 import com.moon.senla.enums.OrderStatus;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class OrderServiceImpl implements OrderService {
+  private static final Logger logger = LoggerFactory.getLogger(BookDAO.class);
   @InjectByType private OrderRepository orderRepository;
   @InjectByType private BookRepository bookRepository;
   @InjectByType private RequestRepository requestRepository;
   @InjectByType private OrderDAO orderDAO;
-  private static final Logger logger = LoggerFactory.getLogger(BookDAO.class);
 
   @Override
   public Order findOrderById(int id) {
@@ -41,9 +42,13 @@ public class OrderServiceImpl implements OrderService {
       } else {
         checkBooksForRequest(order);
       }
-      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
+      logger.info(
+          "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (Exception e) {
-      logger.warn("Failed to execute the method - " + Thread.currentThread().getStackTrace()[1].getMethodName(), e);
+      logger.warn(
+          "Failed to execute the method - "
+              + Thread.currentThread().getStackTrace()[1].getMethodName(),
+          e);
     }
   }
 
@@ -64,9 +69,13 @@ public class OrderServiceImpl implements OrderService {
           }
         }
       }
-      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
+      logger.info(
+          "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (Exception e) {
-      logger.warn("Failed to execute the method - " + Thread.currentThread().getStackTrace()[1].getMethodName(), e);
+      logger.warn(
+          "Failed to execute the method - "
+              + Thread.currentThread().getStackTrace()[1].getMethodName(),
+          e);
     }
   }
 
@@ -80,9 +89,13 @@ public class OrderServiceImpl implements OrderService {
           availability = false;
         }
       }
-      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
+      logger.info(
+          "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (Exception e) {
-      logger.warn("Failed to execute the method - " + Thread.currentThread().getStackTrace()[1].getMethodName(), e);
+      logger.warn(
+          "Failed to execute the method - "
+              + Thread.currentThread().getStackTrace()[1].getMethodName(),
+          e);
     }
     return availability;
   }
@@ -91,9 +104,13 @@ public class OrderServiceImpl implements OrderService {
   public void closeOrder(int id) {
     try {
       orderDAO.update(id);
-      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
+      logger.info(
+          "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (Exception e) {
-      logger.warn("Failed to execute the method - " + Thread.currentThread().getStackTrace()[1].getMethodName(), e);
+      logger.warn(
+          "Failed to execute the method - "
+              + Thread.currentThread().getStackTrace()[1].getMethodName(),
+          e);
     }
   }
 
@@ -101,9 +118,13 @@ public class OrderServiceImpl implements OrderService {
   public void cancelOrder(int id) {
     try {
       orderDAO.updateCancel(id);
-      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
+      logger.info(
+          "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (Exception e) {
-      logger.warn("Failed to execute the method - " + Thread.currentThread().getStackTrace()[1].getMethodName(), e);
+      logger.warn(
+          "Failed to execute the method - "
+              + Thread.currentThread().getStackTrace()[1].getMethodName(),
+          e);
     }
   }
 
@@ -115,9 +136,13 @@ public class OrderServiceImpl implements OrderService {
       for (Order order : getCompletedOrderList(months)) {
         price += order.getPrice();
       }
-      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
+      logger.info(
+          "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (Exception e) {
-      logger.warn("Failed to execute the method - " + Thread.currentThread().getStackTrace()[1].getMethodName(), e);
+      logger.warn(
+          "Failed to execute the method - "
+              + Thread.currentThread().getStackTrace()[1].getMethodName(),
+          e);
     }
     return price;
   }
@@ -138,9 +163,13 @@ public class OrderServiceImpl implements OrderService {
           completedOrder.add(order);
         }
       }
-      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
+      logger.info(
+          "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (Exception e) {
-      logger.warn("Failed to execute the method - " + Thread.currentThread().getStackTrace()[1].getMethodName(), e);
+      logger.warn(
+          "Failed to execute the method - "
+              + Thread.currentThread().getStackTrace()[1].getMethodName(),
+          e);
     }
     return completedOrder;
   }
@@ -151,9 +180,13 @@ public class OrderServiceImpl implements OrderService {
     try {
       sortOrders = getCompletedOrderList(months);
       sortOrders.sort((Comparator.comparing(Order::getExecution)));
-      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
+      logger.info(
+          "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (Exception e) {
-      logger.warn("Failed to execute the method - " + Thread.currentThread().getStackTrace()[1].getMethodName(), e);
+      logger.warn(
+          "Failed to execute the method - "
+              + Thread.currentThread().getStackTrace()[1].getMethodName(),
+          e);
     }
     return sortOrders;
   }
@@ -164,9 +197,13 @@ public class OrderServiceImpl implements OrderService {
     try {
       sortOrders = getCompletedOrderList(months);
       sortOrders.sort((Comparator.comparingInt(Order::getPrice)));
-      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
+      logger.info(
+          "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (Exception e) {
-      logger.warn("Failed to execute the method - " + Thread.currentThread().getStackTrace()[1].getMethodName(), e);
+      logger.warn(
+          "Failed to execute the method - "
+              + Thread.currentThread().getStackTrace()[1].getMethodName(),
+          e);
     }
     return sortOrders;
   }
@@ -177,9 +214,13 @@ public class OrderServiceImpl implements OrderService {
     try {
       sortOrders = orderRepository.getAll();
       sortOrders.sort((Comparator.comparing(Order::getExecution)));
-      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
+      logger.info(
+          "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (Exception e) {
-      logger.warn("Failed to execute the method - " + Thread.currentThread().getStackTrace()[1].getMethodName(), e);
+      logger.warn(
+          "Failed to execute the method - "
+              + Thread.currentThread().getStackTrace()[1].getMethodName(),
+          e);
     }
     return sortOrders;
   }
@@ -190,9 +231,13 @@ public class OrderServiceImpl implements OrderService {
     try {
       sortOrders = orderRepository.getAll();
       sortOrders.sort((Comparator.comparingInt(Order::getPrice)));
-      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
+      logger.info(
+          "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (Exception e) {
-      logger.warn("Failed to execute the method - " + Thread.currentThread().getStackTrace()[1].getMethodName(), e);
+      logger.warn(
+          "Failed to execute the method - "
+              + Thread.currentThread().getStackTrace()[1].getMethodName(),
+          e);
     }
     return sortOrders;
   }
@@ -203,9 +248,13 @@ public class OrderServiceImpl implements OrderService {
     try {
       sortOrders = orderRepository.getAll();
       sortOrders.sort((Comparator.comparing(Order::getOrderStatus)));
-      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
+      logger.info(
+          "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (Exception e) {
-      logger.warn("Failed to execute the method - " + Thread.currentThread().getStackTrace()[1].getMethodName(), e);
+      logger.warn(
+          "Failed to execute the method - "
+              + Thread.currentThread().getStackTrace()[1].getMethodName(),
+          e);
     }
     return sortOrders;
   }

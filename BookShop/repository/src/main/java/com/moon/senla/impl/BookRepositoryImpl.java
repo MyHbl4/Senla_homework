@@ -1,17 +1,18 @@
 package com.moon.senla.impl;
 
-import com.moon.senla.enums.Availability;
-import com.moon.senla.entity.Book;
+import java.util.List;
+
 import com.moon.senla.BookDAO;
 import com.moon.senla.BookRepository;
 import com.moon.senla.annotations.InjectByType;
-import java.util.List;
+import com.moon.senla.entity.Book;
+import com.moon.senla.enums.Availability;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class BookRepositoryImpl implements BookRepository {
-  @InjectByType private BookDAO bookDAO;
   private static final Logger logger = LoggerFactory.getLogger(BookRepositoryImpl.class);
+  @InjectByType private BookDAO bookDAO;
 
   @Override
   public List<Book> getAll() {
@@ -27,9 +28,13 @@ public class BookRepositoryImpl implements BookRepository {
   public void removeBook(int id) {
     try {
       bookDAO.update(id);
-      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
+      logger.info(
+          "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (Exception e) {
-      logger.warn("Failed to execute the method - " + Thread.currentThread().getStackTrace()[1].getMethodName(), e);
+      logger.warn(
+          "Failed to execute the method - "
+              + Thread.currentThread().getStackTrace()[1].getMethodName(),
+          e);
     }
   }
 
@@ -40,9 +45,13 @@ public class BookRepositoryImpl implements BookRepository {
         if (bookDAO.read(Math.toIntExact(book.getId())) != null)
           bookDAO.update(Math.toIntExact(book.getId()));
       }
-      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
+      logger.info(
+          "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (Exception e) {
-      logger.warn("Failed to execute the method - " + Thread.currentThread().getStackTrace()[1].getMethodName(), e);
+      logger.warn(
+          "Failed to execute the method - "
+              + Thread.currentThread().getStackTrace()[1].getMethodName(),
+          e);
     }
   }
 
@@ -57,9 +66,13 @@ public class BookRepositoryImpl implements BookRepository {
           availability = false;
         }
       }
-      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
+      logger.info(
+          "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (Exception e) {
-      logger.warn("Failed to execute the method - " + Thread.currentThread().getStackTrace()[1].getMethodName(), e);
+      logger.warn(
+          "Failed to execute the method - "
+              + Thread.currentThread().getStackTrace()[1].getMethodName(),
+          e);
     }
     return availability;
   }
@@ -74,9 +87,13 @@ public class BookRepositoryImpl implements BookRepository {
           return;
         }
       }
-      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
+      logger.info(
+          "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (Exception e) {
-      logger.warn("Failed to execute the method - " + Thread.currentThread().getStackTrace()[1].getMethodName(), e);
+      logger.warn(
+          "Failed to execute the method - "
+              + Thread.currentThread().getStackTrace()[1].getMethodName(),
+          e);
     }
   }
 }

@@ -1,28 +1,27 @@
 package com.moon.senla.entity;
 
+import java.beans.Transient;
+import java.time.LocalDate;
+import java.util.List;
+import java.util.Objects;
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 import com.moon.senla.enums.OrderStatus;
-import java.beans.Transient;
-import java.time.LocalDate;
-import java.util.List;
-import java.util.Objects;
 
 public class Order {
   private long id;
   private String customerName;
   private List<Book> books;
+  private final int price = getPrice();
   private OrderStatus orderStatus = OrderStatus.NEW;
-
   @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
   @JsonDeserialize(using = LocalDateDeserializer.class)
   @JsonSerialize(using = LocalDateSerializer.class)
   private LocalDate execution = LocalDate.of(0001, 01, 01);
-
-  private final int price = getPrice();
 
   public Order() {}
 

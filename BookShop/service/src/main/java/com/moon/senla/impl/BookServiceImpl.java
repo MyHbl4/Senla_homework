@@ -1,31 +1,32 @@
 package com.moon.senla.impl;
 
-import com.moon.senla.entity.Book;
-import com.moon.senla.BookDAO;
-import com.moon.senla.BookRepository;
-import com.moon.senla.BookService;
-import com.moon.senla.entity.Order;
-import com.moon.senla.OrderRepository;
-import com.moon.senla.entity.Request;
-import com.moon.senla.RequestRepository;
-import com.moon.senla.annotations.InjectByType;
-import com.moon.senla.annotations.InjectProperty;
-import com.moon.senla.enums.OrderStatus;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+
+import com.moon.senla.BookDAO;
+import com.moon.senla.BookRepository;
+import com.moon.senla.BookService;
+import com.moon.senla.OrderRepository;
+import com.moon.senla.RequestRepository;
+import com.moon.senla.annotations.InjectByType;
+import com.moon.senla.annotations.InjectProperty;
+import com.moon.senla.entity.Book;
+import com.moon.senla.entity.Order;
+import com.moon.senla.entity.Request;
+import com.moon.senla.enums.OrderStatus;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class BookServiceImpl implements BookService {
+  private static final Logger logger = LoggerFactory.getLogger(BookDAO.class);
   @InjectByType private BookRepository bookRepository;
   @InjectByType private RequestRepository requestRepository;
   @InjectByType private OrderRepository orderRepository;
   @InjectByType private BookDAO bookDAO;
   @InjectProperty private String FUNCTION_ORDER;
   @InjectProperty private String MONTHS_STALE_BOOKS;
-  private static final Logger logger = LoggerFactory.getLogger(BookDAO.class);
 
   @Override
   public Book findBookById(int id) {
@@ -47,9 +48,13 @@ public class BookServiceImpl implements BookService {
           removeBookRequest(book);
         }
       }
-      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
+      logger.info(
+          "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (Exception e) {
-      logger.warn("Failed to execute the method - " + Thread.currentThread().getStackTrace()[1].getMethodName(), e);
+      logger.warn(
+          "Failed to execute the method - "
+              + Thread.currentThread().getStackTrace()[1].getMethodName(),
+          e);
     }
   }
 
@@ -61,9 +66,13 @@ public class BookServiceImpl implements BookService {
           bookRepository.removeBooks(order.getBooks());
         }
       }
-      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
+      logger.info(
+          "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (Exception e) {
-      logger.warn("Failed to execute the method - " + Thread.currentThread().getStackTrace()[1].getMethodName(), e);
+      logger.warn(
+          "Failed to execute the method - "
+              + Thread.currentThread().getStackTrace()[1].getMethodName(),
+          e);
     }
   }
 
@@ -81,9 +90,13 @@ public class BookServiceImpl implements BookService {
           availability = true;
         }
       }
-      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
+      logger.info(
+          "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (Exception e) {
-      logger.warn("Failed to execute the method - " + Thread.currentThread().getStackTrace()[1].getMethodName(), e);
+      logger.warn(
+          "Failed to execute the method - "
+              + Thread.currentThread().getStackTrace()[1].getMethodName(),
+          e);
     }
     return availability;
   }
@@ -114,9 +127,13 @@ public class BookServiceImpl implements BookService {
           }
         }
       }
-      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
+      logger.info(
+          "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (Exception e) {
-      logger.warn("Failed to execute the method - " + Thread.currentThread().getStackTrace()[1].getMethodName(), e);
+      logger.warn(
+          "Failed to execute the method - "
+              + Thread.currentThread().getStackTrace()[1].getMethodName(),
+          e);
     }
   }
 
@@ -136,10 +153,14 @@ public class BookServiceImpl implements BookService {
           oldBooks.add(book);
         }
       }
-    logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
-  } catch (NumberFormatException e) {
-    logger.warn("Failed to execute the method - " + Thread.currentThread().getStackTrace()[1].getMethodName(), e);
-  }
+      logger.info(
+          "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
+    } catch (NumberFormatException e) {
+      logger.warn(
+          "Failed to execute the method - "
+              + Thread.currentThread().getStackTrace()[1].getMethodName(),
+          e);
+    }
     return oldBooks;
   }
 
@@ -149,9 +170,13 @@ public class BookServiceImpl implements BookService {
     try {
       sortBooks = bookRepository.getAll();
       sortBooks.sort(Comparator.comparing(Book::getAvailability));
-      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
+      logger.info(
+          "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (Exception e) {
-      logger.warn("Failed to execute the method - " + Thread.currentThread().getStackTrace()[1].getMethodName(), e);
+      logger.warn(
+          "Failed to execute the method - "
+              + Thread.currentThread().getStackTrace()[1].getMethodName(),
+          e);
     }
     return sortBooks;
   }
@@ -162,9 +187,13 @@ public class BookServiceImpl implements BookService {
     try {
       sortBooks = bookRepository.getAll();
       sortBooks.sort(Comparator.comparingInt(Book::getPrice));
-      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
+      logger.info(
+          "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (Exception e) {
-      logger.warn("Failed to execute the method - " + Thread.currentThread().getStackTrace()[1].getMethodName(), e);
+      logger.warn(
+          "Failed to execute the method - "
+              + Thread.currentThread().getStackTrace()[1].getMethodName(),
+          e);
     }
     return sortBooks;
   }
@@ -175,9 +204,13 @@ public class BookServiceImpl implements BookService {
     try {
       sortBooks = bookRepository.getAll();
       sortBooks.sort(Comparator.comparingInt(Book::getPublication));
-      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
+      logger.info(
+          "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (Exception e) {
-      logger.warn("Failed to execute the method - " + Thread.currentThread().getStackTrace()[1].getMethodName(), e);
+      logger.warn(
+          "Failed to execute the method - "
+              + Thread.currentThread().getStackTrace()[1].getMethodName(),
+          e);
     }
     return sortBooks;
   }
@@ -188,9 +221,13 @@ public class BookServiceImpl implements BookService {
     try {
       sortBooks = bookRepository.getAll();
       sortBooks.sort(Comparator.comparing(Book::getTitle));
-      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
+      logger.info(
+          "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (Exception e) {
-      logger.warn("Failed to execute the method - " + Thread.currentThread().getStackTrace()[1].getMethodName(), e);
+      logger.warn(
+          "Failed to execute the method - "
+              + Thread.currentThread().getStackTrace()[1].getMethodName(),
+          e);
     }
     return sortBooks;
   }
@@ -201,9 +238,13 @@ public class BookServiceImpl implements BookService {
     try {
       sortBooks = getOldBooks();
       sortBooks.sort(Comparator.comparing(Book::getDeliveryDate));
-      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
+      logger.info(
+          "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (Exception e) {
-      logger.warn("Failed to execute the method - " + Thread.currentThread().getStackTrace()[1].getMethodName(), e);
+      logger.warn(
+          "Failed to execute the method - "
+              + Thread.currentThread().getStackTrace()[1].getMethodName(),
+          e);
     }
     return sortBooks;
   }
@@ -214,9 +255,13 @@ public class BookServiceImpl implements BookService {
     try {
       sortBooks = getOldBooks();
       sortBooks.sort(Comparator.comparingInt(Book::getPrice));
-      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
+      logger.info(
+          "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (Exception e) {
-      logger.warn("Failed to execute the method - " + Thread.currentThread().getStackTrace()[1].getMethodName(), e);
+      logger.warn(
+          "Failed to execute the method - "
+              + Thread.currentThread().getStackTrace()[1].getMethodName(),
+          e);
     }
     return sortBooks;
   }

@@ -1,19 +1,21 @@
 package com.moon.senla.impl;
 
-import com.moon.senla.entity.Book;
+import java.util.List;
+
 import com.moon.senla.BookDAO;
-import com.moon.senla.entity.Request;
 import com.moon.senla.RequestDAO;
 import com.moon.senla.RequestRepository;
 import com.moon.senla.annotations.InjectByType;
-import java.util.List;
+import com.moon.senla.entity.Book;
+import com.moon.senla.entity.Request;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class RequestRepositoryImpl implements RequestRepository {
+  private static final Logger logger = LoggerFactory.getLogger(RequestRepositoryImpl.class);
   @InjectByType private RequestDAO requestDAO;
   @InjectByType private BookDAO bookDAO;
-  private static final Logger logger = LoggerFactory.getLogger(RequestRepositoryImpl.class);
+
   @Override
   public List<Request> getAll() {
     return requestDAO.readAll();
@@ -38,9 +40,13 @@ public class RequestRepositoryImpl implements RequestRepository {
         }
         requestDAO.create(new Request(bookId, title));
       }
-      logger.info("Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
+      logger.info(
+          "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (Exception e) {
-      logger.warn("Failed to execute the method - " + Thread.currentThread().getStackTrace()[1].getMethodName(), e);
+      logger.warn(
+          "Failed to execute the method - "
+              + Thread.currentThread().getStackTrace()[1].getMethodName(),
+          e);
     }
   }
 
