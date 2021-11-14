@@ -1,5 +1,6 @@
 package com.moon.senla;
 
+import com.moon.senla.entity.Book;
 import com.moon.senla.enums.Availability;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

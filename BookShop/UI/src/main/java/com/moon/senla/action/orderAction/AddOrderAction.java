@@ -1,8 +1,8 @@
 package com.moon.senla.action.orderAction;
 
-import com.moon.senla.Book;
+import com.moon.senla.entity.Book;
 import com.moon.senla.CustomException;
-import com.moon.senla.Order;
+import com.moon.senla.entity.Order;
 import com.moon.senla.action.AbstractAction;
 import com.moon.senla.action.Manager;
 import java.util.ArrayList;

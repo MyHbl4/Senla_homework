@@ -1,5 +1,7 @@
 package com.moon.senla;
 
+import com.moon.senla.entity.Book;
+import com.moon.senla.entity.Order;
 import com.moon.senla.enums.Availability;
 import com.moon.senla.enums.OrderStatus;
 import java.sql.Connection;

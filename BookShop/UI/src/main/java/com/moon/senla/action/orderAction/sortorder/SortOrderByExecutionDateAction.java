@@ -3,7 +3,7 @@ package com.moon.senla.action.orderAction.sortorder;
 import java.util.List;
 import com.moon.senla.action.AbstractAction;
 import com.moon.senla.action.Manager;
-import com.moon.senla.Order;
+import com.moon.senla.entity.Order;
 
 public class SortOrderByExecutionDateAction extends AbstractAction {
 

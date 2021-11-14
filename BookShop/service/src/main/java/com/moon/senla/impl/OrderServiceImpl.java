@@ -1,9 +1,9 @@
 package com.moon.senla.impl;
 
-import com.moon.senla.Book;
+import com.moon.senla.entity.Book;
 import com.moon.senla.BookDAO;
 import com.moon.senla.BookRepository;
-import com.moon.senla.Order;
+import com.moon.senla.entity.Order;
 import com.moon.senla.OrderDAO;
 import com.moon.senla.OrderRepository;
 import com.moon.senla.OrderService;

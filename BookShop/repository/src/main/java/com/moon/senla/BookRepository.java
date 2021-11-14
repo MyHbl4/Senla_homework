@@ -1,5 +1,6 @@
 package com.moon.senla;
 
+import com.moon.senla.entity.Book;
 import java.util.List;
 
 public interface BookRepository {

@@ -1,7 +1,7 @@
 package com.moon.senla;
 
 public class CustomException extends Exception {
-
+  private static final long serialVersionUID = 1000000000L;
   public CustomException() {}
 
   public CustomException(String message) {

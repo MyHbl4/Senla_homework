@@ -1,17 +1,16 @@
 package com.moon.senla.impl;
 
-import com.moon.senla.Book;
+import com.moon.senla.entity.Book;
 import com.moon.senla.BookDAO;
 import com.moon.senla.BookRepository;
 import com.moon.senla.BookService;
-import com.moon.senla.Order;
+import com.moon.senla.entity.Order;
 import com.moon.senla.OrderRepository;
-import com.moon.senla.Request;
+import com.moon.senla.entity.Request;
 import com.moon.senla.RequestRepository;
 import com.moon.senla.annotations.InjectByType;
 import com.moon.senla.annotations.InjectProperty;
 import com.moon.senla.enums.OrderStatus;
-import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Comparator;

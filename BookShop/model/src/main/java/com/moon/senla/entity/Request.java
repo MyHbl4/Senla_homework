@@ -1,4 +1,4 @@
-package com.moon.senla;
+package com.moon.senla.entity;
 
 public class Request {
   private long id;

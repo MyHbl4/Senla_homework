@@ -1,8 +1,8 @@
 package com.moon.senla.impl;
 
-import com.moon.senla.Book;
+import com.moon.senla.entity.Book;
 import com.moon.senla.BookDAO;
-import com.moon.senla.Request;
+import com.moon.senla.entity.Request;
 import com.moon.senla.RequestDAO;
 import com.moon.senla.RequestRepository;
 import com.moon.senla.annotations.InjectByType;
