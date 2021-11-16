@@ -11,16 +11,55 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 import com.moon.senla.enums.OrderStatus;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
+@Entity
+@Table(name = "order")
 public class Order {
+  @Id
+  @Column
+  @GeneratedValue(strategy = GenerationType.AUTO)
   private long id;
+
+  @Column(name = "customer")
   private String customerName;
+
+  @ManyToMany(
+      cascade = {CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE},
+      fetch = FetchType.LAZY)
+  @JoinTable(
+      name = "order_books",
+      joinColumns = @JoinColumn(name = "order_id", referencedColumnName = "id"),
+      inverseJoinColumns = @JoinColumn(name = "book_id", referencedColumnName = "id"))
   private List<Book> books;
+
+  @Column(name = "price")
   private final int price = getPrice();
+
+  @Column(name = "status")
+  @Enumerated(EnumType.STRING)
   private OrderStatus orderStatus = OrderStatus.NEW;
+
   @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
   @JsonDeserialize(using = LocalDateDeserializer.class)
   @JsonSerialize(using = LocalDateSerializer.class)
+  @Column(name = "execution")
   private LocalDate execution = LocalDate.of(0001, 01, 01);
 
   public Order() {}

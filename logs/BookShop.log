@@ -688,3 +688,8 @@ org.postgresql.util.PSQLException: Запрос не вернул результ
 2021-11-14 16:50:04,323 INFO main org.reflections.Reflections - Reflections took 521 ms to scan 9 urls, producing 17 keys and 45 values 
 2021-11-14 16:53:58,728 INFO main org.reflections.Reflections - Reflections took 112 ms to scan 9 urls, producing 17 keys and 45 values 
 2021-11-14 16:54:14,120 INFO main com.moon.senla.BookDAO - Method completed - read
+2021-11-15 02:16:54,589 INFO main org.reflections.Reflections - Reflections took 314 ms to scan 9 urls, producing 17 keys and 45 values 
+2021-11-15 22:56:55,821 INFO main org.reflections.Reflections - Reflections took 140 ms to scan 9 urls, producing 17 keys and 45 values 
+2021-11-15 22:57:10,470 INFO main com.moon.senla.Runner - The program is closed
+2021-11-15 22:59:50,931 INFO main org.reflections.Reflections - Reflections took 100 ms to scan 9 urls, producing 17 keys and 45 values 
+2021-11-15 23:00:15,258 INFO main com.moon.senla.Runner - The program is closed

@@ -9,21 +9,47 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 import com.moon.senla.enums.Availability;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
+@Entity
+@Table(name = "book")
 public class Book {
+  @Id
+  @Column
+  @GeneratedValue(strategy = GenerationType.AUTO)
   private long id;
+
+  @Column(name = "title")
   private String title;
+
+  @Column(name = "author")
   private String author;
+
+  @Column(name = "price")
   private int price;
+
+  @Column(name = "availability")
   private Availability availability = Availability.IN_STOCK;
+
+  @Column(name = "publication")
   private int publication;
 
   @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
   @JsonDeserialize(using = LocalDateDeserializer.class)
   @JsonSerialize(using = LocalDateSerializer.class)
+  @Column(name = "delivery_date")
   private LocalDate deliveryDate = LocalDate.now();
 
-  public Book() {}
+  public Book() { }
 
   public Book(
       long id,
