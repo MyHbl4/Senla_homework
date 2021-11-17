@@ -1,6 +1,5 @@
 package com.moon.senla.entity;
 
-import java.beans.Transient;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Objects;
@@ -11,43 +10,51 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 import com.moon.senla.enums.OrderStatus;
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
-@Setter
 @Entity
-@Table(name = "order")
+@Setter
+@Getter
+@Table(name = "orders")
 public class Order {
   @Id
-  @Column
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "id")
   private long id;
 
   @Column(name = "customer")
   private String customerName;
 
-  @ManyToMany(
-      cascade = {CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE},
-      fetch = FetchType.LAZY)
-  @JoinTable(
-      name = "order_books",
-      joinColumns = @JoinColumn(name = "order_id", referencedColumnName = "id"),
-      inverseJoinColumns = @JoinColumn(name = "book_id", referencedColumnName = "id"))
+
+  @JoinTable(name = "order_books",
+          joinColumns = @JoinColumn(name = "order_id"),
+          inverseJoinColumns = @JoinColumn(name = "book_id"))
+  @Transient
   private List<Book> books;
+
+  public List<Book> getBooks () {
+    return books;
+  }
+
+  public void setBooks(List<Book> books) {
+    this.books = books;
+  }
+
+  public void addBook(Book book) {
+    books.add(book);
+  }
 
   @Column(name = "price")
   private final int price = getPrice();
@@ -113,14 +120,6 @@ public class Order {
 
   public void setCustomerName(String customerName) {
     this.customerName = customerName;
-  }
-
-  public List<Book> getBooks() {
-    return books;
-  }
-
-  public void setBooks(List<Book> books) {
-    this.books = books;
   }
 
   public OrderStatus getOrderStatus() {

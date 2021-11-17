@@ -17,11 +17,11 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "request")
+@Table(name = "requests")
 public class Request {
   @Id
-  @Column
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "id")
   private long id;
 
   @Column(name = "count")

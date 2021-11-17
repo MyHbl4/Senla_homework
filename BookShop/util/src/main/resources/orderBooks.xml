@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.moon.senla.entity.OrderBooks" table="order_books" >
+    <id name="id" column="id" type="int">
+        <generator class="native"/>
+    </id>
+
+    <property name="title" column="title" type="string"/>
+
+    <property name="author" column="author" type="string"/>
+
+    </class>
+
+</hibernate-mapping>
+
+<!--        create table order_books (-->
+<!--        id bigserial PRIMARY KEY NOT NULL,-->
+<!--        order_id     integer not null,-->
+<!--        book_id  integer not null,-->
+<!--        CONSTRAINT FK_ORDERS_ID FOREIGN KEY (order_id)-->
+<!--        REFERENCES orders (id),-->
+<!--        CONSTRAINT FK_BOOKS_ID FOREIGN KEY (book_id)-->
+<!--        REFERENCES books (id)-->
+<!--        );-->

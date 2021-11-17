@@ -1,6 +1,7 @@
 package com.moon.senla.entity;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -11,21 +12,29 @@ import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 import com.moon.senla.enums.Availability;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
-@Setter
 @Entity
-@Table(name = "book")
+@Setter
+@Getter
+@NoArgsConstructor
+@Table(name = "books")
 public class Book {
   @Id
-  @Column
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "id")
   private long id;
 
   @Column(name = "title")
@@ -34,9 +43,11 @@ public class Book {
   @Column(name = "author")
   private String author;
 
+
   @Column(name = "price")
   private int price;
 
+  @Enumerated(EnumType.STRING)
   @Column(name = "availability")
   private Availability availability = Availability.IN_STOCK;
 
@@ -49,7 +60,20 @@ public class Book {
   @Column(name = "delivery_date")
   private LocalDate deliveryDate = LocalDate.now();
 
-  public Book() { }
+  @ManyToMany
+  @JoinTable(name = "order_books",
+          joinColumns = @JoinColumn(name = "book_id"),
+          inverseJoinColumns = @JoinColumn(name = "order_id"))
+  @Transient
+  private List<Order> orderList;
+
+  public List<Order> getOrderList() {
+    return orderList;
+  }
+
+  public void setOrderList(List<Order> orderList) {
+    this.orderList = orderList;
+  }
 
   public Book(
       long id,
@@ -73,6 +97,16 @@ public class Book {
     this.author = author;
     this.price = price;
     this.publication = publication;
+  }
+
+  public Book(String title, String author, int price, Availability availability, int publication,
+              LocalDate deliveryDate) {
+    this.title = title;
+    this.author = author;
+    this.price = price;
+    this.availability = availability;
+    this.publication = publication;
+    this.deliveryDate = deliveryDate;
   }
 
   public long getId() {
@@ -172,12 +206,12 @@ public class Book {
         + ", Author: '"
         + author
         + '\''
+        + ", Publication: "
+        + publication
         + ", Price: "
         + price
         + ", Availability: "
         + availability
-        + ", Publication: "
-        + publication
         + ", Delivery date: "
         + deliveryDate;
   }

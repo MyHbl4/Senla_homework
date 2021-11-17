@@ -6,14 +6,12 @@ public interface GenericDao<T> {
 
     void create(T entity);
 
-    T read(Long id);
+    T read(int id);
 
-    List<T> getAll();
+    List<T> readAll();
 
-    T update(T entity);
+    void update(T entity);
 
     void delete(T entity);
-
-    void delete(Long id);
 
 }

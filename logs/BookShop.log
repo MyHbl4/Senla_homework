@@ -693,3 +693,869 @@ org.postgresql.util.PSQLException: Запрос не вернул результ
 2021-11-15 22:57:10,470 INFO main com.moon.senla.Runner - The program is closed
 2021-11-15 22:59:50,931 INFO main org.reflections.Reflections - Reflections took 100 ms to scan 9 urls, producing 17 keys and 45 values 
 2021-11-15 23:00:15,258 INFO main com.moon.senla.Runner - The program is closed
+2021-11-16 18:09:26,300 INFO main org.reflections.Reflections - Reflections took 468 ms to scan 9 urls, producing 19 keys and 51 values 
+2021-11-16 18:09:31,107 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-16 18:09:31,107 INFO main com.moon.senla.BookDAO - Method completed - sortBookByTitle
+2021-11-16 18:10:52,950 INFO main org.reflections.Reflections - Reflections took 94 ms to scan 9 urls, producing 19 keys and 51 values 
+2021-11-16 18:11:12,521 INFO main com.moon.senla.BookDAO - Method completed - readAll
+2021-11-16 18:11:12,521 INFO main com.moon.senla.BookDAO - Method completed - sortBookByTitle
+2021-11-16 18:11:24,484 INFO main com.moon.senla.Runner - The program is closed
+2021-11-17 01:42:00,291 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 01:42:01,057 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 01:42:01,279 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 01:42:01,279 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 01:42:01,279 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 01:42:01,279 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 01:42:01,279 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 01:42:01,295 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 01:42:01,544 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 01:42:02,663 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5b7aa898] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 01:42:02,728 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 01:43:19,795 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 01:43:20,618 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 01:43:20,841 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 01:43:20,841 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 01:43:20,841 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 01:43:20,841 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 01:43:20,841 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 01:43:20,857 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 01:43:21,075 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 01:43:22,193 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6a0f2853] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 01:43:22,271 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 01:43:45,496 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 01:43:46,268 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 01:43:46,486 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 01:43:46,502 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 01:43:46,502 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 01:43:46,502 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 01:43:46,502 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 01:43:46,502 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 01:43:46,732 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 01:43:47,830 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6a0f2853] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 01:43:47,876 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 01:49:56,964 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 01:49:57,768 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 01:49:58,011 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 01:49:58,011 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 01:49:58,011 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 01:49:58,011 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 01:49:58,011 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 01:49:58,011 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 01:49:58,250 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 01:49:59,368 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5d4e13e1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 01:49:59,415 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 01:53:44,870 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 01:53:45,591 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 01:53:45,764 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 01:53:45,764 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 01:53:45,764 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 01:53:45,764 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 01:53:45,764 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 01:53:45,764 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 01:53:45,842 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 01:53:46,985 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@421def93] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 01:53:47,047 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 02:00:47,793 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 02:00:48,501 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 02:00:48,666 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 02:00:48,666 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 02:00:48,666 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 02:00:48,666 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 02:00:48,666 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 02:00:48,666 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 02:00:48,750 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 02:00:49,864 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@345cbf40] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 02:00:49,927 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 02:02:34,171 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 02:02:34,845 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 02:02:35,009 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 02:02:35,009 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 02:02:35,009 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 02:02:35,009 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 02:02:35,009 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 02:02:35,025 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 02:02:35,103 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 02:02:36,206 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7fc420b8] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 02:02:36,260 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 02:03:48,343 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 02:03:49,028 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 02:03:49,215 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 02:03:49,215 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 02:03:49,215 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 02:03:49,215 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 02:03:49,215 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 02:03:49,215 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 02:03:49,309 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 02:03:50,486 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1a1cc163] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 02:03:50,562 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 02:08:11,978 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 02:08:12,649 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 02:08:12,821 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 02:08:12,821 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 02:08:12,821 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 02:08:12,821 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 02:08:12,821 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 02:08:12,827 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 02:08:12,908 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 02:08:14,106 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@d2e6b0b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 02:08:14,168 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 02:15:56,068 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 02:15:56,742 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 02:15:56,912 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 02:15:56,912 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 02:15:56,912 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 02:15:56,912 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 02:15:56,912 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 02:15:56,912 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 02:15:56,985 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 02:15:58,158 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7b477141] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 02:15:58,224 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 02:31:55,174 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 02:31:56,351 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 02:31:56,695 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 02:31:56,695 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 02:31:56,695 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 02:31:56,695 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 02:31:56,695 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 02:31:56,695 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 02:31:56,830 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 02:31:58,806 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7e83992] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 02:31:58,899 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 02:40:47,075 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 02:40:48,088 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 02:40:48,979 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 02:40:48,979 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 02:40:48,979 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 02:40:48,979 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 02:40:48,979 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 02:40:48,995 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 02:40:49,288 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 02:40:49,819 INFO main org.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 02:41:32,458 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 02:41:33,427 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 02:41:58,364 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 02:41:59,338 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 02:41:59,628 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 02:41:59,628 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 02:41:59,628 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 02:41:59,628 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 02:41:59,628 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 02:41:59,628 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 02:41:59,812 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 02:42:01,547 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@d2e6b0b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 02:42:01,710 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 03:12:14,528 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 03:12:15,750 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 03:12:16,141 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 03:12:16,156 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 03:12:16,156 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 03:12:16,156 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 03:12:16,156 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 03:12:16,156 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 03:12:16,559 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 03:12:18,095 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@12b5736c] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 03:12:18,205 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 03:14:51,555 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 03:14:52,627 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 03:14:52,962 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 03:14:52,962 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 03:14:52,962 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 03:14:52,962 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 03:14:52,962 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 03:14:52,977 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 03:14:53,423 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 03:14:54,039 INFO main org.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 03:15:17,656 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 03:15:18,750 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 03:15:19,095 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 03:15:19,110 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 03:15:19,110 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 03:15:19,110 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 03:15:19,110 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 03:15:19,110 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 03:15:19,458 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 03:15:19,901 INFO main org.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 03:15:49,122 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 03:15:50,188 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 03:15:50,522 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 03:15:50,537 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 03:15:50,537 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 03:15:50,537 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 03:15:50,537 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 03:15:50,537 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 03:15:50,886 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 03:15:52,627 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3eb3232b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 03:15:52,767 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 03:16:27,528 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 03:16:28,641 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 03:16:28,988 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 03:16:28,988 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 03:16:28,988 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 03:16:28,988 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 03:16:28,988 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 03:16:29,004 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 03:16:29,444 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 03:16:31,459 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2d74c81b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 03:16:31,608 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 03:21:27,160 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 03:21:28,232 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 03:21:28,577 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 03:21:28,593 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 03:21:28,593 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 03:21:28,593 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 03:21:28,593 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 03:21:28,593 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 03:21:28,988 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 03:21:29,481 INFO main org.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 03:31:42,584 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 03:31:43,589 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 03:31:43,873 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 03:31:43,873 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 03:31:43,873 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 03:31:43,873 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 03:31:43,873 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 03:31:43,888 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 03:31:44,063 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 03:31:44,602 INFO main org.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 03:32:11,721 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 03:32:12,742 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 03:32:13,008 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 03:32:13,008 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 03:32:13,008 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 03:32:13,008 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 03:32:13,008 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 03:32:13,024 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 03:32:13,196 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 03:32:15,157 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@456bcb74] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 03:32:15,380 WARN main org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "alter table if exists PUBLIC.order_books add constraint FKh5mtlb1odbmrg9q8347159719 foreign key (book_id) references PUBLIC.Book" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table if exists PUBLIC.order_books add constraint FKh5mtlb1odbmrg9q8347159719 foreign key (book_id) references PUBLIC.Book" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:580)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:525)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applyForeignKeys(AbstractSchemaMigrator.java:451)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:268)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:121)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:284)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:143)
+	at java.base/java.util.HashMap.forEach(HashMap.java:1425)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:140)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:332)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:467)
+	at org.hibernate.boot.internal.MetadataImpl.buildSessionFactory(MetadataImpl.java:192)
+	at com.moon.senla.HibernateUtil.<clinit>(HibernateUtil.java:17)
+	at com.moon.senla.Runner.main(Runner.java:24)
+Caused by: org.postgresql.util.PSQLException: ERROR: insert or update on table "order_books" violates foreign key constraint "fkh5mtlb1odbmrg9q8347159719"
+  Подробности: Key (book_id)=(3) is not present in table "book".
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2674)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2364)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:354)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:484)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:404)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:325)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:311)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:287)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:282)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 14 common frames omitted
+2021-11-17 03:32:15,380 WARN main org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "alter table if exists PUBLIC.order_books add constraint FK2ell7aeww7ir783o09r1h4e6h foreign key (order_id) references PUBLIC.Order" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table if exists PUBLIC.order_books add constraint FK2ell7aeww7ir783o09r1h4e6h foreign key (order_id) references PUBLIC.Order" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:580)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:525)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applyForeignKeys(AbstractSchemaMigrator.java:451)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:268)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:121)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:284)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:143)
+	at java.base/java.util.HashMap.forEach(HashMap.java:1425)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:140)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:332)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:467)
+	at org.hibernate.boot.internal.MetadataImpl.buildSessionFactory(MetadataImpl.java:192)
+	at com.moon.senla.HibernateUtil.<clinit>(HibernateUtil.java:17)
+	at com.moon.senla.Runner.main(Runner.java:24)
+Caused by: org.postgresql.util.PSQLException: ERROR: insert or update on table "order_books" violates foreign key constraint "fk2ell7aeww7ir783o09r1h4e6h"
+  Подробности: Key (order_id)=(1) is not present in table "order".
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2674)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2364)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:354)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:484)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:404)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:325)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:311)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:287)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:282)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 14 common frames omitted
+2021-11-17 03:32:15,396 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 03:36:45,741 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 03:36:46,691 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 03:36:46,960 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 03:36:46,960 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 03:36:46,960 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 03:36:46,960 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 03:36:46,960 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 03:36:46,960 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 03:36:47,080 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 03:36:47,610 INFO main org.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 03:36:55,000 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 03:36:56,021 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 03:36:56,276 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 03:36:56,292 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 03:36:56,292 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 03:36:56,292 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 03:36:56,292 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 03:36:56,292 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 03:36:56,419 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 03:36:56,920 INFO main org.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 04:43:51,210 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 04:43:52,035 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 04:43:52,238 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 04:43:52,238 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 04:43:52,238 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 04:43:52,238 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 04:43:52,238 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 04:43:52,238 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 04:43:52,479 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 04:43:52,835 INFO main org.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 05:02:03,390 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 05:02:04,204 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 05:02:04,423 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 05:02:04,423 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 05:02:04,423 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 05:02:04,423 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 05:02:04,423 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 05:02:04,423 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 05:02:04,626 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 05:02:04,954 INFO main org.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 05:04:10,395 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 05:04:11,165 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 05:04:11,390 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 05:04:11,406 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 05:04:11,406 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 05:04:11,406 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 05:04:11,406 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 05:04:11,406 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 05:04:11,656 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 05:04:11,963 INFO main org.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 05:05:29,290 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 05:05:30,080 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 05:05:30,311 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 05:05:30,311 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 05:05:30,311 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 05:05:30,311 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 05:05:30,311 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 05:05:30,327 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 05:05:30,537 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 05:05:30,840 INFO main org.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 05:06:13,727 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 05:06:14,503 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 05:06:14,727 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 05:06:14,742 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 05:06:14,742 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 05:06:14,742 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 05:06:14,742 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 05:06:14,742 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 05:06:14,961 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 05:06:16,257 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4b960b5b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 05:06:16,335 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 05:07:07,523 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 05:07:08,297 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 05:07:08,532 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 05:07:08,547 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 05:07:08,547 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 05:07:08,547 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 05:07:08,547 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 05:07:08,547 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 05:07:08,902 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 05:07:10,110 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2f382a5e] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 05:07:10,171 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 05:07:48,741 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 05:07:49,526 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 05:07:49,760 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 05:07:49,760 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 05:07:49,760 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 05:07:49,760 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 05:07:49,760 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 05:07:49,776 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 05:07:50,126 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 05:07:51,311 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@69cd1085] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 05:07:51,358 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 05:08:32,502 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 05:08:33,265 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 05:08:33,494 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 05:08:33,494 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 05:08:33,494 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 05:08:33,494 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 05:08:33,494 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 05:08:33,494 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 05:08:33,729 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 05:08:34,924 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4b960b5b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 05:08:34,971 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 05:09:36,927 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 05:09:37,684 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 05:09:37,924 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 05:09:37,924 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 05:09:37,924 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 05:09:37,924 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 05:09:37,924 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 05:09:37,940 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 05:09:38,181 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 05:09:39,421 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@56dd6efa] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 05:09:39,468 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 05:10:15,604 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 05:10:16,363 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 05:10:16,598 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 05:10:16,598 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 05:10:16,598 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 05:10:16,598 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 05:10:16,598 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 05:10:16,613 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 05:10:16,832 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 05:10:17,122 INFO main org.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 05:10:48,253 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 05:10:49,093 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 05:10:49,318 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 05:10:49,318 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 05:10:49,318 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 05:10:49,318 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 05:10:49,318 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 05:10:49,334 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 05:10:49,562 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 05:10:50,715 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@21a9a705] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 05:10:50,762 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 05:11:42,565 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 05:11:43,340 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 05:11:43,580 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 05:11:43,596 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 05:11:43,596 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 05:11:43,596 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 05:11:43,596 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 05:11:43,596 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 05:11:43,808 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 05:11:44,101 INFO main org.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 05:17:36,097 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 05:17:36,836 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 05:17:37,062 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 05:17:37,062 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 05:17:37,062 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 05:17:37,062 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 05:17:37,062 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 05:17:37,077 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 05:17:37,296 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 05:17:37,593 INFO main org.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 05:18:01,246 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 05:18:02,038 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 05:18:02,277 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 05:18:02,277 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 05:18:02,277 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 05:18:02,277 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 05:18:02,277 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 05:18:02,277 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 05:18:02,636 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 05:18:03,855 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@21a9a705] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 05:18:03,902 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 11:12:24,578 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 11:12:25,850 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 11:12:26,235 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 11:12:26,251 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 11:12:26,251 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 11:12:26,251 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 11:12:26,251 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 11:12:26,251 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 11:12:26,652 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 11:12:28,473 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7cac93fe] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 11:12:28,573 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 11:18:45,336 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 11:18:46,653 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 11:18:47,091 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 11:18:47,107 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 11:18:47,107 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 11:18:47,107 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 11:18:47,107 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 11:18:47,107 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 11:18:47,524 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 11:18:49,566 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@d2e6b0b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 11:18:49,658 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 11:19:15,339 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 11:19:16,544 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 11:19:16,874 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 11:19:16,884 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 11:19:16,884 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 11:19:16,884 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 11:19:16,884 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 11:19:16,893 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 11:19:17,319 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 11:19:19,100 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7affc159] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 11:19:19,238 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 11:31:57,493 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 11:31:58,665 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 11:31:59,067 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 11:31:59,082 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 11:31:59,082 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 11:31:59,082 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 11:31:59,082 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 11:31:59,082 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 11:31:59,469 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 11:32:01,433 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@60bb7995] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 11:32:01,549 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 11:36:38,073 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 11:36:39,175 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 11:36:39,559 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 11:36:39,559 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 11:36:39,559 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 11:36:39,559 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 11:36:39,559 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 11:36:39,575 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 11:36:39,982 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 11:36:41,771 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5eea5627] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 11:36:41,868 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 11:37:31,946 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 11:37:33,033 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 11:37:33,380 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 11:37:33,380 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 11:37:33,380 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 11:37:33,380 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 11:37:33,380 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 11:37:33,396 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 11:37:33,765 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 11:37:35,521 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@69cd1085] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 11:37:35,599 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 11:38:17,631 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 11:38:18,723 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 11:38:19,057 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 11:38:19,063 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 11:38:19,063 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 11:38:19,063 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 11:38:19,063 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 11:38:19,063 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 11:38:19,458 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 11:38:21,195 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@69cd1085] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 11:38:21,260 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 11:46:03,517 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 11:46:04,613 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 11:46:04,951 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 11:46:04,967 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 11:46:04,967 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 11:46:04,967 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 11:46:04,967 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 11:46:04,983 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 11:46:05,314 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 11:46:07,108 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1756f7cc] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 11:46:07,177 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 11:48:50,365 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 11:48:51,586 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 11:48:51,925 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 11:48:51,941 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 11:48:51,941 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 11:48:51,941 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 11:48:51,941 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 11:48:51,941 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 11:48:52,287 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 11:48:54,062 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1756f7cc] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 11:48:54,132 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 11:51:08,066 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 11:51:09,134 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 11:51:09,461 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 11:51:09,469 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 11:51:09,469 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 11:51:09,469 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 11:51:09,469 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 11:51:09,477 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 11:51:09,875 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 11:51:11,650 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@668625f5] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 11:51:11,728 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 15:36:57,188 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 15:36:58,497 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 15:36:58,904 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 15:36:58,904 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 15:36:58,904 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 15:36:58,904 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 15:36:58,904 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 15:36:58,920 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 15:36:59,335 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 15:37:01,283 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@609e57da] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 15:37:01,424 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 15:38:36,476 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 15:38:37,595 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 15:38:37,933 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 15:38:37,949 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 15:38:37,949 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 15:38:37,949 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 15:38:37,949 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 15:38:37,949 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 15:38:38,374 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 15:38:39,963 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@77fa9381] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 15:38:40,089 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 15:39:48,601 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 15:39:49,698 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 15:39:50,049 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 15:39:50,065 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 15:39:50,065 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 15:39:50,065 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 15:39:50,065 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 15:39:50,065 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 15:39:50,415 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 15:39:52,106 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4364863] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 15:39:52,235 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 15:39:52,406 INFO main org.hibernate.event.internal.DefaultLoadEventListener - HHH000327: Error performing load command
+org.hibernate.HibernateException: Unable to extract JDBC value for position `5`
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.readCurrentRowValues(JdbcValuesResultSetImpl.java:312)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.advance(JdbcValuesResultSetImpl.java:283)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.processNext(JdbcValuesResultSetImpl.java:88)
+	at org.hibernate.sql.results.jdbc.internal.AbstractJdbcValues.next(AbstractJdbcValues.java:29)
+	at org.hibernate.sql.results.internal.RowProcessingStateStandardImpl.next(RowProcessingStateStandardImpl.java:90)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:87)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:25)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:268)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:151)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.list(JdbcSelectExecutorStandardImpl.java:79)
+	at org.hibernate.loader.ast.internal.SingleIdLoadPlan.load(SingleIdLoadPlan.java:141)
+	at org.hibernate.loader.ast.internal.SingleIdLoadPlan.load(SingleIdLoadPlan.java:111)
+	at org.hibernate.loader.ast.internal.SingleIdEntityLoaderStandardImpl.load(SingleIdEntityLoaderStandardImpl.java:72)
+	at org.hibernate.persister.entity.AbstractEntityPersister.doLoad(AbstractEntityPersister.java:4184)
+	at org.hibernate.persister.entity.AbstractEntityPersister.load(AbstractEntityPersister.java:4174)
+	at org.hibernate.event.internal.DefaultLoadEventListener.loadFromDatasource(DefaultLoadEventListener.java:561)
+	at org.hibernate.event.internal.DefaultLoadEventListener.doLoad(DefaultLoadEventListener.java:535)
+	at org.hibernate.event.internal.DefaultLoadEventListener.load(DefaultLoadEventListener.java:206)
+	at org.hibernate.event.internal.DefaultLoadEventListener.proxyOrLoad(DefaultLoadEventListener.java:323)
+	at org.hibernate.event.internal.DefaultLoadEventListener.doOnLoad(DefaultLoadEventListener.java:107)
+	at org.hibernate.event.internal.DefaultLoadEventListener.onLoad(DefaultLoadEventListener.java:73)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:118)
+	at org.hibernate.internal.SessionImpl.fireLoadNoChecks(SessionImpl.java:1220)
+	at org.hibernate.internal.SessionImpl.fireLoad(SessionImpl.java:1209)
+	at org.hibernate.loader.access.IdentifierLoadAccessImpl.doLoad(IdentifierLoadAccessImpl.java:182)
+	at org.hibernate.loader.access.IdentifierLoadAccessImpl.lambda$load$1(IdentifierLoadAccessImpl.java:151)
+	at org.hibernate.loader.access.IdentifierLoadAccessImpl.perform(IdentifierLoadAccessImpl.java:98)
+	at org.hibernate.loader.access.IdentifierLoadAccessImpl.load(IdentifierLoadAccessImpl.java:151)
+	at org.hibernate.internal.SessionImpl.get(SessionImpl.java:1003)
+	at com.moon.senla.impl.BookDao.read(BookDao.java:36)
+	at com.moon.senla.Runner.main(Runner.java:17)
+Caused by: java.lang.UnsupportedOperationException: null
+	at org.hibernate.type.descriptor.java.spi.CollectionJavaTypeDescriptor.wrap(CollectionJavaTypeDescriptor.java:57)
+	at org.hibernate.type.descriptor.jdbc.VarbinaryJdbcType$2.doExtract(VarbinaryJdbcType.java:99)
+	at org.hibernate.type.descriptor.jdbc.BasicExtractor.extract(BasicExtractor.java:44)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.readCurrentRowValues(JdbcValuesResultSetImpl.java:304)
+	... 30 common frames omitted
+2021-11-17 16:06:23,543 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 16:06:24,433 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 16:06:24,715 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 16:06:24,715 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 16:06:24,715 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 16:06:24,715 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 16:06:24,715 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 16:06:24,730 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 16:06:25,011 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 16:06:25,351 INFO main org.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 16:12:12,741 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 16:12:13,504 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 16:12:13,730 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 16:12:13,730 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 16:12:13,730 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 16:12:13,730 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 16:12:13,730 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 16:12:13,730 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 16:12:13,984 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 16:12:15,295 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@b3e86d5] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 16:12:15,389 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 16:24:26,655 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 16:24:27,582 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 16:24:27,844 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 16:24:27,844 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 16:24:27,844 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 16:24:27,844 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 16:24:27,844 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 16:24:27,860 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 16:24:28,110 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 16:24:29,423 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@497b560e] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 16:24:29,501 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 16:26:15,862 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 16:26:16,632 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 16:26:16,865 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 16:26:16,881 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 16:26:16,881 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 16:26:16,881 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 16:26:16,881 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 16:26:16,881 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 16:26:17,126 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 16:26:18,313 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2cd4e16a] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 16:26:18,376 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 16:28:21,822 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 16:28:22,691 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 16:28:22,925 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 16:28:22,941 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 16:28:22,941 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 16:28:22,941 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 16:28:22,941 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 16:28:22,941 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 16:28:23,188 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 16:28:24,394 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@38cedb7d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 16:28:24,441 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 16:28:52,590 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 16:28:53,366 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 16:28:53,589 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 16:28:53,589 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 16:28:53,589 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 16:28:53,589 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 16:28:53,589 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 16:28:53,604 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 16:28:53,943 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 16:28:55,121 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@38cedb7d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 16:28:55,167 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 16:32:54,544 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 16:32:55,355 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 16:32:55,589 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 16:32:55,589 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 16:32:55,589 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 16:32:55,589 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 16:32:55,589 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 16:32:55,605 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 16:32:55,839 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 16:32:57,019 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@239f017e] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 16:32:57,066 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 16:34:10,523 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 16:34:11,250 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 16:34:11,516 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 16:34:11,531 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 16:34:11,531 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 16:34:11,531 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 16:34:11,531 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 16:34:11,531 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 16:34:11,781 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 16:34:13,026 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3a2e9f5b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 16:34:13,091 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 16:35:04,664 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 16:35:05,393 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 16:35:05,621 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 16:35:05,637 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 16:35:05,637 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 16:35:05,637 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 16:35:05,637 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 16:35:05,637 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 16:35:05,872 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 16:35:07,099 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5584d9c6] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 16:35:07,146 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 16:46:24,417 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 16:46:25,637 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 16:46:26,044 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 16:46:26,044 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 16:46:26,044 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 16:46:26,044 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 16:46:26,044 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 16:46:26,060 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 16:46:26,466 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 16:46:28,005 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2577a95d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 16:46:28,083 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 16:47:02,891 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 16:47:04,027 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 16:47:04,376 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 16:47:04,392 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 16:47:04,392 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 16:47:04,392 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 16:47:04,392 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 16:47:04,392 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 16:47:04,746 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 16:47:05,215 INFO main org.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 17:00:03,299 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 17:00:04,519 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 17:00:04,910 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 17:00:04,925 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 17:00:04,925 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 17:00:04,925 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 17:00:04,925 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 17:00:04,941 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 17:00:05,364 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 17:00:05,845 INFO main org.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 17:01:39,331 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 17:01:40,418 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 17:01:40,768 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 17:01:40,783 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 17:01:40,783 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 17:01:40,783 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 17:01:40,783 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 17:01:40,783 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 17:01:41,139 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 17:01:43,058 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@36b9cb99] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 17:01:43,136 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 17:02:05,374 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 17:02:06,473 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 17:02:06,839 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 17:02:06,839 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 17:02:06,839 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 17:02:06,839 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 17:02:06,839 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 17:02:06,854 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 17:02:07,262 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 17:02:09,145 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@315105f] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 17:02:09,261 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 17:02:09,488 WARN main org.hibernate.engine.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 23502
+2021-11-17 17:02:09,488 ERROR main org.hibernate.engine.jdbc.spi.SqlExceptionHelper - ERROR: null value in column "order_id" of relation "order_books" violates not-null constraint
+  Подробности: Failing row contains (1, null, null, 2, 1).
+2021-11-17 17:02:09,488 WARN main org.hibernate.engine.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 23502
+2021-11-17 17:02:09,488 ERROR main org.hibernate.engine.jdbc.spi.SqlExceptionHelper - ERROR: null value in column "order_id" of relation "order_books" violates not-null constraint
+  Подробности: Failing row contains (2, null, null, 1, 3).
+2021-11-17 17:04:58,377 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 17:04:59,451 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 17:04:59,811 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 17:04:59,811 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 17:04:59,811 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 17:04:59,811 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 17:04:59,811 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 17:04:59,827 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 17:05:00,157 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 17:05:01,949 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@71ed560f] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 17:05:02,046 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 17:06:25,351 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 17:06:26,452 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 17:06:26,796 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 17:06:26,796 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 17:06:26,796 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 17:06:26,796 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 17:06:26,796 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 17:06:26,813 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 17:06:27,246 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 17:06:29,041 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@58658f63] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 17:06:29,118 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 17:12:23,759 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 17:12:24,854 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 17:12:25,197 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 17:12:25,197 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 17:12:25,197 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 17:12:25,197 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 17:12:25,197 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 17:12:25,213 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 17:12:25,722 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 17:12:27,594 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7e351d7] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 17:12:27,676 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 17:14:05,001 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 17:14:06,131 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 17:14:06,494 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 17:14:06,494 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 17:14:06,494 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 17:14:06,494 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 17:14:06,494 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 17:14:06,510 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 17:14:06,886 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 17:14:08,518 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@b73433] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 17:14:08,568 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-17 17:17:09,303 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 17:17:10,473 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 17:17:10,854 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 17:17:10,854 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 17:17:10,854 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 17:17:10,854 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 17:17:10,854 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 17:17:10,870 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 17:17:11,219 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 17:17:11,695 INFO main org.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 17:22:33,736 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-17 17:22:34,923 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-17 17:22:35,301 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-17 17:22:35,301 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-17 17:22:35,301 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+2021-11-17 17:22:35,301 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-17 17:22:35,301 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-17 17:22:35,317 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-17 17:22:35,677 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-17 17:22:37,684 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@30c3ae63] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-17 17:22:37,762 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
