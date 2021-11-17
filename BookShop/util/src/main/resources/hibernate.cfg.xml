@@ -29,12 +29,9 @@
         <!-- Drop and re-create the database schema on startup -->
         <property name="hbm2ddl.auto">update</property>
 
-<!--        <mapping class="com.moon.senla.Author"/>-->
-<!--        <mapping resource="book.cfg.xml"/>-->
         <mapping class="com.moon.senla.entity.Book"/>
         <mapping class="com.moon.senla.entity.Order"/>
-<!--        <mapping class="com.moon.senla.entity.OrderBooks"/>-->
-<!--        <mapping class="com.moon.senla.entity.Request"/>-->
+        <mapping class="com.moon.senla.entity.Request"/>
 
     </session-factory>
 </hibernate-configuration>

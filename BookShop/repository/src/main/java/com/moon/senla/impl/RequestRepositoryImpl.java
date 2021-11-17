@@ -3,7 +3,6 @@ package com.moon.senla.impl;
 import java.util.List;
 
 import com.moon.senla.BookDAO;
-import com.moon.senla.RequestDAO;
 import com.moon.senla.RequestRepository;
 import com.moon.senla.annotations.InjectByType;
 import com.moon.senla.entity.Book;
@@ -13,7 +12,7 @@ import org.slf4j.LoggerFactory;
 
 public class RequestRepositoryImpl implements RequestRepository {
   private static final Logger logger = LoggerFactory.getLogger(RequestRepositoryImpl.class);
-  @InjectByType private RequestDAO requestDAO;
+  @InjectByType private RequestDao requestDAO;
   @InjectByType private BookDAO bookDAO;
 
   @Override
@@ -27,8 +26,9 @@ public class RequestRepositoryImpl implements RequestRepository {
       String title = null;
       int goodJob = 0;
       for (Request request : getAll()) {
-        if (request.getBookId() == bookId) {
-          requestDAO.update(Math.toIntExact(request.getId()));
+        if (request.getBook().getId() == bookId) {
+          request.setCount(request.getCount()+1);
+          requestDAO.update(request);
           goodJob = 1;
         }
       }
@@ -38,7 +38,8 @@ public class RequestRepositoryImpl implements RequestRepository {
             title = book.getTitle();
           }
         }
-        requestDAO.create(new Request(bookId, title));
+        Book bookr = bookDAO.read((int) bookId);
+        requestDAO.create(new Request(bookr));
       }
       logger.info(
           "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());

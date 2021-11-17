@@ -24,6 +24,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -72,6 +73,10 @@ public class Book {
       joinColumns = @JoinColumn(name = "book_id", referencedColumnName = "id"),
       inverseJoinColumns = @JoinColumn(name = "order_id", referencedColumnName = "id"))
   private List<Order> orderList;
+
+  @JsonIgnoreProperties("book")
+  @OneToOne(mappedBy = "book", fetch = FetchType.LAZY)
+  private Request request;
 
   public Book(
       long id,

@@ -86,7 +86,7 @@ public class BookServiceImpl implements BookService {
     boolean availability = false;
     try {
       for (Request request : requestRepository.getAll()) {
-        if (book.getTitle().equals(request.getTitle()) && request.getCount() > 0) {
+        if (book.getTitle().equals(request.getBook().getTitle()) && request.getCount() > 0) {
           availability = true;
         }
       }
@@ -121,7 +121,7 @@ public class BookServiceImpl implements BookService {
     try {
       if (checkBookInRequests(book)) {
         for (Request request : requestRepository.getAll()) {
-          if (book.getTitle().equals(request.getTitle()) && request.getCount() > 0) {
+          if (book.getTitle().equals(request.getBook().getTitle()) && request.getCount() > 0) {
             request.setCount(request.getCount() - 1);
             break;
           }

@@ -30,69 +30,17 @@ public class Request {
   @JsonIgnoreProperties({"orders", "request"})
   @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
   @JoinColumn(name = "book_id")
-  private long bookId;
-
-  @JsonIgnoreProperties({"orders", "request"})
-  @OneToOne (cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-  @JoinColumn(name = "book_title")
-  private String title = null;
+  private Book book;
 
   public Request() {}
 
-  public Request(long bookId, String title) {
-    this.bookId = bookId;
-    this.title = title;
+  public Request(Book book) {
+    this.book = book;
   }
 
-  public Request(long id, int count, long bookId) {
-    this.id = id;
-    this.count = count;
-    this.bookId = bookId;
+  public String getTitle(){
+    return book.getTitle();
   }
-
-  public Request(long id, int count, long bookId, String title) {
-    this.id = id;
-    this.count = count;
-    this.bookId = bookId;
-    this.title = title;
-  }
-
-  public Request(String title) {
-    this.title = title;
-  }
-
-  public long getId() {
-    return id;
-  }
-
-  public void setId(long id) {
-    this.id = id;
-  }
-
-  public long getBookId() {
-    return bookId;
-  }
-
-  public void setBookId(long bookId) {
-    this.bookId = bookId;
-  }
-
-  public int getCount() {
-    return count;
-  }
-
-  public void setCount(int count) {
-    this.count = count;
-  }
-
-  public String getTitle() {
-    return title;
-  }
-
-  public void setTitle(String title) {
-    this.title = title;
-  }
-
   @Override
   public String toString() {
     return "Request - "
@@ -101,9 +49,9 @@ public class Request {
         + ", Count: "
         + count
         + ", Book ID: "
-        + bookId
+        + book.getId()
         + ", Title: '"
-        + title
+        + book.getTitle()
         + "'";
   }
 }

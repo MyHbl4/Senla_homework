@@ -1581,3 +1581,114 @@ Caused by: java.lang.UnsupportedOperationException: null
 2021-11-18 00:19:20,863 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
 2021-11-18 00:19:22,881 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4dac121d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
 2021-11-18 00:19:23,075 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-18 01:05:21,557 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-18 01:05:22,468 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-18 01:05:22,748 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-18 01:05:22,748 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-18 01:05:22,763 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/bookshop]
+2021-11-18 01:05:22,763 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-18 01:05:22,763 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-18 01:05:22,763 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-18 01:05:23,033 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-18 01:05:23,403 INFO main org.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/bookshop]
+2021-11-18 01:06:07,636 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-18 01:06:08,405 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-18 01:06:08,637 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-18 01:06:08,637 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-18 01:06:08,637 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/bookshop]
+2021-11-18 01:06:08,637 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-18 01:06:08,637 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-18 01:06:08,652 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-18 01:06:08,906 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-18 01:06:09,259 INFO main org.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/bookshop]
+2021-11-18 01:06:32,471 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-18 01:06:33,224 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-18 01:06:33,455 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-18 01:06:33,455 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-18 01:06:33,455 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/bookshop]
+2021-11-18 01:06:33,455 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-18 01:06:33,455 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-18 01:06:33,455 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-18 01:06:33,714 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-18 01:06:34,072 INFO main org.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/bookshop]
+2021-11-18 01:19:33,069 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-18 01:19:33,987 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-18 01:19:34,272 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-18 01:19:34,272 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-18 01:19:34,272 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/bookshop]
+2021-11-18 01:19:34,272 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-18 01:19:34,272 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-18 01:19:34,272 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-18 01:19:34,557 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-18 01:19:35,174 INFO main org.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/bookshop]
+2021-11-18 01:19:59,729 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-18 01:20:00,493 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-18 01:20:00,720 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-18 01:20:00,720 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-18 01:20:00,720 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/bookshop]
+2021-11-18 01:20:00,720 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-18 01:20:00,720 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-18 01:20:00,736 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-18 01:20:00,952 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-18 01:20:01,507 INFO main org.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/bookshop]
+2021-11-18 01:23:08,993 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-18 01:23:09,748 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-18 01:23:09,980 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-18 01:23:09,980 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-18 01:23:09,980 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/bookshop]
+2021-11-18 01:23:09,980 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-18 01:23:09,980 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-18 01:23:09,980 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-18 01:23:10,196 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-18 01:23:10,752 INFO main org.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/bookshop]
+2021-11-18 01:23:47,696 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-18 01:23:48,482 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-18 01:23:48,714 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-18 01:23:48,720 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-18 01:23:48,720 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/bookshop]
+2021-11-18 01:23:48,720 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-18 01:23:48,720 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-18 01:23:48,720 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-18 01:23:48,968 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-18 01:23:49,538 INFO main org.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/bookshop]
+2021-11-18 01:26:39,267 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-18 01:26:40,178 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-18 01:26:40,432 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-18 01:26:40,447 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-18 01:26:40,447 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/bookshop]
+2021-11-18 01:26:40,447 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-18 01:26:40,447 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-18 01:26:40,447 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-18 01:26:40,732 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-18 01:26:41,345 INFO main org.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/bookshop]
+2021-11-18 01:27:10,835 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-18 01:27:11,621 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-18 01:27:11,848 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-18 01:27:11,848 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-18 01:27:11,848 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/bookshop]
+2021-11-18 01:27:11,848 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-18 01:27:11,848 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-18 01:27:11,863 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-18 01:27:12,084 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-18 01:27:12,629 INFO main org.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/bookshop]
+2021-11-18 01:28:49,785 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-18 01:28:50,556 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-18 01:28:50,787 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-18 01:28:50,802 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-18 01:28:50,802 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/bookshop]
+2021-11-18 01:28:50,802 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-18 01:28:50,802 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-18 01:28:50,802 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-18 01:28:51,054 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-18 01:28:51,650 INFO main org.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/bookshop]
+2021-11-18 01:46:36,471 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-18 01:46:37,349 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-18 01:46:37,617 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-18 01:46:37,633 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-18 01:46:37,633 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/bookshop]
+2021-11-18 01:46:37,633 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-18 01:46:37,633 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-18 01:46:37,633 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-18 01:46:37,902 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-18 01:46:39,390 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2ceca2ef] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-18 01:46:39,522 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
