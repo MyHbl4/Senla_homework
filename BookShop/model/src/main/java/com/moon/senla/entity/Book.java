@@ -5,15 +5,19 @@ import java.util.List;
 import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 import com.moon.senla.enums.Availability;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -21,7 +25,6 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
-import jakarta.persistence.Transient;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -43,7 +46,6 @@ public class Book {
   @Column(name = "author")
   private String author;
 
-
   @Column(name = "price")
   private int price;
 
@@ -60,20 +62,16 @@ public class Book {
   @Column(name = "delivery_date")
   private LocalDate deliveryDate = LocalDate.now();
 
-  @ManyToMany
-  @JoinTable(name = "order_books",
-          joinColumns = @JoinColumn(name = "book_id"),
-          inverseJoinColumns = @JoinColumn(name = "order_id"))
-  @Transient
+  @JsonIgnoreProperties("books")
+  @JsonIdentityReference(alwaysAsId = true)
+  @ManyToMany(
+      cascade = {CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE},
+      fetch = FetchType.LAZY)
+  @JoinTable(
+      name = "order_books",
+      joinColumns = @JoinColumn(name = "book_id", referencedColumnName = "id"),
+      inverseJoinColumns = @JoinColumn(name = "order_id", referencedColumnName = "id"))
   private List<Order> orderList;
-
-  public List<Order> getOrderList() {
-    return orderList;
-  }
-
-  public void setOrderList(List<Order> orderList) {
-    this.orderList = orderList;
-  }
 
   public Book(
       long id,
@@ -99,14 +97,27 @@ public class Book {
     this.publication = publication;
   }
 
-  public Book(String title, String author, int price, Availability availability, int publication,
-              LocalDate deliveryDate) {
+  public Book(
+      String title,
+      String author,
+      int price,
+      Availability availability,
+      int publication,
+      LocalDate deliveryDate) {
     this.title = title;
     this.author = author;
     this.price = price;
     this.availability = availability;
     this.publication = publication;
     this.deliveryDate = deliveryDate;
+  }
+
+  public List<Order> getOrderList() {
+    return orderList;
+  }
+
+  public void setOrderList(List<Order> orderList) {
+    this.orderList = orderList;
   }
 
   public long getId() {
