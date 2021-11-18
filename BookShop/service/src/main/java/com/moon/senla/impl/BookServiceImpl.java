@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-import com.moon.senla.BookDAO;
 import com.moon.senla.BookRepository;
 import com.moon.senla.BookService;
 import com.moon.senla.OrderRepository;
@@ -20,11 +19,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class BookServiceImpl implements BookService {
-  private static final Logger logger = LoggerFactory.getLogger(BookDAO.class);
+  private static final Logger logger = LoggerFactory.getLogger(BookServiceImpl.class);
   @InjectByType private BookRepository bookRepository;
   @InjectByType private RequestRepository requestRepository;
   @InjectByType private OrderRepository orderRepository;
-  @InjectByType private BookDAO bookDAO;
+  @InjectByType private BookDao bookDAO;
   @InjectProperty private String FUNCTION_ORDER;
   @InjectProperty private String MONTHS_STALE_BOOKS;
 

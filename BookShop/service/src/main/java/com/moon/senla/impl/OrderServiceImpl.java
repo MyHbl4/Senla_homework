@@ -5,9 +5,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-import com.moon.senla.BookDAO;
 import com.moon.senla.BookRepository;
-import com.moon.senla.OrderDAO;
 import com.moon.senla.OrderRepository;
 import com.moon.senla.OrderService;
 import com.moon.senla.RequestRepository;
@@ -20,11 +18,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class OrderServiceImpl implements OrderService {
-  private static final Logger logger = LoggerFactory.getLogger(BookDAO.class);
+  private static final Logger logger = LoggerFactory.getLogger(OrderServiceImpl.class);
   @InjectByType private OrderRepository orderRepository;
   @InjectByType private BookRepository bookRepository;
   @InjectByType private RequestRepository requestRepository;
-  @InjectByType private OrderDAO orderDAO;
+  @InjectByType private OrderDao orderDAO;
 
   @Override
   public Order findOrderById(int id) {
@@ -103,7 +101,9 @@ public class OrderServiceImpl implements OrderService {
   @Override
   public void closeOrder(int id) {
     try {
-      orderDAO.update(id);
+      Order order = orderDAO.read(id);
+      order.setOrderStatusCompleate();
+      orderDAO.update(order);
       logger.info(
           "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (Exception e) {
@@ -117,7 +117,9 @@ public class OrderServiceImpl implements OrderService {
   @Override
   public void cancelOrder(int id) {
     try {
-      orderDAO.updateCancel(id);
+      Order order = orderDAO.read(id);
+      order.setOrderStatusCanceled();
+      orderDAO.update(order);
       logger.info(
           "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (Exception e) {

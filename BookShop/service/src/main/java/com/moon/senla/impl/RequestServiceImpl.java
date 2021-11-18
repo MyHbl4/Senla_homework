@@ -3,7 +3,6 @@ package com.moon.senla.impl;
 import java.util.Comparator;
 import java.util.List;
 
-import com.moon.senla.BookDAO;
 import com.moon.senla.RequestRepository;
 import com.moon.senla.RequestService;
 import com.moon.senla.annotations.InjectByType;
@@ -12,7 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class RequestServiceImpl implements RequestService {
-  private static final Logger logger = LoggerFactory.getLogger(BookDAO.class);
+  private static final Logger logger = LoggerFactory.getLogger(RequestServiceImpl.class);
   @InjectByType private RequestRepository requestRepository;
 
   @Override

@@ -2,7 +2,6 @@ package com.moon.senla.impl;
 
 import java.util.List;
 
-import com.moon.senla.BookDAO;
 import com.moon.senla.RequestRepository;
 import com.moon.senla.annotations.InjectByType;
 import com.moon.senla.entity.Book;
@@ -13,7 +12,7 @@ import org.slf4j.LoggerFactory;
 public class RequestRepositoryImpl implements RequestRepository {
   private static final Logger logger = LoggerFactory.getLogger(RequestRepositoryImpl.class);
   @InjectByType private RequestDao requestDAO;
-  @InjectByType private BookDAO bookDAO;
+  @InjectByType private BookDao bookDAO;
 
   @Override
   public List<Request> getAll() {
@@ -33,11 +32,6 @@ public class RequestRepositoryImpl implements RequestRepository {
         }
       }
       if (goodJob == 0) {
-        for (Book book : bookDAO.readAll()) {
-          if (book.getId() == bookId) {
-            title = book.getTitle();
-          }
-        }
         Book bookr = bookDAO.read((int) bookId);
         requestDAO.create(new Request(bookr));
       }

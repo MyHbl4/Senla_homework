@@ -2,7 +2,6 @@ package com.moon.senla.impl;
 
 import java.util.List;
 
-import com.moon.senla.OrderDAO;
 import com.moon.senla.OrderRepository;
 import com.moon.senla.annotations.InjectByType;
 import com.moon.senla.entity.Book;
@@ -13,7 +12,7 @@ import org.slf4j.LoggerFactory;
 
 public class OrderRepositoryImpl implements OrderRepository {
   private static final Logger logger = LoggerFactory.getLogger(OrderRepositoryImpl.class);
-  @InjectByType private OrderDAO orderDAO;
+  @InjectByType private OrderDao orderDAO;
 
   @Override
   public List<Order> getAll() {

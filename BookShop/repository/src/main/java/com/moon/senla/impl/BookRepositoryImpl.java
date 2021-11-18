@@ -1,8 +1,8 @@
 package com.moon.senla.impl;
 
+import java.time.LocalDate;
 import java.util.List;
 
-import com.moon.senla.BookDAO;
 import com.moon.senla.BookRepository;
 import com.moon.senla.annotations.InjectByType;
 import com.moon.senla.entity.Book;
@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
 
 public class BookRepositoryImpl implements BookRepository {
   private static final Logger logger = LoggerFactory.getLogger(BookRepositoryImpl.class);
-  @InjectByType private BookDAO bookDAO;
+  @InjectByType private BookDao bookDAO;
 
   @Override
   public List<Book> getAll() {
@@ -27,7 +27,9 @@ public class BookRepositoryImpl implements BookRepository {
   @Override
   public void removeBook(int id) {
     try {
-      bookDAO.update(id);
+      Book book = bookDAO.read(id);
+      book.setAvailability(Availability.OUT_OF_STOCK);
+      bookDAO.update(book);
       logger.info(
           "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
     } catch (Exception e) {
@@ -42,8 +44,10 @@ public class BookRepositoryImpl implements BookRepository {
   public void removeBooks(List<Book> books) {
     try {
       for (Book book : books) {
-        if (bookDAO.read(Math.toIntExact(book.getId())) != null)
-          bookDAO.update(Math.toIntExact(book.getId()));
+        if (bookDAO.read((int) book.getId()) != null) {
+          book.setAvailability(Availability.OUT_OF_STOCK);
+          bookDAO.update(book);
+        }
       }
       logger.info(
           "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
@@ -83,7 +87,9 @@ public class BookRepositoryImpl implements BookRepository {
       for (Book book : bookDAO.readAll()) {
         if (myBook.getTitle().equals(book.getTitle())
             && book.getAvailability().equals(Availability.OUT_OF_STOCK)) {
-          bookDAO.updateInAndDate(Math.toIntExact(book.getId()));
+          book.setAvailability(Availability.IN_STOCK);
+          book.setDeliveryDate(LocalDate.now());
+          bookDAO.update(book);
           return;
         }
       }
