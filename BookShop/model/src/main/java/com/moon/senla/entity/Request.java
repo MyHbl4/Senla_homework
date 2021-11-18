@@ -32,10 +32,14 @@ public class Request {
   @JoinColumn(name = "book_id")
   private Book book;
 
+  @Column(name = "title")
+  private String title;
+
   public Request() {}
 
   public Request(Book book) {
     this.book = book;
+    this.title = book.getTitle();
   }
 
   public String getTitle(){
@@ -51,7 +55,7 @@ public class Request {
         + ", Book ID: "
         + book.getId()
         + ", Title: '"
-        + book.getTitle()
+        + title
         + "'";
   }
 }

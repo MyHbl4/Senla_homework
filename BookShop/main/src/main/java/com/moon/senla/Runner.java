@@ -1,6 +1,5 @@
 package com.moon.senla;
 
-import com.moon.senla.entity.Book;
 import com.moon.senla.entity.Request;
 import com.moon.senla.impl.BookDao;
 import com.moon.senla.impl.OrderDao;
@@ -16,23 +15,37 @@ public class Runner {
     BookDao book = new BookDao();
     RequestDao request = new RequestDao();
 
+//        Order order1 = order.read(9);
+//        System.out.println(order1);
+//        List<Book> or = order1.getBooks();
+//        for(Book b:or){
+//      System.out.println(b);
+//        }
+    //
+    //    Book book1 = book.read(1);
+    //    System.out.println(book1);
+//    Request request1 = request.read(1);
+//    System.out.println(request1);
     //    book.create(new Book("Romeo", "Gottfried Whimper", 100, 1918));
     //    book.create(new Book("Juliet", "Gottfried Whimper", 200, 1918));
     //    book.create(new Book("Romeo and Juliet", "Gottfried Whimper", 300, 1918));
-        Book book1 = book.read(1);
-    //    Book book2 = book.read(2);
-    //    Book book3 = book.read(3);
-    //    List<Book> books = new ArrayList<>();
-    //    List<Book> books2 = new ArrayList<>();
-    //    books.add(book1);
-    //    books.add(book2);
-    //    books2.add(book3);
-    //    books2.add(book1);
-    //    System.out.println(books);
-    //    System.out.println(books2);
-    //    order.create(new Order("Mark", books));
-    //    order.create(new Order("Lydia", books2));
-    request.create(new Request(book1));
+//    Book book1 = book.read(1);
+//    Book book2 = book.read(2);
+//    Book book3 = book.read(3);
+//    System.out.println(book3);
+//    List<Book> books = new ArrayList<>();
+//    books.add(book1);
+//    books.add(book2);
+//    books.add(book3);
+//    List<Book> books2 = new ArrayList<>();
+//    books2.add(book1);
+//    books2.add(book1);
+//    order.create(new Order("Lydia", books));
+//    order.create(new Order("Irina", books2));
+//        order.create(new Order("Aleksandr", books2));
+//        request.create(new Request(book1));
+      Request re = request.read(1);
+    System.out.println(re);
 
     //    BookDao book = new BookDao();
     //    List<Book> books = book.readAll();

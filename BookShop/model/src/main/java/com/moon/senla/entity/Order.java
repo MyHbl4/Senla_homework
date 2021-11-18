@@ -54,7 +54,7 @@ public class Order {
   private List<Book> books;
 
   @Column(name = "price")
-  private final int price = getPrice();
+  private int price;
 
   @Column(name = "status")
   @Enumerated(EnumType.STRING)
@@ -97,10 +97,17 @@ public class Order {
   public Order(String customerName, List<Book> books) {
     this.customerName = customerName;
     this.books = books;
+    this.price = getPrice();
   }
 
   public Order(String customerName) {
     this.customerName = customerName;
+  }
+
+  public Order(String customerName, List<Book> books, int price) {
+    this.customerName = customerName;
+    this.books = books;
+    this.price = price;
   }
 
   public List<Book> getBooks() {
@@ -221,13 +228,11 @@ public class Order {
         + id
         + ", Customer name: '"
         + customerName
-        + "', Books: "
-        + books
         + ", Order status: "
         + orderStatus
         + ", Execution: "
         + execution
         + ", Price: "
-        + getPrice();
+        + price;
   }
 }
