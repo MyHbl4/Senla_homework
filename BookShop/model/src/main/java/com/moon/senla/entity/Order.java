@@ -46,7 +46,7 @@ public class Order {
   @JsonIdentityReference(alwaysAsId = true)
   @ManyToMany(
       cascade = {CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE},
-      fetch = FetchType.LAZY)
+      fetch = FetchType.EAGER)
   @JoinTable(
       name = "order_books",
       joinColumns = @JoinColumn(name = "order_id", referencedColumnName = "id"),
@@ -228,11 +228,13 @@ public class Order {
         + id
         + ", Customer name: '"
         + customerName
+        + ", Price: "
+        + price
+        + ", Books: "
+        + books
         + ", Order status: "
         + orderStatus
         + ", Execution: "
-        + execution
-        + ", Price: "
-        + price;
+        + execution;
   }
 }
