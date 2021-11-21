@@ -3,16 +3,24 @@ package com.moon.senla.impl;
 import java.util.List;
 
 import com.moon.senla.RequestRepository;
-import com.moon.senla.annotations.InjectByType;
 import com.moon.senla.entity.Book;
 import com.moon.senla.entity.Request;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class RequestRepositoryImpl implements RequestRepository {
   private static final Logger logger = LoggerFactory.getLogger(RequestRepositoryImpl.class);
-  @InjectByType private RequestDao requestDAO;
-  @InjectByType private BookDao bookDAO;
+  private RequestDao requestDAO;
+  private BookDao bookDAO;
+
+  @Autowired
+  public RequestRepositoryImpl(RequestDao requestDAO, BookDao bookDAO) {
+    this.requestDAO = requestDAO;
+    this.bookDAO = bookDAO;
+  }
 
   @Override
   public List<Request> getAll() {
@@ -26,7 +34,7 @@ public class RequestRepositoryImpl implements RequestRepository {
       int goodJob = 0;
       for (Request request : getAll()) {
         if (request.getBook().getId() == bookId) {
-          request.setCount(request.getCount()+1);
+          request.setCount(request.getCount() + 1);
           requestDAO.update(request);
           goodJob = 1;
         }

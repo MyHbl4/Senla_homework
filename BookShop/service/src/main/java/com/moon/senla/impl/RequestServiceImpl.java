@@ -5,14 +5,21 @@ import java.util.List;
 
 import com.moon.senla.RequestRepository;
 import com.moon.senla.RequestService;
-import com.moon.senla.annotations.InjectByType;
 import com.moon.senla.entity.Request;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class RequestServiceImpl implements RequestService {
   private static final Logger logger = LoggerFactory.getLogger(RequestServiceImpl.class);
-  @InjectByType private RequestRepository requestRepository;
+  private RequestRepository requestRepository;
+
+  @Autowired
+  public RequestServiceImpl(RequestRepository requestRepository) {
+    this.requestRepository = requestRepository;
+  }
 
   @Override
   public List<Request> getAll() {

@@ -3,7 +3,9 @@ package com.moon.senla.action.orderAction;
 import com.moon.senla.action.AbstractAction;
 import com.moon.senla.action.Manager;
 import com.moon.senla.entity.Order;
+import org.springframework.stereotype.Component;
 
+@Component
 public class CompletedOrderAction extends AbstractAction {
 
   public CompletedOrderAction(Manager manager) {

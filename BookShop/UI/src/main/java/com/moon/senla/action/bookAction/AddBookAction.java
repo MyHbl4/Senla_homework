@@ -3,7 +3,9 @@ package com.moon.senla.action.bookAction;
 import com.moon.senla.action.AbstractAction;
 import com.moon.senla.action.Manager;
 import com.moon.senla.entity.Book;
+import org.springframework.stereotype.Component;
 
+@Component
 public class AddBookAction extends AbstractAction {
 
   public AddBookAction(Manager manager) {

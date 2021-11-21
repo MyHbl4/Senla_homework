@@ -3,16 +3,23 @@ package com.moon.senla.impl;
 import java.util.List;
 
 import com.moon.senla.OrderRepository;
-import com.moon.senla.annotations.InjectByType;
 import com.moon.senla.entity.Book;
 import com.moon.senla.entity.Order;
 import com.moon.senla.enums.Availability;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class OrderRepositoryImpl implements OrderRepository {
   private static final Logger logger = LoggerFactory.getLogger(OrderRepositoryImpl.class);
-  @InjectByType private OrderDao orderDAO;
+  private OrderDao orderDAO;
+
+  @Autowired
+  public OrderRepositoryImpl(OrderDao orderDAO) {
+    this.orderDAO = orderDAO;
+  }
 
   @Override
   public List<Order> getAll() {

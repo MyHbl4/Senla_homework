@@ -4,7 +4,9 @@ import com.moon.senla.CustomException;
 import com.moon.senla.action.AbstractAction;
 import com.moon.senla.action.Manager;
 import com.moon.senla.entity.Book;
+import org.springframework.stereotype.Component;
 
+@Component
 public class BookInfoAction extends AbstractAction {
 
   public BookInfoAction(Manager manager) {

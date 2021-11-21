@@ -4,7 +4,9 @@ import com.moon.senla.CustomException;
 import com.moon.senla.action.AbstractAction;
 import com.moon.senla.action.Manager;
 import com.moon.senla.entity.Order;
+import org.springframework.stereotype.Component;
 
+@Component
 public class OrderInfoAction extends AbstractAction {
 
   public OrderInfoAction(Manager manager) {

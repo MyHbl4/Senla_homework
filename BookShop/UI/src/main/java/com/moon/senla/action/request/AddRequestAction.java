@@ -2,7 +2,9 @@ package com.moon.senla.action.request;
 
 import com.moon.senla.action.AbstractAction;
 import com.moon.senla.action.Manager;
+import org.springframework.stereotype.Component;
 
+@Component
 public class AddRequestAction extends AbstractAction {
 
   public AddRequestAction(Manager manager) {

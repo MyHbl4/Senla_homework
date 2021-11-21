@@ -8,7 +8,9 @@ import com.moon.senla.entity.Book;
 import jakarta.persistence.criteria.CriteriaQuery;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
+import org.springframework.stereotype.Component;
 
+@Component
 public class BookDao extends AbstractDao<Book> implements IBookDao {
   @Override
   public void create(Book entity) {

@@ -5,7 +5,9 @@ import java.util.List;
 import com.moon.senla.action.AbstractAction;
 import com.moon.senla.action.Manager;
 import com.moon.senla.entity.Book;
+import org.springframework.stereotype.Component;
 
+@Component
 public class SortOldBookByDateAction extends AbstractAction {
 
   public SortOldBookByDateAction(Manager manager) {

@@ -1,6 +1,5 @@
 package com.moon.senla;
 
-import com.moon.senla.action.Manager;
 import com.moon.senla.action.bookAction.AddBookAction;
 import com.moon.senla.action.bookAction.BookInfoAction;
 import com.moon.senla.action.bookAction.RemoveBookAction;
@@ -25,22 +24,19 @@ import com.moon.senla.action.request.AddRequestAction;
 import com.moon.senla.action.request.sortrequest.SortRequestByCountAction;
 import com.moon.senla.action.request.sortrequest.SortRequestByTitleAction;
 import com.moon.senla.action.util.Constant;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Builder {
 
-  private static Builder instance;
-  private final Manager manager;
+  private final ApplicationContext context;
   private Menu rootMenu;
 
-  private Builder(Manager manager) {
-    this.manager = manager;
-  }
-
-  public static Builder getInstance(Manager manager) {
-    if (instance == null) {
-      instance = new Builder(manager);
-    }
-    return instance;
+  @Autowired
+  public Builder(ApplicationContext context) {
+    this.context = context;
   }
 
   public Menu getRootMenu() {
@@ -78,9 +74,10 @@ public class Builder {
             "2 - View stale books",
             () -> System.out.println("Select the sorting type"),
             createSortStaleBookMenu()));
-    rootMenu.addMenuItem(new MenuItem("3 - Add book", new AddBookAction(manager), getRootMenu()));
     rootMenu.addMenuItem(
-        new MenuItem("4 - Remove book", new RemoveBookAction(manager), getRootMenu()));
+        new MenuItem("3 - Add book", context.getBean(AddBookAction.class), getRootMenu()));
+    rootMenu.addMenuItem(
+        new MenuItem("4 - Remove book", context.getBean(RemoveBookAction.class), getRootMenu()));
     rootMenu.addMenuItem(
         new MenuItem("5 - Back\n0 - Exit", () -> System.out.println("Back"), getRootMenu()));
     return rootMenu;
@@ -91,21 +88,24 @@ public class Builder {
     rootMenu.setName(Constant.SORT_BOOKS);
     rootMenu.addMenuItem(
         new MenuItem(
-            "1 - Sorting by alphabetically", new SortBookByTitleAction(manager), getRootMenu()));
+            "1 - Sorting by alphabetically",
+            context.getBean(SortBookByTitleAction.class),
+            getRootMenu()));
     rootMenu.addMenuItem(
         new MenuItem(
             "2 - Sorting by publication date",
-            new SortBookByPublicationAction(manager),
+            context.getBean(SortBookByPublicationAction.class),
             getRootMenu()));
     rootMenu.addMenuItem(
-        new MenuItem("3 - Sorting by price", new SortBookByPriceAction(manager), getRootMenu()));
+        new MenuItem(
+            "3 - Sorting by price", context.getBean(SortBookByPriceAction.class), getRootMenu()));
     rootMenu.addMenuItem(
         new MenuItem(
             "4 - Sorting by availability",
-            new SortBookByAvailabilityAction(manager),
+            context.getBean(SortBookByAvailabilityAction.class),
             getRootMenu()));
     rootMenu.addMenuItem(
-        new MenuItem("5 - Book information", new BookInfoAction(manager), getRootMenu()));
+        new MenuItem("5 - Book information", context.getBean(BookInfoAction.class), getRootMenu()));
     rootMenu.addMenuItem(
         new MenuItem("6 - Back\n0 - Exit", () -> System.out.println("Back"), getRootMenu()));
     return rootMenu;
@@ -116,9 +116,14 @@ public class Builder {
     rootMenu.setName(Constant.SORT_STALE_BOOKS);
     rootMenu.addMenuItem(
         new MenuItem(
-            "1 - Sorting by receipt date", new SortOldBookByDateAction(manager), getRootMenu()));
+            "1 - Sorting by receipt date",
+            context.getBean(SortOldBookByDateAction.class),
+            getRootMenu()));
     rootMenu.addMenuItem(
-        new MenuItem("2 - Sorting by price", new SortOldBookByPriceAction(manager), getRootMenu()));
+        new MenuItem(
+            "2 - Sorting by price",
+            context.getBean(SortOldBookByPriceAction.class),
+            getRootMenu()));
     rootMenu.addMenuItem(
         new MenuItem("3 - Back\n0 - Exit", () -> System.out.println("Back"), getRootMenu()));
     return rootMenu;
@@ -137,17 +142,24 @@ public class Builder {
             "2 - View completed orders",
             () -> System.out.println("Select the sorting type"),
             createSortCompletedOrderMenu()));
-    rootMenu.addMenuItem(new MenuItem("3 - Add order", new AddOrderAction(manager), getRootMenu()));
     rootMenu.addMenuItem(
-        new MenuItem("4 - Close the order", new CloseOrderAction(manager), getRootMenu()));
-    rootMenu.addMenuItem(
-        new MenuItem("5 - Cancel the order", new CancelOrderAction(manager), getRootMenu()));
+        new MenuItem("3 - Add order", context.getBean(AddOrderAction.class), getRootMenu()));
     rootMenu.addMenuItem(
         new MenuItem(
-            "6 - Amount of earned funds", new AmountEarnedFundsAction(manager), getRootMenu()));
+            "4 - Close the order", context.getBean(CloseOrderAction.class), getRootMenu()));
     rootMenu.addMenuItem(
         new MenuItem(
-            "7 - Number of completed orders", new CompletedOrderAction(manager), getRootMenu()));
+            "5 - Cancel the order", context.getBean(CancelOrderAction.class), getRootMenu()));
+    rootMenu.addMenuItem(
+        new MenuItem(
+            "6 - Amount of earned funds",
+            context.getBean(AmountEarnedFundsAction.class),
+            getRootMenu()));
+    rootMenu.addMenuItem(
+        new MenuItem(
+            "7 - Number of completed orders",
+            context.getBean(CompletedOrderAction.class),
+            getRootMenu()));
     rootMenu.addMenuItem(
         new MenuItem("8 - Back\n0 - Exit", () -> System.out.println("Back"), getRootMenu()));
     return rootMenu;
@@ -159,14 +171,19 @@ public class Builder {
     rootMenu.addMenuItem(
         new MenuItem(
             "1 - Sorting by execution date",
-            new SortOrderByExecutionDateAction(manager),
+            context.getBean(SortOrderByExecutionDateAction.class),
             getRootMenu()));
     rootMenu.addMenuItem(
-        new MenuItem("2 - Sorting by price", new SortOrderByPriceAction(manager), getRootMenu()));
+        new MenuItem(
+            "2 - Sorting by price", context.getBean(SortOrderByPriceAction.class), getRootMenu()));
     rootMenu.addMenuItem(
-        new MenuItem("3 - Sorting by status", new SortOrderByStatusAction(manager), getRootMenu()));
+        new MenuItem(
+            "3 - Sorting by status",
+            context.getBean(SortOrderByStatusAction.class),
+            getRootMenu()));
     rootMenu.addMenuItem(
-        new MenuItem("4 - Order information", new OrderInfoAction(manager), getRootMenu()));
+        new MenuItem(
+            "4 - Order information", context.getBean(OrderInfoAction.class), getRootMenu()));
     rootMenu.addMenuItem(
         new MenuItem("5 - Back\n0 - Exit", () -> System.out.println("Back"), getRootMenu()));
     return rootMenu;
@@ -178,11 +195,13 @@ public class Builder {
     rootMenu.addMenuItem(
         new MenuItem(
             "1 - Sorting by execution date",
-            new SortCompletedOrderByExecutionDateAction(manager),
+            context.getBean(SortCompletedOrderByExecutionDateAction.class),
             getRootMenu()));
     rootMenu.addMenuItem(
         new MenuItem(
-            "2 - Sorting by price", new SortCompletedOrderByPriceAction(manager), getRootMenu()));
+            "2 - Sorting by price",
+            context.getBean(SortCompletedOrderByPriceAction.class),
+            getRootMenu()));
     rootMenu.addMenuItem(
         new MenuItem("3 - Back\n0 - Exit", () -> System.out.println("Back"), getRootMenu()));
     return rootMenu;
@@ -197,7 +216,7 @@ public class Builder {
             () -> System.out.println("Select the sorting type"),
             createSortRequestMenu()));
     rootMenu.addMenuItem(
-        new MenuItem("2 - Add request", new AddRequestAction(manager), getRootMenu()));
+        new MenuItem("2 - Add request", context.getBean(AddRequestAction.class), getRootMenu()));
     rootMenu.addMenuItem(
         new MenuItem("3 - Back\n0 - Exit", () -> System.out.println("Back"), getRootMenu()));
     return rootMenu;
@@ -207,10 +226,15 @@ public class Builder {
     Menu rootMenu = new Menu();
     rootMenu.setName(Constant.SORT_REQUEST_MENU);
     rootMenu.addMenuItem(
-        new MenuItem("1 - Sorting by count", new SortRequestByCountAction(manager), getRootMenu()));
+        new MenuItem(
+            "1 - Sorting by count",
+            context.getBean(SortRequestByCountAction.class),
+            getRootMenu()));
     rootMenu.addMenuItem(
         new MenuItem(
-            "2 - Sorting by alphabetically", new SortRequestByTitleAction(manager), getRootMenu()));
+            "2 - Sorting by alphabetically",
+            context.getBean(SortRequestByTitleAction.class),
+            getRootMenu()));
     rootMenu.addMenuItem(
         new MenuItem("3 - Back\n0 - Exit", () -> System.out.println("Back"), getRootMenu()));
     return rootMenu;

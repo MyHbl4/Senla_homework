@@ -4,15 +4,22 @@ import java.time.LocalDate;
 import java.util.List;
 
 import com.moon.senla.BookRepository;
-import com.moon.senla.annotations.InjectByType;
 import com.moon.senla.entity.Book;
 import com.moon.senla.enums.Availability;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class BookRepositoryImpl implements BookRepository {
   private static final Logger logger = LoggerFactory.getLogger(BookRepositoryImpl.class);
-  @InjectByType private BookDao bookDAO;
+  private BookDao bookDAO;
+
+  @Autowired
+  public BookRepositoryImpl(BookDao bookDAO) {
+    this.bookDAO = bookDAO;
+  }
 
   @Override
   public List<Book> getAll() {

@@ -9,23 +9,41 @@ import com.moon.senla.BookRepository;
 import com.moon.senla.BookService;
 import com.moon.senla.OrderRepository;
 import com.moon.senla.RequestRepository;
-import com.moon.senla.annotations.InjectByType;
-import com.moon.senla.annotations.InjectProperty;
 import com.moon.senla.entity.Book;
 import com.moon.senla.entity.Order;
 import com.moon.senla.entity.Request;
 import com.moon.senla.enums.OrderStatus;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
+@Component
 public class BookServiceImpl implements BookService {
   private static final Logger logger = LoggerFactory.getLogger(BookServiceImpl.class);
-  @InjectByType private BookRepository bookRepository;
-  @InjectByType private RequestRepository requestRepository;
-  @InjectByType private OrderRepository orderRepository;
-  @InjectByType private BookDao bookDAO;
-  @InjectProperty private String FUNCTION_ORDER;
-  @InjectProperty private String MONTHS_STALE_BOOKS;
+  private BookRepository bookRepository;
+  private RequestRepository requestRepository;
+  private OrderRepository orderRepository;
+  private BookDao bookDAO;
+
+  @Value("${FUNCTION_ORDER}")
+  private String FUNCTION_ORDER;
+
+  @Value("${MONTHS_STALE_BOOKS}")
+  private String MONTHS_STALE_BOOKS;
+
+  @Autowired
+  public BookServiceImpl(
+      BookRepository bookRepository,
+      RequestRepository requestRepository,
+      OrderRepository orderRepository,
+      BookDao bookDAO) {
+    this.bookRepository = bookRepository;
+    this.requestRepository = requestRepository;
+    this.orderRepository = orderRepository;
+    this.bookDAO = bookDAO;
+  }
 
   @Override
   public Book findBookById(int id) {

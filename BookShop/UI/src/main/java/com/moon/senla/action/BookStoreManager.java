@@ -3,12 +3,22 @@ package com.moon.senla.action;
 import com.moon.senla.BookService;
 import com.moon.senla.OrderService;
 import com.moon.senla.RequestService;
-import com.moon.senla.annotations.InjectByType;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class BookStoreManager implements Manager {
-  @InjectByType private BookService bookService;
-  @InjectByType private OrderService orderService;
-  @InjectByType private RequestService requestService;
+  private BookService bookService;
+  private OrderService orderService;
+  private RequestService requestService;
+
+  @Autowired
+  public BookStoreManager(
+      BookService bookService, OrderService orderService, RequestService requestService) {
+    this.bookService = bookService;
+    this.orderService = orderService;
+    this.requestService = requestService;
+  }
 
   public BookService getBookService() {
     return bookService;

@@ -9,20 +9,34 @@ import com.moon.senla.BookRepository;
 import com.moon.senla.OrderRepository;
 import com.moon.senla.OrderService;
 import com.moon.senla.RequestRepository;
-import com.moon.senla.annotations.InjectByType;
 import com.moon.senla.entity.Book;
 import com.moon.senla.entity.Order;
 import com.moon.senla.enums.Availability;
 import com.moon.senla.enums.OrderStatus;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class OrderServiceImpl implements OrderService {
   private static final Logger logger = LoggerFactory.getLogger(OrderServiceImpl.class);
-  @InjectByType private OrderRepository orderRepository;
-  @InjectByType private BookRepository bookRepository;
-  @InjectByType private RequestRepository requestRepository;
-  @InjectByType private OrderDao orderDAO;
+  private OrderRepository orderRepository;
+  private BookRepository bookRepository;
+  private RequestRepository requestRepository;
+  private OrderDao orderDAO;
+
+  @Autowired
+  public OrderServiceImpl(
+      OrderRepository orderRepository,
+      BookRepository bookRepository,
+      RequestRepository requestRepository,
+      OrderDao orderDAO) {
+    this.orderRepository = orderRepository;
+    this.bookRepository = bookRepository;
+    this.requestRepository = requestRepository;
+    this.orderDAO = orderDAO;
+  }
 
   @Override
   public Order findOrderById(int id) {
