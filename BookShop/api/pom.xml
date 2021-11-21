@@ -13,7 +13,7 @@
     <dependencies>
         <dependency>
             <groupId>com.moon.senla</groupId>
-            <artifactId>modelmodule</artifactId>
+            <artifactId>model-module</artifactId>
             <version>1.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
