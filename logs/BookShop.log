@@ -31,9 +31,9 @@ org.hibernate.LazyInitializationException: could not initialize proxy [com.moon.
 	at com.moon.senla.impl.BookServiceImpl.checkBookInRequests(BookServiceImpl.java:88)
 	at com.moon.senla.impl.BookServiceImpl.addBook(BookServiceImpl.java:43)
 	at com.moon.senla.action.bookAction.AddBookAction.execute(AddBookAction.java:23)
-	at com.moon.senla.MenuItem.doAction(MenuItem.java:18)
-	at com.moon.senla.Navigator.navigate(Navigator.java:39)
-	at com.moon.senla.MenuController.run(MenuController.java:30)
+	at com.moon.senla.menu.MenuItem.doAction(MenuItem.java:18)
+	at com.moon.senla.menu.Navigator.navigate(Navigator.java:39)
+	at com.moon.senla.menu.MenuController.run(MenuController.java:30)
 	at com.moon.senla.Runner.main(Runner.java:13)
 2021-11-19 02:55:39,469 INFO main com.moon.senla.impl.BookServiceImpl - Method completed - addBook
 2021-11-19 02:55:48,514 WARN main com.moon.senla.impl.OrderServiceImpl - Failed to execute the method - sortOrderByPrice
@@ -51,9 +51,9 @@ org.hibernate.LazyInitializationException: failed to lazily initialize a collect
 	at java.base/java.util.ArrayList.sort(ArrayList.java:1721)
 	at com.moon.senla.impl.OrderServiceImpl.sortOrderByPrice(OrderServiceImpl.java:235)
 	at com.moon.senla.action.orderAction.sortorder.SortOrderByPriceAction.execute(SortOrderByPriceAction.java:17)
-	at com.moon.senla.MenuItem.doAction(MenuItem.java:18)
-	at com.moon.senla.Navigator.navigate(Navigator.java:39)
-	at com.moon.senla.MenuController.run(MenuController.java:30)
+	at com.moon.senla.menu.MenuItem.doAction(MenuItem.java:18)
+	at com.moon.senla.menu.Navigator.navigate(Navigator.java:39)
+	at com.moon.senla.menu.MenuController.run(MenuController.java:30)
 	at com.moon.senla.Runner.main(Runner.java:13)
 2021-11-19 02:56:02,839 INFO main com.moon.senla.impl.BookServiceImpl - Method completed - sortBookByPrice
 2021-11-19 02:56:38,697 INFO main com.moon.senla.impl.OrderServiceImpl - Method completed - closeOrder
@@ -71,9 +71,9 @@ org.hibernate.LazyInitializationException: failed to lazily initialize a collect
 	at com.moon.senla.entity.Order.getPrice(Order.java:173)
 	at com.moon.senla.impl.OrderServiceImpl.getAllPriceOfSoldBooks(OrderServiceImpl.java:139)
 	at com.moon.senla.action.orderAction.AmountEarnedFundsAction.execute(AmountEarnedFundsAction.java:18)
-	at com.moon.senla.MenuItem.doAction(MenuItem.java:18)
-	at com.moon.senla.Navigator.navigate(Navigator.java:39)
-	at com.moon.senla.MenuController.run(MenuController.java:30)
+	at com.moon.senla.menu.MenuItem.doAction(MenuItem.java:18)
+	at com.moon.senla.menu.Navigator.navigate(Navigator.java:39)
+	at com.moon.senla.menu.MenuController.run(MenuController.java:30)
 	at com.moon.senla.Runner.main(Runner.java:13)
 2021-11-19 02:58:00,014 INFO main com.moon.senla.impl.OrderServiceImpl - Method completed - getCompletedOrderList
 2021-11-19 03:07:12,559 INFO main org.reflections.Reflections - Reflections took 137 ms to scan 11 urls, producing 23 keys and 59 values
@@ -246,9 +246,9 @@ org.hibernate.LazyInitializationException: could not initialize proxy [com.moon.
 	at com.moon.senla.impl.BookServiceImpl.checkBookInRequests(BookServiceImpl.java:106)
 	at com.moon.senla.impl.BookServiceImpl.addBook(BookServiceImpl.java:61)
 	at com.moon.senla.action.bookAction.AddBookAction.execute(AddBookAction.java:25)
-	at com.moon.senla.MenuItem.doAction(MenuItem.java:18)
-	at com.moon.senla.Navigator.navigate(Navigator.java:34)
-	at com.moon.senla.MenuController.run(MenuController.java:23)
+	at com.moon.senla.menu.MenuItem.doAction(MenuItem.java:18)
+	at com.moon.senla.menu.Navigator.navigate(Navigator.java:34)
+	at com.moon.senla.menu.MenuController.run(MenuController.java:23)
 	at com.moon.senla.Runner.main(Runner.java:13)
 2021-11-21 20:18:22,517 INFO main com.moon.senla.impl.BookServiceImpl - Method completed - addBook
 2021-11-21 20:18:27,636 INFO main com.moon.senla.impl.BookServiceImpl - Method completed - sortBookByTitle
@@ -274,9 +274,9 @@ org.hibernate.LazyInitializationException: could not initialize proxy [com.moon.
 	at com.moon.senla.impl.BookServiceImpl.checkBookInRequests(BookServiceImpl.java:106)
 	at com.moon.senla.impl.BookServiceImpl.addBook(BookServiceImpl.java:61)
 	at com.moon.senla.action.bookAction.AddBookAction.execute(AddBookAction.java:25)
-	at com.moon.senla.MenuItem.doAction(MenuItem.java:18)
-	at com.moon.senla.Navigator.navigate(Navigator.java:34)
-	at com.moon.senla.MenuController.run(MenuController.java:23)
+	at com.moon.senla.menu.MenuItem.doAction(MenuItem.java:18)
+	at com.moon.senla.menu.Navigator.navigate(Navigator.java:34)
+	at com.moon.senla.menu.MenuController.run(MenuController.java:23)
 	at com.moon.senla.Runner.main(Runner.java:13)
 2021-11-21 20:20:06,360 INFO main com.moon.senla.impl.BookServiceImpl - Method completed - addBook
 2021-11-21 20:20:14,531 INFO main com.moon.senla.impl.BookServiceImpl - Method completed - sortBookByTitle
@@ -311,3 +311,4 @@ org.hibernate.LazyInitializationException: could not initialize proxy [com.moon.
 2021-11-22 00:04:19,387 INFO main com.moon.senla.impl.OrderServiceImpl - Method completed - sortOrderByExecutionDate
 2021-11-22 00:04:51,532 INFO main com.moon.senla.Runner - The program is closed
 2021-11-22 00:15:16,171 INFO main com.moon.senla.Runner - The program is closed
+2021-11-23 06:35:28,465 INFO main com.moon.senla.Runner - The program is closed
