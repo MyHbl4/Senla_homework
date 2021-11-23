@@ -1,4 +1,4 @@
-package com.moon.senla;
+package com.moon.senla.action.util;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

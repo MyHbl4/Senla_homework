@@ -1,4 +1,4 @@
-package com.moon.senla;
+package com.moon.senla.action.util;
 
 import ch.qos.logback.classic.LoggerContext;
 import ch.qos.logback.classic.joran.JoranConfigurator;
