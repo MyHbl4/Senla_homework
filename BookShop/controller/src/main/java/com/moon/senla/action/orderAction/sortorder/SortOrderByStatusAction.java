@@ -10,13 +10,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class SortOrderByStatusAction extends AbstractAction {
 
-  public SortOrderByStatusAction(Manager manager) {
-    super(manager);
-  }
+    public SortOrderByStatusAction(Manager manager) {
+        super(manager);
+    }
 
-  @Override
-  public void execute() {
-    List<Order> sortOrders = manager.getOrderService().sortOrderByStatus();
-    printOut.printList(sortOrders);
-  }
+    @Override
+    public void execute() {
+        List<Order> sortOrders = manager.getOrderService().sortOrderByStatus();
+        printOut.printList(sortOrders);
+    }
 }

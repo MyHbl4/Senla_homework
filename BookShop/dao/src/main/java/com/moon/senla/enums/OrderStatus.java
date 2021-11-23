@@ -1,10 +1,10 @@
 package com.moon.senla.enums;
 
 public enum OrderStatus {
-  NEW,
-  COMPLETED,
-  CANCELED;
+    NEW,
+    COMPLETED,
+    CANCELED;
 
-  OrderStatus() {
-  }
+    OrderStatus() {
+    }
 }

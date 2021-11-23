@@ -13,5 +13,4 @@ public interface GenericDao<T> {
     void update(T entity);
 
     void delete(T entity);
-
 }

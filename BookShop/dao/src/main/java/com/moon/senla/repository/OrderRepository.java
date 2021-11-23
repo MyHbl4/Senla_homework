@@ -6,9 +6,9 @@ import com.moon.senla.entity.Order;
 
 public interface OrderRepository {
 
-  List<Order> getAll();
+    List<Order> getAll();
 
-  Order findOrderById(int id);
+    Order findOrderById(int id);
 
-  boolean checkBooksInOrder(Order order);
+    boolean checkBooksInOrder(Order order);
 }

@@ -10,13 +10,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class SortOrderByExecutionDateAction extends AbstractAction {
 
-  public SortOrderByExecutionDateAction(Manager manager) {
-    super(manager);
-  }
+    public SortOrderByExecutionDateAction(Manager manager) {
+        super(manager);
+    }
 
-  @Override
-  public void execute() {
-    List<Order> sortOrders = manager.getOrderService().sortOrderByExecutionDate();
-    printOut.printList(sortOrders);
-  }
+    @Override
+    public void execute() {
+        List<Order> sortOrders = manager.getOrderService().sortOrderByExecutionDate();
+        printOut.printList(sortOrders);
+    }
 }

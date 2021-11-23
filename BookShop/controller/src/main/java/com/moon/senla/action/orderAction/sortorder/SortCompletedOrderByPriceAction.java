@@ -10,16 +10,16 @@ import org.springframework.stereotype.Component;
 @Component
 public class SortCompletedOrderByPriceAction extends AbstractAction {
 
-  public SortCompletedOrderByPriceAction(Manager manager) {
-    super(manager);
-  }
+    public SortCompletedOrderByPriceAction(Manager manager) {
+        super(manager);
+    }
 
-  @Override
-  public void execute() {
-    System.out.println("Enter for how many months, show the list");
-    int months;
-    months = customScanner.getInt();
-    List<Order> sortOrders = manager.getOrderService().sortCompletedOrderByPrice(months);
-    printOut.printList(sortOrders);
-  }
+    @Override
+    public void execute() {
+        System.out.println("Enter for how many months, show the list");
+        int months;
+        months = customScanner.getInt();
+        List<Order> sortOrders = manager.getOrderService().sortCompletedOrderByPrice(months);
+        printOut.printList(sortOrders);
+    }
 }

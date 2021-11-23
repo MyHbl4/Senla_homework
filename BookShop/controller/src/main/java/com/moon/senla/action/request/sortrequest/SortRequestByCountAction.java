@@ -10,13 +10,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class SortRequestByCountAction extends AbstractAction {
 
-  public SortRequestByCountAction(Manager manager) {
-    super(manager);
-  }
+    public SortRequestByCountAction(Manager manager) {
+        super(manager);
+    }
 
-  @Override
-  public void execute() {
-    List<Request> sortRequests = manager.getRequestService().sortRequestByCount();
-    printOut.printList(sortRequests);
-  }
+    @Override
+    public void execute() {
+        List<Request> sortRequests = manager.getRequestService().sortRequestByCount();
+        printOut.printList(sortRequests);
+    }
 }

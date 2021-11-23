@@ -1,14 +1,14 @@
 package com.moon.senla.action;
 
-import com.moon.senla.service.BookService;
-import com.moon.senla.service.OrderService;
-import com.moon.senla.service.RequestService;
+import com.moon.senla.BookService;
+import com.moon.senla.OrderService;
+import com.moon.senla.RequestService;
 
 public interface Manager {
 
-  BookService getBookService();
+    BookService getBookService();
 
-  OrderService getOrderService();
+    OrderService getOrderService();
 
-  RequestService getRequestService();
+    RequestService getRequestService();
 }

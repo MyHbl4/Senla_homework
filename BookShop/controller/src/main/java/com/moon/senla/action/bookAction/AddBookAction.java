@@ -8,21 +8,21 @@ import org.springframework.stereotype.Component;
 @Component
 public class AddBookAction extends AbstractAction {
 
-  public AddBookAction(Manager manager) {
-    super(manager);
-  }
+    public AddBookAction(Manager manager) {
+        super(manager);
+    }
 
-  @Override
-  public void execute() {
-    System.out.println("Enter the name of the book");
-    String title = customScanner.getString();
-    System.out.println("Enter the author of the book");
-    String author = customScanner.getString();
-    System.out.println("Enter the price of the book");
-    int price = customScanner.getInt();
-    System.out.println("Enter the year of publication");
-    int publication = customScanner.getInt();
-    manager.getBookService().addBook(new Book(title, author, price, publication));
-    System.out.println("The book has been added");
-  }
+    @Override
+    public void execute() {
+        System.out.println("Enter the name of the book");
+        String title = customScanner.getString();
+        System.out.println("Enter the author of the book");
+        String author = customScanner.getString();
+        System.out.println("Enter the price of the book");
+        int price = customScanner.getInt();
+        System.out.println("Enter the year of publication");
+        int publication = customScanner.getInt();
+        manager.getBookService().addBook(new Book(title, author, price, publication));
+        System.out.println("The book has been added");
+    }
 }

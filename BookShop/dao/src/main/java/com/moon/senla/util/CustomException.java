@@ -1,12 +1,12 @@
-package com.moon.senla;
+package com.moon.senla.util;
 
 import java.io.Serial;
 
 public class CustomException extends Exception {
-  @Serial
-  private static final long serialVersionUID = 1000000000L;
+    @Serial
+    private static final long serialVersionUID = 1000000000L;
 
-  public CustomException() {
-    /* TODO document why this constructor is empty */
-  }
+    public CustomException() {
+        /* TODO document why this constructor is empty */
+    }
 }

@@ -7,5 +7,5 @@ import org.springframework.stereotype.Component;
 
 @Component
 public abstract class AbstractDao<T> implements GenericDao<T> {
-  private static final Logger logger = LoggerFactory.getLogger(AbstractDao.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(AbstractDao.class);
 }

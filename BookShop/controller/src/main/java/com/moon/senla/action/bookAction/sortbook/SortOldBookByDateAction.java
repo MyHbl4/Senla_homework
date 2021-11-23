@@ -10,13 +10,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class SortOldBookByDateAction extends AbstractAction {
 
-  public SortOldBookByDateAction(Manager manager) {
-    super(manager);
-  }
+    public SortOldBookByDateAction(Manager manager) {
+        super(manager);
+    }
 
-  @Override
-  public void execute() {
-    List<Book> sortBooks = manager.getBookService().sortOldBookByDate();
-    printOut.printList(sortBooks);
-  }
+    @Override
+    public void execute() {
+        List<Book> sortBooks = manager.getBookService().sortOldBookByDate();
+        printOut.printList(sortBooks);
+    }
 }

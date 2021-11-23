@@ -7,15 +7,15 @@ import org.springframework.stereotype.Component;
 
 @Component
 public abstract class AbstractAction implements IAction {
-  public Manager manager;
-  public PrintOut printOut;
-  public CustomScanner customScanner;
-  public CheckOfData check;
+    public Manager manager;
+    public PrintOut printOut;
+    public CustomScanner customScanner;
+    public CheckOfData check;
 
-  public AbstractAction(Manager manager) {
-    this.manager = manager;
-    this.customScanner = new CustomScanner();
-    this.printOut = new PrintOut();
-    this.check = new CheckOfData(manager);
-  }
+    public AbstractAction(Manager manager) {
+        this.manager = manager;
+        this.customScanner = new CustomScanner();
+        this.printOut = new PrintOut();
+        this.check = new CheckOfData(manager);
+    }
 }

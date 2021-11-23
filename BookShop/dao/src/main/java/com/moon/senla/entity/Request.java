@@ -19,43 +19,45 @@ import lombok.Setter;
 @Entity
 @Table(name = "requests")
 public class Request {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "id")
-  private long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private long id;
 
-  @Column(name = "count")
-  private int count = 1;
+    @Column(name = "count")
+    private int count = 1;
 
-  @JsonIgnoreProperties({"orders", "request"})
-  @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-  @JoinColumn(name = "book_id")
-  private com.moon.senla.entity.Book book;
+    @JsonIgnoreProperties({"orders", "request"})
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "book_id")
+    private com.moon.senla.entity.Book book;
 
-  @Column(name = "title")
-  private String title;
+    @Column(name = "title")
+    private String title;
 
-  public Request() {}
+    public Request() {
+    }
 
-  public Request(Book book) {
-    this.book = book;
-    this.title = book.getTitle();
-  }
+    public Request(Book book) {
+        this.book = book;
+        this.title = book.getTitle();
+    }
 
-  public String getTitle(){
-    return book.getTitle();
-  }
-  @Override
-  public String toString() {
-    return "Request - "
-        + "ID: "
-        + id
-        + ", Count: "
-        + count
-        + ", Book ID: "
-        + book.getId()
-        + ", Title: '"
-        + title
-        + "'";
-  }
+    public String getTitle() {
+        return book.getTitle();
+    }
+
+    @Override
+    public String toString() {
+        return "Request - "
+                + "ID: "
+                + id
+                + ", Count: "
+                + count
+                + ", Book ID: "
+                + book.getId()
+                + ", Title: '"
+                + title
+                + "'";
+    }
 }
