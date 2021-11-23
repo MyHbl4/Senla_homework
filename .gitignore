@@ -5,6 +5,5 @@
 /build.yml
 /out/
 /sonar-project.properties
-/META-INF/
 *.iml
 /logs/
