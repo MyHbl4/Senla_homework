@@ -1,4 +1,4 @@
-package com.moon.senla;
+package com.moon.senla.util;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;

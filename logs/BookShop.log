@@ -312,3 +312,4 @@ org.hibernate.LazyInitializationException: could not initialize proxy [com.moon.
 2021-11-22 00:04:51,532 INFO main com.moon.senla.Runner - The program is closed
 2021-11-22 00:15:16,171 INFO main com.moon.senla.Runner - The program is closed
 2021-11-23 06:35:28,465 INFO main com.moon.senla.Runner - The program is closed
+2021-11-23 12:56:03,932 INFO main com.moon.senla.Runner - The program is closed

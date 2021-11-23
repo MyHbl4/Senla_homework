@@ -2,9 +2,9 @@ package com.moon.senla.dao;
 
 import java.util.List;
 
-import com.moon.senla.HibernateUtil;
 import com.moon.senla.api.IBookDao;
 import com.moon.senla.entity.Book;
+import com.moon.senla.util.HibernateUtil;
 import jakarta.persistence.criteria.CriteriaQuery;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
