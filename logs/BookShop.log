@@ -23,3 +23,31 @@
 2021-11-24 01:01:28,363 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
 2021-11-24 01:01:28,589 INFO main com.moon.senla.impl.BookServiceImpl - Method completed - sortBookByTitle
 2021-11-24 01:01:30,630 INFO main com.moon.senla.Runner - The program is closed
+2021-11-24 01:32:52,548 INFO main com.moon.senla.Runner - The program is closed
+2021-11-24 02:01:22,849 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-24 02:01:23,437 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-24 02:01:23,621 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-24 02:01:23,630 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-24 02:01:23,630 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/bookshop]
+2021-11-24 02:01:23,630 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-24 02:01:23,630 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-24 02:01:23,635 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-24 02:01:23,916 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-24 02:01:24,987 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@de579ff] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-24 02:01:25,120 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-24 02:01:25,359 INFO main com.moon.senla.impl.BookServiceImpl - Method completed - sortBookByTitle
+2021-11-24 02:01:27,937 INFO main com.moon.senla.Runner - The program is closed
+2021-11-24 12:05:08,968 INFO main com.moon.senla.Runner - The program is closed
+2021-11-26 04:08:43,201 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-11-26 04:08:43,788 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-26 04:08:43,968 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-11-26 04:08:43,975 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-11-26 04:08:43,975 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/bookshop]
+2021-11-26 04:08:43,975 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-11-26 04:08:43,976 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-11-26 04:08:43,980 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-11-26 04:08:44,264 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-26 04:08:45,278 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7a04f730] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-11-26 04:08:45,423 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-26 04:08:45,667 INFO main com.moon.senla.impl.BookServiceImpl - Method completed - sortBookByTitle
+2021-11-26 04:08:55,911 INFO main com.moon.senla.Runner - The program is closed

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>People</title>
+</head>
+<body>
+<div th:each="person : ${people}">
+  <a th:href="@{/people/{id}(id=${person.getId()})}" th:text="${'id:' + person.getId() + ' Name: ' + person.getName() + ', Age:' + person.getAge() + ', Email:' + person.getEmail()}">user</a>
+</div>
+
+<br/>
+<hr/>
+<a href="/people/new">Create new person</a><!--выводим ссылку Create new person, которая перенаправляет
+на создание нового персона-->
+</body>
+</html>
