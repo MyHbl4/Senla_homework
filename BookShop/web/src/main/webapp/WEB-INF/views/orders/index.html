@@ -5,14 +5,16 @@
   <title>orders</title>
 </head>
 <body>
+
+<h4><a href="/">HOME MENU</a> </h4>
+<br/>
+<a href="/orders/new">Create new order</a>
+<br/>
+<hr/>
 <div th:each="order : ${orders}">
   <a th:href="@{/orders/{id}(id=${order.getId()})}" th:text="${'id:' + order.getId() + ', customer: ' + order.getCustomerName() + ', Price:' + order.getPrice() + ', Execution:' + order.getExecution()
   + ', Status:' + order.getOrderStatus()}">user</a>
 </div>
 
-<br/>
-<hr/>
-<a href="/orders/new">Create new order</a><!--выводим ссылку Create new person, которая перенаправляет
-на создание нового персона-->
 </body>
 </html>

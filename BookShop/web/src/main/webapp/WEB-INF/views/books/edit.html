@@ -5,6 +5,7 @@
   <title>Update book</title>
 </head>
 <body>
+
 <form th:method="PATCH" th:action="@{/books/{id}(id=${book.getId()})}" th:object="${book}">
   <label for="title">Enter title: </label>
   <input type="text" th:field="*{title}" id="title"/>
@@ -24,6 +25,8 @@
   <br/>
   <input type="submit" value="Update!"/>
   <h4><a href="/books/">BOOK MENU</a> </h4>
+  <h4><a href="/">HOME MENU</a> </h4>
 </form>
+
 </body>
 </html>

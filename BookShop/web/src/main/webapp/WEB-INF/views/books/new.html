@@ -5,6 +5,7 @@
   <title>New book</title>
 </head>
 <body>
+
 <form th:method="POST" th:action="@{/books}" th:object="${book}">
   <label for="title">Enter title: </label>
   <input type="text" th:field="*{title}" id="title"/>
@@ -25,5 +26,7 @@
   <input type="submit" value="Create!"/>
 </form>
 <h4><a href="/books/">BOOK MENU</a> </h4>
+<h4><a href="/">HOME MENU</a> </h4>
+
 </body>
 </html>

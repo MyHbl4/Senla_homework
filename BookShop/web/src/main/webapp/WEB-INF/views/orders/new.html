@@ -5,6 +5,7 @@
   <title>New order</title>
 </head>
 <body>
+
 <form th:method="POST" th:action="@{/orders}" th:object="${order}">
   <label for="customerName">Enter customer: </label>
   <input type="text" th:field="*{customerName}" id="customerName"/>
@@ -16,5 +17,8 @@
   <br/>
   <input type="submit" value="Create!"/>
 </form>
+<h4><a href="/orders/">ORDER MENU</a></h4>
+<h4><a href="/">HOME MENU</a> </h4>
+
 </body>
 </html>

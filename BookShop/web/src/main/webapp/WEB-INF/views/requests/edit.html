@@ -5,6 +5,7 @@
   <title>Update request</title>
 </head>
 <body>
+
 <form th:method="PATCH" th:action="@{/requests/{id}(id=${request.getId()})}" th:object="${request}">
   <label for="count">Enter count: </label>
   <input type="text" th:field="*{count}" id="count"/>
@@ -13,5 +14,8 @@
 
   <input type="submit" value="Update!"/>
 </form>
+<h4><a href="/requests/">REQUEST MENU</a></h4>
+<h4><a href="/">HOME MENU</a> </h4>
+
 </body>
 </html>

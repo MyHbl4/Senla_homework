@@ -5,6 +5,7 @@
   <title>Order</title>
 </head>
 <body>
+
 <p th:text="${'id:' + order.getId()}">VALUE</p><!--выыодит 'id:' id person-->
 <p th:text="${'Customer:' + order.getCustomerName()}">VALUE</p><!--выводит 'Name:' name person-->
 <p th:text="${'Execution:' + order.getExecution()}">VALUE</p>
@@ -16,5 +17,8 @@
 <form th:method="DELETE" th:action="@{/orders/{id}(id=${order.getId()})}">
   <input type="submit" value="Delete"/>
 </form>
+<h4><a href="/orders/">ORDER MENU</a></h4>
+<h4><a href="/">HOME MENU</a> </h4>
+
 </body>
 </html>

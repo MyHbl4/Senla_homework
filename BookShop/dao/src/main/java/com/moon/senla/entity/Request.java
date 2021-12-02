@@ -54,8 +54,6 @@ public class Request {
                 + id
                 + ", Count: "
                 + count
-                + ", Book ID: "
-                + book.getId()
                 + ", Title: '"
                 + title
                 + "'";

@@ -6,14 +6,15 @@
 </head>
 <body>
 
-<div th:each="request : ${requests}">
-  <a th:href="@{/requests/{id}(id=${request.getId()})}"
-     th:text="${'id:' + request.getId() + ', count:' + request.getCount() + ', ' + request.getBook().getTitle()}">user</a>
-</div>
-
+<h4><a href="/">HOME MENU</a> </h4>
+<br/>
+<a href="/requests/new">Create new request</a>
 <br/>
 <hr/>
-<a href="/requests/new">Create new request</a><!--выводим ссылку Create new person, которая перенаправляет
-на создание нового персона-->
+<div th:each="request : ${requests}">
+  <a th:href="@{/requests/{id}(id=${request.getId()})}"
+     th:text="${'id:' + request.getId() + ', count:' + request.getCount()}">user</a>
+</div>
+
 </body>
 </html>

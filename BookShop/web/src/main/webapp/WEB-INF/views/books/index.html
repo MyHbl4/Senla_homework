@@ -11,7 +11,6 @@
 <a href="/books/new">Create new book</a>
 <br/>
 <hr/>
-
 <a href="/books/sort-price">Sort book by price</a>
 <br/>
 <a href="/books/sort-availability">Sort book by availability</a>
@@ -25,7 +24,6 @@
 <a href="/books/sort-old-date">Sort old book by date</a>
 <br/>
 <hr/>
-
 <div th:each="book : ${books}">
   <a th:href="@{/books/{id}(id=${book.getId()})}"
      th:text="${'id:' + book.getId() + ' Title: ' + book.getTitle() + ', Author:' + book.getAuthor() + ', Publication:' + book.getPublication() + ', Price:' + book.getPrice() + ', Delivery date:' + book.getDeliveryDate() + ', Status:' + book.getAvailability()}">user</a>
