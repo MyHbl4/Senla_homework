@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Update request</title>
+</head>
+<body>
+<form th:method="PATCH" th:action="@{/requests/{id}(id=${request.getId()})}" th:object="${request}">
+  <label for="count">Enter count: </label>
+  <input type="text" th:field="*{count}" id="count"/>
+  <div style="color:red" th:if="${#fields.hasErrors('count')}" th:errors="*{count}">Name error</div>
+  <br/>
+
+  <input type="submit" value="Update!"/>
+</form>
+</body>
+</html>

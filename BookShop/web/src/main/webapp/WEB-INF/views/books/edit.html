@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Update book</title>
+</head>
+<body>
+<form th:method="PATCH" th:action="@{/books/{id}(id=${book.getId()})}" th:object="${book}">
+  <label for="title">Enter title: </label>
+  <input type="text" th:field="*{title}" id="title"/>
+  <div style="color:red" th:if="${#fields.hasErrors('title')}" th:errors="*{title}">Name error</div>
+  <br/>
+  <label for="author">Enter author: </label>
+  <input type="text" th:field="*{author}" id="author"/>
+  <div style="color:red" th:if="${#fields.hasErrors('author')}" th:errors="*{author}">Author error</div>
+  <br/>
+  <label for="publication">Enter publication: </label>
+  <input type="text" th:field="*{publication}" id="publication"/>
+  <div style="color:red" th:if="${#fields.hasErrors('publication')}" th:errors="*{publication}">Publication error</div>
+  <br/>
+  <label for="price">Enter price: </label>
+  <input type="text" th:field="*{price}" id="price"/>
+  <div style="color:red" th:if="${#fields.hasErrors('price')}" th:errors="*{price}">Price error</div>
+  <br/>
+  <input type="submit" value="Update!"/>
+  <h4><a href="/books/">BOOK MENU</a> </h4>
+</form>
+</body>
+</html>

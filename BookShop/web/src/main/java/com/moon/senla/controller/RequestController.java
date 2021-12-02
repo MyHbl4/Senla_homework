@@ -1,0 +1,80 @@
+package com.moon.senla.controller;
+
+import com.moon.senla.dao.RequestDao;
+import com.moon.senla.entity.Request;
+import javax.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/requests")
+public class RequestController {
+
+    private final RequestDao requestDao;
+
+    @Autowired
+    public RequestController(RequestDao requestDao) {
+        this.requestDao = requestDao;
+    }
+
+    @GetMapping()
+    public String index(Model model) {
+        Iterable<Request> requests = requestDao.readAll();
+        model.addAttribute("requests", requests);
+        return "requests/index";
+    }
+
+    @GetMapping("/{id}")
+    public String show(@PathVariable("id") int id, Model model) {
+        model.addAttribute("request", requestDao.read(id));
+        return "requests/show";
+    }
+
+    @GetMapping("/new")//путь по которому переходим на этот метод
+    public String newRequest(@ModelAttribute("request") Request request) {
+        return "requests/new";
+    }
+
+    @PostMapping()
+    public String create(@ModelAttribute("request") @Valid Request request,
+        BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "requests/new";
+        }
+
+        requestDao.create(request);
+        return "redirect:/requests";
+    }
+
+    @GetMapping("/{id}/edit")
+    public String edit(Model model, @PathVariable("id") int id) {
+        model.addAttribute("request", requestDao.read(id));
+        return "requests/edit";
+    }
+
+    @PatchMapping("/{id}")
+    public String update(@ModelAttribute("request") @Valid Request request,
+        BindingResult bindingResult, @PathVariable("id") int id) {
+        if (bindingResult.hasErrors()) {
+            return "requests/edit";
+        }
+
+        requestDao.update(request);
+        return "redirect:/requests";
+    }
+
+    @DeleteMapping("/{id}")
+    public String delete(@PathVariable("id") int id) {
+        requestDao.delete(requestDao.read(id));
+        return "redirect:/requests";
+    }
+}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Update order</title>
+</head>
+<body>
+<form th:method="PATCH" th:action="@{/orders/{id}(id=${order.getId()})}" th:object="${order}">
+  <label for="orderStatus">Enter status: </label>
+  <input type="text" th:field="*{orderStatus}" id="orderStatus"/>
+  <div style="color:red" th:if="${#fields.hasErrors('orderStatus')}" th:errors="*{orderStatus}">status error</div>
+  <br/>
+
+  <input type="submit" value="Update!"/>
+</form>
+</body>
+</html>

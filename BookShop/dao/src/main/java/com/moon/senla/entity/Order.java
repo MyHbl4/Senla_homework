@@ -105,21 +105,21 @@ public class Order {
         this.customerName = customerName;
     }
 
-    public Order(String customerName, List<com.moon.senla.entity.Book> books, int price) {
+    public Order(String customerName, List<Book> books, int price) {
         this.customerName = customerName;
         this.books = books;
         this.price = price;
     }
 
-    public List<com.moon.senla.entity.Book> getBooks() {
+    public List<Book> getBooks() {
         return books;
     }
 
-    public void setBooks(List<com.moon.senla.entity.Book> books) {
+    public void setBooks(List<Book> books) {
         this.books = books;
     }
 
-    public void addBook(com.moon.senla.entity.Book book) {
+    public void addBook(Book book) {
         books.add(book);
     }
 

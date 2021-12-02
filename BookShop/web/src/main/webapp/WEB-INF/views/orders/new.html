@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>New order</title>
+</head>
+<body>
+<form th:method="POST" th:action="@{/orders}" th:object="${order}">
+  <label for="customerName">Enter customer: </label>
+  <input type="text" th:field="*{customerName}" id="customerName"/>
+  <div style="color:red" th:if="${#fields.hasErrors('customerName')}" th:errors="*{customerName}">customer error</div>
+  <br/>
+  <label for="books">Enter books: </label>
+  <input type="text" th:field="*{books}" id="books"/>
+  <div style="color:red" th:if="${#fields.hasErrors('books')}" th:errors="*{books}">books error</div>
+  <br/>
+  <input type="submit" value="Create!"/>
+</form>
+</body>
+</html>

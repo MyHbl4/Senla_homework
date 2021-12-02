@@ -30,7 +30,7 @@ public class Request {
     @JsonIgnoreProperties({"orders", "request"})
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "book_id")
-    private com.moon.senla.entity.Book book;
+    private Book book;
 
     @Column(name = "title")
     private String title;

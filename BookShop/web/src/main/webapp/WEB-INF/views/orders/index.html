@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>orders</title>
+</head>
+<body>
+<div th:each="order : ${orders}">
+  <a th:href="@{/orders/{id}(id=${order.getId()})}" th:text="${'id:' + order.getId() + ', customer: ' + order.getCustomerName() + ', Price:' + order.getPrice() + ', Execution:' + order.getExecution()
+  + ', Status:' + order.getOrderStatus()}">user</a>
+</div>
+
+<br/>
+<hr/>
+<a href="/orders/new">Create new order</a><!--выводим ссылку Create new person, которая перенаправляет
+на создание нового персона-->
+</body>
+</html>

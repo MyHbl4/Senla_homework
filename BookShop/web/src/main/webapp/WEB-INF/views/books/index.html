@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Books</title>
+</head>
+<body>
+
+<h4><a href="/">HOME MENU</a> </h4>
+<hr/>
+<a href="/books/new">Create new book</a>
+<br/>
+<hr/>
+
+<a href="/books/sort-price">Sort book by price</a>
+<br/>
+<a href="/books/sort-availability">Sort book by availability</a>
+<br/>
+<a href="/books/sort-publication">Sort book by publication</a>
+<br/>
+<a href="/books/sort-title">Sort book by title</a>
+<br/>
+<a href="/books/sort-old-price">Sort old book by price</a>
+<br/>
+<a href="/books/sort-old-date">Sort old book by date</a>
+<br/>
+<hr/>
+
+<div th:each="book : ${books}">
+  <a th:href="@{/books/{id}(id=${book.getId()})}"
+     th:text="${'id:' + book.getId() + ' Title: ' + book.getTitle() + ', Author:' + book.getAuthor() + ', Publication:' + book.getPublication() + ', Price:' + book.getPrice() + ', Delivery date:' + book.getDeliveryDate() + ', Status:' + book.getAvailability()}">user</a>
+</div>
+
+</body>
+</html>
