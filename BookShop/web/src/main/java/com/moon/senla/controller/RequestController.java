@@ -1,5 +1,6 @@
 package com.moon.senla.controller;
 
+import com.moon.senla.RequestService;
 import com.moon.senla.dao.RequestDao;
 import com.moon.senla.entity.Request;
 import javax.validation.Valid;
@@ -20,10 +21,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class RequestController {
 
     private final RequestDao requestDao;
+    private final RequestService requestService;
 
     @Autowired
-    public RequestController(RequestDao requestDao) {
+    public RequestController(RequestDao requestDao, RequestService requestService) {
         this.requestDao = requestDao;
+        this.requestService = requestService;
     }
 
     @GetMapping()
@@ -76,5 +79,19 @@ public class RequestController {
     public String delete(@PathVariable("id") int id) {
         requestDao.delete(requestDao.read(id));
         return "redirect:/requests";
+    }
+
+    @GetMapping("/sort-request-count")
+    public String sortRequestByCount(Model model) {
+        Iterable<Request> requests = requestService.sortRequestByCount();
+        model.addAttribute("requests", requests);
+        return "requests/index";
+    }
+
+    @GetMapping("/sort-request-title")
+    public String sortRequestByTitle(Model model) {
+        Iterable<Request> requests = requestService.sortRequestByTitle();
+        model.addAttribute("requests", requests);
+        return "requests/index";
     }
 }

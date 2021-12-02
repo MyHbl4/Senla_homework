@@ -1,5 +1,6 @@
 package com.moon.senla.controller;
 
+import com.moon.senla.OrderService;
 import com.moon.senla.dao.OrderDao;
 import com.moon.senla.entity.Order;
 import javax.validation.Valid;
@@ -20,10 +21,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class OrderController {
 
     private final OrderDao orderDao;
+    private final OrderService orderService;
 
     @Autowired
-    public OrderController(OrderDao orderDao) {
+    public OrderController(OrderDao orderDao, OrderService orderService) {
         this.orderDao = orderDao;
+        this.orderService = orderService;
     }
 
     @GetMapping()
@@ -76,4 +79,28 @@ public class OrderController {
         orderDao.delete(orderDao.read(id));
         return "redirect:/orders";
     }
+
+    @GetMapping("/sort-order-price")
+    public String sortOrderByPrice(Model model) {
+        model.addAttribute("orders", orderService.sortOrderByPrice());
+        return "orders/index";
+    }
+
+    @GetMapping("/sort-order-status")
+    public String sortOrderByStatus(Model model) {
+        model.addAttribute("orders", orderService.sortOrderByStatus());
+        return "orders/index";
+    }
+
+    @GetMapping("/sort-order-execution")
+    public String sortOrderByExecution(Model model) {
+        model.addAttribute("orders", orderService.sortOrderByExecutionDate());
+        return "orders/index";
+    }
+
+//    @GetMapping()
+//    public String index(Model model) {
+//        model.addAttribute("orders", orderService.sortCompletedOrderByPrice());
+//        return "orders/index";
+//    }
 }

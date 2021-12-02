@@ -10,8 +10,13 @@
   + ', Customer name: ' + order.getCustomerName() + ', Price: ' + order.getPrice()
    + ', Order status: ' + order.getOrderStatus() + ', Execution: ' + order.getExecution()}">VALUE</p>
 <p th:text="${'Books in order: ' + order.getBooks()}">VALUE</p>
-
-<a th:href="@{/orders/{id}/edit(id=${order.getId()})}">Edit</a>
+<hr/>
+<div>
+  <form th:method="GET" th:action="@{/orders/{id}/edit(id=${order.getId()})}">
+    <input type="submit" value="Edit"/>
+  </form>
+</div>
+<br/>
 <form th:method="DELETE" th:action="@{/orders/{id}(id=${order.getId()})}">
   <input type="submit" value="Delete"/>
 </form>

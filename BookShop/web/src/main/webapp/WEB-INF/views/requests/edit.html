@@ -10,12 +10,11 @@
   <label for="count">Enter count: </label>
   <input type="text" th:field="*{count}" id="count"/>
   <div style="color:red" th:if="${#fields.hasErrors('count')}" th:errors="*{count}">Name error</div>
-  <br/>
-
+  <hr/>
   <input type="submit" value="Update!"/>
 </form>
 <h4><a href="/requests/">REQUEST MENU</a></h4>
-<h4><a href="/">HOME MENU</a> </h4>
+<h4><a href="/">HOME MENU</a></h4>
 
 </body>
 </html>

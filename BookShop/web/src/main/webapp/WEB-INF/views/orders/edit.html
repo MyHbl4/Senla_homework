@@ -9,13 +9,14 @@
 <form th:method="PATCH" th:action="@{/orders/{id}(id=${order.getId()})}" th:object="${order}">
   <label for="orderStatus">Enter status: </label>
   <input type="text" th:field="*{orderStatus}" id="orderStatus"/>
-  <div style="color:red" th:if="${#fields.hasErrors('orderStatus')}" th:errors="*{orderStatus}">status error</div>
-  <br/>
-
+  <div style="color:red" th:if="${#fields.hasErrors('orderStatus')}" th:errors="*{orderStatus}">
+    status error
+  </div>
+  <hr/>
   <input type="submit" value="Update!"/>
 </form>
 <h4><a href="/orders/">ORDER MENU</a></h4>
-<h4><a href="/">HOME MENU</a> </h4>
+<h4><a href="/">HOME MENU</a></h4>
 
 </body>
 </html>

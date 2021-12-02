@@ -22,7 +22,7 @@
   <label for="price">Enter price: </label>
   <input type="text" th:field="*{price}" id="price"/>
   <div style="color:red" th:if="${#fields.hasErrors('price')}" th:errors="*{price}">Price error</div>
-  <br/>
+  <hr/>
   <input type="submit" value="Update!"/>
   <h4><a href="/books/">BOOK MENU</a> </h4>
   <h4><a href="/">HOME MENU</a> </h4>

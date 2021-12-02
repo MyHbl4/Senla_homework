@@ -7,11 +7,26 @@
 <body>
 
 <p th:text="${book.toString()}">VALUE</p>
-
-<a th:href="@{/books/{id}/edit(id=${book.getId()})}">Edit</a>
+<hr/>
+<div>
+  <form th:method="GET" th:action="@{/books/{id}/edit(id=${book.getId()})}">
+    <input type="submit" value="Edit"/>
+  </form>
+</div>
+<!--<a th:href="@{/books/{id}/edit(id=${book.getId()})}">Edit</a>-->
+<br/>
+<div>
+  <form th:method="PATCH" th:action="@{/books/{id}/remove(id=${book.getId()})}">
+    <input type="submit" value="Remove"/>
+  </form>
+</div>
+<br/>
+<div>
 <form th:method="DELETE" th:action="@{/books/{id}(id=${book.getId()})}">
   <input type="submit" value="Delete"/>
 </form>
+</div>
+
 <h4><a href="/books/">BOOK MENU</a> </h4>
 <h4><a href="/">HOME MENU</a> </h4>
 

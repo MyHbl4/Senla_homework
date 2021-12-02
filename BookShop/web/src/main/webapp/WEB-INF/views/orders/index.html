@@ -11,6 +11,13 @@
 <a href="/orders/new">Create new order</a>
 <br/>
 <hr/>
+<a href="/orders/sort-order-price">Sort order by price</a>
+<br/>
+<a href="/orders/sort-order-status">Sort order by status</a>
+<br/>
+<a href="/orders/sort-order-execution">Sort book by execution date</a>
+<br/>
+<hr/>
 <div th:each="order : ${orders}">
   <a th:href="@{/orders/{id}(id=${order.getId()})}" th:text="${'Order - ' + 'ID: ' + order.getId()
   + ', Customer name: ' + order.getCustomerName() + ', Price: ' + order.getPrice()

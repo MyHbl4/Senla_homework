@@ -11,6 +11,11 @@
 <a href="/requests/new">Create new request</a>
 <br/>
 <hr/>
+<a href="/requests/sort-request-count">Sort requests by count</a>
+<br/>
+<a href="/requests/sort-request-title">Sort requests by title</a>
+<br/>
+<hr/>
 <div th:each="request : ${requests}">
   <a th:href="@{/requests/{id}(id=${request.getId()})}" th:text="${request.toString()}">user</a>
 </div>

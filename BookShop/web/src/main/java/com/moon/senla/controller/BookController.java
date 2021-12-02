@@ -4,13 +4,16 @@ package com.moon.senla.controller;
 import com.moon.senla.BookService;
 import com.moon.senla.dao.BookDao;
 import com.moon.senla.entity.Book;
+import java.util.List;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.Mapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -83,44 +86,50 @@ public class BookController {
         return "redirect:/books";
     }
 
-    @GetMapping("/sort-price")
+    @PatchMapping("/{id}/remove")
+    public String remove(@PathVariable("id") int id) {
+        bookService.removeBook(id);
+        return "redirect:/books";
+    }
+
+    @GetMapping("/sort-book-price")
     public String sortPrice(Model model) {
         Iterable<Book> books = bookService.sortBookByPrice();
         model.addAttribute("books", books);
         return "books/index";
     }
 
-    @GetMapping("/sort-availability")
+    @GetMapping("/sort-book-availability")
     public String sortAvailability(Model model) {
         Iterable<Book> books = bookService.sortBookByAvailability();
         model.addAttribute("books", books);
         return "books/index";
     }
 
-    @GetMapping("/sort-title")
+    @GetMapping("/sort-book-title")
     public String sortTitle(Model model) {
         Iterable<Book> books = bookService.sortBookByTitle();
         model.addAttribute("books", books);
         return "books/index";
     }
 
-    @GetMapping("/sort-publication")
+    @GetMapping("/sort-book-publication")
     public String sortPublication(Model model) {
         Iterable<Book> books = bookService.sortBookByPublication();
         model.addAttribute("books", books);
         return "books/index";
     }
 
-    @GetMapping("/sort-old-date")
+    @GetMapping("/sort-old-book-date")
     public String sortOldBookByDate(Model model) {
-        Iterable<Book> books = bookService.sortOldBookByDate();
+        List<Book> books = bookService.sortOldBookByDate();
         model.addAttribute("books", books);
         return "books/index";
     }
 
-    @GetMapping("/sort-old-price")
+    @GetMapping("/sort-old-book-price")
     public String sortOldBookByPrice(Model model) {
-        Iterable<Book> books = bookService.sortOldBookByPrice();
+        List<Book> books = bookService.sortOldBookByPrice();
         model.addAttribute("books", books);
         return "books/index";
     }
