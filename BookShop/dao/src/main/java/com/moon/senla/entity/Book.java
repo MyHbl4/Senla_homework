@@ -102,20 +102,6 @@ public class Book {
         this.publication = publication;
     }
 
-    public Book(
-            String title,
-            String author,
-            int price,
-            Availability availability,
-            int publication,
-            LocalDate deliveryDate) {
-        this.title = title;
-        this.author = author;
-        this.price = price;
-        this.availability = availability;
-        this.publication = publication;
-        this.deliveryDate = deliveryDate;
-    }
 
     public List<Order> getOrderList() {
         return orderList;

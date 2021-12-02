@@ -40,7 +40,35 @@ public class Request {
 
     public Request(Book book) {
         this.book = book;
-        this.title = book.getTitle();
+        this.title = getTitle();
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
+    public Book getBook() {
+        return book;
+    }
+
+    public void setBook(Book book) {
+        this.book = book;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getTitle() {
@@ -50,12 +78,12 @@ public class Request {
     @Override
     public String toString() {
         return "Request - "
-                + "ID: "
-                + id
-                + ", Count: "
-                + count
-                + ", Title: '"
-                + title
-                + "'";
+            + "ID: "
+            + id
+            + ", Count: "
+            + count
+            + ", Title: '"
+            + title
+            + "'";
     }
 }

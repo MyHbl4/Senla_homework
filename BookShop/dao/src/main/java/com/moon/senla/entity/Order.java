@@ -69,47 +69,12 @@ public class Order {
     public Order() {
     }
 
-    public Order(long id, String customerName, OrderStatus orderStatus, LocalDate execution) {
-        this.id = id;
-        this.customerName = customerName;
-        this.orderStatus = orderStatus;
-        this.execution = execution;
-    }
-
-    public Order(
-            long id,
-            String customerName,
-            List<com.moon.senla.entity.Book> books,
-            OrderStatus orderStatus,
-            LocalDate execution) {
-        this.id = id;
-        this.customerName = customerName;
-        this.books = books;
-        this.orderStatus = orderStatus;
-        this.execution = execution;
-    }
-
-    public Order(long id, String customerName, List<com.moon.senla.entity.Book> books) {
-        this.id = id;
-        this.customerName = customerName;
-        this.books = books;
-    }
-
-    public Order(String customerName, List<com.moon.senla.entity.Book> books) {
+    public Order(String customerName, List<Book> books) {
         this.customerName = customerName;
         this.books = books;
         this.price = getPrice();
     }
 
-    public Order(String customerName) {
-        this.customerName = customerName;
-    }
-
-    public Order(String customerName, List<Book> books, int price) {
-        this.customerName = customerName;
-        this.books = books;
-        this.price = price;
-    }
 
     public List<Book> getBooks() {
         return books;

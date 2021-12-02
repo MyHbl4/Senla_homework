@@ -12,8 +12,7 @@
 <br/>
 <hr/>
 <div th:each="request : ${requests}">
-  <a th:href="@{/requests/{id}(id=${request.getId()})}"
-     th:text="${'id:' + request.getId() + ', count:' + request.getCount()}">user</a>
+  <a th:href="@{/requests/{id}(id=${request.getId()})}" th:text="${request.toString()}">user</a>
 </div>
 
 </body>

@@ -6,13 +6,8 @@
 </head>
 <body>
 
-<p th:text="${'id:' + book.getId()}">VALUE</p>
-<p th:text="${'Title:' + book.getTitle()}">VALUE</p>
-<p th:text="${'Author:' + book.getAuthor()}">VALUE</p>
-<p th:text="${'Publication:' + book.getPublication()}">VALUE</p>
-<p th:text="${'Price:' + book.getPrice()}">VALUE</p>
-<p th:text="${'Delivery date:' + book.getDeliveryDate()}">VALUE</p>
-<p th:text="${'Status:' + book.getAvailability()}">VALUE</p>
+<p th:text="${book.toString()}">VALUE</p>
+
 <a th:href="@{/books/{id}/edit(id=${book.getId()})}">Edit</a>
 <form th:method="DELETE" th:action="@{/books/{id}(id=${book.getId()})}">
   <input type="submit" value="Delete"/>

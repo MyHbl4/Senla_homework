@@ -6,8 +6,7 @@
 </head>
 <body>
 
-<p th:text="${'id:' + request.getId()}">VALUE</p>
-<p th:text="${'count:' + request.getCount()}">VALUE</p>
+<p th:text="${request.toString()}">VALUE</p>
 <a th:href="@{/requests/{id}/edit(id=${request.getId()})}">Edit</a>
 <form th:method="DELETE" th:action="@{/requests/{id}(id=${request.getId()})}">
   <input type="submit" value="Delete"/>

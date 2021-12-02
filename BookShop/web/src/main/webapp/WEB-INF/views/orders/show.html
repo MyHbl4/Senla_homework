@@ -6,14 +6,12 @@
 </head>
 <body>
 
-<p th:text="${'id:' + order.getId()}">VALUE</p><!--выыодит 'id:' id person-->
-<p th:text="${'Customer:' + order.getCustomerName()}">VALUE</p><!--выводит 'Name:' name person-->
-<p th:text="${'Execution:' + order.getExecution()}">VALUE</p>
-<p th:text="${'Status:' + order.getOrderStatus()}">VALUE</p>
-<p th:text="${'Price:' + order.getPrice()}">VALUE</p>
+<p th:text="${'Order - ' + 'ID: ' + order.getId()
+  + ', Customer name: ' + order.getCustomerName() + ', Price: ' + order.getPrice()
+   + ', Order status: ' + order.getOrderStatus() + ', Execution: ' + order.getExecution()}">VALUE</p>
+<p th:text="${'Books in order: ' + order.getBooks()}">VALUE</p>
 
-<a th:href="@{/orders/{id}/edit(id=${order.getId()})}">Edit</a><!--выводит ссылку Edit которая
-отправляет по ардресу редактирования этого персона-->
+<a th:href="@{/orders/{id}/edit(id=${order.getId()})}">Edit</a>
 <form th:method="DELETE" th:action="@{/orders/{id}(id=${order.getId()})}">
   <input type="submit" value="Delete"/>
 </form>
