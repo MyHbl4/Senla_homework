@@ -1,7 +1,9 @@
 package com.moon.senla.controller;
 
+import com.moon.senla.BookService;
 import com.moon.senla.OrderService;
 import com.moon.senla.dao.OrderDao;
+import com.moon.senla.entity.Book;
 import com.moon.senla.entity.Order;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,11 +24,14 @@ public class OrderController {
 
     private final OrderDao orderDao;
     private final OrderService orderService;
+    private final BookService bookService;
 
     @Autowired
-    public OrderController(OrderDao orderDao, OrderService orderService) {
+    public OrderController(OrderDao orderDao, OrderService orderService,
+        BookService bookService) {
         this.orderDao = orderDao;
         this.orderService = orderService;
+        this.bookService = bookService;
     }
 
     @GetMapping()
@@ -42,8 +47,9 @@ public class OrderController {
     }
 
     @GetMapping("/new")
-    public String newOrder(@ModelAttribute("order") Order order) {
-        return "orders/new";
+    public String newOrder(@ModelAttribute("order") Order order, Model model) {
+        Iterable<Book> books = bookService.sortBookByAvailability();
+        model.addAttribute("books", books);return "orders/new";
     }
 
     @PostMapping()

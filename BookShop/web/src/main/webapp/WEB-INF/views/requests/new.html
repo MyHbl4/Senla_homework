@@ -8,13 +8,20 @@
 
 <form th:method="POST" th:action="@{/requests}" th:object="${request}">
   <label for="book">Enter book: </label>
-  <input type="text" th:field="*{book}" id="book"/>
+<!--    <input type="text" th:field="*{book}" id="book2"/>-->
+
+  <select id="book">
+    <div th:each="book1 : ${books}">
+      <option><a th:text="${book1.toString()}">user</a></option>
+    </div>
+  </select>
+
   <div style="color:red" th:if="${#fields.hasErrors('book')}" th:errors="*{book}">book error</div>
   <br/>
   <input type="submit" value="Create!"/>
 </form>
 <h4><a href="/requests/">REQUEST MENU</a></h4>
-<h4><a href="/">HOME MENU</a> </h4>
+<h4><a href="/">HOME MENU</a></h4>
 
 </body>
 </html>

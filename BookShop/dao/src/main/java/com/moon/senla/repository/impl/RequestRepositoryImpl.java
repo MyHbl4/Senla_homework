@@ -31,27 +31,33 @@ public class RequestRepositoryImpl implements RequestRepository {
 
     @Override
     public void addRequest(long bookId) {
-        try {
-            String title = null;
-            int goodJob = 0;
-            for (Request request : getAll()) {
-                if (request.getBook().getId() == bookId) {
-                    request.setCount(request.getCount() + 1);
-                    requestDAO.update(request);
-                    goodJob = 1;
+        List<Book> list = bookDAO.readAll();
+        boolean isMath = list.stream().anyMatch(u -> u.getId()==(bookId));
+        if(isMath) {
+            try {
+                int goodJob = 0;
+                for (Request request : getAll()) {
+                    if (request.getBook().getId() == bookId) {
+                        request.setCount(request.getCount() + 1);
+                        requestDAO.update(request);
+                        goodJob = 1;
+                    }
                 }
-            }
-            if (goodJob == 0) {
-                Book bookr = bookDAO.read((int) bookId);
-                requestDAO.create(new Request(bookr));
-            }
-            LOGGER.info(
-                    "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
-        } catch (Exception e) {
-            LOGGER.warn(
+                if (goodJob == 0) {
+                    Book bookr = bookDAO.read((int) bookId);
+                    requestDAO.create(new Request(bookr));
+                }
+                LOGGER.info(
+                    "Method completed - " + Thread.currentThread()
+                        .getStackTrace()[1].getMethodName());
+            } catch (Exception e) {
+                LOGGER.warn(
                     "Failed to execute the method - "
-                            + Thread.currentThread().getStackTrace()[1].getMethodName(),
+                        + Thread.currentThread().getStackTrace()[1].getMethodName(),
                     e);
+            }
+        } else {
+            System.out.println("There is no book with this id");
         }
     }
 

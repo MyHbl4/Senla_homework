@@ -1,7 +1,9 @@
 package com.moon.senla.controller;
 
+import com.moon.senla.BookService;
 import com.moon.senla.RequestService;
 import com.moon.senla.dao.RequestDao;
+import com.moon.senla.entity.Book;
 import com.moon.senla.entity.Request;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,11 +24,14 @@ public class RequestController {
 
     private final RequestDao requestDao;
     private final RequestService requestService;
+    private final BookService bookService;
 
     @Autowired
-    public RequestController(RequestDao requestDao, RequestService requestService) {
+    public RequestController(RequestDao requestDao, RequestService requestService,
+        BookService bookService) {
         this.requestDao = requestDao;
         this.requestService = requestService;
+        this.bookService = bookService;
     }
 
     @GetMapping()
@@ -43,7 +48,9 @@ public class RequestController {
     }
 
     @GetMapping("/new")//путь по которому переходим на этот метод
-    public String newRequest(@ModelAttribute("request") Request request) {
+    public String newRequest(@ModelAttribute("request") Request request, Model model) {
+        Iterable<Book> books = bookService.sortBookByAvailability();
+        model.addAttribute("books", books);
         return "requests/new";
     }
 
