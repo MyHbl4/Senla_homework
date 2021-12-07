@@ -3,29 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <title>New order</title>
+  <link rel="stylesheet" type="text/css" href="/URLToReachResourcesFolder/css/style.css">
 </head>
 <body>
-
-<form th:method="POST" th:action="@{/orders}" th:object="${order}">
-  <label for="customerName">Enter customer: </label>
-  <input type="text" th:field="*{customerName}" id="customerName"/>
-  <div style="color:red" th:if="${#fields.hasErrors('customerName')}" th:errors="*{customerName}">customer error</div>
-  <br/>
-  <div>
-    <label for="books">Enter books: </label>
-<!--  <input type="text" th:field="*{books}" id="books"/>-->
-  <select id="books" >
-    <div th:each="book1 : ${books}">
-      <option><a th:text="${book1.toString()}">user</a></option>
-    </div>
-  </select>
+<div id="container">
+  <div id="header">
+    <h1>BOOK SHOP</h1>
   </div>
-  <div style="color:red" th:if="${#fields.hasErrors('books')}" th:errors="*{books}">books error</div>
-  <br/>
-  <input type="submit" value="Create!"/>
-</form>
-<h4><a href="/orders/">ORDER MENU</a></h4>
-<h4><a href="/">HOME MENU</a> </h4>
+  <div id="content">
+    <div id="nav">
+      <ul>
+        <li><a href="/">Home menu</a></li>
+        <li><a href="/books/">Book menu</a></li>
+        <li><a href="/orders/">Order menu</a></li>
+        <li><a href="/requests/">Request menu</a></li>
+      </ul>
+    </div>
+    <div id="main">
+      <form th:method="POST" th:action="@{/orders}" th:object="${order}">
+        <label for="customerName">Enter customer: </label>
+        <input type="text" th:field="*{customerName}" id="customerName"/>
+        <div style="color:red" th:if="${#fields.hasErrors('customerName')}"
+             th:errors="*{customerName}">customer error
+        </div>
+        <br/>
 
+        <!--          <label for="books2">Enter books: </label>-->
+        <!--          <input list="boo" th:field="*{books}" id="books2"/>-->
+
+        <!--          <datalist id="boo" th:each="book : ${books}">-->
+        <!--            <option th:value="${book}"><a th:text="${book.getTitle()}">book</a></option>-->
+        <!--          </datalist>-->
+
+
+        <!--        <p th:each="book:${order.books}">-->
+        <!--          <input type="text" th:name="books" th:value="${book.getTitle()}">-->
+        <!--        </p>-->
+        <!--                  <div>-->
+        <!--                    <label for="books2">Enter books: </label>-->
+        <!--                    <input list="boo" th:field="*{books}" id="books2"/>-->
+        <!--                    <details id="boo">-->
+        <!--                      <div th:each="book1 : ${books}">-->
+        <!--                        <option th:value="${book1}"><a th:text="${book1.toString()}">user</a></option>-->
+        <!--                      </div>-->
+        <!--                    </details>-->
+        <!--                  </div>-->
+        <!--                  <div style="color:red" th:if="${#fields.hasErrors('books')}" th:errors="*{books}">books error</div>-->
+        <!--          <br/>-->
+        <hr/>
+        <input type="submit" value="Create!"/>
+      </form>
+    </div>
+  </div>
+  <div id="footer">
+    <a href="/">Home page</a>
+    <a>@MyHbl4</a>
+  </div>
+</div>
 </body>
 </html>

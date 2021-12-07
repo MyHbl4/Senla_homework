@@ -4,16 +4,17 @@ package com.moon.senla.controller;
 import com.moon.senla.BookService;
 import com.moon.senla.dao.BookDao;
 import com.moon.senla.entity.Book;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.Mapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -56,7 +57,9 @@ public class BookController {
     public String create(@ModelAttribute("book") @Valid Book book,
         BindingResult bindingResult) {
         if (bindingResult.hasErrors())//если аннотации выдают ошибку
+        {
             return "books/new";
+        }
 
         bookDao.create(book);
         return "redirect:/books";
@@ -121,16 +124,35 @@ public class BookController {
     }
 
     @GetMapping("/sort-old-book-date")
-    public String sortOldBookByDate(Model model) {
-        List<Book> books = bookService.sortOldBookByDate();
-        model.addAttribute("books", books);
+    public String sortOldBookDate(Model model) {
+        List<Book> oldBooks = null;
+        oldBooks = new ArrayList<>();
+        for (Book book : bookDao.readAll()) {
+            if (book.getDeliveryDate()
+                .isBefore(LocalDate.now().minusMonths(10))) {
+                oldBooks.add(book);
+            }
+        }
+        List<Book> sortBooks = oldBooks;
+        sortBooks.sort(Comparator.comparing(Book::getDeliveryDate));
+        model.addAttribute("books", sortBooks);
         return "books/index";
     }
 
     @GetMapping("/sort-old-book-price")
-    public String sortOldBookByPrice(Model model) {
-        List<Book> books = bookService.sortOldBookByPrice();
-        model.addAttribute("books", books);
+    public String sortOldBookPrice(Model model) {
+        List<Book> oldBooks = null;
+        oldBooks = new ArrayList<>();
+        for (Book book : bookDao.readAll()) {
+            if (book.getDeliveryDate()
+                .isBefore(LocalDate.now().minusMonths(10))) {
+                oldBooks.add(book);
+            }
+        }
+        List<Book> sortBooks = oldBooks;
+        sortBooks.sort(Comparator.comparing(Book::getPrice));
+
+        model.addAttribute("books", sortBooks);
         return "books/index";
     }
 }

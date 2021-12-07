@@ -80,6 +80,18 @@ public class OrderController {
         return "redirect:/orders";
     }
 
+    @PatchMapping("/{id}/cancel")
+    public String cancel(@PathVariable("id") int id) {
+        orderService.cancelOrder(id);
+        return "redirect:/orders";
+    }
+
+    @PatchMapping("/{id}/close")
+    public String close(@PathVariable("id") int id) {
+        orderService.closeOrder(id);
+        return "redirect:/orders";
+    }
+
     @DeleteMapping("/{id}")
     public String delete(@PathVariable("id") int id) {
         orderDao.delete(orderDao.read(id));
@@ -104,9 +116,15 @@ public class OrderController {
         return "orders/index";
     }
 
-//    @GetMapping()
-//    public String index(Model model) {
-//        model.addAttribute("orders", orderService.sortCompletedOrderByPrice());
-//        return "orders/index";
-//    }
+    @GetMapping("/sort-completed-order-price")
+    public String sortCompletedOrderByPrice(Model model) {
+        model.addAttribute("orders", orderService.sortCompletedOrderByPrice(6));
+        return "orders/index";
+    }
+
+    @GetMapping("/sort-completed-order-date")
+    public String sortCompletedOrderByExecutionDate(Model model) {
+        model.addAttribute("orders", orderService.sortCompletedOrderByExecutionDate(6));
+        return "orders/index";
+    }
 }

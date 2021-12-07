@@ -1,24 +1,54 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>requests</title>
+  <meta charset="utf-8">
+  <title>Start page</title>
+  <link rel="stylesheet" type="text/css" href="/URLToReachResourcesFolder/css/style.css">
 </head>
 <body>
-
-<h4><a href="/">HOME MENU</a> </h4>
-<br/>
-<a href="/requests/new">Create new request</a>
-<br/>
-<hr/>
-<a href="/requests/sort-request-count">Sort requests by count</a>
-<br/>
-<a href="/requests/sort-request-title">Sort requests by title</a>
-<br/>
-<hr/>
-<div th:each="request : ${requests}">
-  <a th:href="@{/requests/{id}(id=${request.getId()})}" th:text="${request.toString()}">user</a>
+<div id="container">
+  <div id="header">
+    <h1>BOOK SHOP</h1>
+  </div>
+  <div id="content">
+    <div id="nav">
+      <ul>
+        <li><a href="/">Home menu</a></li>
+        <li><a href="/books/">Book menu</a></li>
+        <li><a href="/orders/">Order menu</a></li>
+        <li><a href="/requests/">Request menu</a></li>
+        <li><a href="/requests/new">Create new request</a></li>
+        <li><a href="/requests/sort-request-count">Sort requests by count</a></li>
+        <li><a href="/requests/sort-request-title">Sort requests by title</a></li>
+      </ul>
+    </div>
+    <div id="main">
+      <table>
+        <tr>
+          <th>Id</th>
+          <th>Count</th>
+          <th>Title</th>
+        </tr>
+        <div th:each="request : ${requests}">
+          <tr>
+            <td><em><b><a th:href="@{/requests/{id}(id=${request.getId()})}"
+                          th:text="${request.getId()}">id</a></b></em>
+            </td>
+            <td><em><b><a th:href="@{/requests/{id}(id=${request.getId()})}"
+                          th:text="${request.getCount()}">Count</a></b></em>
+            </td>
+            <td><em><b><a th:href="@{/requests/{id}(id=${request.getId()})}"
+                          th:text="${request.getBook().getTitle()}">Title</a></b></em>
+            </td>
+          </tr>
+        </div>
+      </table>
+    </div>
+  </div>
+  <div id="footer">
+    <a href="/">Home page</a>
+    <a>@MyHbl4</a>
+  </div>
 </div>
-
 </body>
 </html>

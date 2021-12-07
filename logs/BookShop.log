@@ -454,3 +454,135 @@ java.lang.NullPointerException: Cannot invoke "com.moon.senla.entity.Book.getTit
 2021-12-03 01:51:17,017 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
 2021-12-03 01:51:17,261 INFO main com.moon.senla.impl.RequestServiceImpl - Method completed - addRequest
 2021-12-03 04:02:49,902 INFO main com.moon.senla.Runner - The program is closed
+2021-12-03 16:24:40,775 INFO main com.moon.senla.Runner - The program is closed
+2021-12-03 23:53:20,559 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-12-03 23:53:21,137 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-03 23:53:21,305 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-12-03 23:53:21,320 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-12-03 23:53:21,320 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/bookshop]
+2021-12-03 23:53:21,320 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-12-03 23:53:21,320 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-12-03 23:53:21,320 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-12-03 23:53:21,602 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-12-03 23:53:22,598 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@15d114ce] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-12-03 23:53:22,754 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-03 23:53:22,988 INFO main com.moon.senla.impl.BookServiceImpl - Method completed - sortBookByTitle
+2021-12-03 23:53:29,841 INFO main com.moon.senla.Runner - The program is closed
+2021-12-05 22:36:37,766 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-12-05 22:36:38,610 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-05 22:36:38,907 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-12-05 22:36:38,922 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-12-05 22:36:38,922 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/bookshop]
+2021-12-05 22:36:38,922 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-12-05 22:36:38,922 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-12-05 22:36:38,922 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-12-05 22:36:39,344 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-12-05 22:36:40,922 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@de579ff] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-12-05 22:36:41,053 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-05 22:36:41,405 INFO main com.moon.senla.impl.BookServiceImpl - Method completed - getOldBooks
+2021-12-05 22:36:41,405 INFO main com.moon.senla.impl.BookServiceImpl - Method completed - sortOldBookByDate
+2021-12-05 22:37:29,178 INFO main com.moon.senla.Runner - The program is closed
+2021-12-07 01:42:44,411 INFO main com.moon.senla.Runner - The program is closed
+2021-12-07 16:39:01,876 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-12-07 16:39:02,423 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-07 16:39:02,595 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-12-07 16:39:02,595 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-12-07 16:39:02,595 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/bookshop]
+2021-12-07 16:39:02,595 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-12-07 16:39:02,595 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-12-07 16:39:02,595 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-12-07 16:39:02,845 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-12-07 16:39:03,845 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@582e9152] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-12-07 16:39:03,938 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-07 16:39:24,464 INFO main com.moon.senla.impl.OrderServiceImpl - Method completed - checkBooksInOrder
+2021-12-07 16:39:25,052 WARN main com.moon.senla.repository.impl.RequestRepositoryImpl - Failed to execute the method - addRequest
+java.lang.NullPointerException: Cannot invoke "com.moon.senla.entity.Book.getId()" because the return value of "com.moon.senla.entity.Request.getBook()" is null
+	at com.moon.senla.repository.impl.RequestRepositoryImpl.addRequest(RequestRepositoryImpl.java:40)
+	at com.moon.senla.impl.OrderServiceImpl.checkBooksForRequest(OrderServiceImpl.java:79)
+	at com.moon.senla.impl.OrderServiceImpl.addOrder(OrderServiceImpl.java:55)
+	at com.moon.senla.action.orderAction.AddOrderAction.execute(AddOrderAction.java:39)
+	at com.moon.senla.menu.MenuItem.doAction(MenuItem.java:18)
+	at com.moon.senla.menu.Navigator.navigate(Navigator.java:35)
+	at com.moon.senla.menu.MenuController.run(MenuController.java:23)
+	at com.moon.senla.Runner.main(Runner.java:17)
+2021-12-07 16:39:25,371 INFO main com.moon.senla.impl.OrderServiceImpl - Method completed - checkBooksForRequest
+2021-12-07 16:39:25,371 INFO main com.moon.senla.impl.OrderServiceImpl - Method completed - addOrder
+2021-12-07 16:40:01,850 INFO main com.moon.senla.impl.OrderServiceImpl - Method completed - checkBooksInOrder
+2021-12-07 16:40:02,022 WARN main com.moon.senla.repository.impl.RequestRepositoryImpl - Failed to execute the method - addRequest
+java.lang.NullPointerException: Cannot invoke "com.moon.senla.entity.Book.getId()" because the return value of "com.moon.senla.entity.Request.getBook()" is null
+	at com.moon.senla.repository.impl.RequestRepositoryImpl.addRequest(RequestRepositoryImpl.java:40)
+	at com.moon.senla.impl.OrderServiceImpl.checkBooksForRequest(OrderServiceImpl.java:79)
+	at com.moon.senla.impl.OrderServiceImpl.addOrder(OrderServiceImpl.java:55)
+	at com.moon.senla.action.orderAction.AddOrderAction.execute(AddOrderAction.java:39)
+	at com.moon.senla.menu.MenuItem.doAction(MenuItem.java:18)
+	at com.moon.senla.menu.Navigator.navigate(Navigator.java:35)
+	at com.moon.senla.menu.MenuController.run(MenuController.java:23)
+	at com.moon.senla.Runner.main(Runner.java:17)
+2021-12-07 16:40:02,241 INFO main com.moon.senla.impl.OrderServiceImpl - Method completed - checkBooksForRequest
+2021-12-07 16:40:02,241 INFO main com.moon.senla.impl.OrderServiceImpl - Method completed - addOrder
+2021-12-07 16:40:35,268 WARN main com.moon.senla.repository.impl.RequestRepositoryImpl - Failed to execute the method - addRequest
+java.lang.NullPointerException: Cannot invoke "com.moon.senla.entity.Book.getId()" because the return value of "com.moon.senla.entity.Request.getBook()" is null
+	at com.moon.senla.repository.impl.RequestRepositoryImpl.addRequest(RequestRepositoryImpl.java:40)
+	at com.moon.senla.impl.RequestServiceImpl.addRequest(RequestServiceImpl.java:27)
+	at com.moon.senla.action.request.AddRequestAction.execute(AddRequestAction.java:19)
+	at com.moon.senla.menu.MenuItem.doAction(MenuItem.java:18)
+	at com.moon.senla.menu.Navigator.navigate(Navigator.java:35)
+	at com.moon.senla.menu.MenuController.run(MenuController.java:23)
+	at com.moon.senla.Runner.main(Runner.java:17)
+2021-12-07 16:40:35,268 INFO main com.moon.senla.impl.RequestServiceImpl - Method completed - addRequest
+2021-12-07 16:40:48,430 WARN main com.moon.senla.repository.impl.RequestRepositoryImpl - Failed to execute the method - addRequest
+java.lang.NullPointerException: Cannot invoke "com.moon.senla.entity.Book.getId()" because the return value of "com.moon.senla.entity.Request.getBook()" is null
+	at com.moon.senla.repository.impl.RequestRepositoryImpl.addRequest(RequestRepositoryImpl.java:40)
+	at com.moon.senla.impl.RequestServiceImpl.addRequest(RequestServiceImpl.java:27)
+	at com.moon.senla.action.request.AddRequestAction.execute(AddRequestAction.java:19)
+	at com.moon.senla.menu.MenuItem.doAction(MenuItem.java:18)
+	at com.moon.senla.menu.Navigator.navigate(Navigator.java:35)
+	at com.moon.senla.menu.MenuController.run(MenuController.java:23)
+	at com.moon.senla.Runner.main(Runner.java:17)
+2021-12-07 16:40:48,430 INFO main com.moon.senla.impl.RequestServiceImpl - Method completed - addRequest
+2021-12-07 16:40:55,955 WARN main com.moon.senla.repository.impl.RequestRepositoryImpl - Failed to execute the method - addRequest
+java.lang.NullPointerException: Cannot invoke "com.moon.senla.entity.Book.getId()" because the return value of "com.moon.senla.entity.Request.getBook()" is null
+	at com.moon.senla.repository.impl.RequestRepositoryImpl.addRequest(RequestRepositoryImpl.java:40)
+	at com.moon.senla.impl.RequestServiceImpl.addRequest(RequestServiceImpl.java:27)
+	at com.moon.senla.action.request.AddRequestAction.execute(AddRequestAction.java:19)
+	at com.moon.senla.menu.MenuItem.doAction(MenuItem.java:18)
+	at com.moon.senla.menu.Navigator.navigate(Navigator.java:35)
+	at com.moon.senla.menu.MenuController.run(MenuController.java:23)
+	at com.moon.senla.Runner.main(Runner.java:17)
+2021-12-07 16:40:55,955 INFO main com.moon.senla.impl.RequestServiceImpl - Method completed - addRequest
+2021-12-07 16:41:06,410 WARN main com.moon.senla.repository.impl.RequestRepositoryImpl - Failed to execute the method - addRequest
+java.lang.NullPointerException: Cannot invoke "com.moon.senla.entity.Book.getId()" because the return value of "com.moon.senla.entity.Request.getBook()" is null
+	at com.moon.senla.repository.impl.RequestRepositoryImpl.addRequest(RequestRepositoryImpl.java:40)
+	at com.moon.senla.impl.RequestServiceImpl.addRequest(RequestServiceImpl.java:27)
+	at com.moon.senla.action.request.AddRequestAction.execute(AddRequestAction.java:19)
+	at com.moon.senla.menu.MenuItem.doAction(MenuItem.java:18)
+	at com.moon.senla.menu.Navigator.navigate(Navigator.java:35)
+	at com.moon.senla.menu.MenuController.run(MenuController.java:23)
+	at com.moon.senla.Runner.main(Runner.java:17)
+2021-12-07 16:41:06,410 INFO main com.moon.senla.impl.RequestServiceImpl - Method completed - addRequest
+2021-12-07 16:41:12,830 WARN main com.moon.senla.repository.impl.RequestRepositoryImpl - Failed to execute the method - addRequest
+java.lang.NullPointerException: Cannot invoke "com.moon.senla.entity.Book.getId()" because the return value of "com.moon.senla.entity.Request.getBook()" is null
+	at com.moon.senla.repository.impl.RequestRepositoryImpl.addRequest(RequestRepositoryImpl.java:40)
+	at com.moon.senla.impl.RequestServiceImpl.addRequest(RequestServiceImpl.java:27)
+	at com.moon.senla.action.request.AddRequestAction.execute(AddRequestAction.java:19)
+	at com.moon.senla.menu.MenuItem.doAction(MenuItem.java:18)
+	at com.moon.senla.menu.Navigator.navigate(Navigator.java:35)
+	at com.moon.senla.menu.MenuController.run(MenuController.java:23)
+	at com.moon.senla.Runner.main(Runner.java:17)
+2021-12-07 16:41:12,830 INFO main com.moon.senla.impl.RequestServiceImpl - Method completed - addRequest
+2021-12-07 16:41:17,242 INFO main com.moon.senla.impl.RequestServiceImpl - Method completed - sortRequestByCount
+2021-12-07 16:41:59,749 WARN main com.moon.senla.repository.impl.RequestRepositoryImpl - Failed to execute the method - addRequest
+java.lang.NullPointerException: Cannot invoke "com.moon.senla.entity.Book.getId()" because the return value of "com.moon.senla.entity.Request.getBook()" is null
+	at com.moon.senla.repository.impl.RequestRepositoryImpl.addRequest(RequestRepositoryImpl.java:40)
+	at com.moon.senla.impl.RequestServiceImpl.addRequest(RequestServiceImpl.java:27)
+	at com.moon.senla.action.request.AddRequestAction.execute(AddRequestAction.java:19)
+	at com.moon.senla.menu.MenuItem.doAction(MenuItem.java:18)
+	at com.moon.senla.menu.Navigator.navigate(Navigator.java:35)
+	at com.moon.senla.menu.MenuController.run(MenuController.java:23)
+	at com.moon.senla.Runner.main(Runner.java:17)
+2021-12-07 16:41:59,749 INFO main com.moon.senla.impl.RequestServiceImpl - Method completed - addRequest
+2021-12-07 16:43:15,508 INFO main com.moon.senla.repository.impl.RequestRepositoryImpl - Method completed - addRequest
+2021-12-07 16:43:15,508 INFO main com.moon.senla.impl.RequestServiceImpl - Method completed - addRequest
+2021-12-07 16:44:13,146 INFO main com.moon.senla.repository.impl.RequestRepositoryImpl - Method completed - addRequest
+2021-12-07 16:44:13,146 INFO main com.moon.senla.impl.RequestServiceImpl - Method completed - addRequest
+2021-12-07 16:45:26,396 INFO main com.moon.senla.Runner - The program is closed

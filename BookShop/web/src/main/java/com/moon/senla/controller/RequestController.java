@@ -68,6 +68,7 @@ public class RequestController {
     @GetMapping("/{id}/edit")
     public String edit(Model model, @PathVariable("id") int id) {
         model.addAttribute("request", requestDao.read(id));
+        model.addAttribute("books", bookService.sortBookByAvailability());
         return "requests/edit";
     }
 

@@ -3,20 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <title>Update order</title>
+  <link rel="stylesheet" type="text/css" href="/URLToReachResourcesFolder/css/style.css">
 </head>
 <body>
-
-<form th:method="PATCH" th:action="@{/orders/{id}(id=${order.getId()})}" th:object="${order}">
-  <label for="orderStatus">Enter status: </label>
-  <input type="text" th:field="*{orderStatus}" id="orderStatus"/>
-  <div style="color:red" th:if="${#fields.hasErrors('orderStatus')}" th:errors="*{orderStatus}">
-    status error
+<div id="container">
+  <div id="header">
+    <h1>BOOK SHOP</h1>
   </div>
-  <hr/>
-  <input type="submit" value="Update!"/>
-</form>
-<h4><a href="/orders/">ORDER MENU</a></h4>
-<h4><a href="/">HOME MENU</a></h4>
-
+  <div id="content">
+    <div id="nav">
+      <ul>
+        <li><a href="/">Home menu</a></li>
+        <li><a href="/books/">Book menu</a></li>
+        <li><a href="/orders/">Order menu</a></li>
+        <li><a href="/requests/">Request menu</a></li>
+      </ul>
+    </div>
+    <div id="main">
+      <form th:method="PATCH" th:action="@{/orders/{id}(id=${order.getId()})}" th:object="${order}">
+        <label for="delivery">Enter the date in the format yyyy-mm-dd: </label>
+        <input type="text" th:field="*{execution}" id="delivery"/>
+        <div style="color:red" th:if="${#fields.hasErrors('price')}" th:errors="*{execution}">
+          Delivery
+          error
+        </div>
+        <br/>
+        <label for="status">Enter status NEW, COMPLETED or CANCELED: </label>
+        <input list="list" th:field="*{orderStatus}" id="status"/>
+        <datalist id="list">
+          <option value="NEW"></option>
+          <option value="CANCELED"></option>
+          <option value="COMPLETED"></option>
+        </datalist>
+        <br/>
+        <label for="customer">Enter customer name: </label>
+        <input type="text" th:field="*{customerName}" id="customer"/>
+        <div style="color:red" th:if="${#fields.hasErrors('customer')}" th:errors="*{customerName}">
+          Name error
+        </div>
+<!--        <br/>-->
+<!--        <p th:each="book,stat:${order.getBooks()}">-->
+<!--          <input type="text" th:name="books[__${stat.index}__]" th:value="${book}">-->
+<!--        </p>-->
+<!--        <br/>-->
+<!--        <label for="books2">Enter books: </label>-->
+<!--        <input list="boo" th:field="*{books}" id="books2"/>-->
+<!--        <div th:each="book : ${books}">-->
+<!--        <datalist id="boo">-->
+<!--            <option value="book1"></option>-->
+<!--        </datalist>-->
+<!--        <div/>-->
+        <hr/>
+        <input type="submit" value="Update!"/>
+      </form>
+    </div>
+  </div>
+  <div id="footer">
+    <a href="/">Home page</a>
+    <a>@MyHbl4</a>
+  </div>
+</div>
 </body>
 </html>

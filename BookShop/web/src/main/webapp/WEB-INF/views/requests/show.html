@@ -3,17 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <title>request</title>
+  <link rel="stylesheet" type="text/css" href="/URLToReachResourcesFolder/css/style.css">
 </head>
 <body>
-
-<p th:text="${request.toString()}">VALUE</p>
-<hr/>
-<!--<a th:href="@{/requests/{id}/edit(id=${request.getId()})}">Edit</a>-->
-<form th:method="DELETE" th:action="@{/requests/{id}(id=${request.getId()})}">
-  <input type="submit" value="Delete"/>
-</form>
-<h4><a href="/requests/">REQUEST MENU</a></h4>
-<h4><a href="/">HOME MENU</a> </h4>
-
+<div id="container">
+  <div id="header">
+    <h1>BOOK SHOP</h1>
+  </div>
+  <div id="content">
+    <div id="nav">
+      <ul>
+        <li><a href="/">Home menu</a></li>
+        <li><a href="/books/">Book menu</a></li>
+        <li><a href="/orders/">Order menu</a></li>
+        <li><a href="/requests/">Request menu</a></li>
+      </ul>
+    </div>
+    <div id="main">
+      <p th:text="${request.toString()}">VALUE</p>
+      <hr/>
+      <div>
+        <form th:method="GET" th:action="@{/requests/{id}/edit(id=${request.getId()})}">
+          <input type="submit" value="Edit"/>
+        </form>
+      </div>
+      <div>
+        <form th:method="DELETE" th:action="@{/requests/{id}(id=${request.getId()})}">
+          <input type="submit" value="Delete"/>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div id="footer">
+    <a href="/">Home page</a>
+    <a>@MyHbl4</a>
+  </div>
+</div>
 </body>
 </html>

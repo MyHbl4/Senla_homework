@@ -11,12 +11,15 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Entity
+@NoArgsConstructor
 @Table(name = "requests")
 public class Request {
     @Id
@@ -35,12 +38,16 @@ public class Request {
     @Column(name = "title")
     private String title;
 
-    public Request() {
-    }
-
     public Request(Book book) {
         this.book = book;
         this.title = getTitle();
+    }
+
+    public Request(long id, int count, Book book, String title) {
+        this.id = id;
+        this.count = count;
+        this.book = book;
+        this.title = title;
     }
 
     public long getId() {

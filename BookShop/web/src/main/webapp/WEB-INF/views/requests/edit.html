@@ -3,18 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <title>Update request</title>
+  <link rel="stylesheet" type="text/css" href="/URLToReachResourcesFolder/css/style.css">
 </head>
 <body>
+<div id="container">
+  <div id="header">
+    <h1>BOOK SHOP</h1>
+  </div>
+  <div id="content">
+    <div id="nav">
+      <ul>
+        <li><a href="/">Home menu</a></li>
+        <li><a href="/books/">Book menu</a></li>
+        <li><a href="/orders/">Order menu</a></li>
+        <li><a href="/requests/">Request menu</a></li>
+      </ul>
+    </div>
+    <div id="main">
+      <form th:method="PATCH" th:action="@{/requests/{id}(id=${request.getId()})}" th:object="${request}">
+        <label for="count">Enter count: </label>
+        <input type="text" th:field="*{count}" id="count"/>
+        <div style="color:red" th:if="${#fields.hasErrors('count')}" th:errors="*{count}">Name error</div>
+        <br>
+        <label for="book">Enter book1: </label>
+        <input type="text" th:field="*{book}" id="book"/>
+        <div style="color:red" th:if="${#fields.hasErrors('book')}" th:errors="*{book}">Name error</div>
+        <br>
+        <label for="book1">Enter book: </label>
+        <select id="book1">
+          <div th:each="book1 : ${books}">
+            <option><a th:value="${book1}" th:text="${book1.toString()}">user</a></option>
+          </div>
+        </select>
 
-<form th:method="PATCH" th:action="@{/requests/{id}(id=${request.getId()})}" th:object="${request}">
-  <label for="count">Enter count: </label>
-  <input type="text" th:field="*{count}" id="count"/>
-  <div style="color:red" th:if="${#fields.hasErrors('count')}" th:errors="*{count}">Name error</div>
-  <hr/>
-  <input type="submit" value="Update!"/>
-</form>
-<h4><a href="/requests/">REQUEST MENU</a></h4>
-<h4><a href="/">HOME MENU</a></h4>
-
+        <div style="color:red" th:if="${#fields.hasErrors('book')}" th:errors="*{book}">book error</div>
+        <br/>
+        <hr/>
+        <input type="submit" value="Update!"/>
+      </form>
+    </div>
+  </div>
+  <div id="footer">
+    <a href="/">Home page</a>
+    <a>@MyHbl4</a>
+  </div>
+</div>
 </body>
 </html>

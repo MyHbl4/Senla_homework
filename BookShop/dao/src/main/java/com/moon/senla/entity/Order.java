@@ -26,12 +26,16 @@ import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Setter
 @Getter
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "orders")
 public class Order {
     @Id
@@ -65,9 +69,6 @@ public class Order {
     @JsonSerialize(using = LocalDateSerializer.class)
     @Column(name = "execution")
     private LocalDate execution = LocalDate.of(0001, 01, 01);
-
-    public Order() {
-    }
 
     public Order(String customerName, List<Book> books) {
         this.customerName = customerName;

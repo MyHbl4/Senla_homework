@@ -3,31 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <title>Books</title>
+  <link rel="stylesheet" type="text/css" href="/URLToReachResourcesFolder/css/style.css">
 </head>
 <body>
-
-<h4><a href="/">HOME MENU</a> </h4>
-<hr/>
-<a href="/books/new">Create new book</a>
-<br/>
-<hr/>
-<a href="/books/sort-book-price">Sort book by price</a>
-<br/>
-<a href="/books/sort-book-availability">Sort book by availability</a>
-<br/>
-<a href="/books/sort-book-publication">Sort book by publication</a>
-<br/>
-<a href="/books/sort-book-title">Sort book by title</a>
-<br/>
-<a href="/books/sort-old-book-price">Sort old book by price</a>
-<br/>
-<a href="/books/sort-old-book-date">Sort old book by date</a>
-<br/>
-<hr/>
-<div th:each="book : ${books}">
-  <a th:href="@{/books/{id}(id=${book.getId()})}"
-     th:text="${book.toString()}">user</a>
+<div id="container">
+  <div id="header">
+    <h1>BOOK SHOP</h1>
+  </div>
+  <div id="content">
+    <div id="nav">
+      <ul>
+        <li><a href="/">Home menu</a></li>
+        <li><a href="/books/">Book menu</a></li>
+        <li><a href="/orders/">Order menu</a></li>
+        <li><a href="/requests/">Request menu</a></li>
+        <li><a href="/books/new">Create new book</a><br/></li>
+        <li><a href="/books/sort-book-price">Sort book by price</a></li>
+        <li><a href="/books/sort-book-availability">Sort book by availability</a></li>
+        <li><a href="/books/sort-book-publication">Sort book by publication</a></li>
+        <li><a href="/books/sort-book-title">Sort book by title</a></li>
+        <li><a href="/books/sort-old-book-price">Sort old book by price</a></li>
+        <li><a href="/books/sort-old-book-date">Sort old book by date</a></li>
+      </ul>
+    </div>
+    <div id="main">
+      <table>
+        <tr>
+          <th>Id</th>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Publication</th>
+          <th>Price</th>
+          <th>Delivery date</th>
+          <th>Availability</th>
+        </tr>
+        <div th:each="book : ${books}">
+          <tr>
+            <td><em><b><a th:href="@{/books/{id}(id=${book.getId()})}"
+                          th:text="${book.getId()}">id</a></b></em>
+            </td>
+            <td><em><b><a th:href="@{/books/{id}(id=${book.getId()})}"
+                          th:text="${book.getTitle()}">title</a></b></em>
+            </td>
+            <td><em><b><a th:href="@{/books/{id}(id=${book.getId()})}"
+                          th:text="${book.getAuthor()}">author</a></b></em>
+            </td>
+            <td><em><b><a th:href="@{/books/{id}(id=${book.getId()})}"
+                          th:text="${book.getPublication()}">publication</a></b></em>
+            </td>
+            <td><em><b><a th:href="@{/books/{id}(id=${book.getId()})}"
+                          th:text="${book.getPrice()}">price</a></b></em>
+            </td>
+            <td><em><b><a th:href="@{/books/{id}(id=${book.getId()})}"
+                          th:text="${book.getDeliveryDate()}">delivery</a></b></em>
+            </td>
+            <td><em><b><a th:href="@{/books/{id}(id=${book.getId()})}"
+                          th:text="${book.getAvailability()}">availability</a></b></em>
+            </td>
+          </tr>
+        </div>
+      </table>
+    </div>
+  </div>
+  <div id="footer">
+    <a href="/">Home page</a>
+    <a>@MyHbl4</a>
+  </div>
 </div>
-
 </body>
 </html>

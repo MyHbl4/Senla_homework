@@ -3,25 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <title>Order</title>
+  <link rel="stylesheet" type="text/css" href="/URLToReachResourcesFolder/css/style.css">
 </head>
 <body>
-
-<p th:text="${'Order - ' + 'ID: ' + order.getId()
+<div id="container">
+  <div id="header">
+    <h1>BOOK SHOP</h1>
+  </div>
+  <div id="content">
+    <div id="nav">
+      <ul>
+        <li><a href="/">Home menu</a></li>
+        <li><a href="/books/">Book menu</a></li>
+        <li><a href="/orders/">Order menu</a></li>
+        <li><a href="/requests/">Request menu</a></li>
+      </ul>
+    </div>
+    <div id="main">
+      <p th:text="${'Order - ' + 'ID: ' + order.getId()
   + ', Customer name: ' + order.getCustomerName() + ', Price: ' + order.getPrice()
-   + ', Order status: ' + order.getOrderStatus() + ', Execution: ' + order.getExecution()}">VALUE</p>
-<p th:text="${'Books in order: ' + order.getBooks()}">VALUE</p>
-<hr/>
-<div>
-  <form th:method="GET" th:action="@{/orders/{id}/edit(id=${order.getId()})}">
-    <input type="submit" value="Edit"/>
-  </form>
+   + ', Order status: ' + order.getOrderStatus() + ', Execution: ' + order.getExecution()}">
+        VALUE</p>
+      <p th:text="${'Books in order: ' + order.getBooks()}">VALUE</p>
+      <hr/>
+      <div>
+        <form th:method="GET" th:action="@{/orders/{id}/edit(id=${order.getId()})}">
+          <input type="submit" value="Edit"/>
+        </form>
+      </div>
+      <br/>
+      <div>
+        <form th:method="PATCH" th:action="@{/orders/{id}/cancel(id=${order.getId()})}">
+          <input type="submit" value="Cancel"/>
+        </form>
+      </div>
+      <br/>
+      <div>
+        <form th:method="PATCH" th:action="@{/orders/{id}/close(id=${order.getId()})}">
+          <input type="submit" value="Close"/>
+        </form>
+      </div>
+      <br/>
+      <div>
+        <form th:method="DELETE" th:action="@{/orders/{id}(id=${order.getId()})}">
+          <input type="submit" value="Delete"/>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div id="footer">
+    <a href="/">Home page</a>
+    <a>@MyHbl4</a>
+  </div>
 </div>
-<br/>
-<form th:method="DELETE" th:action="@{/orders/{id}(id=${order.getId()})}">
-  <input type="submit" value="Delete"/>
-</form>
-<h4><a href="/orders/">ORDER MENU</a></h4>
-<h4><a href="/">HOME MENU</a> </h4>
-
 </body>
 </html>

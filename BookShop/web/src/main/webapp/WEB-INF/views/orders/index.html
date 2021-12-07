@@ -3,26 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <title>orders</title>
+  <link rel="stylesheet" type="text/css" href="/URLToReachResourcesFolder/css/style.css">
 </head>
 <body>
-
-<h4><a href="/">HOME MENU</a></h4>
-<br/>
-<a href="/orders/new">Create new order</a>
-<br/>
-<hr/>
-<a href="/orders/sort-order-price">Sort order by price</a>
-<br/>
-<a href="/orders/sort-order-status">Sort order by status</a>
-<br/>
-<a href="/orders/sort-order-execution">Sort book by execution date</a>
-<br/>
-<hr/>
-<div th:each="order : ${orders}">
-  <a th:href="@{/orders/{id}(id=${order.getId()})}" th:text="${'Order - ' + 'ID: ' + order.getId()
-  + ', Customer name: ' + order.getCustomerName() + ', Price: ' + order.getPrice()
-   + ', Order status: ' + order.getOrderStatus() + ', Execution: ' + order.getExecution()}">user</a>
+<div id="container">
+  <div id="header">
+    <h1>BOOK SHOP</h1>
+  </div>
+  <div id="content">
+    <div id="nav">
+      <ul>
+        <li><a href="/">Home menu</a></li>
+        <li><a href="/books/">Book menu</a></li>
+        <li><a href="/orders/">Order menu</a></li>
+        <li><a href="/requests/">Request menu</a></li>
+        <li><a href="/orders/new">Create new order</a></li>
+        <li><a href="/orders/sort-order-price">Sort order by price</a></li>
+        <li><a href="/orders/sort-order-status">Sort order by status</a></li>
+        <li><a href="/orders/sort-order-execution">Sort order by execution date</a></li>
+        <li><a href="/orders/sort-completed-order-price">Sort comleted order <br>by execution date</a></li>
+        <li><a href="/orders/sort-completed-order-date">Sort completed order <br>by price</a></li>
+      </ul>
+    </div>
+    <div id="main">
+      <table>
+        <tr>
+          <th>Id</th>
+          <th>Customer name</th>
+          <th>Price</th>
+          <th>Order status</th>
+          <th>Execution</th>
+        </tr>
+        <div th:each="order : ${orders}">
+          <tr>
+            <td><em><b><a th:href="@{/orders/{id}(id=${order.getId()})}"
+                          th:text="${order.getId()}">id</a></b></em>
+            </td>
+            <td><em><b><a th:href="@{/orders/{id}(id=${order.getId()})}"
+                          th:text="${order.getCustomerName()}">customer name</a></b></em>
+            </td>
+            <td><em><b><a th:href="@{/orders/{id}(id=${order.getId()})}"
+                          th:text="${order.getPrice()}">price</a></b></em>
+            </td>
+            <td><em><b><a th:href="@{/orders/{id}(id=${order.getId()})}"
+                          th:text="${order.getOrderStatus()}">status</a></b></em>
+            </td>
+            <td><em><b><a th:href="@{/orders/{id}(id=${order.getId()})}"
+                          th:text="${order.getExecution()}">execution</a></b></em>
+            </td>
+          </tr>
+        </div>
+      </table>
+    </div>
+  </div>
+  <div id="footer">
+    <a href="/">Home page</a>
+    <a>@MyHbl4</a>
+  </div>
 </div>
-
 </body>
 </html>
