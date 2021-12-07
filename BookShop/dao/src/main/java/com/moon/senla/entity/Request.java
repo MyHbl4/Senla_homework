@@ -19,7 +19,6 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@NoArgsConstructor
 @Table(name = "requests")
 public class Request {
     @Id
@@ -38,16 +37,20 @@ public class Request {
     @Column(name = "title")
     private String title;
 
+    public Request() {
+//        this.title = this.book.getTitle();
+    }
+
     public Request(Book book) {
         this.book = book;
-        this.title = getTitle();
+        this.title = this.book.getTitle();
     }
 
     public Request(long id, int count, Book book, String title) {
         this.id = id;
         this.count = count;
         this.book = book;
-        this.title = title;
+        this.title = this.book.getTitle();
     }
 
     public long getId() {
@@ -79,7 +82,7 @@ public class Request {
     }
 
     public String getTitle() {
-        return book.getTitle();
+        return title;
     }
 
     @Override

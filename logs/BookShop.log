@@ -586,3 +586,132 @@ java.lang.NullPointerException: Cannot invoke "com.moon.senla.entity.Book.getId(
 2021-12-07 16:44:13,146 INFO main com.moon.senla.repository.impl.RequestRepositoryImpl - Method completed - addRequest
 2021-12-07 16:44:13,146 INFO main com.moon.senla.impl.RequestServiceImpl - Method completed - addRequest
 2021-12-07 16:45:26,396 INFO main com.moon.senla.Runner - The program is closed
+2021-12-07 19:50:34,010 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-12-07 19:50:34,900 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-07 19:50:35,197 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-12-07 19:50:35,213 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-12-07 19:50:35,213 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/bookshop]
+2021-12-07 19:50:35,213 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-12-07 19:50:35,213 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-12-07 19:50:35,213 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-12-07 19:50:35,635 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-12-07 19:50:37,182 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2fd39436] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-12-07 19:50:37,309 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-07 19:50:37,683 WARN main com.moon.senla.repository.impl.RequestRepositoryImpl - Failed to execute the method - addRequest
+java.lang.NullPointerException: Cannot invoke "com.moon.senla.entity.Book.getId()" because the return value of "com.moon.senla.entity.Request.getBook()" is null
+	at com.moon.senla.repository.impl.RequestRepositoryImpl.addRequest(RequestRepositoryImpl.java:40)
+	at com.moon.senla.impl.RequestServiceImpl.addRequest(RequestServiceImpl.java:27)
+	at com.moon.senla.action.request.AddRequestAction.execute(AddRequestAction.java:19)
+	at com.moon.senla.menu.MenuItem.doAction(MenuItem.java:18)
+	at com.moon.senla.menu.Navigator.navigate(Navigator.java:35)
+	at com.moon.senla.menu.MenuController.run(MenuController.java:23)
+	at com.moon.senla.Runner.main(Runner.java:17)
+2021-12-07 19:50:37,683 INFO main com.moon.senla.impl.RequestServiceImpl - Method completed - addRequest
+2021-12-07 19:50:42,991 INFO main com.moon.senla.impl.RequestServiceImpl - Method completed - sortRequestByCount
+2021-12-07 19:51:45,542 WARN main com.moon.senla.repository.impl.RequestRepositoryImpl - Failed to execute the method - addRequest
+java.lang.NullPointerException: Cannot invoke "com.moon.senla.entity.Book.getId()" because the return value of "com.moon.senla.entity.Request.getBook()" is null
+	at com.moon.senla.repository.impl.RequestRepositoryImpl.addRequest(RequestRepositoryImpl.java:40)
+	at com.moon.senla.impl.RequestServiceImpl.addRequest(RequestServiceImpl.java:27)
+	at com.moon.senla.action.request.AddRequestAction.execute(AddRequestAction.java:19)
+	at com.moon.senla.menu.MenuItem.doAction(MenuItem.java:18)
+	at com.moon.senla.menu.Navigator.navigate(Navigator.java:35)
+	at com.moon.senla.menu.MenuController.run(MenuController.java:23)
+	at com.moon.senla.Runner.main(Runner.java:17)
+2021-12-07 19:51:45,542 INFO main com.moon.senla.impl.RequestServiceImpl - Method completed - addRequest
+2021-12-07 19:53:10,193 INFO main com.moon.senla.repository.impl.RequestRepositoryImpl - Method completed - addRequest
+2021-12-07 19:53:10,193 INFO main com.moon.senla.impl.RequestServiceImpl - Method completed - addRequest
+2021-12-07 19:56:00,308 INFO main com.moon.senla.repository.impl.RequestRepositoryImpl - Method completed - addRequest
+2021-12-07 19:56:00,308 INFO main com.moon.senla.impl.RequestServiceImpl - Method completed - addRequest
+2021-12-07 19:56:50,730 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-12-07 19:56:51,573 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-07 19:56:51,855 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-12-07 19:56:51,870 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-12-07 19:56:51,870 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/bookshop]
+2021-12-07 19:56:51,870 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-12-07 19:56:51,870 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-12-07 19:56:51,870 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-12-07 19:56:52,245 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-12-07 19:56:53,136 INFO main org.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/bookshop]
+2021-12-07 19:56:53,136 WARN main com.moon.senla.impl.RequestServiceImpl - Failed to execute the method - sortRequestByCount
+java.lang.NullPointerException: Cannot invoke "org.hibernate.SessionFactory.openSession()" because the return value of "com.moon.senla.util.HibernateUtil.getSessionFactory()" is null
+	at com.moon.senla.dao.RequestDao.readAll(RequestDao.java:54)
+	at com.moon.senla.repository.impl.RequestRepositoryImpl.getAll(RequestRepositoryImpl.java:29)
+	at com.moon.senla.impl.RequestServiceImpl.sortRequestByCount(RequestServiceImpl.java:42)
+	at com.moon.senla.action.request.sortrequest.SortRequestByCountAction.execute(SortRequestByCountAction.java:19)
+	at com.moon.senla.menu.MenuItem.doAction(MenuItem.java:18)
+	at com.moon.senla.menu.Navigator.navigate(Navigator.java:35)
+	at com.moon.senla.menu.MenuController.run(MenuController.java:23)
+	at com.moon.senla.Runner.main(Runner.java:17)
+2021-12-07 19:58:12,174 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-12-07 19:58:12,908 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-07 19:58:13,227 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-12-07 19:58:13,227 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-12-07 19:58:13,227 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/bookshop]
+2021-12-07 19:58:13,227 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-12-07 19:58:13,227 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-12-07 19:58:13,227 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-12-07 19:58:13,638 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-12-07 19:58:14,507 INFO main org.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/bookshop]
+2021-12-07 19:58:14,511 WARN main com.moon.senla.impl.RequestServiceImpl - Failed to execute the method - addRequest
+java.lang.NullPointerException: Cannot invoke "org.hibernate.SessionFactory.openSession()" because the return value of "com.moon.senla.util.HibernateUtil.getSessionFactory()" is null
+	at com.moon.senla.dao.BookDao.readAll(BookDao.java:54)
+	at com.moon.senla.repository.impl.RequestRepositoryImpl.addRequest(RequestRepositoryImpl.java:34)
+	at com.moon.senla.impl.RequestServiceImpl.addRequest(RequestServiceImpl.java:27)
+	at com.moon.senla.action.request.AddRequestAction.execute(AddRequestAction.java:19)
+	at com.moon.senla.menu.MenuItem.doAction(MenuItem.java:18)
+	at com.moon.senla.menu.Navigator.navigate(Navigator.java:35)
+	at com.moon.senla.menu.MenuController.run(MenuController.java:23)
+	at com.moon.senla.Runner.main(Runner.java:17)
+2021-12-07 19:58:21,444 WARN main com.moon.senla.impl.RequestServiceImpl - Failed to execute the method - sortRequestByCount
+java.lang.NullPointerException: Cannot invoke "org.hibernate.SessionFactory.openSession()" because the return value of "com.moon.senla.util.HibernateUtil.getSessionFactory()" is null
+	at com.moon.senla.dao.RequestDao.readAll(RequestDao.java:54)
+	at com.moon.senla.repository.impl.RequestRepositoryImpl.getAll(RequestRepositoryImpl.java:29)
+	at com.moon.senla.impl.RequestServiceImpl.sortRequestByCount(RequestServiceImpl.java:42)
+	at com.moon.senla.action.request.sortrequest.SortRequestByCountAction.execute(SortRequestByCountAction.java:19)
+	at com.moon.senla.menu.MenuItem.doAction(MenuItem.java:18)
+	at com.moon.senla.menu.Navigator.navigate(Navigator.java:35)
+	at com.moon.senla.menu.MenuController.run(MenuController.java:23)
+	at com.moon.senla.Runner.main(Runner.java:17)
+2021-12-07 19:59:52,826 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-12-07 19:59:53,569 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-07 19:59:53,792 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-12-07 19:59:53,808 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-12-07 19:59:53,808 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/bookshop]
+2021-12-07 19:59:53,808 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-12-07 19:59:53,808 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-12-07 19:59:53,808 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-12-07 19:59:54,186 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-12-07 19:59:55,628 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@60b5e80d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-12-07 19:59:55,769 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-07 19:59:56,020 INFO main com.moon.senla.impl.RequestServiceImpl - Method completed - sortRequestByCount
+2021-12-07 20:00:04,709 INFO main com.moon.senla.impl.RequestServiceImpl - Method completed - addRequest
+2021-12-07 20:02:26,652 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-12-07 20:02:27,402 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-07 20:02:27,644 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-12-07 20:02:27,660 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-12-07 20:02:27,660 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/bookshop]
+2021-12-07 20:02:27,660 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-12-07 20:02:27,660 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-12-07 20:02:27,660 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-12-07 20:02:27,977 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-12-07 20:02:29,439 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@411fa0ce] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-12-07 20:02:29,585 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-07 20:02:30,023 INFO main com.moon.senla.repository.impl.RequestRepositoryImpl - Method completed - addRequest
+2021-12-07 20:02:30,023 INFO main com.moon.senla.impl.RequestServiceImpl - Method completed - addRequest
+2021-12-07 23:22:50,608 INFO main com.moon.senla.impl.RequestServiceImpl - Method completed - sortRequestByCount
+2021-12-07 23:22:57,612 INFO main com.moon.senla.impl.OrderServiceImpl - Method completed - sortOrderByExecutionDate
+2021-12-08 00:14:59,925 INFO main org.hibernate.Version - HHH000412: Hibernate ORM core version 6.0.0.Beta1
+2021-12-08 00:15:00,503 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-08 00:15:00,675 WARN main org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2021-12-08 00:15:00,691 INFO main org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2021-12-08 00:15:00,691 INFO main org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/bookshop]
+2021-12-08 00:15:00,691 INFO main org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2021-12-08 00:15:00,691 INFO main org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2021-12-08 00:15:00,691 INFO main org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 1 (min=1)
+2021-12-08 00:15:00,941 INFO main SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-12-08 00:15:01,956 INFO main org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@240f350a] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-12-08 00:15:02,050 INFO main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-08 00:15:02,286 INFO main com.moon.senla.impl.BookServiceImpl - Method completed - sortBookByTitle
+2021-12-08 00:15:13,022 INFO main com.moon.senla.repository.impl.RequestRepositoryImpl - Method completed - addRequest
+2021-12-08 00:15:13,022 INFO main com.moon.senla.impl.RequestServiceImpl - Method completed - addRequest
+2021-12-08 00:15:21,153 INFO main com.moon.senla.impl.RequestServiceImpl - Method completed - sortRequestByCount

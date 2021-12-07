@@ -82,10 +82,4 @@ public class SpringConfig implements WebMvcConfigurer {
             .addResourceLocations("/resources/");
 
     }
-
-//
-//    @Override
-//    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
-//        configurer.enable();
-//    }
 }

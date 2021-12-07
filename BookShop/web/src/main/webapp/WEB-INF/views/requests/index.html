@@ -27,6 +27,7 @@
         <tr>
           <th>Id</th>
           <th>Count</th>
+          <th>Book Id</th>
           <th>Title</th>
         </tr>
         <div th:each="request : ${requests}">
@@ -38,7 +39,10 @@
                           th:text="${request.getCount()}">Count</a></b></em>
             </td>
             <td><em><b><a th:href="@{/requests/{id}(id=${request.getId()})}"
-                          th:text="${request.getBook().getTitle()}">Title</a></b></em>
+                          th:text="${request.getBook().getId()}">Book id</a></b></em>
+            </td>
+            <td><em><b><a th:href="@{/requests/{id}(id=${request.getId()})}"
+                          th:text="${request.getTitle()}">Title</a></b></em>
             </td>
           </tr>
         </div>
