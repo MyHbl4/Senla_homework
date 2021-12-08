@@ -2,6 +2,7 @@ package com.moon.senla.controller;
 
 import com.moon.senla.BookService;
 import com.moon.senla.RequestService;
+import com.moon.senla.dao.BookDao;
 import com.moon.senla.dao.RequestDao;
 import com.moon.senla.entity.Book;
 import com.moon.senla.entity.Request;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/requests")
@@ -24,13 +26,15 @@ public class RequestController {
 
     private final RequestDao requestDao;
     private final RequestService requestService;
+    private final BookDao bookDao;
     private final BookService bookService;
 
     @Autowired
     public RequestController(RequestDao requestDao, RequestService requestService,
-        BookService bookService) {
+        BookDao bookDao, BookService bookService) {
         this.requestDao = requestDao;
         this.requestService = requestService;
+        this.bookDao = bookDao;
         this.bookService = bookService;
     }
 
@@ -60,7 +64,10 @@ public class RequestController {
         if (bindingResult.hasErrors()) {
             return "requests/new";
         }
-
+        if (request.getBook()==null){
+            return "requests/new";
+        }
+//        requestService.addRequest(request.getBook().getId());
         requestDao.create(request);
         return "redirect:/requests";
     }

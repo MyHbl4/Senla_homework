@@ -49,13 +49,17 @@ public class OrderController {
     @GetMapping("/new")
     public String newOrder(@ModelAttribute("order") Order order, Model model) {
         Iterable<Book> books = bookService.sortBookByAvailability();
-        model.addAttribute("books", books);return "orders/new";
+        model.addAttribute("books", books);
+        return "orders/new";
     }
 
     @PostMapping()
     public String create(@ModelAttribute("order") @Valid Order order,
         BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
+            return "orders/new";
+        }
+        if (order.getBooks().size() == 0) {
             return "orders/new";
         }
 
