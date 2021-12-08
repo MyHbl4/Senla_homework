@@ -59,7 +59,7 @@ public class OrderController {
         if (bindingResult.hasErrors()) {
             return "orders/new";
         }
-        if (order.getBooks().size() == 0) {
+        if (order.getBooks()==null) {
             return "orders/new";
         }
 
