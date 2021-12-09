@@ -60,15 +60,8 @@ public class RequestController {
 
     @PostMapping()
     public String create(@ModelAttribute("request") @Valid Request request,
-        BindingResult bindingResult) {
-        if (bindingResult.hasErrors()) {
-            return "requests/new";
-        }
-        if (request.getBook()==null){
-            return "requests/new";
-        }
-//        requestService.addRequest(request.getBook().getId());
-        requestDao.create(request);
+        @RequestParam("bookId") int bookId) {
+        requestService.addRequest(bookId);
         return "redirect:/requests";
     }
 
@@ -81,11 +74,13 @@ public class RequestController {
 
     @PatchMapping("/{id}")
     public String update(@ModelAttribute("request") @Valid Request request,
-        BindingResult bindingResult, @PathVariable("id") int id) {
+        BindingResult bindingResult, @PathVariable("id") int id, @RequestParam("bookId") int bookId) {
         if (bindingResult.hasErrors()) {
             return "requests/edit";
         }
 
+        request.setBook(bookDao.read(bookId));
+        request.setTitle(bookDao.read(bookId).getTitle());
         requestDao.update(request);
         return "redirect:/requests";
     }

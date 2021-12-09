@@ -21,33 +21,17 @@
     </div>
     <div id="main">
       <form th:method="POST" th:action="@{/requests}" th:object="${request}">
-        <label for="book">Enter book: </label>
-        <select id="book">
-          <a th:each="book1 : ${books}">
-            <option><a th:object="${book1}" th:text="${book1.toString()}">user</a></option>
-          </a>
-        </select>
-
-        <div style="color:red" th:if="${#fields.hasErrors('book')}" th:errors="*{book}">book error
-        </div>
         <br/>
+
+<!--        <input type="text" name="bookId" placeholder="Write book id">-->
+
+        <label th:for="radio" >Enter book</label>
+        <div th:each="book : ${books}">
+          <input th:type="radio" th:name="bookId" th:value="${book.getId()}" th:text="${'Book ID:' + book.getId() + ' , Title:' + book.getTitle()}">
+        </div>
         <hr/>
         <input type="submit" value="Create!"/>
       </form>
-
-      <!--      <form th:method="POST" th:action="@{/requests}" th:object="${request}">-->
-      <!--        <label for="book">Enter book: </label>-->
-      <!--        <select id="book">-->
-      <!--          <div th:each="book1 : ${books}">-->
-      <!--            <option><a th:value="${book1}" th:text="${book1.toString()}">user</a></option>-->
-      <!--          </div>-->
-      <!--        </select>-->
-
-      <!--        <div style="color:red" th:if="${#fields.hasErrors('book')}" th:errors="*{book}">book error</div>-->
-      <!--        <br/>-->
-      <!--        <hr/>-->
-      <!--        <input type="submit" value="Create!"/>-->
-      <!--      </form>-->
     </div>
   </div>
   <div id="footer">

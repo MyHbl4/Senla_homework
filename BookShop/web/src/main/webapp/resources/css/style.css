@@ -69,16 +69,22 @@ h1, h2, h3 {
 }
 
 table {
+  background: #FCFCFC; /* Цвет фона ячеек */
   text-align: center;
   padding-left: 5%;
   width: 95%; /* Ширина таблицы */
   color: black; /* Цвет текста */
   border: 5px;
+  border-collapse: collapse;
 }
 
 td, th {
-  background: #FCFCFC; /* Цвет фона ячеек */
   padding: 5px; /* Поля вокруг текста */
+  border: 1px solid #333;
+}
+
+tr:hover {
+  background: #A2B8D8; /* Цвет фона */
 }
 
 a {

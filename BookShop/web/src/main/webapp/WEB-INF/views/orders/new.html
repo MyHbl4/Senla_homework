@@ -27,29 +27,10 @@
              th:errors="*{customerName}">customer error
         </div>
         <br/>
-
-        <!--          <label for="books2">Enter books: </label>-->
-        <!--          <input list="boo" th:field="*{books}" id="books2"/>-->
-
-        <!--          <datalist id="boo" th:each="book : ${books}">-->
-        <!--            <option th:value="${book}"><a th:text="${book.getTitle()}">book</a></option>-->
-        <!--          </datalist>-->
-
-
-        <!--        <p th:each="book:${order.books}">-->
-        <!--          <input type="text" th:name="books" th:value="${book.getTitle()}">-->
-        <!--        </p>-->
-        <!--                  <div>-->
-        <!--                    <label for="books2">Enter books: </label>-->
-        <!--                    <input list="boo" th:field="*{books}" id="books2"/>-->
-        <!--                    <details id="boo">-->
-        <!--                      <div th:each="book1 : ${books}">-->
-        <!--                        <option th:value="${book1}"><a th:text="${book1.toString()}">user</a></option>-->
-        <!--                      </div>-->
-        <!--                    </details>-->
-        <!--                  </div>-->
-        <!--                  <div style="color:red" th:if="${#fields.hasErrors('books')}" th:errors="*{books}">books error</div>-->
-        <!--          <br/>-->
+        <label th:for="checkbox">Enter books</label>
+        <div th:each="book : ${books}">
+          <input th:type="checkbox" name="books" th:value="${book}" th:text="${book.getTitle()}">
+        </div>
         <hr/>
         <input type="submit" value="Create!"/>
       </form>
