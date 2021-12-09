@@ -29,7 +29,7 @@
         <br/>
         <label th:for="checkbox">Enter books</label>
         <div th:each="book : ${books}">
-          <input th:type="checkbox" name="books" th:value="${book}" th:text="${book.getTitle()}">
+          <input th:type="checkbox" th:name="orderBooksId" th:value="${book.getId()}" th:text="${book.toString()}">
         </div>
         <hr/>
         <input type="submit" value="Create!"/>

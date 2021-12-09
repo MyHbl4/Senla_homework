@@ -5,6 +5,8 @@ import com.moon.senla.OrderService;
 import com.moon.senla.dao.OrderDao;
 import com.moon.senla.entity.Book;
 import com.moon.senla.entity.Order;
+import java.util.ArrayList;
+import java.util.List;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -56,13 +58,12 @@ public class OrderController {
 
     @PostMapping()
     public String create(@ModelAttribute("order") @Valid Order order,
-        BindingResult bindingResult) {
-        if (bindingResult.hasErrors()) {
-            return "orders/new";
+        @RequestParam("orderBooksId") List<Integer> books_id) {
+        List<Book> bookList = new ArrayList<>();
+        for (Integer i : books_id) {
+            bookList.add(bookService.findBookById(i));
         }
-        if (order.getBooks() == null) {
-            return "orders/new";
-        }
+        order.setBooks(bookList);
         orderService.addOrder(order);
 //        orderDao.create(order);
         return "redirect:/orders";
@@ -71,16 +72,19 @@ public class OrderController {
     @GetMapping("/{id}/edit")
     public String edit(Model model, @PathVariable("id") int id) {
         model.addAttribute("order", orderDao.read(id));
+        model.addAttribute("books", bookService.sortBookByAvailability());
+
         return "orders/edit";
     }
 
     @PatchMapping("/{id}")
-    public String update(@ModelAttribute("order") @Valid Order order,
-        BindingResult bindingResult, @PathVariable("id") int id) {
-        if (bindingResult.hasErrors()) {
-            return "orders/edit";
+    public String update(@ModelAttribute("order") @Valid Order order, @PathVariable("id") int id,
+        @RequestParam("orderBooksId") List<Integer> books_id) {
+        List<Book> bookList = new ArrayList<>();
+        for (Integer i : books_id) {
+            bookList.add(bookService.findBookById(i));
         }
-
+        order.setBooks(bookList);
         orderDao.update(order);
         return "redirect:/orders";
     }
@@ -134,7 +138,9 @@ public class OrderController {
     }
 
     @RequestMapping("/askDetails")
-    public String askDetails(){ return "orders/ask-details";}
+    public String askDetails() {
+        return "orders/ask-details";
+    }
 
     @RequestMapping("/showDetails")
     public String showDetails(Model model, @RequestParam("months") int months) {
@@ -144,7 +150,7 @@ public class OrderController {
             count++;
             price += order.getPrice();
         }
-        model.addAttribute("orders", orderService.sortCompletedOrderByExecutionDate(6));
+        model.addAttribute("orders", orderService.getCompletedOrderList(months));
         model.addAttribute("count",
             "In " + months + " months, " + count + " orders were completed");
         model.addAttribute("price", "Revenue for " + months + " months amounted to: " + price);
