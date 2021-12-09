@@ -6,12 +6,16 @@ import com.moon.senla.dao.BookDao;
 import com.moon.senla.dao.RequestDao;
 import com.moon.senla.entity.Book;
 import com.moon.senla.entity.Request;
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -23,6 +27,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 @RequestMapping("/requests")
 public class RequestController {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(ExceptionController.class);
 
     private final RequestDao requestDao;
     private final RequestService requestService;
@@ -103,5 +109,11 @@ public class RequestController {
         Iterable<Request> requests = requestService.sortRequestByTitle();
         model.addAttribute("requests", requests);
         return "requests/index";
+    }
+
+    @ExceptionHandler(value = Exception.class)
+    public String handleException(HttpServletRequest request, Exception ex) {
+        LOGGER.error("Request " + request.getRequestURL() + " Threw an exception", ex);
+        return "error2";
     }
 }

@@ -8,12 +8,16 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -25,6 +29,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/books")
 public class BookController {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(ExceptionController.class);
 
     private final BookDao bookDao;
     private final BookService bookService;
@@ -154,5 +160,11 @@ public class BookController {
 
         model.addAttribute("books", sortBooks);
         return "books/index";
+    }
+
+    @ExceptionHandler(value = Exception.class)
+    public String handleException(HttpServletRequest request, Exception ex) {
+        LOGGER.error("Request " + request.getRequestURL() + " Threw an exception", ex);
+        return "error2";
     }
 }
