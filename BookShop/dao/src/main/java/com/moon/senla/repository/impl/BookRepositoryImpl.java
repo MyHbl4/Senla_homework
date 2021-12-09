@@ -96,7 +96,6 @@ public class BookRepositoryImpl implements BookRepository {
                     book.setAvailability(Availability.IN_STOCK);
                     book.setDeliveryDate(LocalDate.now());
                     bookDAO.update(book);
-                    System.out.println("книга востановлена");
                     return;
                 }
             }

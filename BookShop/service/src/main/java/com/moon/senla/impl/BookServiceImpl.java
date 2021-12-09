@@ -60,23 +60,17 @@ public class BookServiceImpl implements BookService {
     public void addBook(Book book) {
         try {
             if (!bookRepository.checkBookInBooks(book)) {
-                System.out.println("такая книга есть в книгах");
                 bookRepository.restoreBook(book);
-                System.out.println("книге сделали рестор ");
                 if (checkBookInRequests(book)) {
-                    System.out.println("книга в реквестах");
                     if (checkBookInOrders(book) && (FUNCTION_ORDER.equals("on"))) {
-                        System.out.println("книга есть в ордерах и функция включена");
                         checkOrder();
                         removeBookRequest(book);
                     } else {
-                        System.out.println("книга уменьшена на 1 в реквестах");
                         removeBookRequest(book);
                     }
                 }
             } else {
                 bookDAO.create(book);
-                System.out.println("книга создана");
             }
 
             LOGGER.info(
@@ -93,12 +87,9 @@ public class BookServiceImpl implements BookService {
         try {
             for (Order order : orderRepository.getAll()) {
                 if (orderRepository.checkBooksInOrder(order)) {
-                    System.out.println("книги в ордере все в наличии");
                     order.setOrderStatusCompleate();
                     orderDao.update(order);
-                    System.out.println("статус ордера изменен на комлетед");
                     bookRepository.removeBooks(order.getBooks());
-                    System.out.println("книги из ордера изменили статус на аут");
                 }
             }
             LOGGER.info(
@@ -118,13 +109,11 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public boolean checkBookInRequests(Book book) {
-        boolean availability = false;
         try {
             for (Request request : requestRepository.getAll()) {
                 if (book.getTitle().equals(request.getTitle())
                     && request.getCount() > 0) {
-                    availability = true;
-                    return availability;
+                    return true;
                 }
             }
             LOGGER.info(
@@ -135,7 +124,7 @@ public class BookServiceImpl implements BookService {
                     + Thread.currentThread().getStackTrace()[1].getMethodName(),
                 e);
         }
-        return availability;
+        return false;
     }
 
     @Override
@@ -155,18 +144,13 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public void removeBookRequest(Book book) {
-        System.out.println("в методе уменьшения количества реквестах");
         try {
             if (checkBookInRequests(book)) {
-                System.out.println("kniga est' v rekvestah");
                 for (Request request : requestRepository.getAll()) {
                     if (book.getTitle().equals(request.getTitle())
                         && request.getCount() > 0) {
-                        System.out.println("есть реквест с таким названием ");
                         request.setCount(request.getCount() - 1);
-                        System.out.println("коунт уменьшен на 1");
                         requestDao.update(request);
-                        System.out.println("обновлён реквест");
                         break;
                     }
                 }

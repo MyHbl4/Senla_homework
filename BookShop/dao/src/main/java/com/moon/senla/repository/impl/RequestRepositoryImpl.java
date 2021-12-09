@@ -56,8 +56,6 @@ public class RequestRepositoryImpl implements RequestRepository {
                         + Thread.currentThread().getStackTrace()[1].getMethodName(),
                     e);
             }
-        } else {
-            System.out.println("There is no book with this id");
         }
     }
 
