@@ -61,7 +61,7 @@ public class BookController {
             return "books/new";
         }
 
-        bookDao.create(book);
+        bookService.addBook(book);
         return "redirect:/books";
     }
 

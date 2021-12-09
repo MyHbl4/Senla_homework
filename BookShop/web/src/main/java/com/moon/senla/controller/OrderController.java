@@ -59,11 +59,11 @@ public class OrderController {
         if (bindingResult.hasErrors()) {
             return "orders/new";
         }
-        if (order.getBooks()==null) {
+        if (order.getBooks() == null) {
             return "orders/new";
         }
-
-        orderDao.create(order);
+        orderService.addOrder(order);
+//        orderDao.create(order);
         return "redirect:/orders";
     }
 

@@ -69,13 +69,11 @@ public class BookRepositoryImpl implements BookRepository {
 
     @Override
     public boolean checkBookInBooks(Book myBook) {
-        boolean availability = false;
         try {
-            availability = true;
             for (Book book : bookDAO.readAll()) {
                 if (myBook.getTitle().equals(book.getTitle())
                         && book.getAvailability().equals(Availability.OUT_OF_STOCK)) {
-                    availability = false;
+                    return false;
                 }
             }
             LOGGER.info(
@@ -86,7 +84,7 @@ public class BookRepositoryImpl implements BookRepository {
                             + Thread.currentThread().getStackTrace()[1].getMethodName(),
                     e);
         }
-        return availability;
+        return true;
     }
 
     @Override

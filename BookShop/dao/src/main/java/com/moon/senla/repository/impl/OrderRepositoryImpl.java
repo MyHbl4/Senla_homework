@@ -1,12 +1,11 @@
 package com.moon.senla.repository.impl;
 
-import java.util.List;
-
 import com.moon.senla.dao.OrderDao;
 import com.moon.senla.entity.Book;
 import com.moon.senla.entity.Order;
 import com.moon.senla.enums.Availability;
 import com.moon.senla.repository.OrderRepository;
+import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,22 +33,20 @@ public class OrderRepositoryImpl implements OrderRepository {
 
     @Override
     public boolean checkBooksInOrder(Order order) {
-        boolean availability = false;
         try {
-            availability = true;
             for (Book book : order.getBooks()) {
                 if (book.getAvailability().equals(Availability.OUT_OF_STOCK)) {
-                    availability = false;
+                    return false;
                 }
             }
             LOGGER.info(
-                    "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
+                "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
         } catch (Exception e) {
             LOGGER.warn(
-                    "Failed to execute the method - "
-                            + Thread.currentThread().getStackTrace()[1].getMethodName(),
-                    e);
+                "Failed to execute the method - "
+                    + Thread.currentThread().getStackTrace()[1].getMethodName(),
+                e);
         }
-        return availability;
+        return true;
     }
 }
