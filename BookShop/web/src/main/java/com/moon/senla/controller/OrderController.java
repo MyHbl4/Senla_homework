@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/orders")
@@ -130,5 +131,23 @@ public class OrderController {
     public String sortCompletedOrderByExecutionDate(Model model) {
         model.addAttribute("orders", orderService.sortCompletedOrderByExecutionDate(6));
         return "orders/index";
+    }
+
+    @RequestMapping("/askDetails")
+    public String askDetails(){ return "orders/ask-details";}
+
+    @RequestMapping("/showDetails")
+    public String showDetails(Model model, @RequestParam("months") int months) {
+        int price = 0;
+        int count = 0;
+        for (Order order : orderService.getCompletedOrderList(months)) {
+            count++;
+            price += order.getPrice();
+        }
+        model.addAttribute("orders", orderService.sortCompletedOrderByExecutionDate(6));
+        model.addAttribute("count",
+            "In " + months + " months, " + count + " orders were completed");
+        model.addAttribute("price", "Revenue for " + months + " months amounted to: " + price);
+        return "orders/show-details";
     }
 }

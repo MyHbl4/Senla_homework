@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>New request</title>
+  <title>Show details</title>
   <link rel="stylesheet" type="text/css" href="/URLToReachResourcesFolder/css/style.css">
 </head>
 <body>
@@ -20,14 +20,12 @@
       </ul>
     </div>
     <div id="main">
-      <form th:method="POST" th:action="@{/requests}" th:object="${request}">
-        <br/>
-        <label th:for="radio" >Enter book</label>
-        <div th:each="book : ${books}">
-          <input th:type="radio" th:name="bookId" th:value="${book.getId()}" th:text="${'Book ID:' + book.getId() + ' , Title:' + book.getTitle()}">
-        </div>
-        <hr/>
-        <input type="submit" value="Create!"/>
+      <h3 th:text="${count}"></h3>
+      <br>
+      <h3 th:text="${price}"></h3>
+      <br>
+      <form action="/orders/askDetails" target="_blank">
+        <button>Back</button>
       </form>
     </div>
   </div>
