@@ -1,16 +1,14 @@
 package com.moon.senla.repository.impl;
 
-import java.util.List;
-
 import com.moon.senla.dao.BookDao;
 import com.moon.senla.dao.RequestDao;
 import com.moon.senla.entity.Book;
 import com.moon.senla.entity.Request;
 import com.moon.senla.repository.RequestRepository;
+import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -33,8 +31,8 @@ public class RequestRepositoryImpl implements RequestRepository {
     @Override
     public void addRequest(long bookId) {
         List<Book> list = bookDAO.readAll();
-        boolean isMath = list.stream().anyMatch(u -> u.getId()==(bookId));
-        if(isMath) {
+        boolean isMath = list.stream().anyMatch(u -> u.getId() == (bookId));
+        if (isMath) {
             try {
                 int goodJob = 0;
                 for (Request request : getAll()) {

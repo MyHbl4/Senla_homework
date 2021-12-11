@@ -1,9 +1,5 @@
 package com.moon.senla.entity;
 
-import java.time.LocalDate;
-import java.util.List;
-import java.util.Objects;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -26,6 +22,9 @@ import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
+import java.time.LocalDate;
+import java.util.List;
+import java.util.Objects;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -49,12 +48,12 @@ public class Order {
     @JsonIgnoreProperties("orders")
     @JsonIdentityReference(alwaysAsId = true)
     @ManyToMany(
-            cascade = {CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE},
-            fetch = FetchType.EAGER)
+        cascade = {CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE},
+        fetch = FetchType.EAGER)
     @JoinTable(
-            name = "order_books",
-            joinColumns = @JoinColumn(name = "order_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "book_id", referencedColumnName = "id"))
+        name = "order_books",
+        joinColumns = @JoinColumn(name = "order_id", referencedColumnName = "id"),
+        inverseJoinColumns = @JoinColumn(name = "book_id", referencedColumnName = "id"))
     private List<com.moon.senla.entity.Book> books;
 
     @Column(name = "price")
@@ -175,33 +174,33 @@ public class Order {
         }
         Order order = (Order) o;
         return getId() == order.getId()
-                && getPrice() == order.getPrice()
-                && Objects.equals(getCustomerName(), order.getCustomerName())
-                && Objects.equals(getBooks(), order.getBooks())
-                && getOrderStatus() == order.getOrderStatus()
-                && Objects.equals(getExecution(), order.getExecution());
+            && getPrice() == order.getPrice()
+            && Objects.equals(getCustomerName(), order.getCustomerName())
+            && Objects.equals(getBooks(), order.getBooks())
+            && getOrderStatus() == order.getOrderStatus()
+            && Objects.equals(getExecution(), order.getExecution());
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(
-                getId(), getCustomerName(), getBooks(), getOrderStatus(), getExecution(), getPrice());
+            getId(), getCustomerName(), getBooks(), getOrderStatus(), getExecution(), getPrice());
     }
 
     @Override
     public String toString() {
         return "Order - "
-                + "ID: "
-                + id
-                + ", Customer name: '"
-                + customerName
-                + ", Price: "
-                + price
-                + ", Books: "
-                + books
-                + ", Order status: "
-                + orderStatus
-                + ", Execution: "
-                + execution;
+            + "ID: "
+            + id
+            + ", Customer name: '"
+            + customerName
+            + ", Price: "
+            + price
+            + ", Books: "
+            + books
+            + ", Order status: "
+            + orderStatus
+            + ", Execution: "
+            + execution;
     }
 }

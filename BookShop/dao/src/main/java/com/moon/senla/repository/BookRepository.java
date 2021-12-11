@@ -1,8 +1,7 @@
 package com.moon.senla.repository;
 
-import java.util.List;
-
 import com.moon.senla.entity.Book;
+import java.util.List;
 
 public interface BookRepository {
 

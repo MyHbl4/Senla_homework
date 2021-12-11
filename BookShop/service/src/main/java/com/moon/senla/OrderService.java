@@ -1,8 +1,7 @@
 package com.moon.senla;
 
-import java.util.List;
-
 import com.moon.senla.entity.Order;
+import java.util.List;
 
 public interface OrderService {
 
@@ -20,8 +19,6 @@ public interface OrderService {
 
     int getAllPriceOfSoldBooks(int months);
 
-    List<Order> getAll();
-
     List<Order> getCompletedOrderList(int months);
 
     List<Order> sortCompletedOrderByExecutionDate(int months);
@@ -33,4 +30,14 @@ public interface OrderService {
     List<Order> sortOrderByPrice();
 
     List<Order> sortOrderByStatus();
+
+    void create(Order entity);
+
+    Order read(int id);
+
+    List<Order> readAll();
+
+    void update(Order entity);
+
+    void delete(Order entity);
 }

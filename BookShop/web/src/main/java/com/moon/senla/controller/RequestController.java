@@ -2,8 +2,6 @@ package com.moon.senla.controller;
 
 import com.moon.senla.BookService;
 import com.moon.senla.RequestService;
-import com.moon.senla.dao.BookDao;
-import com.moon.senla.dao.RequestDao;
 import com.moon.senla.entity.Book;
 import com.moon.senla.entity.Request;
 import javax.servlet.http.HttpServletRequest;
@@ -30,30 +28,25 @@ public class RequestController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ExceptionController.class);
 
-    private final RequestDao requestDao;
     private final RequestService requestService;
-    private final BookDao bookDao;
     private final BookService bookService;
 
     @Autowired
-    public RequestController(RequestDao requestDao, RequestService requestService,
-        BookDao bookDao, BookService bookService) {
-        this.requestDao = requestDao;
+    public RequestController(RequestService requestService, BookService bookService) {
         this.requestService = requestService;
-        this.bookDao = bookDao;
         this.bookService = bookService;
     }
 
     @GetMapping()
     public String index(Model model) {
-        Iterable<Request> requests = requestDao.readAll();
+        Iterable<Request> requests = requestService.readAll();
         model.addAttribute("requests", requests);
         return "requests/index";
     }
 
     @GetMapping("/{id}")
     public String show(@PathVariable("id") int id, Model model) {
-        model.addAttribute("request", requestDao.read(id));
+        model.addAttribute("request", requestService.read(id));
         return "requests/show";
     }
 
@@ -73,27 +66,28 @@ public class RequestController {
 
     @GetMapping("/{id}/edit")
     public String edit(Model model, @PathVariable("id") int id) {
-        model.addAttribute("request", requestDao.read(id));
+        model.addAttribute("request", requestService.read(id));
         model.addAttribute("books", bookService.sortBookByAvailability());
         return "requests/edit";
     }
 
     @PatchMapping("/{id}")
     public String update(@ModelAttribute("request") @Valid Request request,
-        BindingResult bindingResult, @PathVariable("id") int id, @RequestParam("bookId") int bookId) {
+        BindingResult bindingResult, @PathVariable("id") int id,
+        @RequestParam("bookId") int bookId) {
         if (bindingResult.hasErrors()) {
             return "requests/edit";
         }
 
-        request.setBook(bookDao.read(bookId));
-        request.setTitle(bookDao.read(bookId).getTitle());
-        requestDao.update(request);
+        request.setBook(bookService.read(bookId));
+        request.setTitle(bookService.read(bookId).getTitle());
+        requestService.update(request);
         return "redirect:/requests";
     }
 
     @DeleteMapping("/{id}")
     public String delete(@PathVariable("id") int id) {
-        requestDao.delete(requestDao.read(id));
+        requestService.delete(requestService.read(id));
         return "redirect:/requests";
     }
 

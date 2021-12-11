@@ -19,7 +19,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -243,7 +242,7 @@ public class BookServiceImpl implements BookService {
     public List<Book> sortBookByTitle() {
         List<Book> sortBooks = null;
         try {
-            sortBooks = bookRepository.getAll();
+            sortBooks = bookDAO.readAll();
             sortBooks.sort(Comparator.comparing(Book::getTitle));
             LOGGER.info(
                 "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
@@ -288,5 +287,30 @@ public class BookServiceImpl implements BookService {
                 e);
         }
         return sortBooks;
+    }
+
+    @Override
+    public void create(Book entity) {
+        bookDAO.create(entity);
+    }
+
+    @Override
+    public Book read(int id) {
+        return bookDAO.read(id);
+    }
+
+    @Override
+    public List<Book> readAll() {
+        return bookDAO.readAll();
+    }
+
+    @Override
+    public void update(Book entity) {
+        bookDAO.update(entity);
+    }
+
+    @Override
+    public void delete(Book entity) {
+        bookDAO.delete(entity);
     }
 }

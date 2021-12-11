@@ -1,9 +1,5 @@
 package com.moon.senla.entity;
 
-import java.time.LocalDate;
-import java.util.List;
-import java.util.Objects;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -26,6 +22,9 @@ import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import java.time.LocalDate;
+import java.util.List;
+import java.util.Objects;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -70,12 +69,12 @@ public class Book {
     @JsonIgnoreProperties("books")
     @JsonIdentityReference(alwaysAsId = true)
     @ManyToMany(
-            cascade = {CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE},
-            fetch = FetchType.LAZY)
+        cascade = {CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE},
+        fetch = FetchType.LAZY)
     @JoinTable(
-            name = "order_books",
-            joinColumns = @JoinColumn(name = "book_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "order_id", referencedColumnName = "id"))
+        name = "order_books",
+        joinColumns = @JoinColumn(name = "book_id", referencedColumnName = "id"),
+        inverseJoinColumns = @JoinColumn(name = "order_id", referencedColumnName = "id"))
     private List<Order> orderList;
 
     @JsonIgnoreProperties("book")
@@ -83,13 +82,13 @@ public class Book {
     private Request request;
 
     public Book(
-            long id,
-            String title,
-            String author,
-            int price,
-            int publication,
-            Availability availability,
-            LocalDate deliveryDate) {
+        long id,
+        String title,
+        String author,
+        int price,
+        int publication,
+        Availability availability,
+        LocalDate deliveryDate) {
         this.id = id;
         this.title = title;
         this.author = author;
@@ -181,44 +180,44 @@ public class Book {
         }
         Book book = (Book) o;
         return getId() == book.getId()
-                && getPrice() == book.getPrice()
-                && getPublication() == book.getPublication()
-                && Objects.equals(getTitle(), book.getTitle())
-                && Objects.equals(getAuthor(), book.getAuthor())
-                && getAvailability() == book.getAvailability()
-                && Objects.equals(getDeliveryDate(), book.getDeliveryDate());
+            && getPrice() == book.getPrice()
+            && getPublication() == book.getPublication()
+            && Objects.equals(getTitle(), book.getTitle())
+            && Objects.equals(getAuthor(), book.getAuthor())
+            && getAvailability() == book.getAvailability()
+            && Objects.equals(getDeliveryDate(), book.getDeliveryDate());
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(
-                getId(),
-                getTitle(),
-                getAuthor(),
-                getPrice(),
-                getAvailability(),
-                getPublication(),
-                getDeliveryDate());
+            getId(),
+            getTitle(),
+            getAuthor(),
+            getPrice(),
+            getAvailability(),
+            getPublication(),
+            getDeliveryDate());
     }
 
     @Override
     public String toString() {
         return "Book - "
-                + "ID: "
-                + id
-                + ", Title: '"
-                + title
-                + '\''
-                + ", Author: '"
-                + author
-                + '\''
-                + ", Publication: "
-                + publication
-                + ", Price: "
-                + price
-                + ", Availability: "
-                + availability
-                + ", Delivery date: "
-                + deliveryDate;
+            + "ID: "
+            + id
+            + ", Title: '"
+            + title
+            + '\''
+            + ", Author: '"
+            + author
+            + '\''
+            + ", Publication: "
+            + publication
+            + ", Price: "
+            + price
+            + ", Availability: "
+            + availability
+            + ", Delivery date: "
+            + deliveryDate;
     }
 }

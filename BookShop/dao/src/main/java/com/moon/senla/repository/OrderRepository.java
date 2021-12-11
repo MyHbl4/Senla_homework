@@ -1,8 +1,7 @@
 package com.moon.senla.repository;
 
-import java.util.List;
-
 import com.moon.senla.entity.Order;
+import java.util.List;
 
 public interface OrderRepository {
 

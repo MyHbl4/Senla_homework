@@ -1,15 +1,13 @@
 package com.moon.senla.dao;
 
-import java.util.List;
-
 import com.moon.senla.api.IOrderDao;
 import com.moon.senla.entity.Book;
 import com.moon.senla.entity.Order;
 import com.moon.senla.util.HibernateUtil;
 import jakarta.persistence.criteria.CriteriaQuery;
+import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -67,18 +65,13 @@ public class OrderDao extends AbstractDao<Order> implements IOrderDao {
     }
 
     @Override
-    public List<Book> readBooks(Integer id) {
-
-        return read(id).getBooks();
-    }
-
-    @Override
     public List<Order> readAll() {
         List<Order> orders = null;
         Session session = null;
         try {
             session = HibernateUtil.getSessionFactory().openSession();
-            CriteriaQuery<Order> criteriaQuery = session.getCriteriaBuilder().createQuery(Order.class);
+            CriteriaQuery<Order> criteriaQuery = session.getCriteriaBuilder()
+                .createQuery(Order.class);
             criteriaQuery.from(Order.class);
             orders = session.createQuery(criteriaQuery).getResultList();
         } catch (HibernateException e) {

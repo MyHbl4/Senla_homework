@@ -1,8 +1,7 @@
 package com.moon.senla;
 
-import java.util.List;
-
 import com.moon.senla.entity.Book;
+import java.util.List;
 
 public interface BookService {
 
@@ -31,4 +30,14 @@ public interface BookService {
     List<Book> sortOldBookByDate();
 
     List<Book> sortOldBookByPrice();
+
+    void create(Book entity);
+
+    Book read(int id);
+
+    List<Book> readAll();
+
+    void update(Book entity);
+
+    void delete(Book entity);
 }

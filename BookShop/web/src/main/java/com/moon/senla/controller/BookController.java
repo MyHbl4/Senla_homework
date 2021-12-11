@@ -2,7 +2,6 @@ package com.moon.senla.controller;
 
 
 import com.moon.senla.BookService;
-import com.moon.senla.dao.BookDao;
 import com.moon.senla.entity.Book;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -32,25 +31,23 @@ public class BookController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ExceptionController.class);
 
-    private final BookDao bookDao;
     private final BookService bookService;
 
     @Autowired
-    public BookController(BookDao bookDao, BookService bookService) {
-        this.bookDao = bookDao;
+    public BookController(BookService bookService) {
         this.bookService = bookService;
     }
 
     @GetMapping()
     public String index(Model model) {
-        Iterable<Book> books = bookDao.readAll();
+        Iterable<Book> books = bookService.readAll();
         model.addAttribute("books", books);
         return "books/index";
     }
 
     @GetMapping("/{id}")
     public String show(@PathVariable("id") int id, Model model) {
-        model.addAttribute("book", bookDao.read(id));
+        model.addAttribute("book", bookService.read(id));
         return "books/show";
     }
 
@@ -73,7 +70,7 @@ public class BookController {
 
     @GetMapping("/{id}/edit")
     public String edit(Model model, @PathVariable("id") int id) {
-        model.addAttribute("book", bookDao.read(id));
+        model.addAttribute("book", bookService.read(id));
         return "books/edit";
     }
 
@@ -85,13 +82,13 @@ public class BookController {
             return "books/edit";
         }
 
-        bookDao.update(book);
+        bookService.update(book);
         return "redirect:/books";
     }
 
     @DeleteMapping("/{id}")
     public String delete(@PathVariable("id") int id) {
-        bookDao.delete(bookDao.read(id));
+        bookService.delete(bookService.read(id));
         return "redirect:/books";
     }
 
@@ -133,7 +130,7 @@ public class BookController {
     public String sortOldBookDate(Model model) {
         List<Book> oldBooks = null;
         oldBooks = new ArrayList<>();
-        for (Book book : bookDao.readAll()) {
+        for (Book book : bookService.readAll()) {
             if (book.getDeliveryDate()
                 .isBefore(LocalDate.now().minusMonths(10))) {
                 oldBooks.add(book);
@@ -149,7 +146,7 @@ public class BookController {
     public String sortOldBookPrice(Model model) {
         List<Book> oldBooks = null;
         oldBooks = new ArrayList<>();
-        for (Book book : bookDao.readAll()) {
+        for (Book book : bookService.readAll()) {
             if (book.getDeliveryDate()
                 .isBefore(LocalDate.now().minusMonths(10))) {
                 oldBooks.add(book);

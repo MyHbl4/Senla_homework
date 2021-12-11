@@ -1,14 +1,12 @@
 package com.moon.senla.dao;
 
-import java.util.List;
-
 import com.moon.senla.api.IRequestDao;
 import com.moon.senla.entity.Request;
 import com.moon.senla.util.HibernateUtil;
 import jakarta.persistence.criteria.CriteriaQuery;
+import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -53,7 +51,8 @@ public class RequestDao extends AbstractDao<Request> implements IRequestDao {
         Session session = null;
         try {
             session = HibernateUtil.getSessionFactory().openSession();
-            CriteriaQuery<Request> criteriaQuery = session.getCriteriaBuilder().createQuery(Request.class);
+            CriteriaQuery<Request> criteriaQuery = session.getCriteriaBuilder()
+                .createQuery(Request.class);
             criteriaQuery.from(Request.class);
             requests = session.createQuery(criteriaQuery).getResultList();
         } catch (HibernateException e) {

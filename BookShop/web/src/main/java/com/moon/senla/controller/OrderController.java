@@ -2,7 +2,6 @@ package com.moon.senla.controller;
 
 import com.moon.senla.BookService;
 import com.moon.senla.OrderService;
-import com.moon.senla.dao.OrderDao;
 import com.moon.senla.entity.Book;
 import com.moon.senla.entity.Order;
 import java.util.ArrayList;
@@ -14,7 +13,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,27 +29,25 @@ public class OrderController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ExceptionController.class);
 
-    private final OrderDao orderDao;
     private final OrderService orderService;
     private final BookService bookService;
 
     @Autowired
-    public OrderController(OrderDao orderDao, OrderService orderService,
+    public OrderController(OrderService orderService,
         BookService bookService) {
-        this.orderDao = orderDao;
         this.orderService = orderService;
         this.bookService = bookService;
     }
 
     @GetMapping()
     public String index(Model model) {
-        model.addAttribute("orders", orderDao.readAll());
+        model.addAttribute("orders", orderService.readAll());
         return "orders/index";
     }
 
     @GetMapping("/{id}")
     public String show(@PathVariable("id") int id, Model model) {
-        model.addAttribute("order", orderDao.read(id));
+        model.addAttribute("order", orderService.read(id));
         return "orders/show";
     }
 
@@ -77,7 +73,7 @@ public class OrderController {
 
     @GetMapping("/{id}/edit")
     public String edit(Model model, @PathVariable("id") int id) {
-        model.addAttribute("order", orderDao.read(id));
+        model.addAttribute("order", orderService.read(id));
         model.addAttribute("books", bookService.sortBookByAvailability());
 
         return "orders/edit";
@@ -91,7 +87,7 @@ public class OrderController {
             bookList.add(bookService.findBookById(i));
         }
         order.setBooks(bookList);
-        orderDao.update(order);
+        orderService.update(order);
         return "redirect:/orders";
     }
 
@@ -109,7 +105,7 @@ public class OrderController {
 
     @DeleteMapping("/{id}")
     public String delete(@PathVariable("id") int id) {
-        orderDao.delete(orderDao.read(id));
+        orderService.delete(orderService.read(id));
         return "redirect:/orders";
     }
 

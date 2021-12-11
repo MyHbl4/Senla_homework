@@ -1,14 +1,12 @@
 package com.moon.senla.dao;
 
-import java.util.List;
-
 import com.moon.senla.api.IBookDao;
 import com.moon.senla.entity.Book;
 import com.moon.senla.util.HibernateUtil;
 import jakarta.persistence.criteria.CriteriaQuery;
+import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -53,7 +51,8 @@ public class BookDao extends AbstractDao<Book> implements IBookDao {
         Session session = null;
         try {
             session = HibernateUtil.getSessionFactory().openSession();
-            CriteriaQuery<Book> criteriaQuery = session.getCriteriaBuilder().createQuery(Book.class);
+            CriteriaQuery<Book> criteriaQuery = session.getCriteriaBuilder()
+                .createQuery(Book.class);
             criteriaQuery.from(Book.class);
             books = session.createQuery(criteriaQuery).getResultList();
         } catch (HibernateException e) {
