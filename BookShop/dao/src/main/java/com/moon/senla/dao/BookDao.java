@@ -9,8 +9,9 @@ import jakarta.persistence.criteria.CriteriaQuery;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
-@Component
+@Repository
 public class BookDao extends AbstractDao<Book> implements IBookDao {
     @Override
     public void create(Book entity) {

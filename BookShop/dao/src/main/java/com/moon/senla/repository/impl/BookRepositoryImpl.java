@@ -11,8 +11,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
-@Component
+@Repository
 public class BookRepositoryImpl implements BookRepository {
     private static final Logger LOGGER = LoggerFactory.getLogger(BookRepositoryImpl.class);
     private BookDao bookDAO;

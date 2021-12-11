@@ -10,8 +10,9 @@ import jakarta.persistence.criteria.CriteriaQuery;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
-@Component
+@Repository
 public class OrderDao extends AbstractDao<Order> implements IOrderDao {
     @Override
     public void create(Order entity) {

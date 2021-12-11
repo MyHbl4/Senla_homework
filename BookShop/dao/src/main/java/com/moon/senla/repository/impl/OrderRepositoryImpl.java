@@ -10,8 +10,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
-@Component
+@Repository
 public class OrderRepositoryImpl implements OrderRepository {
     private static final Logger LOGGER = LoggerFactory.getLogger(OrderRepositoryImpl.class);
     private OrderDao orderDAO;
