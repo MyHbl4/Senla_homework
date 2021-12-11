@@ -20,6 +20,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class BookServiceImpl implements BookService {
@@ -57,6 +58,7 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
+    @Transactional
     public void addBook(Book book) {
         try {
             if (!bookRepository.checkBookInBooks(book)) {
