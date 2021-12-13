@@ -3,6 +3,8 @@ package com.moon.senla.entity;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
@@ -54,7 +56,8 @@ public class Order {
         name = "order_books",
         joinColumns = @JoinColumn(name = "order_id", referencedColumnName = "id"),
         inverseJoinColumns = @JoinColumn(name = "book_id", referencedColumnName = "id"))
-    private List<com.moon.senla.entity.Book> books;
+    @JsonProperty(access = Access.WRITE_ONLY)
+    private List<Book> books;
 
     @Column(name = "price")
     private int price;

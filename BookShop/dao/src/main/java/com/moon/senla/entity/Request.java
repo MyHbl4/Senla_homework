@@ -1,6 +1,8 @@
 package com.moon.senla.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -30,6 +32,7 @@ public class Request {
     @JsonIgnoreProperties({"orders", "request"})
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "book_id")
+    @JsonProperty(access = Access.WRITE_ONLY)
     private Book book;
 
     @Column(name = "title")

@@ -1,0 +1,101 @@
+
+#container {
+  background-color: #C2CCEC;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#header {
+  background-color: royalblue;
+  text-align: left;
+  color: black;
+}
+
+#content {
+  height: 100vh;
+  padding: 10px;
+}
+
+#nav {
+  width: 20%;
+  float: left;
+  font-family: Segoe UI Historic, Segoe UI, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+}
+
+#nav a:hover {
+  background-color: #A7B7EB;
+  color: royalblue;
+}
+
+#nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#nav li {
+  padding: 10px;
+}
+
+#main {
+  min-height: 100%;
+  width: 80%;
+  float: right;
+}
+
+#footer {
+  height: 5em;
+  line-height: 5em;
+  background-color: #494949;
+  clear: both;
+  text-align: center;
+}
+#footer a {
+  color: #FCFCFC;
+}
+
+body {
+  background: #DFEFF8;
+  color: black;
+  direction: ltr;
+  line-height: 1.34;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+table {
+  background: #FCFCFC; /* Цвет фона ячеек */
+  text-align: center;
+  padding-left: 5%;
+  width: 95%; /* Ширина таблицы */
+  color: black; /* Цвет текста */
+  border: 5px;
+  border-collapse: collapse;
+}
+
+td, th {
+  padding: 5px; /* Поля вокруг текста */
+  border: 1px solid #333;
+}
+
+tr:hover {
+  background: #A2B8D8; /* Цвет фона */
+}
+
+a {
+  color: black; /* Цвет ссылок */
+  text-decoration: none; /* Отменяем подчеркивание у ссылки */
+}
+
+/*a:visited {*/
+/*  color: black; !* Цвет посещенных ссылок *!*/
+/*}*/
+
+/*a:active {*/
+/*  color: black; !* Цвет активных ссылок *!*/
+/*}*/

@@ -58,7 +58,6 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    @Transactional
     public void addBook(Book book) {
         try {
             if (!bookRepository.checkBookInBooks(book)) {

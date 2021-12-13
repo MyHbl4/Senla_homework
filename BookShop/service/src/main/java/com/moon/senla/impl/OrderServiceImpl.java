@@ -45,7 +45,6 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    @Transactional
     public void addOrder(Order order) {
         try {
             orderDAO.createOrderBooks(order);

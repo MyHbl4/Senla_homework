@@ -15,7 +15,8 @@
         <module>dao</module>
         <module>service</module>
         <module>web</module>
-        <!--        <module>web</module>-->
+        <module>rest</module>
+        <module>security</module>
     </modules>
 
     <properties>
@@ -43,6 +44,7 @@
         <postgres.version>42.3.1</postgres.version>
         <javassist.version>3.28.0-GA</javassist.version>
         <reflections.version>0.10.2</reflections.version>
+        <spring-security.version>5.6.0</spring-security.version>
     </properties>
 
     <dependencies>
@@ -171,6 +173,46 @@
             <artifactId>spring-jdbc</artifactId>
             <version>${spring.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.mchange</groupId>
+            <artifactId>c3p0</artifactId>
+            <version>0.9.5.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>5.3.13</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>${spring-security.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>${spring-security.version}</version>
+        </dependency>
+
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.security</groupId>-->
+<!--            <artifactId>spring-security-taglibs</artifactId>-->
+<!--            <version>${spring-security.version}</version>-->
+<!--        </dependency>-->
+
+        <dependency>
+            <groupId>org.thymeleaf.extras</groupId>
+            <artifactId>thymeleaf-extras-springsecurity5</artifactId>
+            <version>3.0.4.RELEASE</version>
+        </dependency>
+
+
+
+
     </dependencies>
 
     <build>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Book</title>
+  <link rel="stylesheet" type="text/css" href="/URLToReachResourcesFolder/css/style.css">
+</head>
+<body>
+<div id="container">
+  <div id="header">
+    <h1>BOOK SHOP</h1>
+  </div>
+  <div id="content">
+    <div id="nav">
+      <ul>
+        <li><a href="/">Home menu</a></li>
+        <li><a href="/books/">Book menu</a></li>
+        <li><a href="/orders/">Order menu</a></li>
+        <li><a href="/requests/">Request menu</a></li>
+      </ul>
+    </div>
+    <div id="main">
+      <p th:text="${book.toString()}">VALUE</p>
+      <hr/>
+      <div>
+        <form th:method="GET" th:action="@{/books/{id}/edit(id=${book.getId()})}">
+          <input type="submit" value="Edit"/>
+        </form>
+      </div>
+      <br/>
+      <div>
+        <form th:method="PATCH" th:action="@{/books/{id}/remove(id=${book.getId()})}">
+          <input type="submit" value="Remove"/>
+        </form>
+      </div>
+      <br/>
+      <div>
+        <form th:method="DELETE" th:action="@{/books/{id}(id=${book.getId()})}">
+          <input type="submit" value="Delete"/>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div id="footer">
+    <a href="/">Home page</a>
+    <a>@MyHbl4</a>
+  </div>
+</div>
+</body>
+</html>

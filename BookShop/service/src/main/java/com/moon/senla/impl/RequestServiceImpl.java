@@ -26,7 +26,6 @@ public class RequestServiceImpl implements RequestService {
     }
 
     @Override
-    @Transactional
     public void addRequest(long bookId) {
         try {
             requestRepository.addRequest(bookId);
