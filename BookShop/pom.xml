@@ -11,7 +11,6 @@
     <name>book-shop</name>
     <url>https://github.com/MyHbl4/Senla_homework.git</url>
     <modules>
-        <module>controller</module>
         <module>dao</module>
         <module>service</module>
         <module>web</module>
