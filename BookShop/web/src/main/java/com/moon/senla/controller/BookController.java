@@ -12,6 +12,7 @@ import javax.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -30,6 +31,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class BookController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ExceptionController.class);
+
+    @Value("${MONTHS_STALE_BOOKS}")
+    private String MONTHS_STALE_BOOKS;
 
     private final BookService bookService;
 
@@ -98,41 +102,41 @@ public class BookController {
         return "redirect:/books";
     }
 
-    @GetMapping("/sort-book-price")
+    @GetMapping("/sort/sort-book-price")
     public String sortPrice(Model model) {
         Iterable<Book> books = bookService.sortBookByPrice();
         model.addAttribute("books", books);
         return "books/index";
     }
 
-    @GetMapping("/sort-book-availability")
+    @GetMapping("/sort/sort-book-availability")
     public String sortAvailability(Model model) {
         Iterable<Book> books = bookService.sortBookByAvailability();
         model.addAttribute("books", books);
         return "books/index";
     }
 
-    @GetMapping("/sort-book-title")
+    @GetMapping("/sort/sort-book-title")
     public String sortTitle(Model model) {
         Iterable<Book> books = bookService.sortBookByTitle();
         model.addAttribute("books", books);
         return "books/index";
     }
 
-    @GetMapping("/sort-book-publication")
+    @GetMapping("/sort/sort-book-publication")
     public String sortPublication(Model model) {
         Iterable<Book> books = bookService.sortBookByPublication();
         model.addAttribute("books", books);
         return "books/index";
     }
 
-    @GetMapping("/sort-old-book-date")
+    @GetMapping("/sort/sort-old-book-date")
     public String sortOldBookDate(Model model) {
         List<Book> oldBooks = null;
         oldBooks = new ArrayList<>();
         for (Book book : bookService.readAll()) {
             if (book.getDeliveryDate()
-                .isBefore(LocalDate.now().minusMonths(10))) {
+                .isBefore(LocalDate.now().minusMonths(Long.parseLong(MONTHS_STALE_BOOKS)))) {
                 oldBooks.add(book);
             }
         }
@@ -142,13 +146,13 @@ public class BookController {
         return "books/index";
     }
 
-    @GetMapping("/sort-old-book-price")
+    @GetMapping("/sort/sort-old-book-price")
     public String sortOldBookPrice(Model model) {
         List<Book> oldBooks = null;
         oldBooks = new ArrayList<>();
         for (Book book : bookService.readAll()) {
             if (book.getDeliveryDate()
-                .isBefore(LocalDate.now().minusMonths(10))) {
+                .isBefore(LocalDate.now().minusMonths(Long.parseLong(MONTHS_STALE_BOOKS)))) {
                 oldBooks.add(book);
             }
         }
@@ -162,6 +166,6 @@ public class BookController {
     @ExceptionHandler(value = Exception.class)
     public String handleException(HttpServletRequest request, Exception ex) {
         LOGGER.error("Request " + request.getRequestURL() + " Threw an exception", ex);
-        return "error2";
+        return "error/error";
     }
 }

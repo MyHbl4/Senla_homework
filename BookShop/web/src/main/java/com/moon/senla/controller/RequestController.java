@@ -108,6 +108,6 @@ public class RequestController {
     @ExceptionHandler(value = Exception.class)
     public String handleException(HttpServletRequest request, Exception ex) {
         LOGGER.error("Request " + request.getRequestURL() + " Threw an exception", ex);
-        return "error2";
+        return "error/error";
     }
 }
