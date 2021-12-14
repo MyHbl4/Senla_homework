@@ -16,24 +16,26 @@ import org.thymeleaf.extras.springsecurity4.dialect.SpringSecurityDialect;
 @EnableWebSecurity
 public class MySecurityConfig extends WebSecurityConfigurerAdapter {
 
-//    @Autowired
-//    private DataSource dataSource;
+    @Autowired
+    private DataSource dataSource;
 
     @Autowired
     private AccessDeniedHandler accessDeniedHandler;
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        UserBuilder userBuilder = User.withDefaultPasswordEncoder();
-
-        auth.inMemoryAuthentication()
-            .withUser(userBuilder.username("user")
-                .password("user")
-                .roles("USER"))
-            .withUser(userBuilder.username("admin")
-                .password("admin")
-                .roles("ADMIN"));
+        auth.jdbcAuthentication().dataSource(dataSource);
     }
+//        UserBuilder userBuilder = User.withDefaultPasswordEncoder();
+//
+//        auth.inMemoryAuthentication()
+//            .withUser(userBuilder.username("user")
+//                .password("user")
+//                .roles("USER"))
+//            .withUser(userBuilder.username("admin")
+//                .password("admin")
+//                .roles("ADMIN"));
+//    }
 
 
 //    @Override
@@ -41,19 +43,16 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
 //        auth.jdbcAuthentication()
 //            .dataSource(dataSource)
 //            .passwordEncoder(NoOpPasswordEncoder.getInstance())
-//            .usersByUsernameQuery("select username, password, active from usr where username=?")
+//            .usersByUsernameQuery("select username, password, enabled from users where username=?")
 //            .authoritiesByUsernameQuery(
-//                "select u.username, ur.roles from usr u inner join user_role ur on u.id = ur.user_id where u.username=?");
+//                "select u.username, ur.authority from users u inner join authorities ur on u.username = ur.username where u.username=?");
 //    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
             .antMatchers("/").hasAnyRole("USER", "ADMIN")
-            .antMatchers("/orders/").hasAnyRole("USER", "ADMIN")
-            .antMatchers("/books/").hasAnyRole("USER", "ADMIN")
-            .antMatchers("/orders/new").hasAnyRole("USER", "ADMIN")
-            .antMatchers("/books/sort/**").hasAnyRole("USER", "ADMIN")
+            .antMatchers("/user/**").hasAnyRole("USER", "ADMIN")
             .antMatchers("/orders/**").hasRole("ADMIN")
             .antMatchers("/requests/**").hasRole("ADMIN")
             .antMatchers("/books/**").hasRole("ADMIN")

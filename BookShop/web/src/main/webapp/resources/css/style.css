@@ -7,7 +7,7 @@
 }
 
 #header {
-  background-color: royalblue;
+  background-color: #5DB5C1;
   text-align: left;
   color: black;
 }
@@ -43,6 +43,11 @@
   width: 80%;
   float: right;
 }
+
+.displayed {
+  text-align: center;
+}
+
 
 #footer {
   height: 5em;
