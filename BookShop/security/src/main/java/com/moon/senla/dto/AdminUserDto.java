@@ -1,8 +1,8 @@
 package com.moon.senla.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.moon.senla.model.Status;
-import com.moon.senla.model.User;
+import com.moon.senla.entity.Status;
+import com.moon.senla.entity.User;
 import lombok.Data;
 
 @Data

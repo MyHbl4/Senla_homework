@@ -1,7 +1,7 @@
 package com.moon.senla.rest;
 
 import com.moon.senla.dto.UserDto;
-import com.moon.senla.model.User;
+import com.moon.senla.entity.User;
 import com.moon.senla.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

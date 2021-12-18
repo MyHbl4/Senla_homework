@@ -1,6 +1,6 @@
 package com.moon.senla.repository.impl;
 
-import com.moon.senla.model.User;
+import com.moon.senla.entity.User;
 import com.moon.senla.repository.UserRepository;
 import com.moon.senla.util.HibernateUtil;
 import jakarta.persistence.criteria.CriteriaQuery;

@@ -1,6 +1,6 @@
 package com.moon.senla.security;
 
-import com.moon.senla.model.User;
+import com.moon.senla.entity.User;
 import com.moon.senla.security.jwt.JwtUser;
 import com.moon.senla.security.jwt.JwtUserFactory;
 import com.moon.senla.services.UserService;

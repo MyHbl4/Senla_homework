@@ -1,6 +1,6 @@
 package com.moon.senla.services;
 
-import com.moon.senla.model.User;
+import com.moon.senla.entity.User;
 import java.util.List;
 
 public interface UserService {

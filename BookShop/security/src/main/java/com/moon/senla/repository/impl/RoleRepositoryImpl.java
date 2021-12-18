@@ -1,6 +1,6 @@
 package com.moon.senla.repository.impl;
 
-import com.moon.senla.model.Role;
+import com.moon.senla.entity.Role;
 import com.moon.senla.repository.RoleRepository;
 import com.moon.senla.util.HibernateUtil;
 import org.hibernate.HibernateException;

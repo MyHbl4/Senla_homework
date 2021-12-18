@@ -1,8 +1,8 @@
 package com.moon.senla.services.impl;
 
-import com.moon.senla.model.Role;
-import com.moon.senla.model.Status;
-import com.moon.senla.model.User;
+import com.moon.senla.entity.Role;
+import com.moon.senla.entity.Status;
+import com.moon.senla.entity.User;
 import com.moon.senla.repository.RoleRepository;
 import com.moon.senla.repository.UserRepository;
 import com.moon.senla.services.UserService;

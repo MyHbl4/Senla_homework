@@ -1,6 +1,6 @@
 package com.moon.senla.security.jwt;
 
-import com.moon.senla.model.Role;
+import com.moon.senla.entity.Role;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.JwtException;
