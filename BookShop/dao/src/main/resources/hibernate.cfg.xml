@@ -30,6 +30,8 @@
         <mapping class="com.moon.senla.entity.Book"/>
         <mapping class="com.moon.senla.entity.Order"/>
         <mapping class="com.moon.senla.entity.Request"/>
+        <mapping class="com.moon.senla.entity.User"/>
+        <mapping class="com.moon.senla.entity.Role"/>
 
     </session-factory>
 </hibernate-configuration>
