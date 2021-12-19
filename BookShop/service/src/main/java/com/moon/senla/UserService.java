@@ -1,4 +1,4 @@
-package com.moon.senla.services;
+package com.moon.senla;
 
 import com.moon.senla.entity.User;
 import java.util.List;

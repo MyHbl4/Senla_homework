@@ -1,7 +1,7 @@
 package com.moon.senla.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.moon.senla.entity.Status;
+import com.moon.senla.enums.Status;
 import com.moon.senla.entity.User;
 import lombok.Data;
 

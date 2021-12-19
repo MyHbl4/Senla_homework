@@ -1,11 +1,11 @@
-package com.moon.senla.services.impl;
+package com.moon.senla.impl;
 
 import com.moon.senla.entity.Role;
-import com.moon.senla.entity.Status;
+import com.moon.senla.enums.Status;
 import com.moon.senla.entity.User;
 import com.moon.senla.repository.RoleRepository;
 import com.moon.senla.repository.UserRepository;
-import com.moon.senla.services.UserService;
+import com.moon.senla.UserService;
 import java.util.ArrayList;
 import java.util.List;
 import org.slf4j.Logger;

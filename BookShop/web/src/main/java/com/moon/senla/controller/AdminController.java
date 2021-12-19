@@ -1,9 +1,8 @@
-package com.moon.senla.rest;
+package com.moon.senla.controller;
 
 import com.moon.senla.dto.AdminUserDto;
-import com.moon.senla.dto.UserDto;
 import com.moon.senla.entity.User;
-import com.moon.senla.services.UserService;
+import com.moon.senla.UserService;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,42 +14,43 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/api/v1/users/")
-public class UserRestControllerV1 {
+@RequestMapping(value = "/admin")
+public class AdminController {
+
     private final UserService userService;
 
     @Autowired
-    public UserRestControllerV1(UserService userService) {
+    public AdminController(UserService userService) {
         this.userService = userService;
     }
 
-    @GetMapping(value = "{id}")
-    public ResponseEntity<UserDto> getUserById(@PathVariable(name = "id") Long id) {
+    @GetMapping(value = "/users/{id}")
+    public ResponseEntity<AdminUserDto> getUserById(@PathVariable(name = "id") Long id) {
         User user = userService.findById(id);
 
         if (user == null) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
 
-        UserDto result = UserDto.fromUser(user);
+        AdminUserDto result = AdminUserDto.fromUser(user);
 
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
-    @GetMapping(value = "users")
-    public ResponseEntity<List<UserDto>> getAllUsers() {
+    @GetMapping(value = "/users")
+    public ResponseEntity<List<AdminUserDto>> getAllUsers() {
         List<User> users = userService.getAll();
-        List<UserDto> userDtoList = new ArrayList<>();
+        List<AdminUserDto> adminUserDtoList = new ArrayList<>();
 
         if (users == null) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         for (User user:users) {
-            userDtoList.add(UserDto.fromUser(user));
+            adminUserDtoList.add(AdminUserDto.fromUser(user));
         }
 
 
 
-        return new ResponseEntity<>(userDtoList, HttpStatus.OK);
+        return new ResponseEntity<>(adminUserDtoList, HttpStatus.OK);
     }
 }

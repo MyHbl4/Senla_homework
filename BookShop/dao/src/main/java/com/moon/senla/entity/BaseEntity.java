@@ -1,5 +1,6 @@
 package com.moon.senla.entity;
 
+import com.moon.senla.enums.Status;
 import jakarta.persistence.Column;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;

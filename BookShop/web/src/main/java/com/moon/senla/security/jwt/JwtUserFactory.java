@@ -1,7 +1,7 @@
 package com.moon.senla.security.jwt;
 
 import com.moon.senla.entity.Role;
-import com.moon.senla.entity.Status;
+import com.moon.senla.enums.Status;
 import com.moon.senla.entity.User;
 import java.util.ArrayList;
 import java.util.List;

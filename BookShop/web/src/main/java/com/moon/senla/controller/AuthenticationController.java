@@ -1,26 +1,30 @@
-package com.moon.senla.rest;
+package com.moon.senla.controller;
 
 import com.moon.senla.dto.AuthenticationRequestDto;
+import com.moon.senla.dto.UserDto;
 import com.moon.senla.entity.User;
 import com.moon.senla.security.jwt.JwtTokenProvider;
-import com.moon.senla.services.UserService;
+import com.moon.senla.UserService;
 import java.util.HashMap;
 import java.util.Map;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/api/v1/auth/")
-public class AuthenticationRestControllerV1 {
+@RequestMapping(value = "/auth")
+public class AuthenticationController {
 
     private final AuthenticationManager authenticationManager;
 
@@ -29,14 +33,14 @@ public class AuthenticationRestControllerV1 {
     private final UserService userService;
 
     @Autowired
-    public AuthenticationRestControllerV1(AuthenticationManager authenticationManager,
+    public AuthenticationController(AuthenticationManager authenticationManager,
         JwtTokenProvider jwtTokenProvider, UserService userService) {
         this.authenticationManager = authenticationManager;
         this.jwtTokenProvider = jwtTokenProvider;
         this.userService = userService;
     }
 
-    @PostMapping("login")
+    @PostMapping("/login")
     public ResponseEntity login(@RequestBody AuthenticationRequestDto requestDto) {
         try {
             String username = requestDto.getUsername();
@@ -59,5 +63,18 @@ public class AuthenticationRestControllerV1 {
         } catch (AuthenticationException e) {
             throw new BadCredentialsException("Invalid username or password!!!!!!!!!!");
         }
+    }
+
+    @PostMapping("/register")
+    public ResponseEntity<UserDto> registerUser(@RequestBody @Valid User user, @ModelAttribute("user") User usr){
+        User newUser = new User();
+        newUser.setEmail(user.getEmail());
+        newUser.setUsername(user.getUsername());
+        newUser.setFirstName(user.getFirstName());
+        newUser.setLastName(user.getLastName());
+        newUser.setPassword(user.getPassword());
+        userService.register(newUser);
+        UserDto result = UserDto.fromUser(userService.findByUsername(newUser.getUsername()));
+        return new ResponseEntity<>(result, HttpStatus.OK);
     }
 }

@@ -3,7 +3,7 @@ package com.moon.senla.security;
 import com.moon.senla.entity.User;
 import com.moon.senla.security.jwt.JwtUser;
 import com.moon.senla.security.jwt.JwtUserFactory;
-import com.moon.senla.services.UserService;
+import com.moon.senla.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
