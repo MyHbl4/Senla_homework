@@ -46,10 +46,10 @@ public class AuthenticationRestControllerV1 {
 
             if (user == null) {
                 throw new UsernameNotFoundException(
-                    "User with username: " + username + " not found");
+                    "User with username: " + username + " not found!!!!!!!!!!!!!!!");
             }
 
-            String token = jwtTokenProvider.createToken(username, user.getRoles());
+            String token = jwtTokenProvider.createToken(user.getUsername(), user.getRoles());
 
             Map<Object, Object> response = new HashMap<>();
             response.put("username", username);
@@ -57,7 +57,7 @@ public class AuthenticationRestControllerV1 {
 
             return ResponseEntity.ok(response);
         } catch (AuthenticationException e) {
-            throw new BadCredentialsException("Invalid username or password");
+            throw new BadCredentialsException("Invalid username or password!!!!!!!!!!");
         }
     }
 }

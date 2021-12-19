@@ -3,6 +3,8 @@ package com.moon.senla.rest;
 import com.moon.senla.dto.AdminUserDto;
 import com.moon.senla.entity.User;
 import com.moon.senla.services.UserService;
+import java.util.ArrayList;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -33,5 +35,22 @@ public class AdminRestControllerV1 {
         AdminUserDto result = AdminUserDto.fromUser(user);
 
         return new ResponseEntity<>(result, HttpStatus.OK);
+    }
+
+    @GetMapping(value = "users")
+    public ResponseEntity<List<AdminUserDto>> getAllUsers() {
+        List<User> users = userService.getAll();
+        List<AdminUserDto> adminUserDtoList = new ArrayList<>();
+
+        if (users == null) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        for (User user:users) {
+            adminUserDtoList.add(AdminUserDto.fromUser(user));
+        }
+
+
+
+        return new ResponseEntity<>(adminUserDtoList, HttpStatus.OK);
     }
 }

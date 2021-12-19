@@ -13,6 +13,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -24,11 +25,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class JwtTokenProvider {
 
-    //    @Value("${jwt.token.secret}")
-    private String secret = "bookshop";
+    @Value("${jwt.token.secret}")
+    private String secret;
 
-    //    @Value("${jwt.token.expired}")
-    private long validityInMilliseconds = 3600000;
+    @Value("${jwt.token.expired}")
+    private long validityInMilliseconds;
 
 
     @Autowired

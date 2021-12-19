@@ -3,7 +3,11 @@ package com.moon.senla.repository.impl;
 import com.moon.senla.entity.User;
 import com.moon.senla.repository.UserRepository;
 import com.moon.senla.util.HibernateUtil;
+import jakarta.persistence.NoResultException;
 import jakarta.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.criteria.Expression;
+import jakarta.persistence.criteria.Predicate;
+import jakarta.persistence.criteria.Root;
 import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -13,13 +17,19 @@ import org.springframework.stereotype.Component;
 public class UserRepositoryImpl implements UserRepository {
     @Override
     public User findByUsername(String username) {
-        User user = null;
-        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            user = session.get(User.class, username);
-        } catch (HibernateException e) {
-            e.printStackTrace();
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        CriteriaQuery<User> criteriaQuery = session.getCriteriaBuilder().createQuery(User.class);
+        Root<User> userRequest = criteriaQuery.from(User.class);
+
+        Expression<String> exp = userRequest.get("username");
+        Predicate predicate = exp.in(username);
+
+        criteriaQuery.where(predicate);
+        try {
+            return session.createQuery(criteriaQuery).getSingleResult();
+        } catch (NoResultException e) {
+            return new User();
         }
-        return user;
     }
 
     @Override
