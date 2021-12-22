@@ -5,8 +5,6 @@ import java.util.List;
 
 public interface OrderService {
 
-    Order findOrderById(int id);
-
     void addOrder(Order order);
 
     void checkBooksForRequest(Order order);
@@ -16,8 +14,6 @@ public interface OrderService {
     void closeOrder(int id);
 
     void cancelOrder(int id);
-
-    int getAllPriceOfSoldBooks(int months);
 
     List<Order> getCompletedOrderList(int months);
 

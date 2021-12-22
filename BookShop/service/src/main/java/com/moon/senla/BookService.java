@@ -17,8 +17,6 @@ public interface BookService {
 
     void removeBookRequest(Book book);
 
-    List<Book> getOldBooks();
-
     List<Book> sortBookByAvailability();
 
     List<Book> sortBookByPrice();
@@ -27,9 +25,7 @@ public interface BookService {
 
     List<Book> sortBookByTitle();
 
-    List<Book> sortOldBookByDate();
-
-    List<Book> sortOldBookByPrice();
+    void checkOrder();
 
     void create(Book entity);
 

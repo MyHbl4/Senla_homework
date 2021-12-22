@@ -27,27 +27,6 @@ public class BookRepositoryImpl implements BookRepository {
     }
 
     @Override
-    public Book findBookById(int id) {
-        return bookDAO.read(id);
-    }
-
-    @Override
-    public void removeBook(int id) {
-        try {
-            Book book = bookDAO.read(id);
-            book.setAvailability(Availability.OUT_OF_STOCK);
-            bookDAO.update(book);
-            LOGGER.info(
-                "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
-        } catch (Exception e) {
-            LOGGER.warn(
-                "Failed to execute the method - "
-                    + Thread.currentThread().getStackTrace()[1].getMethodName(),
-                e);
-        }
-    }
-
-    @Override
     public void removeBooks(List<Book> books) {
         try {
             for (Book book : books) {

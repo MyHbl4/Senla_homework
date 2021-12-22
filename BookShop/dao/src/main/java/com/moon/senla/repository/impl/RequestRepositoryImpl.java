@@ -35,7 +35,7 @@ public class RequestRepositoryImpl implements RequestRepository {
         if (isMath) {
             try {
                 int goodJob = 0;
-                for (Request request : getAll()) {
+                for (Request request : requestDAO.readAll()) {
                     if (request.getBook().getId() == bookId) {
                         request.setCount(request.getCount() + 1);
                         requestDAO.update(request);

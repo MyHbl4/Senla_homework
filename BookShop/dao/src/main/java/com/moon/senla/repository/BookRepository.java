@@ -7,10 +7,6 @@ public interface BookRepository {
 
     List<Book> getAll();
 
-    Book findBookById(int id);
-
-    void removeBook(int id);
-
     void removeBooks(List<Book> books);
 
     boolean checkBookInBooks(Book myBook);

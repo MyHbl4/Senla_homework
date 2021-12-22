@@ -40,11 +40,6 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public Order findOrderById(int id) {
-        return orderDAO.read(id);
-    }
-
-    @Override
     public void addOrder(Order order) {
         try {
             orderDAO.createOrderBooks(order);
@@ -145,24 +140,24 @@ public class OrderServiceImpl implements OrderService {
         }
     }
 
-    @Override
-    public int getAllPriceOfSoldBooks(int months) {
-        int price = 0;
-        try {
-            price = 0;
-            for (Order order : getCompletedOrderList(months)) {
-                price += order.getPrice();
-            }
-            LOGGER.info(
-                "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
-        } catch (Exception e) {
-            LOGGER.warn(
-                "Failed to execute the method - "
-                    + Thread.currentThread().getStackTrace()[1].getMethodName(),
-                e);
-        }
-        return price;
-    }
+//    @Override
+//    public int getAllPriceOfSoldBooks(int months) {
+//        int price = 0;
+//        try {
+//            price = 0;
+//            for (Order order : getCompletedOrderList(months)) {
+//                price += order.getPrice();
+//            }
+//            LOGGER.info(
+//                "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
+//        } catch (Exception e) {
+//            LOGGER.warn(
+//                "Failed to execute the method - "
+//                    + Thread.currentThread().getStackTrace()[1].getMethodName(),
+//                e);
+//        }
+//        return price;
+//    }
 
     @Override
     public List<Order> getCompletedOrderList(int months) {

@@ -7,6 +7,7 @@ import com.moon.senla.dao.RequestDao;
 import com.moon.senla.entity.Book;
 import com.moon.senla.entity.Order;
 import com.moon.senla.entity.Request;
+import com.moon.senla.enums.Availability;
 import com.moon.senla.enums.OrderStatus;
 import com.moon.senla.repository.BookRepository;
 import com.moon.senla.repository.OrderRepository;
@@ -20,7 +21,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class BookServiceImpl implements BookService {
@@ -54,7 +54,7 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public Book findBookById(int id) {
-        return bookRepository.findBookById(id);
+        return bookDAO.read(id);
     }
 
     @Override
@@ -84,7 +84,8 @@ public class BookServiceImpl implements BookService {
         }
     }
 
-    private void checkOrder() {
+    @Override
+    public void checkOrder() {
         try {
             for (Order order : orderRepository.getAll()) {
                 if (orderRepository.checkBooksInOrder(order)) {
@@ -105,7 +106,18 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public void removeBook(int id) {
-        bookRepository.removeBook(id);
+        try {
+            Book book = bookDAO.read(id);
+            book.setAvailability(Availability.OUT_OF_STOCK);
+            bookDAO.update(book);
+            LOGGER.info(
+                "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
+        } catch (Exception e) {
+            LOGGER.warn(
+                "Failed to execute the method - "
+                    + Thread.currentThread().getStackTrace()[1].getMethodName(),
+                e);
+        }
     }
 
     @Override
@@ -166,27 +178,27 @@ public class BookServiceImpl implements BookService {
         }
     }
 
-    @Override
-    public List<Book> getOldBooks() {
-        List<Book> oldBooks = null;
-        try {
-            oldBooks = new ArrayList<>();
-            for (Book book : bookRepository.getAll()) {
-                if (book.getDeliveryDate()
-                    .isBefore(LocalDate.now().minusMonths(Long.parseLong(MONTHS_STALE_BOOKS)))) {
-                    oldBooks.add(book);
-                }
-            }
-            LOGGER.info(
-                "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
-        } catch (NumberFormatException e) {
-            LOGGER.warn(
-                "Failed to execute the method - "
-                    + Thread.currentThread().getStackTrace()[1].getMethodName(),
-                e);
-        }
-        return oldBooks;
-    }
+//    @Override
+//    public List<Book> getOldBooks() {
+//        List<Book> oldBooks = null;
+//        try {
+//            oldBooks = new ArrayList<>();
+//            for (Book book : bookRepository.getAll()) {
+//                if (book.getDeliveryDate()
+//                    .isBefore(LocalDate.now().minusMonths(Long.parseLong(MONTHS_STALE_BOOKS)))) {
+//                    oldBooks.add(book);
+//                }
+//            }
+//            LOGGER.info(
+//                "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
+//        } catch (NumberFormatException e) {
+//            LOGGER.warn(
+//                "Failed to execute the method - "
+//                    + Thread.currentThread().getStackTrace()[1].getMethodName(),
+//                e);
+//        }
+//        return oldBooks;
+//    }
 
     @Override
     public List<Book> sortBookByAvailability() {
@@ -256,39 +268,39 @@ public class BookServiceImpl implements BookService {
         return sortBooks;
     }
 
-    @Override
-    public List<Book> sortOldBookByDate() {
-        List<Book> sortBooks = null;
-        try {
-            sortBooks = getOldBooks();
-            sortBooks.sort(Comparator.comparing(Book::getDeliveryDate));
-            LOGGER.info(
-                "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
-        } catch (Exception e) {
-            LOGGER.warn(
-                "Failed to execute the method - "
-                    + Thread.currentThread().getStackTrace()[1].getMethodName(),
-                e);
-        }
-        return sortBooks;
-    }
-
-    @Override
-    public List<Book> sortOldBookByPrice() {
-        List<Book> sortBooks = null;
-        try {
-            sortBooks = getOldBooks();
-            sortBooks.sort(Comparator.comparingInt(Book::getPrice));
-            LOGGER.info(
-                "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
-        } catch (Exception e) {
-            LOGGER.warn(
-                "Failed to execute the method - "
-                    + Thread.currentThread().getStackTrace()[1].getMethodName(),
-                e);
-        }
-        return sortBooks;
-    }
+//    @Override
+//    public List<Book> sortOldBookByDate() {
+//        List<Book> sortBooks = null;
+//        try {
+//            sortBooks = getOldBooks();
+//            sortBooks.sort(Comparator.comparing(Book::getDeliveryDate));
+//            LOGGER.info(
+//                "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
+//        } catch (Exception e) {
+//            LOGGER.warn(
+//                "Failed to execute the method - "
+//                    + Thread.currentThread().getStackTrace()[1].getMethodName(),
+//                e);
+//        }
+//        return sortBooks;
+//    }
+//
+//    @Override
+//    public List<Book> sortOldBookByPrice() {
+//        List<Book> sortBooks = null;
+//        try {
+//            sortBooks = getOldBooks();
+//            sortBooks.sort(Comparator.comparingInt(Book::getPrice));
+//            LOGGER.info(
+//                "Method completed - " + Thread.currentThread().getStackTrace()[1].getMethodName());
+//        } catch (Exception e) {
+//            LOGGER.warn(
+//                "Failed to execute the method - "
+//                    + Thread.currentThread().getStackTrace()[1].getMethodName(),
+//                e);
+//        }
+//        return sortBooks;
+//    }
 
     @Override
     public void create(Book entity) {
