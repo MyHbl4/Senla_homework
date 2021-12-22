@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property name="HOME_LOG" value="logs/BookShop.log"/>
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <!-- "application-name" is a variable -->
+        <file>${HOME_LOG}</file>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>%d %p %t %c - %m%n</Pattern>
+        </layout>
+    </appender>
+    <!--  <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">-->
+    <!--    <layout class="ch.qos.logback.classic.PatternLayout">-->
+    <!--      <Pattern>%d [%thread] %level %logger - %m%n</Pattern>-->
+    <!--    </layout>-->
+    <!--  </appender>-->
+    <root level="info">
+        <appender-ref ref="FILE"/>
+        <!--    <appender-ref ref="CONSOLE"/>-->
+    </root>
+</configuration>
