@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+  <meta charset="UTF-8">
+  <title>Show details</title>
+  <link rel="stylesheet" type="text/css" href="/URLToReachResourcesFolder/css/style.css">
+</head>
+<body>
+<div id="container">
+  <div id="header">
+    <h1>BOOK SHOP</h1>
+  </div>
+  <div id="content">
+    <div id="nav">
+      <ul>
+        <li><a href="/">Home menu</a></li>
+        <li><a href="/books/">Book menu</a></li>
+        <li><a href="/orders/">Order menu</a></li>
+        <li><a href="/requests/">Request menu</a></li>
+      </ul>
+    </div>
+    <div id="main">
+      <h3 th:text="${count}"></h3>
+      <br>
+      <h3 th:text="${price}"></h3>
+      <br>
+      <form action="/orders/askDetails" target="_blank">
+        <button>Back</button>
+      </form>
+    </div>
+  </div>
+  <div id="footer">
+    <a href="/">Home page</a>
+    <a>| @MyHbl4 2021</a>
+    <span sec:authorize="isAuthenticated()">| Logged user: [[${#httpServletRequest.remoteUser}]]</span>
+    <a th:href="@{/logout}">| Sign Out</a>
+    </span>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+  <meta charset="UTF-8">
+  <title>Update order</title>
+  <link rel="stylesheet" type="text/css" href="/URLToReachResourcesFolder/css/style.css">
+</head>
+<body>
+<div id="container">
+  <div id="header">
+    <h1>BOOK SHOP</h1>
+  </div>
+  <div id="content">
+    <div id="nav">
+      <ul>
+        <li><a href="/">Home menu</a></li>
+        <li><a href="/books/">Book menu</a></li>
+        <li><a href="/orders/">Order menu</a></li>
+        <li><a href="/requests/">Request menu</a></li>
+      </ul>
+    </div>
+    <div id="main">
+      <form th:method="PATCH" th:action="@{/orders/{id}(id=${order.getId()})}" th:object="${order}">
+        <label for="delivery">Enter the date in the format yyyy-mm-dd: </label>
+        <input type="text" th:field="*{execution}" id="delivery"/>
+        <div style="color:red" th:if="${#fields.hasErrors('price')}" th:errors="*{execution}">
+          Delivery
+          error
+        </div>
+        <br/>
+        <label for="status">Enter status NEW, COMPLETED or CANCELED: </label>
+        <input list="list" th:field="*{orderStatus}" id="status"/>
+        <datalist id="list">
+          <option value="NEW"></option>
+          <option value="CANCELED"></option>
+          <option value="COMPLETED"></option>
+        </datalist>
+        <br/>
+        <label for="customerName">Enter customer: </label>
+        <input type="text" th:field="*{customerName}" id="customerName"/>
+        <div style="color:red" th:if="${#fields.hasErrors('customerName')}"
+             th:errors="*{customerName}">customer error
+        </div>
+        <br/>
+        <label th:for="checkbox">Enter books</label>
+        <div th:each="book : ${books}">
+          <input th:type="checkbox" th:name="orderBooksId" th:value="${book.getId()}" th:text="${book.toString()}">
+        </div>
+        <hr/>
+        <input type="submit" value="Update!"/>
+      </form>
+    </div>
+  </div>
+  <div id="footer">
+    <a href="/">Home page</a>
+    <a>| @MyHbl4 2021</a>
+    <span sec:authorize="isAuthenticated()">| Logged user: [[${#httpServletRequest.remoteUser}]]</span>
+    <a th:href="@{/logout}">| Sign Out</a>
+    </span>
+  </div>
+</div>
+</body>
+</html>
