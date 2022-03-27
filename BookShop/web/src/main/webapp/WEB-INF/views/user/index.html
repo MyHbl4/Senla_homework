@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+  <meta charset="UTF-8">
+  <title>User menu</title>
+  <link rel="stylesheet" type="text/css" href="/URLToReachResourcesFolder/css/style.css">
+</head>
+<body>
+<div id="container">
+  <div id="header">
+    <h1>BOOK SHOP</h1>
+  </div>
+  <div id="content">
+    <div id="nav">
+      <ul>
+        <li><a href="/">Home menu</a></li>
+        <li><a href="/user/">User menu</a></li>
+        <li><a href="/user/new">Create new order</a></li>
+        <li><a href="/user/sort/sort-book-price">Sort book by price</a></li>
+        <li><a href="/user/sort/sort-book-availability">Sort book by availability</a></li>
+        <li><a href="/user/sort/sort-book-publication">Sort book by publication</a></li>
+        <li><a href="/user/sort/sort-book-title">Sort book by title</a></li>
+      </ul>
+    </div>
+    <div id="main">
+      <table>
+        <tr>
+          <th>Id</th>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Publication</th>
+          <th>Price</th>
+          <th>Delivery date</th>
+          <th>Availability</th>
+        </tr>
+        <div th:each="book : ${books}">
+          <tr>
+            <td><em><b><a th:text="${book.getId()}">id</a></b></em>
+            </td>
+            <td><em><b><a th:text="${book.getTitle()}">title</a></b></em>
+            </td>
+            <td><em><b><a th:text="${book.getAuthor()}">author</a></b></em>
+            </td>
+            <td><em><b><a th:text="${book.getPublication()}">publication</a></b></em>
+            </td>
+            <td><em><b><a th:text="${book.getPrice()}">price</a></b></em>
+            </td>
+            <td><em><b><a th:text="${book.getDeliveryDate()}">delivery</a></b></em>
+            </td>
+            <td><em><b><a th:text="${book.getAvailability()}">availability</a></b></em>
+            </td>
+          </tr>
+        </div>
+      </table>
+    </div>
+  </div>
+  <div id="footer">
+    <a href="/">Home page</a>
+    <a>| @MyHbl4 2021</a>
+    <span sec:authorize="isAuthenticated()">| Logged user: [[${#httpServletRequest.remoteUser}]]</span>
+    <a th:href="@{/logout}">| Sign Out</a>
+    </span>
+  </div>
+</div>
+</body>
+</html>

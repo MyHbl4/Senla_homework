@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+  <meta charset="UTF-8">
+  <title>Permission</title>
+  <link rel="stylesheet" type="text/css" href="/URLToReachResourcesFolder/css/style.css">
+</head>
+<body>
+<div id="container">
+  <div id="header">
+    <h1>BOOK SHOP</h1>
+  </div>
+  <div id="content">
+    <div id="nav">
+<!--      <input type="button" value="Home menu"-->
+<!--             onclick="window.location.href='/'">-->
+<!--      <br>-->
+<!--      <input type="button" value="Book menu"-->
+<!--             onclick="window.location.href='/books/'">-->
+<!--      <br>-->
+<!--      <input type="button" value="Order menu"-->
+<!--             onclick="window.location.href='/orders/'">-->
+<!--      <br>-->
+<!--      <div sec:authorize="hasRole('ADMIN')">-->
+<!--        <input type="button" value="Request menu"-->
+<!--               onclick="window.location.href='/requests/'">-->
+<!--      </div>-->
+<!--      <div sec:authorize="hasRole('ADMIN')">-->
+<!--        This content is only shown to users.-->
+<!--      </div>-->
+
+            <ul>
+              <li><a href="/">Home menu</a></li>
+              <li><a href="/user/">User menu</a></li>
+              <li><a href="/books/">Book menu for admin</a></li>
+              <li><a href="/orders/">Order menu for admin</a></li>
+              <li><a href="/requests/">Request menu for admin</a></li>
+            </ul>
+    </div>
+    <div id="main">
+      <h1>403 - Access is denied</h1>
+      <div th:inline="text">Hello [[${#httpServletRequest.remoteUser}]],
+        you do not have permission to access this page.</div>
+      <img src="/URLToReachResourcesFolder/images/403.jpg">
+    </div>
+  </div>
+  <div id="footer">
+    <a href="/">Home page</a>
+    <a>| @MyHbl4 2021</a>
+    <span sec:authorize="isAuthenticated()">| Logged user: [[${#httpServletRequest.remoteUser}]]</span>
+    <a th:href="@{/logout}">| Sign Out</a>
+    </span>
+  </div>
+</div>
+</body>
+</html>
